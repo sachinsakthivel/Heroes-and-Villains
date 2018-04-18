@@ -11,6 +11,7 @@ public class GameEnviornment {
 			System.out.println("What is the name of your super hero team? (Length of Team Name must be 2-10 characters long): ");
 			teamName = reader.next();
 		}
+		while 
 		
 
 	}

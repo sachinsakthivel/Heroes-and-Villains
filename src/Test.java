@@ -1,4 +1,3 @@
-
 public class Test {
 	
 	static GameEnviornment test = new GameEnviornment();
