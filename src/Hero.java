@@ -17,12 +17,8 @@ public class Hero extends Person{
 	}
 	
 	// not too sure about this function
-	public void setCurrentHealth(int currentHealth) {
-		if (maximumHealth > currentHealth) {
-			this.currentHealth = currentHealth; 
-		} else {
-			System.out.println("Maximum health achieved");
-		}
+	public void setCurrentHealth(int Health) {
+		this.currentHealth = Health;
 	}
 	
 	public boolean getLiving() {

@@ -50,9 +50,11 @@ public class Villain extends Person {
 	public void setGamesLost() {
 		if (getGamesLost() >= 3) {
 			setDefeated(true);
-		} this.gamesLost +=1;
+		} 
+		this.gamesLost +=1;
 		
 	}
+
 	
 	public String toString() {
 		String output = new String("This villain is named: " + getPersonName() + " and currently has " + getCurrentHealth() +  " health. Their battle cry is "  + getTauntPhrase());
