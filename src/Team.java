@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Team {
-	
+	/* team class*/
 	private String squadName;
 	private boolean dead;
 	private ArrayList<Hero> team = new ArrayList<Hero>();
