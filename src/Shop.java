@@ -12,7 +12,7 @@ public class Shop {
 		Random rand  = new Random();
 		LesserHealNum =  rand.nextInt((12 - 7) + 1) + 7;
 		AverageHealNum =  rand.nextInt((6 - 2) + 1) + 2;
-		GreaterHealNum = rand.nextInt((1 - 3) + 1) + 2;
+		GreaterHealNum = rand.nextInt((3 - 1) + 1) + 2;
 		MapNum = 6;
 		input = -1;
 	}
@@ -33,16 +33,20 @@ public class Shop {
 	public void menuOptions() {
 		
 		System.out.println("0 - Return To Home Base");
-		System.out.println("1 - Buy a Lesser Heal Ticket");
-		System.out.println("2 - Buy an Average Heal Ticket");
-		System.out.println("3 - Buy a Greater Heal Ticket");
-		System.out.println("4 - Buy a Map");
-				
+		System.out.println("1 - Buy a Lesser Heal Ticket ("+LesserHealNum+" left)");
+		System.out.println("2 - Buy an Average Heal Ticket ("+AverageHealNum+" left)");
+		System.out.println("3 - Buy a Greater Heal Ticket ("+GreaterHealNum+" left)");
+		System.out.println("4 - Buy a Map ("+MapNum+" left)");
 	}
 	
 	public void buy(int choice, int coins) {
 		if (choice == 1) {
+			System.out.println("Check");
 		}
+	}
+	
+	public static void main(String args[]) {
+		Shop newShop = new Shop();
 	}
 
 }
