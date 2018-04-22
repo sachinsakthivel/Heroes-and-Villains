@@ -10,6 +10,7 @@ public class Team {
 	private int AverageHealNum;
 	private int GreaterHealNum;
 	private int MapNum;
+	private int Coins;
 	
 	
 	public Team(String name, int length) {
@@ -85,6 +86,13 @@ public class Team {
 	public void setDead(boolean dead) {
 		this.dead = dead;
 	}
-	
-	
+
+	public int getCoins() {
+		return Coins;
+	}
+
+	public void setCoins(int coins) {
+		Coins = coins;
+	}
+
 }
