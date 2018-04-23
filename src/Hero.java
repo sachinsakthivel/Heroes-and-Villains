@@ -4,6 +4,19 @@ public class Hero extends Person{
 	private int maximumHealth;
 	private boolean living;
 	
+	public Hero(String name) {
+		super(name);
+		this.maximumHealth = 100;
+		this.living = true;
+		this.currentHealth = 100;
+		typeChoice();
+		
+	}
+	
+	public void typeChoice() {
+		
+	}
+	
 	public int getCurrentHealth() {
 		return currentHealth;
 	}
@@ -33,15 +46,7 @@ public class Hero extends Person{
 		String output = new String("This person is named: " + getPersonName() + " and currently has " + getCurrentHealth() +  " health.");
 		return output; 
 	}
-	//HERO TYPE NEEDED!!!
-	public Hero(String name) {
-		super(name);
-		this.maximumHealth = 100;
-		this.living = true;
-		this.currentHealth = 100;
-	}
-	
-	
+
 	
 
 }

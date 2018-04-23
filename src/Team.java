@@ -4,18 +4,37 @@ public class Team {
 	/* team class*/
 	//HAVEN'T FIGURED OUT POWERUPS
 	private String teamName;
+	private int teamLength;
 	private boolean dead;
 	private ArrayList<Hero> team = new ArrayList<Hero>();
+	
 	private int LesserHealNum;
 	private int AverageHealNum;
 	private int GreaterHealNum;
 	private int MapNum;
 	private int Coins;
 	
+	private String heroName;
 	
 	public Team(String name, int length) {
 		teamName = name;
+		teamLength = length;
+		LesserHealNum = 0;
+		AverageHealNum = 0;
+		GreaterHealNum = 0;
+		MapNum = 0;
+		Coins = 500;
+		dead = false;
 		
+	}
+	
+	public void setTeam() {
+		for (int i = 1; i == teamLength; i++ ) {
+			Scanner reader = new Scanner(System.in);
+			System.out.println("What would you like the name of Hero no."+i+" ?:");
+			heroName = reader.next();
+			
+		}
 	}
 	
 	public String getteamName() {
