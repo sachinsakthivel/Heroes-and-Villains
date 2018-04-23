@@ -25,15 +25,17 @@ public class Team {
 		MapNum = 0;
 		Coins = 500;
 		dead = false;
+		setTeamList();
 		
 	}
 	
-	public void setTeam() {
-		for (int i = 1; i == teamLength; i++ ) {
+	public void setTeamList() {
+		for (int i = 0; i < teamLength; i++ ) {
 			Scanner reader = new Scanner(System.in);
-			System.out.println("What would you like the name of Hero no."+i+" ?:");
+			System.out.println("What would you like the name of Hero no."+(i+1)+" ?:");
 			heroName = reader.next();
-			
+			Hero newHero = new Hero(heroName);
+			addToTeam(newHero);
 		}
 	}
 	
@@ -59,9 +61,10 @@ public class Team {
 	}
 	
 	public String toString() {
-		String output = new String("This is the " + getteamName());
+		String output = new String("Name of the Team is: " + getteamName());
+		output += "\n" + "\n" + "Heroes:";
 		for (Hero superhero: team) {
-			output += superhero.getPersonName() + ": " +  superhero.getCurrentHealth() + " Health";
+			output += "\n" + superhero.getPersonName() + " : " +  superhero.getCurrentHealth() + " Health";
 		}
 		return output;
 	}

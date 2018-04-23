@@ -14,7 +14,7 @@ public class Hero extends Person{
 	}
 	
 	public void typeChoice() {
-		
+		System.out.println("Type selection is not implemented yet");
 	}
 	
 	public int getCurrentHealth() {

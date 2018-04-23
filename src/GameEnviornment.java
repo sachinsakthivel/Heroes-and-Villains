@@ -36,6 +36,7 @@ public class GameEnviornment {
 	public void setGame() {
 		getInput();
 		Team newTeam = new Team(teamName, teamLength);
+		System.out.println(newTeam);
 	}
 	
 }
