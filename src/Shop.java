@@ -41,10 +41,16 @@ public class Shop {
 	
 	public void buy(int choice, int coins) {
 		if (choice == 1) {
-			System.out.println("Check");
+			tradeCheck(LesserHealNum, 20);
 		}
 	}
 	
+	public void tradeCheck(int itemstock, int) {
+		if (itemstock < 1) {
+			System.out.println("Sorry Stranger, Out of Stock");
+		elif (price)
+		}
+	}
 	public static void main(String args[]) {
 		Shop newShop = new Shop();
 	}
