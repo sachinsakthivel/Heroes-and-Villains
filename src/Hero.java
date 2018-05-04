@@ -1,5 +1,6 @@
 
 public class Hero extends Person{
+	
 	private int currentHealth;
 	private int maximumHealth;
 	private boolean living;
