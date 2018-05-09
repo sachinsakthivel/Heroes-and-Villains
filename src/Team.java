@@ -42,6 +42,8 @@ public class Team {
 		invList.add(AverageHeal);
 		Item GreaterHeal = new greaterHeals();
 		invList.add(GreaterHeal);
+		Item Map = new Maps();
+		invList.add(Map);
 	}
 	
 	public ArrayList<Item> getInv(){
@@ -82,7 +84,6 @@ public class Team {
 		for (Item chosenItem: invList) {
 			output += "\n" + chosenItem;
 		}
-		output += "/n" +"You currently have " + MapNum + " Maps.";
 		return output;
 	}
 
