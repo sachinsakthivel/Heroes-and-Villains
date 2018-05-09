@@ -65,7 +65,7 @@ public class rockPaperScissors {
 	
 	public void menuOptions() {
 		System.out.println("Welcome to the game of Rock Paper Scissors !!!");
-		System.out.println("Your choice?:");
+		System.out.println("Your choice?:\n");
 		System.out.println("1 - Paper");
 		System.out.println("2 - Scissors");
 		System.out.println("3 - Rock");

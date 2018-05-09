@@ -7,20 +7,20 @@ public class guessTheNumber {
 	private int userGuess;
 	private boolean gameWon;
 	
-	public boolean play() {
+	public boolean play(int upperLimit) {
 		System.out.println("Welcome to game of 'Guess the Number' !!!");
 		System.out.println("The rules are simple: You have two chances to guess the number that the I have chosen in the range of 1 to 10");
 		System.out.println("Don't worry, I'm not that unfair, I will tell you if your guess is higher or lower.");
 		gameWon = false;
 		Random numGenerator = new Random();
-		guessNumber = numGenerator.nextInt(10) + 1;
+		guessNumber = numGenerator.nextInt(upperLimit) + 1;
 		Scanner input = new Scanner(System.in);
 		while (gameWon == false) {
 			if (tries == 2) {
 				System.out.println("Ha Ha Ha, You Lose. The number I chose was " + guessNumber);
 				break;
 			}
-			System.out.println("Well then, What's your guess?? Choose Wisely !!");
+			System.out.println("\nWell then, What's your guess?? Choose Wisely !!");
 			userGuess = input.nextInt();
 			System.out.println(guessNumber);
 			tries++;
@@ -39,7 +39,7 @@ public class guessTheNumber {
 	
 	public static void main(String[] args) {
 		guessTheNumber newGame = new guessTheNumber();
-		System.out.println(newGame.play());
+		System.out.println(newGame.play(10));
 	}
 
 }
