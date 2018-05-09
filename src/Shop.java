@@ -22,9 +22,21 @@ public class Shop {
 		System.out.println("Welcome Stranger, What're you Buying?");
 		while (input != 0) {
 			menuOptions();
-			if (input != 0) {
-				buy(reader.nextInt(), superteam.getCoins());
-				System.out.println("Anything else, Stranger?");
+			input = reader.nextInt();
+			if (input == 1) {
+				buy(LesserHealNum, superteam);
+			}
+			else if (input == 2) {
+				buy(AverageHealNum, superteam);
+			}
+			else if (input == 3) {
+				buy(GreaterHealNum, superteam);
+			}
+			else if (input == 4) {
+				buy(MapNum, superteam);
+			}
+			else {
+				System.out.println("Pleasure doing business with ya, Stranger");
 			}
 			
 		}
@@ -39,18 +51,20 @@ public class Shop {
 		System.out.println("4 - Buy a Map ("+MapNum+" left)");
 	}
 	
-	public void buy(int choice, int coins) {
-		if (choice == 1) {
-			tradeCheck(LesserHealNum, 20);
+	public void buy(int itemNum, Team team) {
+		if (itemNum < 1) {
+			System.out.println("Sorry Stranger, Out of Stock");
 		}
+		else if ( > chosenTeam.getCoins()) {
+			System.out.println("Not enough coins, Stranger");
+		}
+		else {
+			int coins = chosenTeam.getCoins() - choice.getItemPrice();
+			chosenTeam.setCoins(coins);
+		}
+		
 	}
 	
-	public void tradeCheck(int itemstock, int) {
-		if (itemstock < 1) {
-			System.out.println("Sorry Stranger, Out of Stock");
-		elif (price)
-		}
-	}
 	public static void main(String args[]) {
 		Shop newShop = new Shop();
 	}

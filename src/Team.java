@@ -14,6 +14,7 @@ public class Team {
 	private int MapNum;
 	private int Coins;
 	
+	private ArrayList<Item> invList = new ArrayList<Item>();
 	private String heroName;
 	
 	public Team(String name, int length) {
@@ -26,6 +27,7 @@ public class Team {
 		Coins = 500;
 		dead = false;
 		setTeamList();
+		setInventory();
 		
 	}
 	
@@ -37,6 +39,11 @@ public class Team {
 			Hero newHero = new Hero(heroName);
 			addToTeam(newHero);
 		}
+	}
+	
+	public void setInventory() {
+		LesserHeals LesserHeal = new LesserHeals();
+		invList.add(LesserHeal);
 	}
 	
 	public String getteamName() {

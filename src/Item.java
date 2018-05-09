@@ -49,4 +49,6 @@ public class Item {
 	public void setItemStock(int itemStock) {
 		ItemStock = itemStock;
 	}
+	
+	public String toString 
 }
