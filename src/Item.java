@@ -50,5 +50,4 @@ public class Item {
 		ItemStock = itemStock;
 	}
 	
-	public String toString 
 }

@@ -44,6 +44,17 @@ public class Team {
 	public void setInventory() {
 		Item LesserHeal = new LesserHeals();
 		invList.add(LesserHeal);
+		Item AverageHeal = new avgHeals();
+		invList.add(AverageHeal);
+		Item GreaterHeal = new greaterHeals();
+		invList.add(GreaterHeal);
+	}
+	
+	public ArrayList<Item> getInv(){
+		return invList;
+	}
+	public void setInv(ArrayList<Item> updateInv) {
+		invList = updateInv;
 	}
 	
 	public String getteamName() {
@@ -72,6 +83,10 @@ public class Team {
 		output += "\n" + "\n" + "Heroes:";
 		for (Hero superhero: team) {
 			output += "\n" + superhero.getPersonName() + " : " +  superhero.getCurrentHealth() + " Health";
+		}
+		output += "\n" + "\n" + "Items:";
+		for (Item chosenItem: invList) {
+			output += "\n" + chosenItem;
 		}
 		return output;
 	}

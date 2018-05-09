@@ -1,10 +1,10 @@
 
-public class LesserHeals extends Item {
+public class avgHeals extends Item{
 	private int HealNum;
 	
-	public LesserHeals() {
-		super("Lesser Heal Tickets", 20, 30, 0);
-		HealNum = 10;
+	public avgHeals() {
+		super("Average Heal Tickets", 50, 60, 0);
+		HealNum = 25;
 	}
 	
 	public String toString() {

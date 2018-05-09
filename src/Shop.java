@@ -24,16 +24,16 @@ public class Shop {
 			menuOptions();
 			input = reader.nextInt();
 			if (input == 1) {
-				buy(LesserHealNum, superteam);
+				buy(LesserHealNum, superteam, input);
 			}
 			else if (input == 2) {
-				buy(AverageHealNum, superteam);
+				buy(AverageHealNum, superteam, input);
 			}
 			else if (input == 3) {
-				buy(GreaterHealNum, superteam);
+				buy(GreaterHealNum, superteam, input);
 			}
 			else if (input == 4) {
-				buy(MapNum, superteam);
+				buy(MapNum, superteam, input);
 			}
 			else {
 				System.out.println("Pleasure doing business with ya, Stranger");
@@ -51,22 +51,21 @@ public class Shop {
 		System.out.println("4 - Buy a Map ("+MapNum+" left)");
 	}
 	
-	public void buy(int itemNum, Team team) {
+	public void buy(int itemNum, Team team, int input) {
 		if (itemNum < 1) {
 			System.out.println("Sorry Stranger, Out of Stock");
 		}
-		else if ( > chosenTeam.getCoins()) {
+		else if ( team.getInv().get(input-1).getItemPrice() > team.getCoins()) {
 			System.out.println("Not enough coins, Stranger");
 		}
 		else {
-			int coins = chosenTeam.getCoins() - choice.getItemPrice();
-			chosenTeam.setCoins(coins);
+			int newPotionCount = team.getInv().get(input-1).getItemStock() + 1;
+			team.getInv().get(input-1).setItemStock(newPotionCount);
+			int coins = team.getCoins() - team.getInv().get(input-1).getItemPrice();
+			team.setCoins(coins);
+			System.out.println("Anything Else, Stranger");
 		}
 		
-	}
-	
-	public static void main(String args[]) {
-		Shop newShop = new Shop();
 	}
 
 }

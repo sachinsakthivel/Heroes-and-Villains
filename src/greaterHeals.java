@@ -1,10 +1,10 @@
 
-public class LesserHeals extends Item {
+public class greaterHeals extends Item{
 	private int HealNum;
 	
-	public LesserHeals() {
-		super("Lesser Heal Tickets", 20, 30, 0);
-		HealNum = 10;
+	public greaterHeals() {
+		super("Greater Heal Tickets", 100, 120, 0);
+		HealNum = 50;
 	}
 	
 	public String toString() {
@@ -12,5 +12,4 @@ public class LesserHeals extends Item {
 		returnString += "\n" + "This item heals " + HealNum + " hp points in " + this.getItemDuration() + " seconds.";
 		return returnString;
 	}
-	
 }
