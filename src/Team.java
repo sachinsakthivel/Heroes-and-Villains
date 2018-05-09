@@ -8,9 +8,6 @@ public class Team {
 	private boolean dead;
 	private ArrayList<Hero> team = new ArrayList<Hero>();
 	
-	private int LesserHealNum;
-	private int AverageHealNum;
-	private int GreaterHealNum;
 	private int MapNum;
 	private int Coins;
 	
@@ -20,9 +17,6 @@ public class Team {
 	public Team(String name, int length) {
 		teamName = name;
 		teamLength = length;
-		LesserHealNum = 0;
-		AverageHealNum = 0;
-		GreaterHealNum = 0;
 		MapNum = 0;
 		Coins = 500;
 		dead = false;
@@ -88,31 +82,8 @@ public class Team {
 		for (Item chosenItem: invList) {
 			output += "\n" + chosenItem;
 		}
+		output += "/n" +"You currently have " + MapNum + " Maps."
 		return output;
-	}
-
-	public int getLesserHealNum() {
-		return LesserHealNum;
-	}
-
-	public void setLesserHealNum(int lesserHealNum) {
-		LesserHealNum = lesserHealNum;
-	}
-
-	public int getGreaterHealNum() {
-		return GreaterHealNum;
-	}
-
-	public void setGreaterHealNum(int greaterHealNum) {
-		GreaterHealNum = greaterHealNum;
-	}
-
-	public int getAverageHealNum() {
-		return AverageHealNum;
-	}
-
-	public void setAverageHealNum(int averageHealNum) {
-		AverageHealNum = averageHealNum;
 	}
 
 	public int getMapNum() {

@@ -4,13 +4,11 @@ import java.util.*;
 public class Item {
 	private String ItemName;
 	private int ItemPrice;
-	private int ItemDuration;
 	private int ItemStock;
 	
-	public Item(String Name, int Price, int Duration, int Stock) {
+	public Item(String Name, int Price, int Stock) {
 		setItemName(Name);
 		setItemPrice(Price);
-		setItemDuration(Duration);
 		setItemStock(Stock);
 	}
 	
@@ -34,13 +32,6 @@ public class Item {
 		ItemPrice = itemPrice;
 	}
 
-	public int getItemDuration() {
-		return ItemDuration;
-	}
-
-	public void setItemDuration(int itemDuration) {
-		ItemDuration = itemDuration;
-	}
 
 	public int getItemStock() {
 		return ItemStock;
