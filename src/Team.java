@@ -42,7 +42,7 @@ public class Team {
 	}
 	
 	public void setInventory() {
-		LesserHeals LesserHeal = new LesserHeals();
+		Item LesserHeal = new LesserHeals();
 		invList.add(LesserHeal);
 	}
 	
