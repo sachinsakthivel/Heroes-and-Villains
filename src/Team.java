@@ -82,7 +82,7 @@ public class Team {
 		}
 		output += "\n" + "\n" + "Items:";
 		for (Item chosenItem: invList) {
-			output += "\n" + chosenItem;
+			output += "\n" + chosenItem + "\n";
 		}
 		return output;
 	}
