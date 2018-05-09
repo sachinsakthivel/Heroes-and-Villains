@@ -82,7 +82,7 @@ public class Team {
 		for (Item chosenItem: invList) {
 			output += "\n" + chosenItem;
 		}
-		output += "/n" +"You currently have " + MapNum + " Maps."
+		output += "/n" +"You currently have " + MapNum + " Maps.";
 		return output;
 	}
 
