@@ -5,7 +5,7 @@ public class rockPaperScissors {
 	private int vNum;
 	private String vPick;
 	private int userPick;
-	private boolean gameWon = false;
+	private boolean gameWon;
 	
 	public boolean play() {
 		gameWon = false;
