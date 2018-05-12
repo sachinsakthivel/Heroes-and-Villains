@@ -10,7 +10,7 @@ public class VilliansLair extends Locations{
 		}
 	}
 	
-	public void travel() {
+	public void travel(Team team) {
 		travelledto();
 		System.out.println("There is a fine line between bravery and foolishness, I do not on which side you Heroes stand upon, Show me!");
 		System.out.println("You have encountered the Boss of this City");

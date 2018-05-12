@@ -33,14 +33,14 @@ public class Team {
 	}
 	
 	public void setInventory() {
-		Item LesserHeal = new LesserHeals();
-		invList.add(LesserHeal);
-		Item AverageHeal = new avgHeals();
-		invList.add(AverageHeal);
-		Item GreaterHeal = new greaterHeals();
-		invList.add(GreaterHeal);
-		Item Map = new Maps();
-		invList.add(Map);
+		invList.add(new lesserHeals());
+		invList.add(new avgHeals());
+		invList.add(new greaterHeals());
+		invList.add(new Maps());
+		invList.add(new armourUp());
+		invList.add(new riggedDice());
+		invList.add(new maxHealthUp());
+		invList.add(new hypSuggestSkill());
 	}
 	
 	public ArrayList<Item> getInv(){

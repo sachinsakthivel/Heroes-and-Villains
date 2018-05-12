@@ -1,9 +1,9 @@
 
-public class LesserHeals extends Item {
+public class lesserHeals extends Item {
 	private int HealNum;
 	private int ItemDuration;
 	
-	public LesserHeals() {
+	public lesserHeals() {
 		super("Lesser Heal Tickets", 20, 0);
 		ItemDuration = 30;
 		HealNum = 10;
