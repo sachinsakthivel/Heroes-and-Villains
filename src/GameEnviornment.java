@@ -5,6 +5,7 @@ public class GameEnviornment {
 	private String teamName = "";
 	private int teamLength = -1;
 	private int cityNum = -1;
+	HelperFunctions misc = new HelperFunctions();
 	
 	
 	public void getInput() {
@@ -17,18 +18,12 @@ public class GameEnviornment {
 			}
 		}
 		while (cityNum < 3 || cityNum > 6) {
-			System.out.println("How many Cities would you like to explore?:");
-			cityNum = reader.nextInt();
-			if (cityNum < 3 || cityNum >6) {
-				System.out.println("Invalid Input, You can choose between 3 to 6 cities");
+			System.out.println("How many Cities would you like to explore?: (Choose between 3 to 6 Cities)");
+			cityNum = misc.InputValidator(3, 6);
 			}
-		}
 		while (teamLength < 1 || teamLength > 3) {
-			System.out.println("How many Heroes would you like to have on your team?: ");
-			teamLength = reader.nextInt();
-			if (teamLength <1 || teamLength > 3) {
-				System.out.println("Invalid Input, You can choose between 1 to 3 Heroes");
-			}
+			System.out.println("How many Heroes would you like to have on your team?: (Choose between 1 to 3 Heroes)");
+			teamLength = misc.InputValidator(1, 3);
 		}
 
 	}
