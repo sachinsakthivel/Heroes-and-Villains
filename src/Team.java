@@ -7,8 +7,6 @@ public class Team {
 	private int teamLength;
 	private boolean dead;
 	private ArrayList<Hero> team = new ArrayList<Hero>();
-	
-	private int MapNum;
 	private int Coins;
 	
 	private ArrayList<Item> invList = new ArrayList<Item>();
@@ -17,7 +15,6 @@ public class Team {
 	public Team(String name, int length) {
 		teamName = name;
 		teamLength = length;
-		MapNum = 0;
 		Coins = 500;
 		dead = false;
 		setTeamList();
@@ -87,13 +84,6 @@ public class Team {
 		return output;
 	}
 
-	public int getMapNum() {
-		return MapNum;
-	}
-
-	public void setMapNum(int mapNum) {
-		MapNum = mapNum;
-	}
 
 	public boolean isDead() {
 		return dead;

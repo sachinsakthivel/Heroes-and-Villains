@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Shop {
+public class Shop extends Locations {
 	
 	private int LesserHealNum;
 	private int AverageHealNum;
@@ -8,7 +8,8 @@ public class Shop {
 	private int MapNum;
 	private int input;
 	
-	public Shop () {
+	public Shop() {
+		super("Wanderer's Shop");
 		Random rand  = new Random();
 		LesserHealNum =  rand.nextInt((12 - 7) + 1) + 7;
 		AverageHealNum =  rand.nextInt((6 - 2) + 1) + 2;
@@ -17,23 +18,25 @@ public class Shop {
 		input = -1;
 	}
 	
-	public void travel(Team superteam) {
+	public void travel(Team team) {
+		travelledto();
 		Scanner reader = new Scanner(System.in);
 		System.out.println("Welcome Stranger, What're you Buying?");
 		while (input != 0) {
-			menuOptions();
+			System.out.println("You have currently " + team.getCoins() + " coins left.");
+			menuOptions(team);
 			input = reader.nextInt();
 			if (input == 1) {
-				buy(LesserHealNum, superteam, input);
+				buy(LesserHealNum, team, input);
 			}
 			else if (input == 2) {
-				buy(AverageHealNum, superteam, input);
+				buy(AverageHealNum, team, input);
 			}
 			else if (input == 3) {
-				buy(GreaterHealNum, superteam, input);
+				buy(GreaterHealNum, team, input);
 			}
 			else if (input == 4) {
-				buy(MapNum, superteam, input);
+				buy(MapNum, team, input);
 			}
 			else {
 				System.out.println("Pleasure doing business with ya, Stranger");
@@ -42,13 +45,12 @@ public class Shop {
 		}
 	}
 	
-	public void menuOptions() {
-		
+	public void menuOptions(Team team) {
 		System.out.println("0 - Return To Home Base");
-		System.out.println("1 - Buy a Lesser Heal Ticket ("+LesserHealNum+" left)");
-		System.out.println("2 - Buy an Average Heal Ticket ("+AverageHealNum+" left)");
-		System.out.println("3 - Buy a Greater Heal Ticket ("+GreaterHealNum+" left)");
-		System.out.println("4 - Buy a Map ("+MapNum+" left)");
+		System.out.println("1 - Buy a Lesser Heal Ticket ("+LesserHealNum+" left in Stock) (You own: "+team.getInv().get(0).getItemStock()+") (Price: "+team.getInv().get(0).getItemPrice()+" coins)");
+		System.out.println("2 - Buy an Average Heal Ticket ("+AverageHealNum+" left in Stock) (You own: "+team.getInv().get(1).getItemStock()+") (Price: "+team.getInv().get(0).getItemPrice()+" coins)");
+		System.out.println("3 - Buy a Greater Heal Ticket ("+GreaterHealNum+" left in Stock) (You own: "+team.getInv().get(1).getItemStock()+") (Price: "+team.getInv().get(0).getItemPrice()+" coins)");
+		System.out.println("4 - Buy a Map ("+MapNum+" left in Stock)");
 	}
 	
 	public void buy(int itemNum, Team team, int input) {
@@ -67,5 +69,6 @@ public class Shop {
 		}
 		
 	}
+	
 
 }

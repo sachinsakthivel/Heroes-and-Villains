@@ -37,6 +37,26 @@ public class GameEnviornment {
 		getInput();
 		Team newTeam = new Team(teamName, teamLength);
 		System.out.println(newTeam);
+		playGame(newTeam);
 	}
 	
+	public void playGame(Team chosenTeam) {
+		storyIntro();
+		 int i = 0;
+		while (i < cityNum) {
+			if (i < cityNum -1) {
+				City newCity = new City(false);
+				newCity.HomeBase(chosenTeam);
+				i++;
+			} else {
+				City newCity = new City(true);
+				newCity.HomeBase(chosenTeam);
+				i++;
+			}
+		}
+	}
+	
+	public void storyIntro() {
+		System.out.println("Story Introduction not implemented Yet.");
+	}
 }
