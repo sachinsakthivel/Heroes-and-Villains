@@ -3,6 +3,9 @@ public class Hero extends Person{
 	
 	private int currentHealth;
 	private int maximumHealth;
+	private int Dice;
+	private int Skill;
+	private int Armour;
 	private boolean living;
 	
 	public Hero(String name) {
@@ -10,6 +13,9 @@ public class Hero extends Person{
 		this.maximumHealth = 100;
 		this.living = true;
 		this.currentHealth = 100;
+		this.Dice = 0;
+		this.Skill = 0;
+		this.Armour = 0;
 		typeChoice();
 		
 	}
@@ -44,8 +50,33 @@ public class Hero extends Person{
 	}
 
 	public String toString() {
-		String output = new String("This person is named: " + getPersonName() + " and currently has " + getCurrentHealth() +  " health.");
+		String output = new String("This person is named: " + getPersonName() +"	Current Health: " + getCurrentHealth() + "	Maximum Health: "+ getMaximumHealth());
+		output += "\nArmour: " + getArmour() + "	Dice Upgrade: " + getDice()+ "		Hypnotic Skill Upgrade: " + getSkill();
 		return output; 
+	}
+
+	public int getDice() {
+		return Dice;
+	}
+
+	public void setDice(int dice) {
+		Dice = dice;
+	}
+
+	public int getSkill() {
+		return Skill;
+	}
+
+	public void setSkill(int skill) {
+		Skill = skill;
+	}
+
+	public int getArmour() {
+		return Armour;
+	}
+
+	public void setArmour(int armour) {
+		Armour = armour;
 	}
 
 	

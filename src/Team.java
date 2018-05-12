@@ -75,7 +75,7 @@ public class Team {
 		String output = new String("Name of the Team is: " + getteamName());
 		output += "\n" + "\n" + "Heroes:";
 		for (Hero superhero: team) {
-			output += "\n" + superhero.getPersonName() + " : " +  superhero.getCurrentHealth() + " Health";
+			output += "\n" + superhero + "\n";
 		}
 		output += "\n" + "\n" + "Items:";
 		for (Item chosenItem: invList) {

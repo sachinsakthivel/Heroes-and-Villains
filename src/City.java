@@ -50,7 +50,7 @@ public class City {
 		System.out.println("3 - Travel West - Destination: " + places.get(2).getName());
 		System.out.println("4 - Travel South - Destination: "+ places.get(3).getName());
 		System.out.println("5 - Use a Map");
-		System.out.println("6 - Look at Team Status");
+		System.out.println("6 - Look at Team Status and Item Descriptions");
 	}
 	
 	public void useMap(Team team) {

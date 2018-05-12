@@ -11,6 +11,7 @@ public class Shop extends Locations {
 	private int SkillNum;
 	private int MapNum;
 	private int input;
+	boolean trade = false;
 	
 	public Shop() {
 		super("Wanderer's Shop");
@@ -35,28 +36,36 @@ public class Shop extends Locations {
 			menuOptions(team);
 			input = reader.nextInt();
 			if (input == 1) {
-				buy(LesserHealNum, team, input);
+				trade = buy(LesserHealNum, team, input);
+				if (trade) {LesserHealNum--;}
 			}
 			else if (input == 2) {
-				buy(AverageHealNum, team, input);
+				trade = buy(AverageHealNum, team, input);
+				if (trade) {AverageHealNum--;}
 			}
 			else if (input == 3) {
-				buy(GreaterHealNum, team, input);
+				trade = buy(GreaterHealNum, team, input);
+				if (trade) {GreaterHealNum--;}
 			}
 			else if (input == 4) {
-				buy(MapNum, team, input);
+				trade = buy(MapNum, team, input);
+				if (trade) {MapNum--;}
 			}
 			else if (input == 5) {
-				buy(ArmourNum, team, input);
+				trade = buy(ArmourNum, team, input);
+				if (trade) {ArmourNum--;}
 			}
 			else if (input == 6) {
-				buy(DiceNum, team, input);
+				trade = buy(DiceNum, team, input);
+				if (trade) {DiceNum--;}
 			}
 			else if (input == 7) {
-				buy(HealthUpNum, team, input );
+				trade = buy(HealthUpNum, team, input );
+				if (trade) {HealthUpNum--;}
 			}
 			else if (input == 8) {
-				buy(SkillNum, team, input);
+				trade = buy(SkillNum, team, input);
+				if (trade) {SkillNum--;}
 			}
 			else {
 				System.out.println("Pleasure doing business with ya, Stranger");
@@ -77,19 +86,23 @@ public class Shop extends Locations {
 		System.out.println("8 - Buy a Hypnotic Suggestion Manual ("+SkillNum+" left in Stock) (You own: "+team.getInv().get(7).getItemStock()+") (Price: "+team.getInv().get(7).getItemPrice()+" coins)");
 	}
 	
-	public void buy(int itemNum, Team team, int input) {
+	public boolean buy(int itemNum, Team team, int input) {
 		if (itemNum < 1) {
 			System.out.println("Sorry Stranger, Out of Stock");
+			return false;
 		}
 		else if ( team.getInv().get(input-1).getItemPrice() > team.getCoins()) {
 			System.out.println("Not enough coins, Stranger");
+			return false;
 		}
 		else {
 			int newPotionCount = team.getInv().get(input-1).getItemStock() + 1;
 			team.getInv().get(input-1).setItemStock(newPotionCount);
 			int coins = team.getCoins() - team.getInv().get(input-1).getItemPrice();
 			team.setCoins(coins);
+			itemNum --;
 			System.out.println("Anything Else, Stranger");
+			return true;
 		}
 		
 	}
