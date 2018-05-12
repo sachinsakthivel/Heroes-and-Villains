@@ -23,7 +23,11 @@ public class City {
 			System.out.println("What would you like to do?");
 			menuOptions();
 			userInput = inputStream.nextInt();
-			if (userInput == 1) {
+			if (userInput == 0) {
+				System.out.println("Thank you for Playing.");
+				System.exit(0);
+			}
+			else if (userInput == 1) {
 				places.get(0).travel(team);
 			} else if (userInput == 2) {
 				places.get(1).travel(team);
@@ -50,7 +54,7 @@ public class City {
 	}
 	
 	public void useMap(Team team) {
-		if (team.getInv().get(3).getItemStock() > 1) {
+		if (team.getInv().get(3).getItemStock() > 0) {
 			for (Locations place: places) {
 				place.travelledto();
 			}

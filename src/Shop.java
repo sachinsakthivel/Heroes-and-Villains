@@ -48,9 +48,9 @@ public class Shop extends Locations {
 	public void menuOptions(Team team) {
 		System.out.println("0 - Return To Home Base");
 		System.out.println("1 - Buy a Lesser Heal Ticket ("+LesserHealNum+" left in Stock) (You own: "+team.getInv().get(0).getItemStock()+") (Price: "+team.getInv().get(0).getItemPrice()+" coins)");
-		System.out.println("2 - Buy an Average Heal Ticket ("+AverageHealNum+" left in Stock) (You own: "+team.getInv().get(1).getItemStock()+") (Price: "+team.getInv().get(0).getItemPrice()+" coins)");
-		System.out.println("3 - Buy a Greater Heal Ticket ("+GreaterHealNum+" left in Stock) (You own: "+team.getInv().get(1).getItemStock()+") (Price: "+team.getInv().get(0).getItemPrice()+" coins)");
-		System.out.println("4 - Buy a Map ("+MapNum+" left in Stock)");
+		System.out.println("2 - Buy an Average Heal Ticket ("+AverageHealNum+" left in Stock) (You own: "+team.getInv().get(1).getItemStock()+") (Price: "+team.getInv().get(1).getItemPrice()+" coins)");
+		System.out.println("3 - Buy a Greater Heal Ticket ("+GreaterHealNum+" left in Stock) (You own: "+team.getInv().get(2).getItemStock()+") (Price: "+team.getInv().get(2).getItemPrice()+" coins)");
+		System.out.println("4 - Buy a Map ("+MapNum+" left in Stock) (You own: "+team.getInv().get(3).getItemStock()+") (Price: "+team.getInv().get(3).getItemPrice()+" coins)");
 	}
 	
 	public void buy(int itemNum, Team team, int input) {
