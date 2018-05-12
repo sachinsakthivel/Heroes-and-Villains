@@ -1,3 +1,4 @@
+import java.utlil.*;
 
 public class PowerUpDen extends Locations{
 	
@@ -7,7 +8,8 @@ public class PowerUpDen extends Locations{
 	
 	public void travel(Team team) {
 		travelledto();
-		System.out.println("Not implemetend yet");
+		System.out.println("Howdy y'all, Welcome to Miky's Workshop and Upgrade Station!!");
+
 	}
 
 }

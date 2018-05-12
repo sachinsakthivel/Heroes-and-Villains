@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class Shop extends Locations {
 	
 	private int LesserHealNum;
@@ -12,6 +11,7 @@ public class Shop extends Locations {
 	private int MapNum;
 	private int input;
 	boolean trade = false;
+	HelperFunctions misc = new HelperFunctions();
 	
 	public Shop() {
 		super("Wanderer's Shop");
@@ -28,13 +28,12 @@ public class Shop extends Locations {
 	
 	public void travel(Team team) {
 		travelledto();
-		Scanner reader = new Scanner(System.in);
 		input = -1;
 		System.out.println("Welcome Stranger, What're you Buying?");
 		while (input != 0) {
 			System.out.println("You have currently " + team.getCoins() + " coins left.");
 			menuOptions(team);
-			input = reader.nextInt();
+			input = misc.InputValidator(0, 8);
 			if (input == 1) {
 				trade = buy(LesserHealNum, team, input);
 				if (trade) {LesserHealNum--;}

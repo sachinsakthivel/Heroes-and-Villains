@@ -2,7 +2,6 @@ import java.util.*;
 
 public class Team {
 	/* team class*/
-	//HAVEN'T FIGURED OUT POWERUPS
 	private String teamName;
 	private int teamLength;
 	private boolean dead;

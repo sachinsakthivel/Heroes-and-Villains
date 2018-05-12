@@ -2,7 +2,9 @@ import java.util.*;
 
 public class HelperFunctions {
 	
-	public int InputCheck(int lower, int upper) {
+	
+	public int InputValidator(int lower, int upper) {
+		System.out.println("Please input an integer that Corresponds to your Option.");
 		int userInput = -1;
 		boolean validInput = false;
 		Scanner inputStream = new Scanner(System.in);
@@ -19,9 +21,8 @@ public class HelperFunctions {
 				System.out.println("Not a valid Integer, Please Input a Integer.");
 			}
 		}
-		inputStream.close();
 		return userInput;
-	
 	}
+		
 	
 }
