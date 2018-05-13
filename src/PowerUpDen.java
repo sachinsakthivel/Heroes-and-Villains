@@ -22,8 +22,7 @@ public class PowerUpDen extends Locations{
 			if (userInput == 1) {
 			chosenHero = HelperFunctions.heroPick(team.getTeam());
 			chosenItem = HelperFunctions.itemPick(team.getInv(), PowerUpStartIndex, PowerUpEndIndex);
-			System.out.println(chosenItem);
-			System.out.println(chosenHero);
+			chosenItem.use(chosenHero);
 			System.out.println("You want to Power Up Anyone Else?");
 			} else {
 				System.out.println("Be Careful Out There, y'all better come back ya hear? Good Custormers are hard to come by these days.");

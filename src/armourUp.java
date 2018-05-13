@@ -18,5 +18,15 @@ public class armourUp extends Item {
 		return returnString;
 	}
 	
+	public void use(Hero hero) {
+		if (this.getItemStock() > 0 ) {
+			hero.setArmour(hero.getArmour() + armAmount);
+			this.setItemStock(this.getItemStock() - 1);
+			System.out.println("Power Up Successful");
+		} else {
+			System.out.println("Insufficient amount of "+this.getItemName()+", Please Buy Some from Shop");
+		}
+	}
+	
 
 }

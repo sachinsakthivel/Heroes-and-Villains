@@ -82,7 +82,7 @@ public class Shop extends Locations {
 		System.out.println("5 - Buy Armour ("+ArmourNum+" left in Stock) (You own: "+team.getInv().get(4).getItemStock()+") (Price: "+team.getInv().get(4).getItemPrice()+" coins)");
 		System.out.println("6 - Buy Weighted Dice ("+DiceNum+" left in Stock) (You own: "+team.getInv().get(5).getItemStock()+") (Price: "+team.getInv().get(5).getItemPrice()+" coins)");
 		System.out.println("7 - Buy a MaxHealthUp Potions ("+HealthUpNum+" left in Stock) (You own: "+team.getInv().get(6).getItemStock()+") (Price: "+team.getInv().get(6).getItemPrice()+" coins)");
-		System.out.println("8 - Buy a Hypnotic Suggestion Manual ("+SkillNum+" left in Stock) (You own: "+team.getInv().get(7).getItemStock()+") (Price: "+team.getInv().get(7).getItemPrice()+" coins)");
+		System.out.println("8 - Buy a Hypnotic Suggestion Skill ("+SkillNum+" left in Stock) (You own: "+team.getInv().get(7).getItemStock()+") (Price: "+team.getInv().get(7).getItemPrice()+" coins)");
 	}
 	
 	public boolean buy(int itemNum, Team team, int input) {

@@ -18,5 +18,15 @@ public class hypSuggestSkill extends Item {
 		returnString += "\nIt is stackable.";
 		return returnString;
 	}
+	
+	public void use(Hero hero) {
+		if (this.getItemStock() > 0 ) {
+			hero.setSkill(hero.getSkill() + upperLimit);
+			this.setItemStock(this.getItemStock() - 1);
+			System.out.println("Power Up Successful");
+		} else {
+			System.out.println("Insufficient amount of "+this.getItemName()+", Please Buy Some from Shop");
+		}
+	}
 
 }
