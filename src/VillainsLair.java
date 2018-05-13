@@ -25,7 +25,7 @@ public class VillainsLair extends Locations{
 		travelledto();
 		userInput = -1;
 		System.out.println("You have arrived at the Villain's Lair!");
-		while (userInput != 0 || villain.getLiving() || team.getTeam().size() == 0) {
+		while (userInput != 0 || !villain.getLiving() || team.getTeam().size() == 0) {
 			menuOptions();
 			userInput = HelperFunctions.InputValidator(0, 1);
 			if (userInput == 1 ) {
