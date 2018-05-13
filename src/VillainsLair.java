@@ -71,4 +71,8 @@ public class VillainsLair extends Locations{
 		System.out.println("1 - Fight the Villain");
 	}
 	
+	public Villain getVillain() {
+		return villain;
+	}
+	
 }

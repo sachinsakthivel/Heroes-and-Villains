@@ -62,7 +62,7 @@ public class Villain extends Person {
 	public void checkdeath() {
 		if (strikes == 0) {
 			this.setLiving(false);
-			System.out.println("Congratualations, You have Defeated the Villain!!");
+			System.out.println("Congratualations, You have Defeated the Villain of This City!!");
 		}
 	}
 	

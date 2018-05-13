@@ -18,7 +18,7 @@ public class City {
 	public void HomeBase(Team team) {
 		System.out.println("Welcome To Your Home Base");
 		randomEvent();
-		while (userInput !=0) {
+		while (userInput !=0 && lair.getVillain().getLiving()) {
 			System.out.println("What would you like to do?");
 			menuOptions();
 			userInput = HelperFunctions.InputValidator(0, 6);

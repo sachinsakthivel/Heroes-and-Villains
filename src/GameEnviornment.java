@@ -39,10 +39,13 @@ public class GameEnviornment {
 			if (i < cityNum -1) {
 				City newCity = new City(false);
 				newCity.HomeBase(chosenTeam);
+				System.out.println("Congratulations, You have Saved this City!. Now Onto to the Next City!.");
 				i++;
 			} else {
-				City newCity = new City(true);
-				newCity.HomeBase(chosenTeam);
+				City finalCity = new City(true);
+				finalCity.HomeBase(chosenTeam);
+				storyOutro();
+				System.out.println("GAME WON!!!");
 				i++;
 			}
 		}
@@ -50,5 +53,9 @@ public class GameEnviornment {
 	
 	public void storyIntro() {
 		System.out.println("Story Introduction not implemented Yet.");
+	}
+	
+	public void storyOutro() {
+		System.out.println("Story Conclusion not implemented Yet.");
 	}
 }
