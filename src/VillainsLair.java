@@ -37,6 +37,7 @@ public class VillainsLair extends Locations{
 				if (!chosenHero.getLiving()) {
 					team.removeOffTeam(chosenHero);
 				}
+				team.checkDead();
 				villain.checkdeath();
 			}
 			

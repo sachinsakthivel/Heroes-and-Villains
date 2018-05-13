@@ -87,13 +87,14 @@ public class Team {
 	}
 
 
-	public boolean isDead() {
-		return dead;
+	public void checkDead() {
+		if (team.size() == 0) {
+			System.out.println("All your Heroes Have Perished. You Have Failed This City.");
+			System.out.println("\n GAME OVER");
+			System.exit(0);
+		}
 	}
 
-	public void setDead(boolean dead) {
-		this.dead = dead;
-	}
 
 	public int getCoins() {
 		return Coins;
