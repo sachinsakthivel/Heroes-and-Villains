@@ -25,7 +25,7 @@ public class PowerUpDen extends Locations{
 			chosenItem.use(chosenHero);
 			System.out.println("You want to Power Up Anyone Else?");
 			} else {
-				System.out.println("Be Careful Out There, y'all better come back ya hear? Good Custormers are hard to come by these days.");
+				System.out.println("y'all better come back ya hear? Good Custormers are hard to come by these days.");
 			}
 			
 		}
