@@ -55,8 +55,8 @@ public class rockPaperScissors extends Game {
 	}
 			
 	public void VillianPick() {
-		Random villianChoice = new Random();
-		vNum  = villianChoice.nextInt(2) + 1;
+		Random rand = new Random();
+		vNum  = rand.nextInt(2) + 1;
 		if (vNum == 1) {
 			vPick = "Paper";
 		}
@@ -76,6 +76,11 @@ public class rockPaperScissors extends Game {
 		System.out.println("1 - Paper");
 		System.out.println("2 - Scissors");
 		System.out.println("3 - Rock");
+	}
+	
+	public static void main(String[] args) {
+		rockPaperScissors rock = new rockPaperScissors();
+		rock.play();
 	}
 	
 
