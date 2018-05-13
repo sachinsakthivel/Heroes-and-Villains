@@ -16,10 +16,47 @@ public class rockPaperScissors extends Game {
 	public boolean play() {
 		gameWon = false;
 		Scanner UserInput = new Scanner(System.in);
-		Random villianChoice = new Random();
 		menuOptions();
 		userPick = UserInput.nextInt();
-		vNum  = villianChoice.nextInt(3) + 1;
+		VillianPick();
+		System.out.println("....And the villian has picked "+vPick+" !.");
+		if (userPick == vNum) {
+			System.out.println("So close! It's a tie!!");
+			System.out.println("We Shall Play Again.");
+			play();
+		}
+		else {
+			if (userPick == 1) {
+				if (vNum == 2) {
+					System.out.println("Sadly, You Have Lost.");
+				} else {
+					System.out.println("Congratulations You have Won this Game!!!");
+					gameWon = true;
+				}
+			} else if (userPick == 2) {
+				if (vNum == 1) {
+					System.out.println("Sadly, You Have Lost.");
+				}
+				else {
+					System.out.println("Congratulations You have Won this Game!!!");
+					gameWon = true;
+				} 
+			} else {
+				if (vNum == 1) {
+					System.out.println("Sadly, You Have Lost.");
+				}
+				else {
+					System.out.println("Congratulations You have Won this Game!!!");
+					gameWon = true;
+				} 
+			}
+		}
+		return gameWon;
+	}
+			
+	public void VillianPick() {
+		Random villianChoice = new Random();
+		vNum  = villianChoice.nextInt(2) + 1;
 		if (vNum == 1) {
 			vPick = "Paper";
 		}
@@ -29,44 +66,6 @@ public class rockPaperScissors extends Game {
 		else {
 			vPick = "Paper";
 		}
-		System.out.println("....And the villian has picked "+vPick+" !.");
-		if (userPick == vNum) {
-			System.out.println("So close! It's a tie!!");
-			System.out.println("We Shall Play Again.");
-			play();
-		}
-		else {
-			switch(userPick) {
-			case 1:
-				if (vNum == 2) {
-					System.out.println("Sadly, You Have Lost.");
-				}
-				else {
-					System.out.println("Congratulations You have Won this Game!!!");
-					gameWon = true;
-				}
-				break;
-			case 2:
-				if (vNum == 1) {
-					System.out.println("Sadly, You Have Lost.");
-				}
-				else {
-					System.out.println("Congratulations You have Won this Game!!!");
-					gameWon = true;
-				} 
-				break;
-			case 3:
-				if (vNum == 1) {
-					System.out.println("Sadly, You Have Lost.");
-				}
-				else {
-					System.out.println("Congratulations You have Won this Game!!!");
-					gameWon = true;
-				} 
-				break;
-				}
-			}
-		return gameWon;
 	}
 
 	

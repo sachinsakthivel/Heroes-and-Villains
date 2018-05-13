@@ -26,7 +26,7 @@ public class diceRolls extends Game{
 		userRoll = rollGenerator.nextInt(10) + 1;
 		System.out.println("You have rolled a " + userRoll+ ".");
 		if (villanRoll == userRoll) {
-			System.out.println("\naWell, it seems Lady Luck is quite indecisive, It's a tie.");
+			System.out.println("\nah Well, it seems Lady Luck is quite indecisive, It's a tie.");
 			System.out.println("We Shall Play Again");
 			play(rollLimit);
 		} else if (villanRoll > userRoll) {

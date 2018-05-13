@@ -25,7 +25,7 @@ public class VillainsLair extends Locations{
 		travelledto();
 		userInput = -1;
 		System.out.println("You have arrived at the Villain's Lair!");
-		while (userInput != 0 && villain.getLiving() & team.getTeam().size() == 0) {
+		while (userInput != 0 && villain.getLiving() && team.getTeam().size() > 0) {
 			menuOptions();
 			userInput = HelperFunctions.InputValidator(0, 1);
 			if (userInput == 1 ) {
@@ -62,7 +62,7 @@ public class VillainsLair extends Locations{
 			System.out.println("Hero's current Health: "+ hero.getCurrentHealth());
 		} else {
 			villain.setStrikes(villain.getStrikes() - 1);
-			System.out.println("Villian's Games Lost : " + villain.getStrikes());
+			System.out.println("Games left to Win until Villan Dies : " + villain.getStrikes());
 		}
 	}
 	
