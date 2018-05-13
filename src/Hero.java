@@ -6,12 +6,10 @@ public class Hero extends Person{
 	private int Dice;
 	private int Skill;
 	private int Armour;
-	private boolean living;
 	
 	public Hero(String name) {
 		super(name);
 		this.maximumHealth = 100;
-		this.living = true;
 		this.currentHealth = 100;
 		this.Dice = 0;
 		this.Skill = 0;
@@ -36,17 +34,16 @@ public class Hero extends Person{
 		this.maximumHealth = maxHealth;
 	}
 	
-	// not too sure about this function
 	public void setCurrentHealth(int Health) {
 		this.currentHealth = Health;
 	}
 	
-	public boolean getLiving() {
-		return living;
-	}
 	
-	public void setLiving(boolean living) {
-		this.living = living;
+	public void checkdeath() {
+		if (currentHealth < 0) {
+			System.out.println("This Hero has Died.");
+			this.setLiving(false);
+		}
 	}
 
 	public String toString() {

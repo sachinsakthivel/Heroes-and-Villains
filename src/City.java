@@ -5,10 +5,9 @@ public class City {
 	private Shop shop = new Shop();
 	private Hospital hosptial = new Hospital();
 	private PowerUpDen power = new PowerUpDen();
-	private VilliansLair lair = new VilliansLair(isFinal);
+	private VillainsLair lair = new VillainsLair(isFinal);
 	private int userInput = -1;
 	ArrayList<Locations> places;
-	HelperFunctions misc = new HelperFunctions();
 	
 	public City( boolean last) {
 		isFinal = last;
@@ -22,7 +21,7 @@ public class City {
 		while (userInput !=0) {
 			System.out.println("What would you like to do?");
 			menuOptions();
-			userInput = misc.InputValidator(0, 6);
+			userInput = HelperFunctions.InputValidator(0, 6);
 			if (userInput == 0) {
 				System.out.println("Thank you for Playing.");
 				System.exit(0);

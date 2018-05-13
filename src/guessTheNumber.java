@@ -1,12 +1,17 @@
 import java.util.*;
 
-public class guessTheNumber {
+public class guessTheNumber extends Game {
 	
+	private static final String name = "Guess The Number";
+	private static final String rules = "The Aim of the Game is to Guess the Villans's Number. You have two Guesses, and the Villan will say whether you Guess is Higher or Lower";
 	private int guessNumber;
 	private int tries;
 	private int userGuess;
 	private boolean gameWon;
 	
+	public guessTheNumber() {
+		super(name, rules);
+	}
 	public boolean play(int upperLimit) {
 		System.out.println("Welcome to game of 'Guess the Number' !!!");
 		System.out.println("The rules are simple: You have two chances to guess the number that the I have chosen in the range of 1 to 10");

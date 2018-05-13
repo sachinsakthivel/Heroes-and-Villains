@@ -1,11 +1,17 @@
 import java.util.*;
 
-public class rockPaperScissors {
+public class rockPaperScissors extends Game {
 	
+	private static final String name = "Rock Paper Scissors";
+	private static final String rules = "The Aim of this Game is to beat the opponent's choice. Paper beats Rock, Rock beat Scissors and Scissors beats Paper.";
 	private int vNum;
 	private String vPick;
 	private int userPick;
 	private boolean gameWon;
+	
+	public rockPaperScissors() {
+		super(name, rules);
+	}
 	
 	public boolean play() {
 		gameWon = false;
@@ -26,6 +32,8 @@ public class rockPaperScissors {
 		System.out.println("....And the villian has picked "+vPick+" !.");
 		if (userPick == vNum) {
 			System.out.println("So close! It's a tie!!");
+			System.out.println("We Shall Play Again.");
+			play();
 		}
 		else {
 			switch(userPick) {
@@ -71,10 +79,5 @@ public class rockPaperScissors {
 		System.out.println("3 - Rock");
 	}
 	
-	public static void main(String[] args) {
-		rockPaperScissors newgame = new rockPaperScissors();
-		System.out.println((newgame.play()));
-		
-	}
 
 }

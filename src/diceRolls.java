@@ -1,17 +1,24 @@
 import java.util.*;
 
-public class diceRolls {
+public class diceRolls extends Game{
+	
+	private static final String name = "Dice Rolls";
+	private static final String rules = "The Aim of this Game is to get the highest dice roll, The Person with the Highest Roll is the Winner!!";
 	private int villanRoll;
 	private int userRoll;
 	private String userInput;
 	private boolean gameWon;
+	
+	public diceRolls() {
+		super(name, rules);
+	}
 	
 	
 	public boolean play(int rollLimit) {
 		gameWon = false;
 		Random rollGenerator = new Random();
 		Scanner input = new Scanner(System.in);
-		System.out.println("Welcom to the game of Dice Rolls !!!");
+		System.out.println("Welcome to the game of Dice Rolls !!!");
 		System.out.println("This is the game that test's your connection the Lady of Luck!");
 		System.out.println("\nAre you feeling Lucky? - (Press any character to roll)");
 		userInput = input.next();
@@ -32,9 +39,5 @@ public class diceRolls {
 		}
 		return gameWon;
 	}
-	
-	public static void main(String[] args) {
-		diceRolls newGame = new diceRolls();
-		System.out.println((newGame.play(12)));
-	}
+
 }

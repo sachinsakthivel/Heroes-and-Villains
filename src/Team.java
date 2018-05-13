@@ -77,10 +77,13 @@ public class Team {
 			output += "\n" + superhero + "\n";
 		}
 		output += "\n" + "\n" + "Items:";
+		String invOutPut = "";
 		for (Item chosenItem: invList) {
-			output += "\n" + chosenItem + "\n";
-		}
-		return output;
+			if (chosenItem.getItemStock() > 0) {
+				 invOutPut += "\n" + chosenItem + "\n";
+			}
+		} if (invOutPut == "") {invOutPut = "\n" + "You currently have no Items." + "\n";} 
+		return output + invOutPut;
 	}
 
 

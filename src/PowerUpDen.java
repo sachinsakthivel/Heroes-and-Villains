@@ -57,41 +57,5 @@ public class PowerUpDen extends Locations{
 				u++;
 			}
 	}
-			
-		
-	/**		
-			while (userInput != 0) {
-				
-			
-				while (userInput != 0) {
-					chosenItem = HelperFunctions.itemPick(team.getInv(), PowerUpStartIndex, PowerUpEndIndex);
-				}
-			}
-		}
-		System.out.println(chosenHero);
-		System.out.println(chosenItem);
-		System.out.println("Be Careful Out There, y'all better come back, ya hear!. Good Customers are hard to find these days.");
-	}
-	
-	
-	public void menuOptions() {
-		System.out.println("0 - Travel Back to Homebase");
-		System.out.println("1 - Power Up a Hero");
-	}
-	
-	public int heroPick(ArrayList<Hero> heroList) {
-		System.out.println("Which Hero would you like to Pick?: ");
-		int i = 1;
-		System.out.println("0 - Go Back");
-		int userInput = -1;
-		for (Hero hero: heroList) {
-			System.out.println(i + " - " + hero);
-			i++;
-		}
-		userInput = HelperFunctions.InputValidator(0, heroList.size());
-		chosenHero = heroList.get(userInput-1);
-		userInput
-	}
-	**/
 
 }
