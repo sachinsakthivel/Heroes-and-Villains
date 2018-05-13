@@ -28,7 +28,7 @@ public class HelperFunctions {
 		int i = 1;
 		int userInput = -1;
 		for (Hero hero: heroList) {
-			System.out.println(i + " - " + hero);
+			System.out.println(i + " - " + hero + "\n");
 			i++;
 		}
 		userInput = InputValidator(1, heroList.size());
@@ -40,11 +40,11 @@ public class HelperFunctions {
 			int u = 1;
 			int userInput = -1;
 			for (int i = startIndex; i < endIndex; i++ ) {
-				System.out.println(u + " - " + InvList.get(i));
+				System.out.println(u + " - " + InvList.get(i)+ "\n");
 				u++;
 			}
 			userInput = InputValidator(1, (endIndex-startIndex));
-			return InvList.get(userInput);
+			return InvList.get(userInput + startIndex -1);
 	}
 		
 }
