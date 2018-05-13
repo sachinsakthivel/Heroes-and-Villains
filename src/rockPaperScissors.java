@@ -64,7 +64,7 @@ public class rockPaperScissors extends Game {
 			vPick = "Scissors";
 		}
 		else {
-			vPick = "Paper";
+			vPick = "Rock";
 		}
 	}
 

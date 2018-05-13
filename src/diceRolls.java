@@ -19,7 +19,7 @@ public class diceRolls extends Game{
 		Random rollGenerator = new Random();
 		Scanner input = new Scanner(System.in);
 		System.out.println("Welcome to the game of Dice Rolls !!!");
-		System.out.println("This is the game that test's your connection the Lady of Luck!");
+		System.out.println("This is the game that test's your connection to the Lady of Luck!");
 		System.out.println("\nAre you feeling Lucky? - (Press any character to roll)");
 		userInput = input.next();
 		villanRoll = rollGenerator.nextInt(10 - rollLimit) + 1;
