@@ -11,7 +11,7 @@ public class Shop extends Locations {
 	private int MapNum;
 	private int input;
 	boolean trade = false;
-	HelperFunctions misc = new HelperFunctions();
+	private int[] ShopList;
 	
 	public Shop() {
 		super("Wanderer's Shop");
@@ -24,6 +24,9 @@ public class Shop extends Locations {
 		HealthUpNum = rand.nextInt(3) + 2;
 		SkillNum = rand.nextInt(4) + 1;
 		MapNum = 6;
+		int[] StockList = {LesserHealNum, AverageHealNum, GreaterHealNum, MapNum, ArmourNum, DiceNum, HealthUpNum, SkillNum};
+		ShopList = StockList;
+		
 	}
 	
 	public void travel(Team team) {
@@ -33,7 +36,7 @@ public class Shop extends Locations {
 		while (input != 0) {
 			System.out.println("You have currently " + team.getCoins() + " coins left.");
 			menuOptions(team);
-			input = misc.InputValidator(0, 8);
+			input = HelperFunctions.InputValidator(0, 8);
 			if (input == 1) {
 				trade = buy(LesserHealNum, team, input);
 				if (trade) {LesserHealNum--;}
@@ -74,17 +77,15 @@ public class Shop extends Locations {
 	}
 	
 	public void menuOptions(Team team) {
-		System.out.println("0 - Return To Home Base");
-		System.out.println("1 - Buy a Lesser Heal Ticket ("+LesserHealNum+" left in Stock) (You own: "+team.getInv().get(0).getItemStock()+") (Price: "+team.getInv().get(0).getItemPrice()+" coins)");
-		System.out.println("2 - Buy an Average Heal Ticket ("+AverageHealNum+" left in Stock) (You own: "+team.getInv().get(1).getItemStock()+") (Price: "+team.getInv().get(1).getItemPrice()+" coins)");
-		System.out.println("3 - Buy a Greater Heal Ticket ("+GreaterHealNum+" left in Stock) (You own: "+team.getInv().get(2).getItemStock()+") (Price: "+team.getInv().get(2).getItemPrice()+" coins)");
-		System.out.println("4 - Buy a Map ("+MapNum+" left in Stock) (You own: "+team.getInv().get(3).getItemStock()+") (Price: "+team.getInv().get(3).getItemPrice()+" coins)");
-		System.out.println("5 - Buy Armour ("+ArmourNum+" left in Stock) (You own: "+team.getInv().get(4).getItemStock()+") (Price: "+team.getInv().get(4).getItemPrice()+" coins)");
-		System.out.println("6 - Buy Weighted Dice ("+DiceNum+" left in Stock) (You own: "+team.getInv().get(5).getItemStock()+") (Price: "+team.getInv().get(5).getItemPrice()+" coins)");
-		System.out.println("7 - Buy a MaxHealthUp Potions ("+HealthUpNum+" left in Stock) (You own: "+team.getInv().get(6).getItemStock()+") (Price: "+team.getInv().get(6).getItemPrice()+" coins)");
-		System.out.println("8 - Buy a Hypnotic Suggestion Skill ("+SkillNum+" left in Stock) (You own: "+team.getInv().get(7).getItemStock()+") (Price: "+team.getInv().get(7).getItemPrice()+" coins)");
+		System.out.println("0 - Return To Home Base" + "\n");
+		int i = 1;
+		for (Item item: team.getInv()) {
+			System.out.println(i+" - Buy One "+ item.getItemName() + " ("+ShopList[i-1]+ " left in Stock) (You own: "+team.getInv().get(i-1).getItemStock()+") (Price: "+team.getInv().get(i -1).getItemPrice()+" coins)");
+			System.out.println(item.getItemDescription() + "\n");
+			i++;
+		}
 	}
-	
+		
 	public boolean buy(int itemNum, Team team, int input) {
 		if (itemNum < 1) {
 			System.out.println("Sorry Stranger, Out of Stock");

@@ -54,7 +54,7 @@ public class Hospital extends Locations {
 				  public void run() {
 				    releaseFromWard(team, chosenHero);
 				  }
-				}, 2*60*1000);
+				}, chosenItem.getItemDuration()*60*1000);
 		}
 	}
 	

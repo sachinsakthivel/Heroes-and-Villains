@@ -1,11 +1,14 @@
 
 public class hypSuggestSkill extends Item {
 	
-	private int upperLimit;
+	private final int upperLimit;
+	private final String Description;
 	
 	public hypSuggestSkill() {
 		super("Hypnotic Suggestion Skill", 90, 0);
 			upperLimit = 1;
+			Description ="This item allows a Hero to learn the skill of Hypnotic suggestion which helps in the Mini-game 'Guess the Number' by reducing the range given by 1.\nIt is stackable.";
+			this.setItemDescription(Description);
 	}
 	
 	public int getUpperLimit() {
@@ -14,8 +17,7 @@ public class hypSuggestSkill extends Item {
 	
 	public String toString() {
 		String returnString = this.getItemName() + " - " + this.getItemStock() + " currently in Team Inventory.";
-		returnString += "\n" + "This item allows a Hero to learn the skill of Hypnotic suggestion which helps in the Mini-game 'Guess the Number' by reducing the range given by 1.";
-		returnString += "\nIt is stackable.";
+		returnString += "\n" + this.getItemDescription();
 		return returnString;
 	}
 	

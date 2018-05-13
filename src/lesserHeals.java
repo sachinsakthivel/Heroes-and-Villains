@@ -1,25 +1,30 @@
+import java.util.Random;
 
 public class lesserHeals extends Item {
-	private int HealNum;
-	private int ItemDuration;
+	
+	private final int HealBase;
+	private final int HealNum;
+	private final int Duration;
+	private final String Description;
 	
 	public lesserHeals() {
 		super("Lesser Heal Tickets", 20, 0);
-		ItemDuration = 1;
-		HealNum = 10;
+		Random rand = new Random();
+		HealBase = 10;
+		HealNum = rand.nextInt(3) + HealBase;
+		Duration = 1;
+		this.setItemDuration(Duration);
+		Description = "This treatement heals " + HealBase + " hp points or more depending on the treament's sucess rate in " + this.getItemDuration() + " minute.";
+		this.setItemDescription(Description);
 	}
 	
 	public int getHealNum() {
 		return HealNum;
 	}
 	
-	public int getItemDuration() {
-		return ItemDuration;
-	}
-	
 	public String toString() {
 		String returnString = this.getItemName() + " - " + this.getItemStock() + " currently in Team Inventory.";
-		returnString += "\n" + "This item heals " + HealNum + " hp points in " + ItemDuration + " minute.";
+		returnString += "\n" + this.Description;
 		return returnString;
 	}
 	
