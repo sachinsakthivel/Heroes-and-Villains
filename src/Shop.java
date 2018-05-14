@@ -16,14 +16,14 @@ public class Shop extends Locations {
 	public Shop() {
 		super("Wanderer's Shop");
 		Random rand  = new Random();
-		LesserHealNum =  rand.nextInt(4) + 7;
-		AverageHealNum =  rand.nextInt(3) + 2;
-		GreaterHealNum = rand.nextInt(2) + 1;
-		ArmourNum = rand.nextInt(5) + 9;
-		DiceNum = rand.nextInt(4) + 1;
-		HealthUpNum = rand.nextInt(3) + 2;
-		SkillNum = rand.nextInt(4) + 1;
-		MapNum = 6;
+		int LesserHealNum =  rand.nextInt(4) + 7;
+		int AverageHealNum =  rand.nextInt(3) + 2;
+		int GreaterHealNum = rand.nextInt(2) + 1;
+		int ArmourNum = rand.nextInt(5) + 9;
+		int DiceNum = rand.nextInt(4) + 1;
+		int HealthUpNum = rand.nextInt(3) + 2;
+		int SkillNum = rand.nextInt(4) + 1;
+		int MapNum = 1;
 		int[] StockList = {LesserHealNum, AverageHealNum, GreaterHealNum, MapNum, ArmourNum, DiceNum, HealthUpNum, SkillNum};
 		ShopList = StockList;
 		
@@ -37,39 +37,9 @@ public class Shop extends Locations {
 			System.out.println("You have currently " + team.getCoins() + " coins left.");
 			menuOptions(team);
 			input = HelperFunctions.InputValidator(0, 8);
-			if (input == 1) {
-				trade = buy(LesserHealNum, team, input);
-				if (trade) {LesserHealNum--;}
-			}
-			else if (input == 2) {
-				trade = buy(AverageHealNum, team, input);
-				if (trade) {AverageHealNum--;}
-			}
-			else if (input == 3) {
-				trade = buy(GreaterHealNum, team, input);
-				if (trade) {GreaterHealNum--;}
-			}
-			else if (input == 4) {
-				trade = buy(MapNum, team, input);
-				if (trade) {MapNum--;}
-			}
-			else if (input == 5) {
-				trade = buy(ArmourNum, team, input);
-				if (trade) {ArmourNum--;}
-			}
-			else if (input == 6) {
-				trade = buy(DiceNum, team, input);
-				if (trade) {DiceNum--;}
-			}
-			else if (input == 7) {
-				trade = buy(HealthUpNum, team, input );
-				if (trade) {HealthUpNum--;}
-			}
-			else if (input == 8) {
-				trade = buy(SkillNum, team, input);
-				if (trade) {SkillNum--;}
-			}
-			else {
+			if (input !=0) {
+				ShopList = buy(ShopList, team, input);
+			} else {
 				System.out.println("Pleasure doing business with ya, Stranger" + "\n");
 			}
 			
@@ -87,23 +57,23 @@ public class Shop extends Locations {
 		}
 	}
 		
-	public boolean buy(int itemNum, Team team, int input) {
-		if (itemNum < 1) {
+	public int[] buy(int[] itemList, Team team, int input) {
+		if (itemList[input -1] < 1) {
 			System.out.println("Sorry Stranger, Out of Stock");
-			return false;
+			return itemList;
 		}
-		else if ( team.getInv().get(input-1).getItemPrice() > team.getCoins()) {
+		else if (team.getInv().get(input-1).getItemPrice() > team.getCoins()) {
 			System.out.println("Not enough coins, Stranger");
-			return false;
+			return itemList;
 		}
 		else {
-			int newPotionCount = team.getInv().get(input-1).getItemStock() + 1;
-			team.getInv().get(input-1).setItemStock(newPotionCount);
+			int newItemCount = team.getInv().get(input-1).getItemStock() + 1;
+			team.getInv().get(input-1).setItemStock(newItemCount);
 			int coins = team.getCoins() - team.getInv().get(input-1).getItemPrice();
 			team.setCoins(coins);
-			itemNum --;
+			itemList[input-1] -= 1;
 			System.out.println("Anything Else, Stranger?" + "\n");
-			return true;
+			return itemList;
 		}
 		
 	}
