@@ -40,7 +40,7 @@ public class Hero extends Person{
 	
 	
 	public void checkdeath() {
-		if (currentHealth < 0) {
+		if (currentHealth < 1) {
 			System.out.println("This Hero has Died.");
 			this.setLiving(false);
 		}
