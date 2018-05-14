@@ -34,7 +34,7 @@ public class rockPaperScissors extends Game {
 					gameWon = true;
 				}
 			} else if (userPick == 2) {
-				if (vNum == 1) {
+				if (vNum == 3) {
 					System.out.println("Sadly, You Have Lost.");
 				}
 				else {
