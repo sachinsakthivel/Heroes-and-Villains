@@ -36,6 +36,7 @@ public class Hospital extends Locations {
 	}
 	
 	public void menuOptions() {
+		System.out.println("What would you like to do? (Input the Number that Corresponds with your Choice) ");
 		System.out.println("0 - Return To HomeBase");
 		System.out.println("1 - Heal a Hero");
 		System.out.println("2 - Visit the Hero Ward");
@@ -61,13 +62,13 @@ public class Hospital extends Locations {
 	public void moveToWard(Team team, Hero hero) {
 		Ward.add(hero);
 		team.removeOffTeam(hero);
-		System.out.println("Hero: "+hero.getPersonName()+ " has been moved to Healing Ward from Team.");
+		System.out.println("Hero: "+hero.getPersonName()+ " has been moved to Healing Ward from Team." + "\n");
 	}
 	
 	public void releaseFromWard(Team team, Hero hero) {
 		team.addToTeam(hero);
 		Ward.remove(hero);
-		System.out.println("Hero: "+hero.getPersonName()+ " has been released from Healing Ward and is ready to fight again.");
+		System.out.println("Hero: "+hero.getPersonName()+ " has been released from Healing Ward and is ready to fight again." + "\n");
 	}
 	
 	public void visitWard() {
@@ -76,7 +77,7 @@ public class Hospital extends Locations {
 				System.out.println("Person Name: " + patient.getPersonName());
 			}
 		} else {
-			System.out.println("There are currenlty no Heroes Healing in Ward.");
+			System.out.println("There are currenlty no Heroes Healing in Ward." + "\n");
 		}
 	}
 

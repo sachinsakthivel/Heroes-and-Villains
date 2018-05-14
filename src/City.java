@@ -19,7 +19,6 @@ public class City {
 		System.out.println("Welcome To Your Home Base");
 		randomEvent();
 		while (userInput !=0 && lair.getVillain().getLiving()) {
-			System.out.println("What would you like to do?");
 			menuOptions();
 			userInput = HelperFunctions.InputValidator(0, 6);
 			if (userInput == 0) {
@@ -43,6 +42,7 @@ public class City {
 	}
 	
 	public void menuOptions() {
+		System.out.println("What would you like to do? (Input the Number that Corresponds with your Choice) ");
 		System.out.println("0 - Quit Game");
 		System.out.println("1 - Travel North - Destination: " + places.get(0).getName());
 		System.out.println("2 - Travel East - Destination: " + places.get(1).getName());

@@ -44,6 +44,7 @@ public class PowerUpDen extends Locations{
 	}
 	
 	public void menuOptions() {
+		System.out.println("What would you like to do? (Input the Number that Corresponds with your Choice) ");
 		System.out.println("0 - Travel Back to Homebase");
 		System.out.println("1 - Power Up a Hero");
 	}

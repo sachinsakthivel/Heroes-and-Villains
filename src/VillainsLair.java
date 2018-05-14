@@ -59,14 +59,15 @@ public class VillainsLair extends Locations{
 		if (!gameWon) {
 			int damage = hero.getArmour() - villain.getDamage();
 			hero.setCurrentHealth(hero.getCurrentHealth() + damage);
-			System.out.println("Hero's current Health: "+ hero.getCurrentHealth());
+			System.out.println("Hero's current Health: "+ hero.getCurrentHealth() + "\n");
 		} else {
 			villain.setStrikes(villain.getStrikes() - 1);
-			System.out.println("Games left to Win until Villan Dies : " + villain.getStrikes());
+			System.out.println("Games left to Win until Villan Dies : " + villain.getStrikes() + "\n");
 		}
 	}
 	
 	public void menuOptions() {
+		System.out.println("What would you like to do? (Input the Number that Corresponds with your Choice) ");
 		System.out.println("0 - Travel Back to Homebase");
 		System.out.println("1 - Fight the Villain");
 	}

@@ -32,7 +32,7 @@ public class Shop extends Locations {
 	public void travel(Team team) {
 		travelledto();
 		input = -1;
-		System.out.println("Welcome Stranger, What're you Buying?");
+		System.out.println("Welcome Stranger, What're you Buying?" + "\n");
 		while (input != 0) {
 			System.out.println("You have currently " + team.getCoins() + " coins left.");
 			menuOptions(team);
@@ -70,13 +70,14 @@ public class Shop extends Locations {
 				if (trade) {SkillNum--;}
 			}
 			else {
-				System.out.println("Pleasure doing business with ya, Stranger");
+				System.out.println("Pleasure doing business with ya, Stranger" + "\n");
 			}
 			
 		}
 	}
 	
 	public void menuOptions(Team team) {
+		System.out.println("What would you like to do? (Input the Number that Corresponds with your Choice) ");
 		System.out.println("0 - Return To Home Base" + "\n");
 		int i = 1;
 		for (Item item: team.getInv()) {
@@ -101,7 +102,7 @@ public class Shop extends Locations {
 			int coins = team.getCoins() - team.getInv().get(input-1).getItemPrice();
 			team.setCoins(coins);
 			itemNum --;
-			System.out.println("Anything Else, Stranger");
+			System.out.println("Anything Else, Stranger?" + "\n");
 			return true;
 		}
 		

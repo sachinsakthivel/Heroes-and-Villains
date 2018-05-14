@@ -47,8 +47,8 @@ public class Hero extends Person{
 	}
 
 	public String toString() {
-		String output = new String("This person is named: " + getPersonName() +"	Current Health: " + getCurrentHealth() + "	Maximum Health: "+ getMaximumHealth());
-		output += "\nArmour: " + getArmour() + "	Dice Upgrade: " + getDice()+ "		Hypnotic Skill Upgrade: " + getSkill();
+		String output = new String("This person is named: " + getPersonName() +"\nCurrent Health: " + getCurrentHealth() + "\nMaximum Health: "+ getMaximumHealth());
+		output += "\nArmour: " + getArmour() + "\nLuck: " + (getSkill() + getDice());
 		return output; 
 	}
 
