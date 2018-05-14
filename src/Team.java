@@ -7,6 +7,7 @@ public class Team {
 	private boolean dead;
 	private ArrayList<Hero> team = new ArrayList<Hero>();
 	private int Coins;
+	private ArrayList<Hero> Ward = new ArrayList<Hero>();
 	
 	private ArrayList<Item> invList = new ArrayList<Item>();
 	private String heroName;
@@ -88,7 +89,7 @@ public class Team {
 
 
 	public void checkDead() {
-		if (team.size() == 0) {
+		if (team.size() == 0 && Ward.size() == 0) {
 			System.out.println("All your Heroes Have Perished. You Have Failed This City.");
 			System.out.println("\n GAME OVER");
 			System.exit(0);
@@ -102,6 +103,22 @@ public class Team {
 
 	public void setCoins(int coins) {
 		Coins = coins;
+	}
+	
+	public void moveToWard(Hero hero) {
+		Ward.add(hero);
+		this.removeOffTeam(hero);
+		System.out.println("Hero: "+hero.getPersonName()+ " has been moved to Healing Ward from Team." + "\n");
+	}
+	
+	public void releaseFromWard(Hero hero) {
+		this.addToTeam(hero);
+		Ward.remove(hero);
+		System.out.println("Hero: "+hero.getPersonName()+ " has been released from Healing Ward and is ready to fight again." + "\n");
+	}
+	
+	public ArrayList<Hero> getWard() {
+		return Ward;
 	}
 
 }

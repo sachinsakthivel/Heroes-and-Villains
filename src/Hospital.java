@@ -7,7 +7,6 @@ public class Hospital extends Locations {
 	private Item chosenItem;
 	private int healStartIndex = 0;
 	private int healEndIndex = 3;
-	private ArrayList<Hero> Ward = new ArrayList<Hero>();
 	private Timer timer = new Timer();
 	
 	public Hospital() {
@@ -27,7 +26,7 @@ public class Hospital extends Locations {
 			healingprocedure(team);
 			System.out.println("You want to Heal Anyone Else?");
 			} else if (userInput == 2) {
-				visitWard();
+				visitWard(team.getWard());
 			} else {
 				System.out.println("Be Careful Out There, these are Dangerous Times");
 			} 
@@ -49,31 +48,19 @@ public class Hospital extends Locations {
 			System.out.println("Chosen Hero has no need for Healing, Hero is at Full Health.");
 		} else {
 			chosenItem.use(chosenHero);
-			moveToWard(team ,chosenHero);
+			team.moveToWard(chosenHero);
 			timer.schedule(new TimerTask() {
 				  @Override
 				  public void run() {
-				    releaseFromWard(team, chosenHero);
+				    team.releaseFromWard(chosenHero);
 				  }
 				}, chosenItem.getItemDuration()*60*1000);
 		}
 	}
 	
-	public void moveToWard(Team team, Hero hero) {
-		Ward.add(hero);
-		team.removeOffTeam(hero);
-		System.out.println("Hero: "+hero.getPersonName()+ " has been moved to Healing Ward from Team." + "\n");
-	}
-	
-	public void releaseFromWard(Team team, Hero hero) {
-		team.addToTeam(hero);
-		Ward.remove(hero);
-		System.out.println("Hero: "+hero.getPersonName()+ " has been released from Healing Ward and is ready to fight again." + "\n");
-	}
-	
-	public void visitWard() {
-		if (Ward.size() > 0) {
-			for (Hero patient: Ward) {
+	public void visitWard(ArrayList<Hero> ward) {
+		if (ward.size() > 0) {
+			for (Hero patient: ward) {
 				System.out.println("Person Name: " + patient.getPersonName());
 			}
 		} else {

@@ -8,6 +8,7 @@ public class finalVillain extends Villain{
 		super();
 		this.setStrikes(5);
 		this.setTaunt("So, You're are the ones who have been causing my allies so much trouble. *shakes his head* I need to find better allies." );
+		this.setDamage(this.getDamage() + 10);
 	}
 	
 	public int gamePreference() {
