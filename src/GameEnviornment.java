@@ -10,7 +10,7 @@ public class GameEnviornment {
 	public void getInput() {
 		Scanner reader = new Scanner(System.in);
 		while (teamName.length() < 2 || teamName.length() > 10) {
-			System.out.println("What is the name of your super hero team?: ");
+			System.out.println("Hey there, What is the name of your super hero team?: ");
 			teamName = reader.next();
 			if (teamName.length() < 2 || teamName.length() > 10) {
 				System.out.println("Invalid Input, the Length of Team Name must be 2-10 characters long:");
