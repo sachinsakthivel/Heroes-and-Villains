@@ -24,7 +24,7 @@ public class Team {
 	public void setTeamList() {
 		for (int i = 0; i < teamLength; i++ ) {
 			Scanner reader = new Scanner(System.in);
-			System.out.println("What would you like the name of Hero no."+(i+1)+" ?:");
+			System.out.println("What would you like the name of Hero no."+(i+1)+" to be?:");
 			heroName = reader.next();
 			Hero newHero = new Hero(heroName);
 			addToTeam(newHero);
