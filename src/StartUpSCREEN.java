@@ -1,6 +1,9 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import net.miginfocom.swing.MigLayout;
+import javax.swing.JButton;
+import java.awt.Font;
 
 public class StartUpSCREEN {
 
@@ -34,8 +37,19 @@ public class StartUpSCREEN {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 851, 591);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnNewGame = new JButton("New Game");
+		btnNewGame.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnNewGame.setBounds(344, 235, 126, 40);
+		frame.getContentPane().add(btnNewGame);
+		
+		JButton btnQuitGame = new JButton("Quit Game");
+		btnQuitGame.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnQuitGame.setBounds(344, 310, 126, 40);
+		frame.getContentPane().add(btnQuitGame);
 	}
 
 }
