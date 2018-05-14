@@ -90,7 +90,7 @@ public class Team {
 
 	public void checkDead() {
 		if (team.size() == 0 && Ward.size() == 0) {
-			System.out.println("All your Heroes Have Died. You Have Failed This City.");
+			System.out.println("All your Heroes Have Perished. You Have Failed This City.");
 			System.out.println("\n GAME OVER");
 			System.exit(0);
 		}
