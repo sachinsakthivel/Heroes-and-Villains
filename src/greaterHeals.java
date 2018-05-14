@@ -3,15 +3,13 @@ import java.util.Random;
 public class greaterHeals extends Item {
 	
 	private final int HealBase;
-	private final int HealNum;
 	private final int Duration;
 	private final String Description;
+	private Random rand = new Random();
 	
 	public greaterHeals() {
 		super("Greater Heal Tickets", 100, 0);
-		Random rand = new Random();
 		HealBase = 50;
-		HealNum = rand.nextInt(10) + HealBase;
 		Duration = 4;
 		this.setItemDuration(Duration);
 		Description = "This treatement heals " + HealBase + " hp points or more depending on the treament's sucess rate in " + this.getItemDuration() + " minute.";
@@ -19,7 +17,7 @@ public class greaterHeals extends Item {
 	}
 	
 	public int getHealNum() {
-		return HealNum;
+		return HealBase;
 	}
 	
 	public String toString() {
@@ -30,7 +28,7 @@ public class greaterHeals extends Item {
 	
 	public void use(Hero hero) {
 		if (this.getItemStock() > 0 ) {
-			int heroHealthUpdate = hero.getCurrentHealth() + HealNum;
+			int heroHealthUpdate = hero.getCurrentHealth() +rand.nextInt(10);
 			if (heroHealthUpdate < hero.getMaximumHealth()) {
 				hero.setCurrentHealth(heroHealthUpdate);
 			} else {
