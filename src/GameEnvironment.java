@@ -34,6 +34,9 @@ public class GameEnvironment {
 	
 	public void playGame(Team chosenTeam) {
 		storyIntro();
+		
+		// main game loop:
+		
 		 int i = 0;
 		while (i < cityNum) {
 			if (i < cityNum -1) {
