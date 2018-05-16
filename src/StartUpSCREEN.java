@@ -48,7 +48,7 @@ public class StartUpSCREEN {
 		frmStartuptest = new JFrame();
 		frmStartuptest.setResizable(false);
 		frmStartuptest.setTitle("StartUpTest");
-		frmStartuptest.setBounds(100, 100, 1010, 730);
+		frmStartuptest.setBounds(100, 100, 1039, 791);
 		frmStartuptest.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmStartuptest.getContentPane().setLayout(null);
 		
@@ -64,8 +64,8 @@ public class StartUpSCREEN {
 		frmStartuptest.getContentPane().add(btnNewButton);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(StartUpSCREEN.class.getResource("/Images/Charge.jpg")));
-		label.setBounds(0, 0, 996, 693);
+		label.setIcon(new ImageIcon(StartUpSCREEN.class.getResource("/Images/chargeEdit.jpg")));
+		label.setBounds(0, 0, 964, 720);
 		frmStartuptest.getContentPane().add(label);
 	}
 	
