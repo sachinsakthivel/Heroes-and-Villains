@@ -9,6 +9,7 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
+import javax.swing.SwingConstants;
 
 public class StartUpSCREEN {
 
@@ -52,6 +53,12 @@ public class StartUpSCREEN {
 		frmStartuptest.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmStartuptest.getContentPane().setLayout(null);
 		
+		JButton button = new JButton("");
+		button.setVerticalAlignment(SwingConstants.TOP);
+		button.setIcon(new ImageIcon(StartUpSCREEN.class.getResource("/Images/Charge.jpg")));
+		button.setBounds(71, 83, 113, 93);
+		frmStartuptest.getContentPane().add(button);
+		
 		JButton btnNewGame = new JButton("NEW GAME");
 		btnNewGame.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		btnNewGame.setBounds(440, 391, 151, 38);
@@ -60,7 +67,7 @@ public class StartUpSCREEN {
 		JButton btnNewButton = new JButton("QUIT GAME");
 		btnNewButton.setBackground(Color.WHITE);
 		btnNewButton.setFont(new Font("Century Gothic", Font.PLAIN, 18));
-		btnNewButton.setBounds(440, 473, 151, 38);
+		btnNewButton.setBounds(440, 505, 151, 38);
 		frmStartuptest.getContentPane().add(btnNewButton);
 		
 		JLabel label = new JLabel("");

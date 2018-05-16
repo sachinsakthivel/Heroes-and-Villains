@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GameEnviornment {
+public class GameEnvironment {
 	
 	private String teamName = "";
 	private int teamLength = -1;

@@ -1,6 +1,6 @@
 public class Test {
 	
-	static GameEnviornment test = new GameEnviornment();
+	static GameEnvironment test = new GameEnvironment();
 	
 	public static void main(String args[]) {
 		test.setGame();
