@@ -10,11 +10,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import java.awt.SystemColor;
+import java.awt.Cursor;
 
 public class StartUpSCREEN {
 
-	private JFrame frmStartuptest;
-	private MainGUIManager manager;
+	private JFrame frame;
+	private MAINGUIManager manager;
 	
 
 	/**
@@ -25,7 +27,7 @@ public class StartUpSCREEN {
 			public void run() {
 				try {
 					StartUpSCREEN window = new StartUpSCREEN();
-					window.frmStartuptest.setVisible(true);
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -36,51 +38,57 @@ public class StartUpSCREEN {
 	/**
 	 * Create the application.
 	 */
-	public StartUpSCREEN(MainGUIManager incomingManager) {
+	public StartUpSCREEN(MAINGUIManager incomingManager) {
 		manager = incomingManager;
 		initialize();
-		frmStartuptest.setVisible(true);
+		frame.setVisible(true);
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmStartuptest = new JFrame();
-		frmStartuptest.setResizable(false);
-		frmStartuptest.setTitle("StartUpTest");
-		frmStartuptest.setBounds(100, 100, 1039, 791);
-		frmStartuptest.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmStartuptest.getContentPane().setLayout(null);
+		frame = new JFrame();
+		frame.setResizable(false);
+		frame.setTitle("StartUpTest");
+		frame.setBounds(100, 100, 983, 787);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
 		
-		JButton button = new JButton("");
-		button.setVerticalAlignment(SwingConstants.TOP);
-		button.setIcon(new ImageIcon(StartUpSCREEN.class.getResource("/Images/Charge.jpg")));
-		button.setBounds(71, 83, 113, 93);
-		frmStartuptest.getContentPane().add(button);
+		JLabel lblSengAssignmentSimulator = new JLabel("SENG201 ASSIGNMENT SIMULATOR");
+		lblSengAssignmentSimulator.setOpaque(true);
+		lblSengAssignmentSimulator.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblSengAssignmentSimulator.setBackground(Color.WHITE);
+		lblSengAssignmentSimulator.setFont(new Font("Century Gothic", Font.BOLD, 30));
+		lblSengAssignmentSimulator.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSengAssignmentSimulator.setBounds(206, 163, 556, 82);
+		frame.getContentPane().add(lblSengAssignmentSimulator);
 		
 		JButton btnNewGame = new JButton("NEW GAME");
-		btnNewGame.setFont(new Font("Century Gothic", Font.PLAIN, 18));
-		btnNewGame.setBounds(440, 391, 151, 38);
-		frmStartuptest.getContentPane().add(btnNewGame);
+		btnNewGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnNewGame.setToolTipText("Start a new game");
+		btnNewGame.setForeground(Color.BLACK);
+		btnNewGame.setBackground(SystemColor.textHighlight);
+		btnNewGame.setFont(new Font("Century Gothic", Font.BOLD, 22));
+		btnNewGame.setBounds(396, 391, 175, 60);
+		frame.getContentPane().add(btnNewGame);
 		
 		JButton btnNewButton = new JButton("QUIT GAME");
-		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setFont(new Font("Century Gothic", Font.PLAIN, 18));
-		btnNewButton.setBounds(440, 505, 151, 38);
-		frmStartuptest.getContentPane().add(btnNewButton);
+		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnNewButton.setToolTipText("Exit the game.");
+		btnNewButton.setBackground(SystemColor.textHighlight);
+		btnNewButton.setFont(new Font("Century Gothic", Font.BOLD, 22));
+		btnNewButton.setBounds(396, 483, 175, 60);
+		frame.getContentPane().add(btnNewButton);
 		
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(StartUpSCREEN.class.getResource("/Images/chargeEdit.jpg")));
-		label.setBounds(0, 0, 964, 720);
-		frmStartuptest.getContentPane().add(label);
+		label.setIcon(new ImageIcon(StartUpSCREEN.class.getResource("/Images/stickBKG.jpg")));
+		label.setBounds(0, 0, 968, 755);
+		frame.getContentPane().add(label);
 	}
 	
 	public void closeSCREEN() {
-		frmStartuptest.dispose();
+		frame.dispose();
 	}
 	
-	public void FinishedSCREEN() {
-		manager.closeStartUpSCREEN(this);
-	}
 }
