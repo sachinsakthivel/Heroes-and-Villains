@@ -26,6 +26,7 @@ import java.awt.Point;
 public class HeroSetupSCREEN {
 	
 	private String heroName = "";
+	private int typePick = -1;
 
 	JFrame frame;
 	private JTextField textField;
@@ -107,6 +108,17 @@ public class HeroSetupSCREEN {
 		frame.getContentPane().add(lblTeam);
 		
 		JButton btnConfirm = new JButton("Confirm");
+		btnConfirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (typePick == -1) {
+					JLabel lblerror = new JLabel("Incorrect Input, Please Select A Hero Type");
+					lblerror.setVisible(true);
+					lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
+					lblerror.setBounds(585, 691, 375, 40);
+					frame.getContentPane().add(lblerror);
+				}
+			}
+		});
 		btnConfirm.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnConfirm.setToolTipText("Confirm your selections");
 		btnConfirm.setBackground(SystemColor.textHighlight);
@@ -131,6 +143,7 @@ public class HeroSetupSCREEN {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setText(Guardian.background() + "\n\n" + Guardian.getStats());
+				typePick = 1;
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -141,6 +154,7 @@ public class HeroSetupSCREEN {
 		btnKnight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setText(Knight.background() + "\n\n" + Knight.getStats());
+				typePick = 2;
 			}
 		});
 		btnKnight.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -151,6 +165,7 @@ public class HeroSetupSCREEN {
 		btnJester.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setText(Trickster.background() + "\n\n" + Trickster.getStats());
+				typePick = 3;
 			}
 		});
 		btnJester.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -161,6 +176,7 @@ public class HeroSetupSCREEN {
 		btnWatchdog.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setText(watchDog.background() + "\n\n" + watchDog.getStats());
+				typePick = 4;
 			}
 		});
 		btnWatchdog.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -171,6 +187,7 @@ public class HeroSetupSCREEN {
 		btnNecromancer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setText(Necromancer.background() + "\n\n" + Necromancer.getStats());
+				typePick = 5;
 			}
 		});
 		btnNecromancer.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -181,13 +198,17 @@ public class HeroSetupSCREEN {
 		btnHealer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setText(Oracle.background() + "\n\n" + Oracle.getStats());
+				typePick = 6;
 				
 			}
 		});
 		btnHealer.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnHealer.setBounds(396, 374, 149, 60);
 		frame.getContentPane().add(btnHealer);
+		
+
 	}
+	
 	
 	public void closeSCREEN() {
 		frame.dispose();
