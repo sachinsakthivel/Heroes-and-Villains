@@ -89,7 +89,7 @@ public class GameEnvironment {
 		StartUp.frame.setVisible(true);
 	}
 	
-	public void launchGameSetupSCREEN() {
+	public static void launchGameSetupSCREEN() {
 		GameSetupSCREEN GameSetup = new GameSetupSCREEN();
 		GameSetup.frame.setVisible(true);
 	}
