@@ -61,30 +61,25 @@ public class HeroSetupSCREEN {
 		textField.setToolTipText("Enter a team name");
 		textField.setFont(new Font("Century Gothic", Font.PLAIN, 22));
 		textField.setBackground(new Color(245, 245, 245));
-		textField.setBounds(382, 57, 288, 42);
+		textField.setBounds(319, 244, 388, 50);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblType = new JLabel("Type:");
+		JLabel lblType = new JLabel("Class:");
 		lblType.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblType.setBounds(318, 118, 66, 33);
+		lblType.setBounds(291, 343, 79, 33);
 		frame.getContentPane().add(lblType);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		comboBox.setToolTipText("Select a hero type");
 		comboBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		comboBox.setBounds(382, 117, 288, 42);
+		comboBox.setBounds(373, 340, 288, 42);
 		frame.getContentPane().add(comboBox);
-		
-		JLabel lblHeroNo = new JLabel("Hero No.");
-		lblHeroNo.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblHeroNo.setBounds(775, 75, 95, 33);
-		frame.getContentPane().add(lblHeroNo);
 		
 		JLabel lblTeam = new JLabel("Hero Name:");
 		lblTeam.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblTeam.setBounds(245, 61, 136, 33);
+		lblTeam.setBounds(185, 252, 136, 33);
 		frame.getContentPane().add(lblTeam);
 		
 		JButton btnConfirm = new JButton("Confirm");
@@ -94,26 +89,6 @@ public class HeroSetupSCREEN {
 		btnConfirm.setFont(new Font("Century Gothic", Font.BOLD, 22));
 		btnConfirm.setBounds(396, 679, 175, 60);
 		frame.getContentPane().add(btnConfirm);
-		
-		JTextArea txtrHeroNo = new JTextArea();
-		txtrHeroNo.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		txtrHeroNo.setText("1");
-		txtrHeroNo.setFont(new Font("Century Gothic", Font.BOLD, 18));
-		txtrHeroNo.setBounds(814, 109, 23, 27);
-		frame.getContentPane().add(txtrHeroNo);
-		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(133, 232, 506, 338);
-		frame.getContentPane().add(tabbedPane);
-		
-		JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.addTab("New tab", null, tabbedPane_2, null);
-		
-		JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.addTab("New tab", null, tabbedPane_3, null);
-		
-		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.addTab("New tab", null, tabbedPane_1, null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));

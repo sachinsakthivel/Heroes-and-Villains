@@ -73,7 +73,7 @@ public class GameSetupSCREEN {
 		slider.setMajorTickSpacing(1);
 		slider.setMinimum(3);
 		slider.setMaximum(6);
-		slider.setBounds(504, 190, 288, 67);
+		slider.setBounds(504, 189, 288, 67);
 		frame.getContentPane().add(slider);
 		
 		JButton btnConfirm = new JButton("Confirm");
