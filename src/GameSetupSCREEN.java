@@ -22,6 +22,9 @@ public class GameSetupSCREEN {
 	JFrame frame;
 	private JTextField textField;
 	private JLabel lblNoOfCities;
+	
+	static GameEnvironment GameEnvironment = new GameEnvironment();
+
 
 	/**
 	 * Launch the application.
@@ -81,6 +84,7 @@ public class GameSetupSCREEN {
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				GameEnvironment.launchHeroSetupSCREEN();
 				closeSCREEN();
 			}
 		});
