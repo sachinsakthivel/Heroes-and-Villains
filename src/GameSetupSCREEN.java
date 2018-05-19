@@ -93,7 +93,7 @@ public class GameSetupSCREEN {
 		lblerror.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblerror.setForeground(Color.RED);
 		lblerror.setFont(new Font("Century Gothic", Font.PLAIN, 15));
-		lblerror.setBounds(356, 434, 269, 40);
+		lblerror.setBounds(349, 375, 269, 40);
 		frame.getContentPane().add(lblerror);
 		
 		JButton btnConfirm = new JButton("Confirm");
