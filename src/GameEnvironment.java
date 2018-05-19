@@ -8,6 +8,11 @@ public class GameEnvironment {
 	private int teamLength = -1;
 	private int cityNum = -1;
 	
+	private StartUpSCREEN StartUp;
+	private GameSetupSCREEN GameSetup;
+	private HeroSetupSCREEN HeroSetup;
+	private ExitSCREEN ExitScreen;
+	
 	
 	public void getInput() {
 		Scanner reader = new Scanner(System.in);
@@ -30,7 +35,8 @@ public class GameEnvironment {
 	
 	public void setGame() {
 		launchStartUpSCREEN();
-		teamName = GameSetupSCREEN.getTeamName();
+		launchGameSetupSCREEN();
+		teamName = GameSetup.getTeamName();
 		System.out.println(teamName);
 		//launchGameSetupSCREEN();
 		
@@ -46,7 +52,8 @@ public class GameEnvironment {
 	public void createHeroes(Team team) {
 		for (int i = 0 ; i < teamLength; i++) {
 			launchHeroSetupSCREEN();
-			String heroName = "yolo";
+			String heroName = HeroSetupSCREEN.this.getHeroName();
+			int heroChoice = Her
 		}
 	}
 	
@@ -80,22 +87,22 @@ public class GameEnvironment {
 		System.out.println("Story Conclusion not implemented Yet.");
 	}
 	
-	public static void launchStartUpSCREEN() {
-		StartUpSCREEN StartUp = new StartUpSCREEN();
+	public void launchStartUpSCREEN() {
+		StartUp = new StartUpSCREEN();
 		StartUp.frame.setVisible(true);
 	}
 	
-	public static void launchGameSetupSCREEN() {
+	public void launchGameSetupSCREEN() {
 		GameSetupSCREEN GameSetup = new GameSetupSCREEN();
 		GameSetup.frame.setVisible(true);
 	}
 	
-	public static void launchHeroSetupSCREEN() {
+	public void launchHeroSetupSCREEN() {
 		HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN();
 		HeroSetup.frame.setVisible(true);
 	}
 	
-	public static void luanchExitSCREEN() {
+	public void luanchExitSCREEN() {
 		ExitSCREEN ExitScreen = new ExitSCREEN();
 		ExitScreen.frame.setVisible(true);
 	}
