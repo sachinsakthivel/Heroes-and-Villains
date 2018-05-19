@@ -14,8 +14,16 @@ import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.SwingConstants;
+import javax.swing.JScrollBar;
+import javax.swing.JTextPane;
 
 public class HeroSetupSCREEN {
+	
+	private String heroName = "";
 
 	private JFrame frame;
 	private JTextField textField;
@@ -34,6 +42,21 @@ public class HeroSetupSCREEN {
 				}
 			}
 		});
+	}
+	
+	/**
+	 * Getter for frame
+	 */
+	public JFrame getFrame() {
+		return frame;
+	}
+	/**
+	 * setter for frame
+	 * @param newframe
+	 */
+	public void setFrame(JFrame newframe)  {
+		frame = newframe;
+		
 	}
 
 	/**
@@ -55,31 +78,37 @@ public class HeroSetupSCREEN {
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
+		textField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				heroName = textField.getText();
+			}
+		});
 		textField.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textField.setDisabledTextColor(Color.LIGHT_GRAY);
 		textField.setForeground(Color.BLACK);
 		textField.setToolTipText("Enter a team name");
 		textField.setFont(new Font("Century Gothic", Font.PLAIN, 22));
 		textField.setBackground(new Color(245, 245, 245));
-		textField.setBounds(319, 244, 388, 50);
+		textField.setBounds(302, 207, 388, 50);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblType = new JLabel("Class:");
 		lblType.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblType.setBounds(291, 343, 79, 33);
+		lblType.setBounds(287, 311, 79, 33);
 		frame.getContentPane().add(lblType);
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Tank", "Necromancer", "Healer", "Gambler", "Guardian", "Ninja"}));
 		comboBox.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		comboBox.setToolTipText("Select a hero type");
 		comboBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		comboBox.setBounds(373, 340, 288, 42);
+		comboBox.setBounds(364, 308, 288, 42);
 		frame.getContentPane().add(comboBox);
 		
 		JLabel lblTeam = new JLabel("Hero Name:");
 		lblTeam.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblTeam.setBounds(185, 252, 136, 33);
+		lblTeam.setBounds(170, 215, 136, 33);
 		frame.getContentPane().add(lblTeam);
 		
 		JButton btnConfirm = new JButton("Confirm");
@@ -90,18 +119,14 @@ public class HeroSetupSCREEN {
 		btnConfirm.setBounds(396, 679, 175, 60);
 		frame.getContentPane().add(btnConfirm);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(814, 562, 93, 89);
-		frame.getContentPane().add(panel);
+		JLabel lblHeroCreation = new JLabel("Create Your Hero");
+		lblHeroCreation.setFont(new Font("Trebuchet MS", Font.BOLD, 28));
+		lblHeroCreation.setBounds(364, 50, 255, 85);
+		frame.getContentPane().add(lblHeroCreation);
 		
-		JLabel label = new JLabel("");
-		label.setBackground(Color.LIGHT_GRAY);
-		label.setOpaque(true);
-		label.setToolTipText("2-10 characters long");
-		label.setIcon(new ImageIcon(HeroSetupSCREEN.class.getResource("/Images/stickBKG.jpg")));
-		label.setBounds(0, 0, 968, 755);
-		frame.getContentPane().add(label);
+		JLabel lblSelectYourHero = new JLabel("Select Your Hero Class");
+		lblSelectYourHero.setBounds(420, 432, 111, 211);
+		frame.getContentPane().add(lblSelectYourHero);
 	}
 	
 	public void closeSCREEN() {
