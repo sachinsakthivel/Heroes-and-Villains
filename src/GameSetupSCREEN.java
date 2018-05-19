@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 
 public class GameSetupSCREEN {
 	
-	private String TeamName = "";
+	private static String TeamName = "";
 
 	JFrame frame;
 	private JTextField textField;
@@ -136,10 +136,10 @@ public class GameSetupSCREEN {
 		frame.getContentPane().add(label);
 	}
 	
-	public String getTeamName() {
+	public static String getTeamName() {
 		return TeamName;
 	}
-	
+		
 	public void closeSCREEN() {
 		frame.dispose();
 	}

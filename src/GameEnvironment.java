@@ -29,8 +29,13 @@ public class GameEnvironment {
 	}
 	
 	public void setGame() {
-		launchStartUpSCREEN();		
-		/*getInput();
+		launchStartUpSCREEN();
+		GameSetupSCREEN.getTeamName();
+		//launchGameSetupSCREEN();
+		
+		
+		/*For text based game Just in case leave this
+		getInput();
 		Team newTeam = new Team(teamName, teamLength);
 		playGame(newTeam);
 		

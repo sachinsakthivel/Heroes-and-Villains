@@ -107,15 +107,17 @@ public class HeroSetupSCREEN {
 		lblTeam.setBounds(173, 141, 136, 33);
 		frame.getContentPane().add(lblTeam);
 		
+		JLabel lblerror = new JLabel("Incorrect Input, Please Select A Hero Type");
+		lblerror.setVisible(false);
+		lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
+		lblerror.setBounds(585, 691, 375, 40);
+		frame.getContentPane().add(lblerror);
+		
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (typePick == -1) {
-					JLabel lblerror = new JLabel("Incorrect Input, Please Select A Hero Type");
 					lblerror.setVisible(true);
-					lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
-					lblerror.setBounds(585, 691, 375, 40);
-					frame.getContentPane().add(lblerror);
 				}
 			}
 		});
