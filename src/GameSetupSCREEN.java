@@ -20,7 +20,7 @@ import javax.swing.SwingConstants;
 
 public class GameSetupSCREEN {
 	
-	private static String TeamName = "TestName";
+	private static String TeamName = "";
 
 	JFrame frame;
 	private JTextField textField;
