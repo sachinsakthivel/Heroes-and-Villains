@@ -101,10 +101,9 @@ public class GameSetupSCREEN {
 			public void actionPerformed(ActionEvent arg0) {
 				if (TeamName.length() < 2 || TeamName.length() > 10) {
 					lblerror.setVisible(true);
-				//} else if{
+				} else if{
 					
 				}else {
-					GameEnvironment.launchHeroSetupSCREEN();
 					closeSCREEN();
 				}
 				
