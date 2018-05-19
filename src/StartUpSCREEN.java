@@ -87,7 +87,10 @@ public class StartUpSCREEN {
 		JButton btnNewButton = new JButton("QUIT GAME");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+<<<<<<< HEAD
 				closeSCREEN();
+=======
+>>>>>>> branch 'master' of https://eng-git.canterbury.ac.nz/ssa237/heroes-and-villians.git
 			}
 		});
 		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));

@@ -4,11 +4,9 @@ public class Team {
 	/* team class*/
 	private String teamName;
 	private int teamLength;
-	private boolean dead;
 	private ArrayList<Hero> team = new ArrayList<Hero>();
 	private int Coins;
 	private ArrayList<Hero> Ward = new ArrayList<Hero>();
-	
 	private ArrayList<Item> invList = new ArrayList<Item>();
 	private String heroName;
 	
@@ -16,7 +14,6 @@ public class Team {
 		teamName = name;
 		teamLength = length;
 		Coins = 500;
-		dead = false;
 		setTeamList();
 		setInventory();
 		
