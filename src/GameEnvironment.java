@@ -41,14 +41,17 @@ public class GameEnvironment {
 		teamLength = GameSetup.getNoHeroes();
 		cityNum = GameSetup.getNoCities();
 		chosenTeam = new Team(teamName, teamLength);
-		playGame(newTeam);
+		createHeroes();
+		playGame(chosenTeam);
 	}
 	
-	public void createHeroes(Team team) {
+	public void createHeroes() {
 		for (int i = 0 ; i < teamLength; i++) {
 			launchHeroSetupSCREEN();
-			String heroName = HeroSetupSCREEN.this.getHeroName();
-			int heroChoice = Her
+			String heroName = HeroSetup.getHeroName();
+			int heroChoice = HeroSetup.getType();
+			Hero newHero = HelperFunctions.heroCreate(heroChoice, heroName);
+			chosenTeam.addToTeam(newHero);
 		}
 	}
 	
@@ -97,7 +100,7 @@ public class GameEnvironment {
 		HeroSetup.frame.setVisible(true);
 	}
 	
-	public void luanchExitSCREEN() {
+	public void launchExitSCREEN() {
 		ExitSCREEN ExitScreen = new ExitSCREEN();
 		ExitScreen.frame.setVisible(true);
 	}

@@ -234,4 +234,8 @@ public class HeroSetupSCREEN {
 	public void setHeroName(String heroName) {
 		this.heroName = heroName;
 	}
+	
+	public int getType() {
+		return typePick;
+	}
 }
