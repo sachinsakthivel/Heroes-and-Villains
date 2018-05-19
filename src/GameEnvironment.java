@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class GameEnvironment {
 	
-	private static String teamName = "";
-	private static int teamLength = -1;
-	private static int cityNum = -1;
+	private String teamName = "";
+	private int teamLength = -1;
+	private int cityNum = -1;
 	
 	
-	public static void getInput() {
+	public void getInput() {
 		Scanner reader = new Scanner(System.in);
 		while (teamName.length() < 2 || teamName.length() > 10) {
 			System.out.println("Hey there, What is the name of your super hero team?: ");
@@ -28,8 +28,9 @@ public class GameEnvironment {
 		}
 	}
 	
-	public static void setGame() {
-		launchStartUpSCREEN();
+	public void setGame() {
+		//launchStartUpSCREEN();
+		launchGameSetupSCREEN();
 		/*getInput();
 		Team newTeam = new Team(teamName, teamLength);
 		playGame(newTeam);
@@ -40,7 +41,7 @@ public class GameEnvironment {
 		
 	}
 	
-	public static void playGame(Team chosenTeam) {
+	public void playGame(Team chosenTeam) {
 		storyIntro();
 		
 		// main game loop:
@@ -62,33 +63,33 @@ public class GameEnvironment {
 		}
 	}
 	
-	public static void storyIntro() {
+	public void storyIntro() {
 		System.out.println("Story Introduction not implemented Yet.");
 	}
 	
-	public static void storyOutro() {
+	public void storyOutro() {
 		System.out.println("Story Conclusion not implemented Yet.");
 	}
 	
-	public static void launchStartUpSCREEN() {
+	public void launchStartUpSCREEN() {
 		StartUpSCREEN StartUp = new StartUpSCREEN();
 		StartUp.frame.setVisible(true);
 	}
 	
-	public static void launchGameSetupSCREEN() {
+	public void launchGameSetupSCREEN() {
 		GameSetupSCREEN GameSetup = new GameSetupSCREEN();
 		GameSetup.frame.setVisible(true);
 	}
 	
-	public static void launchHeroSetupSCREEN() {
+	public void launchHeroSetupSCREEN() {
 		HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN();
-		HeroSetup.frame.setVisible(true);
+		//HeroSetup.frame.setVisible(true);
 	}
 	
 	
 	
 	
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		setGame();
 	}
 }

@@ -31,7 +31,7 @@ public class StartUpSCREEN {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -70,6 +70,8 @@ public class StartUpSCREEN {
 		btnNewGame.addActionListener(new ActionListener() {
 			 public void actionPerformed(ActionEvent arg0) {
 				GameEnvironment.launchGameSetupSCREEN();
+				//GameSetupSCREEN GameSetup = new GameSetupSCREEN();
+				//GameSetup.frame.setVisible(true);
 				closeSCREEN();
 			}
 		});
