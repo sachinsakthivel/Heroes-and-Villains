@@ -92,18 +92,18 @@ public class HeroSetupSCREEN {
 		textField.setToolTipText("Enter a team name");
 		textField.setFont(new Font("Century Gothic", Font.PLAIN, 22));
 		textField.setBackground(new Color(245, 245, 245));
-		textField.setBounds(301, 171, 388, 50);
+		textField.setBounds(299, 133, 388, 50);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		JLabel lblType = new JLabel("Hero Types");
 		lblType.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblType.setBounds(420, 234, 132, 33);
+		lblType.setBounds(406, 226, 132, 33);
 		frame.getContentPane().add(lblType);
 		
 		JLabel lblTeam = new JLabel("Hero Name:");
 		lblTeam.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblTeam.setBounds(173, 179, 136, 33);
+		lblTeam.setBounds(173, 141, 136, 33);
 		frame.getContentPane().add(lblTeam);
 		
 		JButton btnConfirm = new JButton("Confirm");
@@ -116,7 +116,7 @@ public class HeroSetupSCREEN {
 		
 		JLabel lblHeroCreation = new JLabel("Create Your Hero");
 		lblHeroCreation.setFont(new Font("Trebuchet MS", Font.BOLD, 28));
-		lblHeroCreation.setBounds(364, 50, 243, 85);
+		lblHeroCreation.setBounds(364, 22, 243, 85);
 		frame.getContentPane().add(lblHeroCreation);
 		
 		JTextArea textArea = new JTextArea("Select a Hero Class");
@@ -124,7 +124,7 @@ public class HeroSetupSCREEN {
 		textArea.setLineWrap(true);
 		textArea.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		textArea.setEditable(false);
-		textArea.setBounds(173, 414, 651, 233);
+		textArea.setBounds(160, 475, 651, 181);
 		frame.getContentPane().add(textArea);
 		
 		JButton btnNewButton = new JButton("Guardian");
@@ -134,18 +134,18 @@ public class HeroSetupSCREEN {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnNewButton.setBounds(225, 303, 149, 60);
+		btnNewButton.setBounds(225, 374, 149, 60);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton button = new JButton("Tanker");
-		button.addActionListener(new ActionListener() {
+		JButton btnKnight = new JButton("Knight");
+		btnKnight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.setText(Tanker.background() + "\n\n" + Tanker.getStats());
+				textArea.setText(Knight.background() + "\n\n" + Knight.getStats());
 			}
 		});
-		button.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		button.setBounds(51, 303, 149, 60);
-		frame.getContentPane().add(button);
+		btnKnight.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnKnight.setBounds(225, 277, 149, 60);
+		frame.getContentPane().add(btnKnight);
 		
 		JButton btnJester = new JButton("Trickster");
 		btnJester.addActionListener(new ActionListener() {
@@ -154,8 +154,28 @@ public class HeroSetupSCREEN {
 			}
 		});
 		btnJester.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnJester.setBounds(396, 303, 149, 60);
+		btnJester.setBounds(396, 277, 149, 60);
 		frame.getContentPane().add(btnJester);
+		
+		JButton btnWatchdog = new JButton("Watch Dog");
+		btnWatchdog.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(watchDog.background() + "\n\n" + watchDog.getStats());
+			}
+		});
+		btnWatchdog.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnWatchdog.setBounds(575, 277, 149, 60);
+		frame.getContentPane().add(btnWatchdog);
+		
+		JButton btnNecromancer = new JButton("Necromancer");
+		btnNecromancer.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNecromancer.setBounds(575, 374, 149, 60);
+		frame.getContentPane().add(btnNecromancer);
+		
+		JButton btnHealer = new JButton("Oracle");
+		btnHealer.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnHealer.setBounds(396, 374, 149, 60);
+		frame.getContentPane().add(btnHealer);
 	}
 	
 	public void closeSCREEN() {

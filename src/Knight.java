@@ -1,11 +1,11 @@
 
-public class Tanker extends Hero {
+public class Knight extends Hero {
 	
 	private static int maxHealth = 100;
 	private static int Armour = 10;
 	private static int Luck = 0;
 	
-	public Tanker(String name) {
+	public Knight(String name) {
 		super(name);
 		this.setArmour(Armour);
 	}

@@ -9,6 +9,7 @@ public class Team {
 	private ArrayList<Hero> Ward = new ArrayList<Hero>();
 	private ArrayList<Item> invList = new ArrayList<Item>();
 	private String heroName;
+	private ArrayList<Hero> Graveyard = new ArrayList<Hero>();
 	
 	public Team(String name, int length) {
 		teamName = name;
@@ -65,6 +66,7 @@ public class Team {
 	}
 	
 	public void removeOffTeam(Hero superhero) {
+		Graveyard.add(superhero);
 		team.remove(superhero);
 	}
 	

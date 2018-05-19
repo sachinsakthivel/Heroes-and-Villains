@@ -6,21 +6,18 @@ public class Hero extends Person{
 	private int Dice;
 	private int Skill;
 	private int Armour;
-	
+	private boolean isActive;
 	public Hero(String name) {
 		super(name);
 		this.maximumHealth = 100;
-		this.currentHealth = maximumHealth;
-		this.Dice = 0;
-		this.Skill = 0;
-		this.Armour = 0;
-		typeChoice();
+		currentHealth = maximumHealth;
+		Dice = 0;
+		Skill = 0;
+		Armour = 0;
+		isActive = false;
 		
 	}
 	
-	public void typeChoice() {
-		System.out.println("Type selection is not implemented yet");
-	}
 	
 	public int getCurrentHealth() {
 		return currentHealth;
@@ -74,6 +71,22 @@ public class Hero extends Person{
 
 	public void setArmour(int armour) {
 		Armour = armour;
+	}
+
+
+	public boolean getisActive() {
+		return isActive;
+	}
+
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+	
+	public void ability(Team team) {
+		if (!this.getisActive()) {
+			System.out.println("This Hero Does not Have any Active Abilities");
+		}
 	}
 
 	
