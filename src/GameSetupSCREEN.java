@@ -17,10 +17,14 @@ import javax.swing.border.LineBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 
 public class GameSetupSCREEN {
 	
 	private static String TeamName = "";
+	private static int NoCities;
+	private static int NoHeroes;
 
 	JFrame frame;
 	private JTextField textField;
@@ -78,6 +82,11 @@ public class GameSetupSCREEN {
 		textField.setColumns(10);
 		
 		JSlider slider = new JSlider();
+		slider.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				NoCities = slider.getValue();
+			}
+		});
 		slider.setBorder(new LineBorder(new Color(0, 0, 0)));
 		slider.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		slider.setPaintLabels(true);
@@ -126,6 +135,11 @@ public class GameSetupSCREEN {
 		frame.getContentPane().add(lblNoOfHeroes);
 		
 		JSlider slider_1 = new JSlider();
+		slider.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				NoHeroes = slider.getValue();
+			}
+		});
 		slider_1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		slider_1.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		slider_1.setPaintTicks(true);
@@ -152,6 +166,14 @@ public class GameSetupSCREEN {
 	
 	public static String getTeamName() {
 		return TeamName;
+	}
+	
+	public static int getNoCities() {
+		return NoCities;
+	}
+	
+	public static int getNoHeroes() {
+		return NoHeroes;
 	}
 		
 	public void closeSCREEN() {
