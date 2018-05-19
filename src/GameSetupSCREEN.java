@@ -93,7 +93,7 @@ public class GameSetupSCREEN {
 		lblerror.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblerror.setForeground(Color.RED);
 		lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
-		lblerror.setBounds(316, 404, 269, 40);
+		lblerror.setBounds(316, 404, 306, 40);
 		frame.getContentPane().add(lblerror);
 		
 		JButton btnConfirm = new JButton("Confirm");
@@ -101,8 +101,6 @@ public class GameSetupSCREEN {
 			public void actionPerformed(ActionEvent arg0) {
 				if (TeamName.length() < 2 || TeamName.length() > 10) {
 					lblerror.setVisible(true);
-				} else if{
-					
 				}else {
 					closeSCREEN();
 				}
