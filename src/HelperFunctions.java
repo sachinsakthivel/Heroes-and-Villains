@@ -2,6 +2,27 @@ import java.util.*;
 
 public class HelperFunctions {
 	
+	public static Hero heroCreate(int userPick, String name) {
+		if (userPick == 1 ) {
+			Guardian newHero = new Guardian(name);
+			return newHero;
+		} else if (userPick == 2) {
+			Knight newHero = new Knight(name);
+			return newHero;
+		} else if (userPick == 3) {
+			Trickster newHero = new Trickster(name);
+			return newHero;
+		} else if (userPick == 4) {
+			watchDog newHero = new watchDog(name);
+			return newHero;
+		} else if (userPick == 5) {
+			Necromancer newHero = new Necromancer(name);
+			return newHero;
+		} else {
+			Oracle newHero = new Oracle(name);
+			return newHero;
+		}
+	}
 	
 	public static int InputValidator(int lower, int upper) {
 		int userInput = -1;
