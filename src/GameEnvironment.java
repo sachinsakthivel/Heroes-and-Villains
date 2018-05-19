@@ -103,6 +103,7 @@ public class GameEnvironment {
 	public void launchExitSCREEN() {
 		ExitScreen = new ExitSCREEN();
 		ExitScreen.frame.setVisible(true);
+		
 	}
 	
 	
