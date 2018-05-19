@@ -168,11 +168,22 @@ public class HeroSetupSCREEN {
 		frame.getContentPane().add(btnWatchdog);
 		
 		JButton btnNecromancer = new JButton("Necromancer");
+		btnNecromancer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(Necromancer.background() + "\n\n" + Necromancer.getStats());
+			}
+		});
 		btnNecromancer.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnNecromancer.setBounds(575, 374, 149, 60);
 		frame.getContentPane().add(btnNecromancer);
 		
 		JButton btnHealer = new JButton("Oracle");
+		btnHealer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(Oracle.background() + "\n\n" + Oracle.getStats());
+				
+			}
+		});
 		btnHealer.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnHealer.setBounds(396, 374, 149, 60);
 		frame.getContentPane().add(btnHealer);

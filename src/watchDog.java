@@ -7,6 +7,7 @@ public class watchDog extends Hero {
 	
 	public watchDog(String name) {
 		super(name);
+		this.setType("WatchDog");
 	}
 	
 	public static String background() {

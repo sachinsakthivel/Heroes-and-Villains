@@ -9,6 +9,7 @@ public class Guardian extends Hero {
 		super(name);
 		this.setMaximumHealth(maxHealth);
 		this.setCurrentHealth(maxHealth);
+		this.setType("Guardian");
 	}
 	
 	public static String background() {

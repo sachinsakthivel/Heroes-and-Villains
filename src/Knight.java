@@ -8,6 +8,7 @@ public class Knight extends Hero {
 	public Knight(String name) {
 		super(name);
 		this.setArmour(Armour);
+		this.setType("Knight");
 	}
 	
 	public static String background() {

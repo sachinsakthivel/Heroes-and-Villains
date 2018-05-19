@@ -9,6 +9,7 @@ public class Trickster extends Hero {
 		super(name);
 		this.setDice(2);
 		this.setSkill(2);
+		this.setType("Trickster");
 	}
 	
 	public static String background() {

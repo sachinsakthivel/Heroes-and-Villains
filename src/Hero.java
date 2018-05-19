@@ -7,6 +7,9 @@ public class Hero extends Person{
 	private int Skill;
 	private int Armour;
 	private boolean isActive;
+	private String type;
+	private int abilityCount;
+	
 	public Hero(String name) {
 		super(name);
 		this.maximumHealth = 100;
@@ -44,7 +47,7 @@ public class Hero extends Person{
 	}
 
 	public String toString() {
-		String output = new String("This person is named: " + getPersonName() +"\nCurrent Health: " + getCurrentHealth() + "\nMaximum Health: "+ getMaximumHealth());
+		String output = new String("This person is named: " + getPersonName() + "			Type: " + getType() +"\nCurrent Health: " + getCurrentHealth() + "\nMaximum Health: "+ getMaximumHealth());
 		output += "\nArmour: " + getArmour() + "\nLuck: " + (getSkill() + getDice());
 		return output; 
 	}
@@ -87,6 +90,26 @@ public class Hero extends Person{
 		if (!this.getisActive()) {
 			System.out.println("This Hero Does not Have any Active Abilities");
 		}
+	}
+
+
+	public String getType() {
+		return type;
+	}
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+	public int getAbilityCount() {
+		return abilityCount;
+	}
+
+
+	public void setAbilityCount(int abilityCount) {
+		this.abilityCount = abilityCount;
 	}
 
 	

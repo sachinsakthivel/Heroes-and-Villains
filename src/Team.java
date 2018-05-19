@@ -119,5 +119,9 @@ public class Team {
 	public ArrayList<Hero> getWard() {
 		return Ward;
 	}
+	
+	public ArrayList<Hero> getGrave() {
+		return Graveyard;
+	}
 
 }
