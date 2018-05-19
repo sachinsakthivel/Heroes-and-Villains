@@ -30,7 +30,8 @@ public class GameEnvironment {
 	
 	public void setGame() {
 		launchStartUpSCREEN();
-		GameSetupSCREEN.getTeamName();
+		teamName = GameSetupSCREEN.getTeamName();
+		System.out.println(teamName);
 		//launchGameSetupSCREEN();
 		
 		
@@ -40,9 +41,13 @@ public class GameEnvironment {
 		playGame(newTeam);
 		
 		*/
-		
-		
-		
+	}
+	
+	public void createHeroes(Team team) {
+		for (int i = 0 ; i < teamLength; i++) {
+			launchHeroSetupSCREEN();
+			String heroName = "hi";
+		}
 	}
 	
 	public void playGame(Team chosenTeam) {
