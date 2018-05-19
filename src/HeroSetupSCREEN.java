@@ -20,6 +20,8 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.SwingConstants;
 import javax.swing.JScrollBar;
 import javax.swing.JTextPane;
+import java.awt.Component;
+import java.awt.Point;
 
 public class HeroSetupSCREEN {
 	
@@ -90,26 +92,18 @@ public class HeroSetupSCREEN {
 		textField.setToolTipText("Enter a team name");
 		textField.setFont(new Font("Century Gothic", Font.PLAIN, 22));
 		textField.setBackground(new Color(245, 245, 245));
-		textField.setBounds(302, 207, 388, 50);
+		textField.setBounds(301, 171, 388, 50);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblType = new JLabel("Class:");
+		JLabel lblType = new JLabel("Hero Types");
 		lblType.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblType.setBounds(287, 311, 79, 33);
+		lblType.setBounds(420, 234, 132, 33);
 		frame.getContentPane().add(lblType);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Tank", "Necromancer", "Healer", "Gambler", "Guardian", "Ninja"}));
-		comboBox.setFont(new Font("Century Gothic", Font.PLAIN, 18));
-		comboBox.setToolTipText("Select a hero type");
-		comboBox.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		comboBox.setBounds(364, 308, 288, 42);
-		frame.getContentPane().add(comboBox);
 		
 		JLabel lblTeam = new JLabel("Hero Name:");
 		lblTeam.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblTeam.setBounds(170, 215, 136, 33);
+		lblTeam.setBounds(173, 179, 136, 33);
 		frame.getContentPane().add(lblTeam);
 		
 		JButton btnConfirm = new JButton("Confirm");
@@ -125,12 +119,22 @@ public class HeroSetupSCREEN {
 		lblHeroCreation.setBounds(364, 50, 243, 85);
 		frame.getContentPane().add(lblHeroCreation);
 		
-		JTextArea textArea = new JTextArea(Tank.background() + "\n\n" + Tank.getStats());
+		JTextArea textArea = new JTextArea("Select a Hero Class");
 		textArea.setLineWrap(true);
 		textArea.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		textArea.setEditable(false);
 		textArea.setBounds(173, 414, 651, 233);
 		frame.getContentPane().add(textArea);
+		
+		JButton btnNewButton = new JButton("Tank");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(Tank.background() + "\n\n" + Tank.getStats());
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton.setBounds(34, 303, 149, 60);
+		frame.getContentPane().add(btnNewButton);
 	}
 	
 	public void closeSCREEN() {
