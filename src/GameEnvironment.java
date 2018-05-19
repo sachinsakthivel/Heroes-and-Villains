@@ -46,7 +46,7 @@ public class GameEnvironment {
 	public void createHeroes(Team team) {
 		for (int i = 0 ; i < teamLength; i++) {
 			launchHeroSetupSCREEN();
-			String heroName = "hi";
+			String heroName = "yolo";
 		}
 	}
 	
