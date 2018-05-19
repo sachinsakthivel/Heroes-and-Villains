@@ -92,7 +92,7 @@ public class GameSetupSCREEN {
 		lblerror.setVisible(false);
 		lblerror.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblerror.setForeground(Color.RED);
-		lblerror.setFont(new Font("Century Gothic", Font.PLAIN, 15));
+		lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
 		lblerror.setBounds(316, 404, 269, 40);
 		frame.getContentPane().add(lblerror);
 		
@@ -101,10 +101,13 @@ public class GameSetupSCREEN {
 			public void actionPerformed(ActionEvent arg0) {
 				if (TeamName.length() < 2 || TeamName.length() > 10) {
 					lblerror.setVisible(true);
-				} else {
+				//} else if{
+					
+				}else {
 					GameEnvironment.launchHeroSetupSCREEN();
 					closeSCREEN();
 				}
+				
 				
 			}
 		});
