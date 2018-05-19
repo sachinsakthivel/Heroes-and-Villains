@@ -89,18 +89,18 @@ public class GameEnvironment {
 		StartUp.frame.setVisible(true);
 	}
 	
-	public static void launchGameSetupSCREEN() {
-		GameSetupSCREEN GameSetup = new GameSetupSCREEN();
+	public void launchGameSetupSCREEN() {
+		GameSetup = new GameSetupSCREEN();
 		GameSetup.frame.setVisible(true);
 	}
 	
 	public void launchHeroSetupSCREEN() {
-		HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN();
+		HeroSetup = new HeroSetupSCREEN();
 		HeroSetup.frame.setVisible(true);
 	}
 	
 	public void launchExitSCREEN() {
-		ExitSCREEN ExitScreen = new ExitSCREEN();
+		ExitScreen = new ExitSCREEN();
 		ExitScreen.frame.setVisible(true);
 	}
 	
