@@ -6,7 +6,7 @@ public class armourUp extends Item {
 	
 	public armourUp() {
 		super("Armour Piece", 120, 0);
-		armAmount = 10;
+		armAmount = 5;
 		Description = "This item increases the Armour of a Hero by " + armAmount + " points. Armour decreases the damage taken by the any who wear it.\nIt is stackable";
 		this.setItemDescription(Description);
 	}

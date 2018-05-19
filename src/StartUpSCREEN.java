@@ -12,6 +12,8 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
 import java.awt.Cursor;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class StartUpSCREEN {
 
@@ -74,6 +76,10 @@ public class StartUpSCREEN {
 		frame.getContentPane().add(btnNewGame);
 		
 		JButton btnNewButton = new JButton("QUIT GAME");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton.setToolTipText("Exit the game.");
 		btnNewButton.setBackground(SystemColor.textHighlight);
