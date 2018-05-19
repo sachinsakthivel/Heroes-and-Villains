@@ -108,12 +108,14 @@ public class HeroSetupSCREEN {
 		frame.getContentPane().add(lblTeam);
 		
 		JLabel lblerror = new JLabel("Incorrect Input, Please Select A Hero Type");
+		lblerror.setForeground(Color.RED);
 		lblerror.setVisible(false);
 		lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
 		lblerror.setBounds(312, 628, 375, 40);
 		frame.getContentPane().add(lblerror);
 		
 		JLabel lblerror1 = new JLabel("Please Type in A Hero Name and Press Enter");
+		lblerror1.setForeground(Color.RED);
 		lblerror1.setVisible(false);
 		lblerror1.setFont(new Font("Dialog", Font.PLAIN, 18));
 		lblerror1.setBounds(312, 628, 375, 40);
