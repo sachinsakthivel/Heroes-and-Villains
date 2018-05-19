@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 
-
 public class GameEnvironment {
 	
 	private String teamName = "";
@@ -12,6 +11,8 @@ public class GameEnvironment {
 	private GameSetupSCREEN GameSetup;
 	private HeroSetupSCREEN HeroSetup;
 	private ExitSCREEN ExitScreen;
+	
+	private Team chosenTeam;
 	
 	
 	public void getInput() {
@@ -37,16 +38,10 @@ public class GameEnvironment {
 		launchStartUpSCREEN();
 		launchGameSetupSCREEN();
 		teamName = GameSetup.getTeamName();
-		System.out.println(teamName);
-		//launchGameSetupSCREEN();
-		
-		
-		/*For text based game Just in case leave this
-		getInput();
-		Team newTeam = new Team(teamName, teamLength);
+		teamLength = GameSetup.getNoHeroes();
+		cityNum = GameSetup.getNoCities();
+		chosenTeam = new Team(teamName, teamLength);
 		playGame(newTeam);
-		
-		*/
 	}
 	
 	public void createHeroes(Team team) {
