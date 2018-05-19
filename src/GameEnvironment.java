@@ -36,7 +36,6 @@ public class GameEnvironment {
 	
 	public void setGame() {
 		launchStartUpSCREEN();
-		launchGameSetupSCREEN();
 		teamName = GameSetup.getTeamName();
 		teamLength = GameSetup.getNoHeroes();
 		cityNum = GameSetup.getNoCities();
