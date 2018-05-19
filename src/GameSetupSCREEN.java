@@ -16,10 +16,11 @@ import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class GameSetupSCREEN {
 	
-	private static String TeamName = "";
+	private static String TeamName = "TestName";
 
 	JFrame frame;
 	private JTextField textField;
@@ -87,11 +88,24 @@ public class GameSetupSCREEN {
 		slider.setBounds(504, 189, 288, 67);
 		frame.getContentPane().add(slider);
 		
+		JLabel lblerror = new JLabel("Team name should be between 2-10");
+		lblerror.setVisible(false);
+		lblerror.setHorizontalTextPosition(SwingConstants.CENTER);
+		lblerror.setForeground(Color.RED);
+		lblerror.setFont(new Font("Century Gothic", Font.PLAIN, 15));
+		lblerror.setBounds(356, 434, 269, 40);
+		frame.getContentPane().add(lblerror);
+		
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				GameEnvironment.launchHeroSetupSCREEN();
-				closeSCREEN();
+				if (TeamName == "") {
+					lblerror.setVisible(true);
+				} else {
+					GameEnvironment.launchHeroSetupSCREEN();
+					closeSCREEN();
+				}
+				
 			}
 		});
 		btnConfirm.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
