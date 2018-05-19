@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class GameEnvironment {
 	
-	private String teamName = "";
-	private int teamLength = -1;
-	private int cityNum = -1;
+	private static String teamName = "";
+	private static int teamLength = -1;
+	private static int cityNum = -1;
 	
-	/*
-	public void getInput() {
+	
+	public static void getInput() {
 		Scanner reader = new Scanner(System.in);
 		while (teamName.length() < 2 || teamName.length() > 10) {
 			System.out.println("Hey there, What is the name of your super hero team?: ");
@@ -26,21 +26,22 @@ public class GameEnvironment {
 			System.out.println("How many Heroes would you like to have on your team?: (Choose between 1 to 3 Heroes)");
 			teamLength = HelperFunctions.InputValidator(1, 3);
 		}
-	}*/
+	}
 	
 	public static void setGame() {
-		/*getInput();
+		getInput();
 		Team newTeam = new Team(teamName, teamLength);
-		playGame(newTeam);*/
+		playGame(newTeam);
 		
+		/*
 		StartUpSCREEN window = new StartUpSCREEN();
-		window.frame.setVisible(true);
+		window.frame.setVisible(true);*/
 		
 		
 		
 	}
 	
-	public void playGame(Team chosenTeam) {
+	public static void playGame(Team chosenTeam) {
 		storyIntro();
 		
 		// main game loop:
@@ -62,11 +63,11 @@ public class GameEnvironment {
 		}
 	}
 	
-	public void storyIntro() {
+	public static void storyIntro() {
 		System.out.println("Story Introduction not implemented Yet.");
 	}
 	
-	public void storyOutro() {
+	public static void storyOutro() {
 		System.out.println("Story Conclusion not implemented Yet.");
 	}
 	
