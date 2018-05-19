@@ -29,7 +29,7 @@ public class GameEnvironment {
 	}
 	
 	public void setGame() {
-		launchStartUpSCREEN();
+		launchStartUpSCREEN();		
 		/*getInput();
 		Team newTeam = new Team(teamName, teamLength);
 		playGame(newTeam);
@@ -85,6 +85,10 @@ public class GameEnvironment {
 		HeroSetup.frame.setVisible(true);
 	}
 	
+	public static void luanchExitSCREEN() {
+		ExitSCREEN ExitScreen = new ExitSCREEN();
+		ExitScreen.frame.setVisible(true);
+	}
 	
 	
 	

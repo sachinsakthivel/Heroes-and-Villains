@@ -18,6 +18,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class GameSetupSCREEN {
+	
+	private String TeamName = "";
 
 	JFrame frame;
 	private JTextField textField;
@@ -59,6 +61,11 @@ public class GameSetupSCREEN {
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
+		textField.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TeamName = textField.getText();
+			}
+		});
 		textField.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textField.setDisabledTextColor(Color.LIGHT_GRAY);
 		textField.setForeground(Color.BLACK);
@@ -127,6 +134,10 @@ public class GameSetupSCREEN {
 		label.setIcon(new ImageIcon(GameSetupSCREEN.class.getResource("/Images/stickBKG.jpg")));
 		label.setBounds(0, 0, 968, 755);
 		frame.getContentPane().add(label);
+	}
+	
+	public String getTeamName() {
+		return TeamName;
 	}
 	
 	public void closeSCREEN() {

@@ -68,7 +68,7 @@ public class StartUpSCREEN {
 		JButton btnNewGame = new JButton("NEW GAME");
 		btnNewGame.addActionListener(new ActionListener() {
 			 public void actionPerformed(ActionEvent arg0) {
-				GameEnvironment.launchGameSetupSCREEN();
+				//GameEnvironment.launchGameSetupSCREEN();
 				//GameSetupSCREEN GameSetup = new GameSetupSCREEN();
 				//GameSetup.frame.setVisible(true);
 				closeSCREEN();
@@ -85,6 +85,7 @@ public class StartUpSCREEN {
 		JButton btnNewButton =  new JButton("QUIT GAME");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				GameEnvironment.luanchExitSCREEN();
 				closeSCREEN();
 			}
 		});
