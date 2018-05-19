@@ -14,6 +14,8 @@ import java.util.Scanner;
 import javax.swing.JSlider;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GameSetupSCREEN {
 
@@ -77,6 +79,11 @@ public class GameSetupSCREEN {
 		frame.getContentPane().add(slider);
 		
 		JButton btnConfirm = new JButton("Confirm");
+		btnConfirm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				closeSCREEN();
+			}
+		});
 		btnConfirm.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnConfirm.setToolTipText("Confirm your selections");
 		btnConfirm.setBackground(SystemColor.textHighlight);
