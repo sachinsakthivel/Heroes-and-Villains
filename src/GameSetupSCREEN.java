@@ -164,15 +164,19 @@ public class GameSetupSCREEN {
 		frame.getContentPane().add(label);
 	}
 	
-	public static String getTeamName() {
+	public void setTeamName(String TeamName) {
+		this.TeamName = TeamName;
+	}
+	
+	public String getTeamName() {
 		return TeamName;
 	}
 	
-	public static int getNoCities() {
+	public int getNoCities() {
 		return NoCities;
 	}
 	
-	public static int getNoHeroes() {
+	public int getNoHeroes() {
 		return NoHeroes;
 	}
 		
