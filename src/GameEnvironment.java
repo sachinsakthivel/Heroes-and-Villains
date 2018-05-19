@@ -29,13 +29,12 @@ public class GameEnvironment {
 	}
 	
 	public static void setGame() {
-		getInput();
+		launchStartUpSCREEN();
+		/*getInput();
 		Team newTeam = new Team(teamName, teamLength);
 		playGame(newTeam);
 		
-		/*
-		StartUpSCREEN window = new StartUpSCREEN();
-		window.frame.setVisible(true);*/
+		*/
 		
 		
 		
@@ -70,6 +69,24 @@ public class GameEnvironment {
 	public static void storyOutro() {
 		System.out.println("Story Conclusion not implemented Yet.");
 	}
+	
+	public static void launchStartUpSCREEN() {
+		StartUpSCREEN StartUp = new StartUpSCREEN();
+		StartUp.frame.setVisible(true);
+	}
+	
+	public static void launchGameSetupSCREEN() {
+		GameSetupSCREEN GameSetup = new GameSetupSCREEN();
+		GameSetup.frame.setVisible(true);
+	}
+	
+	public static void launchHeroSetupSCREEN() {
+		HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN();
+		HeroSetup.frame.setVisible(true);
+	}
+	
+	
+	
 	
 	public static void main(String[] args) {
 		setGame();
