@@ -114,20 +114,19 @@ public class HeroSetupSCREEN {
 		frame.getContentPane().add(lblerror);
 		
 		JLabel lblerror1 = new JLabel("Incorrect Input, Please Type in A Hero Name");
-		lblerror.setVisible(false);
-		lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
-		lblerror.setBounds(585, 691, 375, 40);
-		frame.getContentPane().add(lblerror);
+		lblerror1.setVisible(false);
+		lblerror1.setFont(new Font("Dialog", Font.PLAIN, 18));
+		lblerror1.setBounds(585, 691, 375, 40);
+		frame.getContentPane().add(lblerror1);
 		
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (heroName == "") {
-					lblerror.setVisible(false);
 					lblerror1.setVisible(true);
 				} else if (typePick == -1) {
-					lblerror1.setVisible(false);
 					lblerror.setVisible(true);
+				} else {
 				}
 			}
 		});
