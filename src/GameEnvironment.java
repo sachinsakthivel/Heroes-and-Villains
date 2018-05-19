@@ -70,17 +70,17 @@ public class GameEnvironment {
 		System.out.println("Story Conclusion not implemented Yet.");
 	}
 	
-	public void launchStartUpSCREEN() {
+	public static void launchStartUpSCREEN() {
 		StartUpSCREEN StartUp = new StartUpSCREEN();
 		StartUp.frame.setVisible(true);
 	}
 	
-	public void launchGameSetupSCREEN() {
+	public static void launchGameSetupSCREEN() {
 		GameSetupSCREEN GameSetup = new GameSetupSCREEN();
 		GameSetup.frame.setVisible(true);
 	}
 	
-	public void launchHeroSetupSCREEN() {
+	public static void launchHeroSetupSCREEN() {
 		HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN();
 		HeroSetup.frame.setVisible(true);
 	}
