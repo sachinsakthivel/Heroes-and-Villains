@@ -99,12 +99,12 @@ public class GameSetupSCREEN {
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (TeamName.length() < 2 || TeamName.length() > 10) {
+				/*if (TeamName.length() < 2 || TeamName.length() > 10) {
 					lblerror.setVisible(true);
 				} else {
 					GameEnvironment.launchHeroSetupSCREEN();
 					closeSCREEN();
-				}
+				}*/
 				
 			}
 		});
