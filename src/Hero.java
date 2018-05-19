@@ -10,7 +10,7 @@ public class Hero extends Person{
 	public Hero(String name) {
 		super(name);
 		this.maximumHealth = 100;
-		this.currentHealth = 100;
+		this.currentHealth = maximumHealth;
 		this.Dice = 0;
 		this.Skill = 0;
 		this.Armour = 0;
