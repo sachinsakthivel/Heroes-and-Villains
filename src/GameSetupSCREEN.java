@@ -97,12 +97,12 @@ public class GameSetupSCREEN {
 		slider.setBounds(504, 189, 288, 67);
 		frame.getContentPane().add(slider);
 		
-		JLabel lblerror = new JLabel("Team name should be between 2-10");
+		JLabel lblerror = new JLabel("Team name should be between 2-10 charachters and please press enter");
 		lblerror.setVisible(false);
 		lblerror.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblerror.setForeground(Color.RED);
 		lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
-		lblerror.setBounds(316, 404, 306, 40);
+		lblerror.setBounds(204, 433, 595, 40);
 		frame.getContentPane().add(lblerror);
 		
 		JButton btnConfirm = new JButton("Confirm");
@@ -119,7 +119,7 @@ public class GameSetupSCREEN {
 		});
 		btnConfirm.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnConfirm.setToolTipText("Confirm your selections");
-		btnConfirm.setBackground(SystemColor.textHighlight);
+		btnConfirm.setBackground(Color.LIGHT_GRAY);
 		btnConfirm.setFont(new Font("Century Gothic", Font.BOLD, 22));
 		btnConfirm.setBounds(396, 483, 175, 60);
 		frame.getContentPane().add(btnConfirm);
