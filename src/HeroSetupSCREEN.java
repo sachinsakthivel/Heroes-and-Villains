@@ -50,6 +50,7 @@ public class HeroSetupSCREEN {
 	public JFrame getFrame() {
 		return frame;
 	}
+	 
 	/**
 	 * setter for frame
 	 * @param newframe
@@ -121,12 +122,15 @@ public class HeroSetupSCREEN {
 		
 		JLabel lblHeroCreation = new JLabel("Create Your Hero");
 		lblHeroCreation.setFont(new Font("Trebuchet MS", Font.BOLD, 28));
-		lblHeroCreation.setBounds(364, 50, 255, 85);
+		lblHeroCreation.setBounds(364, 50, 243, 85);
 		frame.getContentPane().add(lblHeroCreation);
 		
-		JLabel lblSelectYourHero = new JLabel("Select Your Hero Class");
-		lblSelectYourHero.setBounds(420, 432, 111, 211);
-		frame.getContentPane().add(lblSelectYourHero);
+		JTextArea textArea = new JTextArea(Tank.background() + "\n\n" + Tank.getStats());
+		textArea.setLineWrap(true);
+		textArea.setFont(new Font("Cambria Math", Font.PLAIN, 17));
+		textArea.setEditable(false);
+		textArea.setBounds(173, 414, 651, 233);
+		frame.getContentPane().add(textArea);
 	}
 	
 	public void closeSCREEN() {
