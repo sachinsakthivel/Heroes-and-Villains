@@ -30,7 +30,7 @@ public class StartUpSCREEN {
 	/**
 	 * Launch the application.
 	 */
-	public void main(String[] args) {
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -68,9 +68,6 @@ public class StartUpSCREEN {
 		JButton btnNewGame = new JButton("NEW GAME");
 		btnNewGame.addActionListener(new ActionListener() {
 			 public void actionPerformed(ActionEvent arg0) {
-				GameEnvironment.launchGameSetupSCREEN();
-				//GameSetupSCREEN GameSetup = new GameSetupSCREEN();
-				//GameSetup.frame.setVisible(true);
 				closeSCREEN();
 			}
 		});
@@ -85,7 +82,8 @@ public class StartUpSCREEN {
 		JButton btnNewButton =  new JButton("QUIT GAME");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				GameEnvironment.luanchExitSCREEN();
+				ExitSCREEN ExitScreen = new ExitSCREEN();
+				ExitScreen.frame.setVisible(true);
 				closeSCREEN();
 			}
 		});
