@@ -120,21 +120,42 @@ public class HeroSetupSCREEN {
 		frame.getContentPane().add(lblHeroCreation);
 		
 		JTextArea textArea = new JTextArea("Select a Hero Class");
+		textArea.setWrapStyleWord(true);
 		textArea.setLineWrap(true);
 		textArea.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		textArea.setEditable(false);
 		textArea.setBounds(173, 414, 651, 233);
 		frame.getContentPane().add(textArea);
 		
-		JButton btnNewButton = new JButton("Tank");
+		JButton btnNewButton = new JButton("Guardian");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.setText(Tank.background() + "\n\n" + Tank.getStats());
+				textArea.setText(Guardian.background() + "\n\n" + Guardian.getStats());
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnNewButton.setBounds(34, 303, 149, 60);
+		btnNewButton.setBounds(225, 303, 149, 60);
 		frame.getContentPane().add(btnNewButton);
+		
+		JButton button = new JButton("Tanker");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(Tanker.background() + "\n\n" + Tanker.getStats());
+			}
+		});
+		button.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		button.setBounds(51, 303, 149, 60);
+		frame.getContentPane().add(button);
+		
+		JButton btnJester = new JButton("Trickster");
+		btnJester.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.setText(Trickster.background() + "\n\n" + Trickster.getStats());
+			}
+		});
+		btnJester.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnJester.setBounds(396, 303, 149, 60);
+		frame.getContentPane().add(btnJester);
 	}
 	
 	public void closeSCREEN() {
