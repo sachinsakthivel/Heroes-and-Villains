@@ -84,7 +84,7 @@ public class HeroSetupSCREEN {
 		textField = new JTextField();
 		textField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				heroName = textField.getText();
+				setHeroName(textField.getText());
 			}
 		});
 		textField.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -113,10 +113,20 @@ public class HeroSetupSCREEN {
 		lblerror.setBounds(585, 691, 375, 40);
 		frame.getContentPane().add(lblerror);
 		
+		JLabel lblerror1 = new JLabel("Incorrect Input, Please Type in A Hero Name");
+		lblerror.setVisible(false);
+		lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
+		lblerror.setBounds(585, 691, 375, 40);
+		frame.getContentPane().add(lblerror);
+		
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (typePick == -1) {
+				if (heroName == "") {
+					lblerror.setVisible(false);
+					lblerror1.setVisible(true);
+				} else if (typePick == -1) {
+					lblerror1.setVisible(false);
 					lblerror.setVisible(true);
 				}
 			}
@@ -214,5 +224,13 @@ public class HeroSetupSCREEN {
 	
 	public void closeSCREEN() {
 		frame.dispose();
+	}
+
+	public String getHeroName() {
+		return heroName;
+	}
+
+	public void setHeroName(String heroName) {
+		this.heroName = heroName;
 	}
 }
