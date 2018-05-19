@@ -149,7 +149,7 @@ public class HeroSetupSCREEN {
 		textArea.setLineWrap(true);
 		textArea.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		textArea.setEditable(false);
-		textArea.setBounds(160, 412, 651, 181);
+		textArea.setBounds(160, 412, 624, 181);
 		frame.getContentPane().add(textArea);
 		
 		JButton btnNewButton = new JButton("Guardian");
