@@ -29,8 +29,7 @@ public class GameEnvironment {
 	}
 	
 	public void setGame() {
-		//launchStartUpSCREEN();
-		launchGameSetupSCREEN();
+		launchStartUpSCREEN();
 		/*getInput();
 		Team newTeam = new Team(teamName, teamLength);
 		playGame(newTeam);
@@ -83,7 +82,7 @@ public class GameEnvironment {
 	
 	public void launchHeroSetupSCREEN() {
 		HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN();
-		//HeroSetup.frame.setVisible(true);
+		HeroSetup.frame.setVisible(true);
 	}
 	
 	

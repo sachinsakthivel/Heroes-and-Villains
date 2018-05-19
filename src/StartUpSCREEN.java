@@ -19,7 +19,7 @@ public class StartUpSCREEN {
 
 	JFrame frame;
 	
-	
+	static GameEnvironment GameEnvironment = new GameEnvironment();
 	/**
 	 * Create the application.
 	 */

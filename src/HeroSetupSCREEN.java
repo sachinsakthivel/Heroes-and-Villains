@@ -27,7 +27,7 @@ public class HeroSetupSCREEN {
 	
 	private String heroName = "";
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField textField;
 
 	/**
