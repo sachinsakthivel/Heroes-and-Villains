@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.SystemColor;
+import java.util.Scanner;
 
 import javax.swing.JSlider;
 import javax.swing.JButton;
@@ -16,7 +17,7 @@ import javax.swing.border.LineBorder;
 
 public class GameSetupSCREEN {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField textField;
 	private JLabel lblNoOfCities;
 
@@ -117,6 +118,26 @@ public class GameSetupSCREEN {
 		label.setBounds(0, 0, 968, 755);
 		frame.getContentPane().add(label);
 	}
+	
+	/*here goes the actual code
+	 * public void getInput() {
+		Scanner reader = new Scanner(System.in);
+		while (teamName.length() < 2 || teamName.length() > 10) {
+			System.out.println("Hey there, What is the name of your super hero team?: ");
+			teamName = reader.next();
+			if (teamName.length() < 2 || teamName.length() > 10) {
+				System.out.println("Invalid Input, the Length of Team Name must be 2-10 characters long:");
+			}
+		}
+		while (cityNum < 3 || cityNum > 6) {
+			System.out.println("How many Cities would you like to explore?: (Choose between 3 to 6 Cities)");
+			cityNum = HelperFunctions.InputValidator(3, 6);
+			}
+		while (teamLength < 1 || teamLength > 3) {
+			System.out.println("How many Heroes would you like to have on your team?: (Choose between 1 to 3 Heroes)");
+			teamLength = HelperFunctions.InputValidator(1, 3);
+		}
+	 */
 	
 	public void closeSCREEN() {
 		frame.dispose();

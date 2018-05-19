@@ -1,12 +1,14 @@
 import java.util.Scanner;
 
+
+
 public class GameEnvironment {
 	
 	private String teamName = "";
 	private int teamLength = -1;
 	private int cityNum = -1;
 	
-	
+	/*
 	public void getInput() {
 		Scanner reader = new Scanner(System.in);
 		while (teamName.length() < 2 || teamName.length() > 10) {
@@ -24,12 +26,18 @@ public class GameEnvironment {
 			System.out.println("How many Heroes would you like to have on your team?: (Choose between 1 to 3 Heroes)");
 			teamLength = HelperFunctions.InputValidator(1, 3);
 		}
-	}
+	}*/
 	
-	public void setGame() {
-		getInput();
+	public static void setGame() {
+		/*getInput();
 		Team newTeam = new Team(teamName, teamLength);
-		playGame(newTeam);
+		playGame(newTeam);*/
+		
+		StartUpSCREEN window = new StartUpSCREEN();
+		window.frame.setVisible(true);
+		
+		
+		
 	}
 	
 	public void playGame(Team chosenTeam) {
@@ -60,5 +68,9 @@ public class GameEnvironment {
 	
 	public void storyOutro() {
 		System.out.println("Story Conclusion not implemented Yet.");
+	}
+	
+	public static void main(String[] args) {
+		setGame();
 	}
 }
