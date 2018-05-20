@@ -62,7 +62,7 @@ public class GameEnvironment {
 	
 	public void closeSetupScreen(GameSetupSCREEN setup) {
 		setup.closeSCREEN();
-		runHeroSetupSCREEN();
+		launchHeroSetupSCREEN();
 	}
 	public void launchHeroSetupSCREEN() {
 		HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN(this);
@@ -70,14 +70,11 @@ public class GameEnvironment {
 	
 	public void closeHeroSetupScreen(HeroSetupSCREEN heroCreate) {
 		heroCreate.closeSCREEN();
+		System.out.println(chosenTeam);
+		System.out.println(chosenTeam.getTeamLength());
 		
 	}
-	
-	public void runHeroSetupSCREEN() {
-		for (int i = 0; i < chosenTeam.getTeam().size(); i++) {
-			launchHeroSetupSCREEN();
-		}
-	}
+ 
 	public void launchExitSCREEN() {
 		ExitScreen = new ExitSCREEN();
 		ExitScreen.frame.setVisible(true);

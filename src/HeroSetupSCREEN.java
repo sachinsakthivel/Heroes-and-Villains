@@ -31,6 +31,7 @@ public class HeroSetupSCREEN {
 	JFrame frame;
 	private JTextField textField;
 	private GameEnvironment game;
+	private int run;
 
 	/**
 	 * Launch the application.
@@ -70,6 +71,7 @@ public class HeroSetupSCREEN {
 		initialize();
 		game = newGame;
 		frame.setVisible(true);
+		run = game.getTeam().getTeamLength();
 	}
 
 	/**
@@ -134,6 +136,7 @@ public class HeroSetupSCREEN {
 					lblerror.setVisible(true);
 				} else {
 					createHero();
+					runAgain();
 					finishedWindow();
 				}
 			}
@@ -240,5 +243,14 @@ public class HeroSetupSCREEN {
 		Team team = game.getTeam();
 		team.addToTeam(newHero);
 		game.setTeam(team);
+	}
+	
+	public void runAgain() {
+		if (run > 0) {
+			System.out.println("hey");
+			game.getTeam().setTeamLength(run - 1);
+			game.launchHeroSetupSCREEN();
+			
+		}
 	}
 }
