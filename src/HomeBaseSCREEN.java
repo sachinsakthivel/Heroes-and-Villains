@@ -10,6 +10,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import java.awt.Component;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import java.awt.Rectangle;
 
 public class HomeBaseSCREEN {
 
@@ -72,17 +75,17 @@ public class HomeBaseSCREEN {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNorth.setBounds(579, 423, 182, 38);
+		btnNorth.setBounds(555, 423, 182, 38);
 		frame.getContentPane().add(btnNorth);
 		
 		btnEast = new JButton("Destination: " +currentCity.getplaces().get(1).getName());
 		btnEast.setToolTipText("Travel East");
-		btnEast.setBounds(785, 555, 182, 38);
+		btnEast.setBounds(766, 555, 182, 38);
 		frame.getContentPane().add(btnEast);
 		
 		btnWest = new JButton("Destination: " +currentCity.getplaces().get(2).getName());
 		btnWest.setToolTipText("Travel West");
-		btnWest.setBounds(377, 555, 182, 38);
+		btnWest.setBounds(364, 555, 182, 38);
 		frame.getContentPane().add(btnWest);
 		
 		btnSouth = new JButton("Destination: " +currentCity.getplaces().get(3).getName());
@@ -91,7 +94,7 @@ public class HomeBaseSCREEN {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnSouth.setBounds(579, 689, 182, 38);
+		btnSouth.setBounds(565, 689, 182, 38);
 		frame.getContentPane().add(btnSouth);
 		
 		JLabel lblNewLabel = new JLabel("This is the Final City: " + isFinal);
@@ -100,7 +103,7 @@ public class HomeBaseSCREEN {
 		
 		JLabel compass = new JLabel("");
 		compass.setIcon(scaleImg("/Images/compass-3057603_960_720.png", 200, 200));
-		compass.setBounds(569, 472, 206, 206);
+		compass.setBounds(555, 472, 206, 206);
 		frame.getContentPane().add(compass);
 		
 		
@@ -115,11 +118,11 @@ public class HomeBaseSCREEN {
 		frame.getContentPane().add(btnQuitGame);
 		
 		JTextArea outputBox = new JTextArea("After the arduous journey to the Home Base of the City; the Heroes rested their minds and bodies.\r\n\r\nAfter being fully rested, the Heroes are ready for a new challenge! What would you like to do?");
-		outputBox.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		outputBox.setWrapStyleWord(true);
 		outputBox.setLineWrap(true);
+		outputBox.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		outputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		outputBox.setBounds(321, 124, 624, 246);
+		outputBox.setBounds(321, 124, 608, 246);
 		frame.getContentPane().add(outputBox);
 		
 		JButton btnNewButton = new JButton("Use a Map");
@@ -138,6 +141,11 @@ public class HomeBaseSCREEN {
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnCheckTeamStatus = new JButton("Check Team Status");
+		btnCheckTeamStatus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				outputBox.setText(game.getTeam().toString());
+			}
+		});
 		btnCheckTeamStatus.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCheckTeamStatus.setBounds(31, 225, 266, 43);
 		frame.getContentPane().add(btnCheckTeamStatus);
@@ -146,6 +154,10 @@ public class HomeBaseSCREEN {
 		btnUseAHeros.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnUseAHeros.setBounds(31, 327, 266, 43);
 		frame.getContentPane().add(btnUseAHeros);
+		
+		JScrollPane textPlane = new JScrollPane(outputBox);
+		textPlane.setBounds(new Rectangle(318, 124, 630, 246));
+		frame.getContentPane().add(textPlane);
 	}
 	
 	public ImageIcon scaleImg(String ImgFile, Integer width, Integer height) {
