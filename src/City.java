@@ -9,6 +9,8 @@ public class City {
 	private int userInput = -1;
 	ArrayList<Locations> places;
 	
+	private String DisplayText = "The menu options are\nthis\nand that";
+	
 	public City( boolean last) {
 		isFinal = last;
 		places = new ArrayList<Locations>(Arrays.asList(shop, hosptial, power, lair));
@@ -64,6 +66,10 @@ public class City {
 	
 	public void randomEvent() {
 		System.out.println("Random Events not implemented Yet");
+	}
+	
+	public void changestuffinHomebase() {
+		HomeBaseSCREEN.setDisplayText();
 	}
 
 }
