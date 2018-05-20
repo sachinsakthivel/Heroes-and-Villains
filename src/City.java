@@ -9,8 +9,6 @@ public class City {
 	private int userInput = -1;
 	ArrayList<Locations> places;
 	
-	private String DisplayText = "The menu options are\nthis\nand that";
-	
 	public City( boolean last) {
 		isFinal = last;
 		places = new ArrayList<Locations>(Arrays.asList(shop, hosptial, power, lair));
@@ -68,13 +66,8 @@ public class City {
 		System.out.println("Random Events not implemented Yet");
 	}
 	
-<<<<<<< HEAD
 	public ArrayList<Locations> getplaces() {
 		return places;
-=======
-	public void changestuffinHomebase() {
-		HomeBaseSCREEN.setDisplayText();
->>>>>>> branch 'master' of https://eng-git.canterbury.ac.nz/ssa237/heroes-and-villians.git
 	}
 
 }

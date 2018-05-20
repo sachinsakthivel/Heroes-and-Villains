@@ -71,12 +71,11 @@ public class GameEnvironment {
 		heroCreate.closeSCREEN();
 		System.out.println(chosenTeam);
 		System.out.println(chosenTeam.getTeamLength());
-		launchHomeBaseSCREEN();
 	}
 	
 	public void launchHomeBaseSCREEN() {
-		for (int i = 0; i < cityNum; i++) {
-			HomeBaseSCREEN homebase = new HomeBaseSCREEN(this);
+		for (int i = 1; i < cityNum; i++) {
+			HomeBaseSCREEN homebase = new HomeBaseSCREEN(this , false );
 		}
 	}
 	
