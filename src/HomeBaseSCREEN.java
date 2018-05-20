@@ -172,6 +172,6 @@ public class HomeBaseSCREEN {
 	}
 	
 	public void finishedWindow() {
-		game.closeHomeBaseScreen(this);
+		game.closeHomeBaseSCREEN(this);
 	}
 }

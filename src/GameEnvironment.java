@@ -62,10 +62,7 @@ public class GameEnvironment {
 		launchHeroSetupSCREEN();
 	}
 	public void launchHeroSetupSCREEN() {
-		launchHomeBaseSCREEN();
-		for (int i = 0; i < chosenTeam.getTeamLength(); i++) {
-			HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN(this);
-		}
+		HeroSetupSCREEN heroSetup = new HeroSetupSCREEN(this);
 	}
 	
 	public void closeHeroSetupScreen(HeroSetupSCREEN heroCreate) {
@@ -109,6 +106,18 @@ public class GameEnvironment {
 	
 	public Team getTeam() {
 		return chosenTeam;
+	}
+
+	public City getCurrentCity() {
+		return currentCity;
+	}
+	
+	public int getCityNum() {
+		return cityNum;
+	}
+
+	public void setCurrentCity(City currentCity) {
+		this.currentCity = currentCity;
 	}
 	
 }

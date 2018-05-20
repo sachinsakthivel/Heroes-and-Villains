@@ -71,6 +71,7 @@ public class HeroSetupSCREEN {
 		initialize();
 		game = newGame;
 		frame.setVisible(true);
+		run = game.getTeam().getTeamLength();
 	}
 
 	/**
@@ -137,6 +138,7 @@ public class HeroSetupSCREEN {
 					game.getTeam().setTeamLength(game.getTeam().getTeamLength() - 1);
 					createHero();
 					finishedWindow();
+					runAgain();
 				}
 			}
 		});
@@ -226,6 +228,13 @@ public class HeroSetupSCREEN {
 		btnHealer.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnHealer.setBounds(396, 326, 149, 60);
 		frame.getContentPane().add(btnHealer);
+	}
+	
+	public void runAgain() {
+		if (run > 1) {
+			game.getTeam().setTeamLength(run - 1);
+			game.launchHeroSetupSCREEN();
+		}
 	}
 	
 	
