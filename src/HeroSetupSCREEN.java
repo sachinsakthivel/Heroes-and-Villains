@@ -240,13 +240,11 @@ public class HeroSetupSCREEN {
 	
 	public void createHero() {
 		Hero newHero = HelperFunctions.heroCreate(typePick, heroName);
-		Team team = game.getTeam();
-		team.addToTeam(newHero);
-		game.setTeam(team);
+		game.getTeam().addToTeam(newHero);
 	}
 	
 	public void runAgain() {
-		if (run > 0) {
+		while (run > 0) {
 			System.out.println("hey");
 			game.getTeam().setTeamLength(run - 1);
 			game.launchHeroSetupSCREEN();

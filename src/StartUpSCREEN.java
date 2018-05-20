@@ -24,6 +24,7 @@ public class StartUpSCREEN {
 	 */
 	
 	private GameEnvironment game;
+	
 	public StartUpSCREEN(GameEnvironment newGame) {
 		initialize();
 		game = newGame;
