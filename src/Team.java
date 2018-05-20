@@ -8,28 +8,16 @@ public class Team {
 	private int Coins;
 	private ArrayList<Hero> Ward = new ArrayList<Hero>();
 	private ArrayList<Item> invList = new ArrayList<Item>();
-	private String heroName;
 	private ArrayList<Hero> Graveyard = new ArrayList<Hero>();
 	
 	public Team(String name, int length) {
 		teamName = name;
-		teamLength = length;
+		setTeamLength(length);
 		Coins = 500;
-		setTeamList();
 		setInventory();
 		
 	}
-	
-	public void setTeamList() {
-		for (int i = 0; i < teamLength; i++ ) {
-			Scanner reader = new Scanner(System.in);
-			System.out.println("What would you like the name of Hero no."+(i+1)+" to be?:");
-			heroName = reader.next();
-			Hero newHero = new Hero(heroName);
-			addToTeam(newHero);
-		}
-	}
-	
+		
 	public void setInventory() {
 		invList.add(new lesserHeals());
 		invList.add(new avgHeals());
@@ -122,6 +110,14 @@ public class Team {
 	
 	public ArrayList<Hero> getGrave() {
 		return Graveyard;
+	}
+
+	public int getTeamLength() {
+		return teamLength;
+	}
+
+	public void setTeamLength(int teamLength) {
+		this.teamLength = teamLength;
 	}
 
 }

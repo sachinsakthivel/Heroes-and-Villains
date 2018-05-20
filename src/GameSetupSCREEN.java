@@ -21,20 +21,19 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 
 public class GameSetupSCREEN {
-	
-	private static String TeamName = "";
-	private static int NoCities;
-	private static int NoHeroes;
+
+	private String TeamName = "";
+	private int NoCities = -1;
+	private int NoHeroes = -1;
 
 	JFrame frame;
 	private JTextField textField;
-	private JLabel lblNoOfCities;
+	private GameEnvironment game;
 	
 
 
 	/**
 	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -47,12 +46,15 @@ public class GameSetupSCREEN {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the application.
 	 */
-	public GameSetupSCREEN() {
+	public GameSetupSCREEN(GameEnvironment newGame) {
 		initialize();
+		game = newGame;
+		frame.setVisible(true);
 	}
 
 	/**
@@ -97,7 +99,7 @@ public class GameSetupSCREEN {
 		slider.setBounds(504, 189, 288, 67);
 		frame.getContentPane().add(slider);
 		
-		JLabel lblerror = new JLabel("Team name should be between 2-10 charachters and please press enter");
+		JLabel lblerror = new JLabel("Team name should be between 2-10 Characters and please Press Enter");
 		lblerror.setVisible(false);
 		lblerror.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblerror.setForeground(Color.RED);
@@ -111,7 +113,8 @@ public class GameSetupSCREEN {
 				if (TeamName.length() < 2 || TeamName.length() > 10) {
 					lblerror.setVisible(true);
 				}else {
-					closeSCREEN();
+					createTeam();
+					finishedWindow();
 				}
 				
 				
@@ -129,9 +132,9 @@ public class GameSetupSCREEN {
 		lblTeam.setBounds(349, 137, 145, 33);
 		frame.getContentPane().add(lblTeam);
 		
-		JLabel lblNoOfHeroes = new JLabel("No. of heroes in your team:");
+		JLabel lblNoOfHeroes = new JLabel("Number of Heroes in your Team:");
 		lblNoOfHeroes.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblNoOfHeroes.setBounds(204, 278, 294, 33);
+		lblNoOfHeroes.setBounds(140, 278, 358, 33);
 		frame.getContentPane().add(lblNoOfHeroes);
 		
 		JSlider slider_1 = new JSlider();
@@ -150,9 +153,9 @@ public class GameSetupSCREEN {
 		slider_1.setBounds(504, 267, 288, 68);
 		frame.getContentPane().add(slider_1);
 		
-		lblNoOfCities = new JLabel("No of cities you would like to explore:");
+		JLabel lblNoOfCities = new JLabel("Number of Cities you would like to explore:");
 		lblNoOfCities.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblNoOfCities.setBounds(90, 205, 408, 33);
+		lblNoOfCities.setBounds(39, 205, 459, 33);
 		frame.getContentPane().add(lblNoOfCities);
 		
 		JLabel label = new JLabel("");
@@ -183,4 +186,16 @@ public class GameSetupSCREEN {
 	public void closeSCREEN() {
 		frame.dispose();
 	}
+	
+	public void finishedWindow() {
+		game.closeSetupScreen(this);
+	}
+	
+	public void createTeam() {
+		game.setCityNum(NoCities);
+		Team team = new Team(TeamName, NoHeroes);
+		game.setTeam(team);
+	}
+	
+	
 }

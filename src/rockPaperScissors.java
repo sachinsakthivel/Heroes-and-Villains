@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class rockPaperScissors extends Game {
+public class rockPaperScissors extends miniGame {
 	
 	private static final String name = "Rock Paper Scissors";
 	private static final String rules = "The Aim of this Game is to beat the opponent's choice. Paper beats Rock, Rock beat Scissors and Scissors beats Paper.";

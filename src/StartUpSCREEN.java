@@ -22,15 +22,18 @@ public class StartUpSCREEN {
 	/**
 	 * Create the application.
 	 */
-	public StartUpSCREEN() {
+	
+	private GameEnvironment game;
+	public StartUpSCREEN(GameEnvironment newGame) {
 		initialize();
+		game = newGame;
+		frame.setVisible(true);
 	}
 	
 
 	
 	/**
 	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -43,6 +46,7 @@ public class StartUpSCREEN {
 			}
 		});
 	}
+	*/
 
 	
 
@@ -69,7 +73,7 @@ public class StartUpSCREEN {
 		JButton btnNewGame = new JButton("NEW GAME");
 		btnNewGame.addActionListener(new ActionListener() {
 			 public void actionPerformed(ActionEvent arg0) {
-				closeSCREEN();
+				 finishedWindow();
 			}
 		});
 		btnNewGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -104,4 +108,9 @@ public class StartUpSCREEN {
 	public void closeSCREEN() {
 		frame.dispose();
 	}
+	
+	public void finishedWindow() {
+		game.closeMainScreen(this);
+	}
+	
 }

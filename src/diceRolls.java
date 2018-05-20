@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class diceRolls extends Game{
+public class diceRolls extends miniGame{
 	
 	private static final String name = "Dice Rolls";
 	private static final String rules = "The Aim of this Game is to get the highest dice roll, The Person with the Highest Roll is the Winner!!";

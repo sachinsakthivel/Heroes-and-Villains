@@ -1,10 +1,10 @@
 
-public class Game {
+public class miniGame {
 	
 	private String gameName = "";
 	private String gameRules = "";
 	
-	public Game(String name, String rules) {
+	public miniGame(String name, String rules) {
 		setGameName(name);
 		setGameRules(rules);
 		
