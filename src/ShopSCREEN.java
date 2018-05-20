@@ -42,6 +42,7 @@ public class ShopSCREEN {
 	public ShopSCREEN(GameEnvironment newGame) {
 		game = newGame;
 		initialize();
+		frame.setVisible(true);
 	}
 	
 
@@ -64,6 +65,10 @@ public class ShopSCREEN {
 		outputBox.setBounds(215, 493, 608, 246);
 		frame.getContentPane().add(outputBox);
 		
+		
+		//Buttons for Items in shop
+		
+		//LesserHeal Button
 		JButton btnLesserHeal = new JButton("Lesser Heal");
 		btnLesserHeal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -74,50 +79,88 @@ public class ShopSCREEN {
 		btnLesserHeal.setBounds(48, 29, 183, 48);
 		frame.getContentPane().add(btnLesserHeal);
 		
+		//Average Heal Button
 		JButton btnAverageHeal = new JButton("Average Heal");
+		btnAverageHeal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				outputBox.setText(game.getTeam().getInv().get(1).getItemDescription());
+			}
+		});
 		btnAverageHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
 		btnAverageHeal.setBounds(362, 29, 183, 48);
 		frame.getContentPane().add(btnAverageHeal);
 		
+		//Greater Heal Button
 		JButton btnGreaterHeal = new JButton("Greater Heal");
+		btnGreaterHeal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				outputBox.setText(game.getTeam().getInv().get(2).getItemDescription());
+			}
+		});
 		btnGreaterHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
 		btnGreaterHeal.setBounds(718, 29, 183, 48);
 		frame.getContentPane().add(btnGreaterHeal);
+
+		//Map Button
+		JButton btnMaps = new JButton("Maps");
+		btnMaps.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				outputBox.setText(game.getTeam().getInv().get(3).getItemDescription());
+			}
+		});
+		btnMaps.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
+		btnMaps.setBounds(718, 330, 183, 48);
+		frame.getContentPane().add(btnMaps);
 		
+		//Armour Button
 		JButton btnArmour = new JButton("Armour");
+		btnArmour.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				outputBox.setText(game.getTeam().getInv().get(4).getItemDescription());
+			}
+		});
 		btnArmour.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
 		btnArmour.setBounds(48, 188, 183, 48);
 		frame.getContentPane().add(btnArmour);
 		
+		//Dice Luck Button
 		JButton btnDiceLuck = new JButton("Dice luck");
 		btnDiceLuck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				outputBox.setText(game.getTeam().getInv().get(5).getItemDescription());
 			}
 		});
 		btnDiceLuck.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
 		btnDiceLuck.setBounds(362, 188, 183, 48);
 		frame.getContentPane().add(btnDiceLuck);
 		
+		//Max Health Button
 		JButton btnMaxHealth = new JButton("Max Health");
+		btnMaxHealth.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				outputBox.setText(game.getTeam().getInv().get(6).getItemDescription());
+			}
+		});
 		btnMaxHealth.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
 		btnMaxHealth.setBounds(718, 188, 183, 48);
 		frame.getContentPane().add(btnMaxHealth);
 		
+		//Skill Button
 		JButton btnSkill = new JButton("Skill");
+		btnSkill.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				outputBox.setText(game.getTeam().getInv().get(7).getItemDescription());
+			}
+		});
 		btnSkill.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
 		btnSkill.setBounds(48, 330, 183, 48);
 		frame.getContentPane().add(btnSkill);
 		
-		JButton btnMaps = new JButton("Maps");
-		btnMaps.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnMaps.setBounds(718, 330, 183, 48);
-		frame.getContentPane().add(btnMaps);
-		
+		//Return To HomeBase
 		JButton btnReturnToHomebase = new JButton("Return to HomeBase");
 		btnReturnToHomebase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				closeSCREEN();			
+				finishedWindow();
 			}
 		});
 		btnReturnToHomebase.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
