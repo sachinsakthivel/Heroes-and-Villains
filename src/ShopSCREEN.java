@@ -95,6 +95,8 @@ public class ShopSCREEN {
 		JButton btnReturnToHomebase = new JButton("Return to HomeBase");
 		btnReturnToHomebase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				frame.setVisible(false);
+				
 			}
 		});
 		btnReturnToHomebase.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
