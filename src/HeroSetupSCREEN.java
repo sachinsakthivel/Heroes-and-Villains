@@ -71,7 +71,6 @@ public class HeroSetupSCREEN {
 		initialize();
 		game = newGame;
 		frame.setVisible(true);
-		run = game.getTeam().getTeamLength();
 	}
 
 	/**
@@ -135,8 +134,8 @@ public class HeroSetupSCREEN {
 					lblerror1.setVisible(false);
 					lblerror.setVisible(true);
 				} else {
+					game.getTeam().setTeamLength(game.getTeam().getTeamLength() - 1);
 					createHero();
-					runAgain();
 					finishedWindow();
 				}
 			}
@@ -243,12 +242,4 @@ public class HeroSetupSCREEN {
 		game.getTeam().addToTeam(newHero);
 	}
 	
-	public void runAgain() {
-		while (run > 0) {
-			System.out.println("hey");
-			game.getTeam().setTeamLength(run - 1);
-			game.launchHeroSetupSCREEN();
-			
-		}
-	}
 }
