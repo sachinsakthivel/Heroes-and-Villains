@@ -73,7 +73,7 @@ public class HeroSetupSCREEN {
 	}
 
 	/**
-	 * Initialize the contents of the frame.
+	 * Initialize the contents of the frames.
 	 */
 	private void initialize() {
 		frame = new JFrame();

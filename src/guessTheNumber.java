@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class guessTheNumber extends Game {
+public class guessTheNumber extends miniGame {
 	
 	private static final String name = "Guess The Number";
 	private static final String rules = "The Aim of the Game is to Guess the Villans's Number. You have two Guesses, and the Villan will say whether you Guess is Higher or Lower";
