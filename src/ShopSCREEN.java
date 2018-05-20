@@ -21,7 +21,7 @@ public class ShopSCREEN {
 
 	/**
 	 * Launch the application.
-	 */
+	 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -34,6 +34,7 @@ public class ShopSCREEN {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the application.
@@ -66,7 +67,7 @@ public class ShopSCREEN {
 		JButton btnLesserHeal = new JButton("Lesser Heal");
 		btnLesserHeal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.lesserHeal.getItemDescription());
+				outputBox.setText(game.getTeam().getInv().get(0).getItemDescription());
 			}
 		});
 		btnLesserHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -116,8 +117,7 @@ public class ShopSCREEN {
 		JButton btnReturnToHomebase = new JButton("Return to HomeBase");
 		btnReturnToHomebase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				frame.setVisible(false);
-			
+				closeSCREEN();			
 			}
 		});
 		btnReturnToHomebase.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -137,6 +137,10 @@ public class ShopSCREEN {
 	
 	public void SetDisplayText(String newText) {
 		DisplayText = newText;
+	}
+	
+	public void closeSCREEN() {
+		frame.dispose();
 	}
 	
 	
