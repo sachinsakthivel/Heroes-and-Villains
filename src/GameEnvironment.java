@@ -62,10 +62,10 @@ public class GameEnvironment {
 		launchHeroSetupSCREEN();
 	}
 	public void launchHeroSetupSCREEN() {
+		launchHomeBaseSCREEN();
 		for (int i = 0; i < chosenTeam.getTeamLength(); i++) {
 			HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN(this);
 		}
-		launchHomeBaseSCREEN();
 	}
 	
 	public void closeHeroSetupScreen(HeroSetupSCREEN heroCreate) {
@@ -75,6 +75,7 @@ public class GameEnvironment {
 	}
 	
 	public void launchHomeBaseSCREEN() {
+		HomeBaseSCREEN homeBase = new HomeBaseSCREEN(this, true);
 		for (int i = 1; i < cityNum; i++) {
 			HomeBaseSCREEN homebase = new HomeBaseSCREEN(this , false );
 		}
@@ -82,8 +83,6 @@ public class GameEnvironment {
 	
 	public void closeHomeBaseScreen(HomeBaseSCREEN home) {
 		home.closeSCREEN();
-		launchExitSCREEN();
-		
 	}
  
 	public void launchExitSCREEN() {
