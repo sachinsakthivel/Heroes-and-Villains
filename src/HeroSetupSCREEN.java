@@ -235,7 +235,7 @@ public class HeroSetupSCREEN {
 			game.getTeam().setTeamLength(run - 1);
 			game.launchHeroSetupSCREEN();
 		} else {
-			game.launchHomeBaseSCREEN();
+			game.launchHomeBaseSCREEN(false);
 		}
 	}
 	

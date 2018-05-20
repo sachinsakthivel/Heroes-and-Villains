@@ -24,7 +24,7 @@ public class HomeBaseSCREEN {
 	private JButton btnEast;
 	private JButton btnWest;
 	private JButton btnSouth;
-	
+	private int run;
 	private static String DisplayText;
 
 	/**
@@ -52,6 +52,7 @@ public class HomeBaseSCREEN {
 		this.isFinal = isFinal;
 		initialize();
 		frame.setVisible(true);
+		run = game.getCityNum();
 	}
 
 	/**
@@ -111,6 +112,7 @@ public class HomeBaseSCREEN {
 		btnQuitGame.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
 				finishedWindow();
+				runAgain();
 			}
 		});
 		btnQuitGame.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -165,6 +167,16 @@ public class HomeBaseSCREEN {
 		Image scaleImg = cover.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
 		ImageIcon icon = new ImageIcon(scaleImg);
 		return icon;
+	}
+	
+	public void runAgain() {
+		if (run == 2) {
+			game.setCityNum(run - 1);
+			game.launchHomeBaseSCREEN(true);
+		} else if (run > 2) {
+			game.setCityNum(run - 1);
+			game.launchHomeBaseSCREEN(false);
+		}
 	}
 	
 	public void closeSCREEN() {

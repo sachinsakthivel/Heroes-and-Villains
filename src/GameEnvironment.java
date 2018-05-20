@@ -71,11 +71,8 @@ public class GameEnvironment {
 		System.out.println(chosenTeam.getTeamLength());
 	}
 	
-	public void launchHomeBaseSCREEN() {
-		HomeBaseSCREEN homeBase = new HomeBaseSCREEN(this, true);
-		for (int i = 1; i < cityNum; i++) {
-			HomeBaseSCREEN homebase = new HomeBaseSCREEN(this , false );
-		}
+	public void launchHomeBaseSCREEN(boolean isFinal) {
+		HomeBaseSCREEN homeBase = new HomeBaseSCREEN(this, isFinal);
 	}
 	
 	public void closeHomeBaseSCREEN(HomeBaseSCREEN home) {
@@ -88,7 +85,6 @@ public class GameEnvironment {
 	
 	public void closeShopSCREEN(ShopSCREEN shop) {
 		shop.closeSCREEN();
-		launchHomeBaseSCREEN();
 	}
   
 	public void launchExitSCREEN() {
