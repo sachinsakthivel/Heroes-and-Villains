@@ -23,12 +23,14 @@ import javax.swing.event.ChangeEvent;
 public class GameSetupSCREEN {
 
 	private String TeamName = "";
-	private int NoCities = -1;
+	private int NoCities = -5;
 	private int NoHeroes = -1;
 
 	JFrame frame;
 	private JTextField textField;
 	private GameEnvironment game;
+	private JSlider citySlide;
+	private JSlider heroSlide;
 	
 
 
@@ -83,21 +85,21 @@ public class GameSetupSCREEN {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JSlider slider = new JSlider();
-		slider.addChangeListener(new ChangeListener() {
+		citySlide = new JSlider();
+		citySlide.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
-				NoCities = slider.getValue();
+				NoCities = citySlide.getValue();
 			}
 		});
-		slider.setBorder(new LineBorder(new Color(0, 0, 0)));
-		slider.setFont(new Font("Century Gothic", Font.PLAIN, 18));
-		slider.setPaintLabels(true);
-		slider.setPaintTicks(true);
-		slider.setMajorTickSpacing(1);
-		slider.setMinimum(3);
-		slider.setMaximum(6);
-		slider.setBounds(504, 189, 288, 67);
-		frame.getContentPane().add(slider);
+		citySlide.setBorder(new LineBorder(new Color(0, 0, 0)));
+		citySlide.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		citySlide.setPaintLabels(true);
+		citySlide.setPaintTicks(true);
+		citySlide.setMajorTickSpacing(1);
+		citySlide.setMinimum(3);
+		citySlide.setMaximum(6);
+		citySlide.setBounds(504, 189, 288, 67);
+		frame.getContentPane().add(citySlide);
 		
 		JLabel lblerror = new JLabel("Team name should be between 2-10 Characters and please Press Enter");
 		lblerror.setVisible(false);
@@ -113,7 +115,6 @@ public class GameSetupSCREEN {
 				if (TeamName.length() < 2 || TeamName.length() > 10) {
 					lblerror.setVisible(true);
 				}else {
-					createTeam();
 					finishedWindow();
 				}
 				
@@ -137,21 +138,21 @@ public class GameSetupSCREEN {
 		lblNoOfHeroes.setBounds(140, 278, 358, 33);
 		frame.getContentPane().add(lblNoOfHeroes);
 		
-		JSlider slider_1 = new JSlider();
-		slider.addChangeListener(new ChangeListener() {
+		heroSlide = new JSlider();
+		heroSlide.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
-				NoHeroes = slider.getValue();
+				NoHeroes = heroSlide.getValue();
 			}
 		});
-		slider_1.setBorder(new LineBorder(new Color(0, 0, 0)));
-		slider_1.setFont(new Font("Century Gothic", Font.PLAIN, 18));
-		slider_1.setPaintTicks(true);
-		slider_1.setPaintLabels(true);
-		slider_1.setMinimum(1);
-		slider_1.setMaximum(3);
-		slider_1.setMajorTickSpacing(1);
-		slider_1.setBounds(504, 267, 288, 68);
-		frame.getContentPane().add(slider_1);
+		heroSlide.setBorder(new LineBorder(new Color(0, 0, 0)));
+		heroSlide.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		heroSlide.setPaintTicks(true);
+		heroSlide.setPaintLabels(true);
+		heroSlide.setMinimum(1);
+		heroSlide.setMaximum(3);
+		heroSlide.setMajorTickSpacing(1);
+		heroSlide.setBounds(504, 267, 288, 68);
+		frame.getContentPane().add(heroSlide);
 		
 		JLabel lblNoOfCities = new JLabel("Number of Cities you would like to explore:");
 		lblNoOfCities.setFont(new Font("Century Gothic", Font.BOLD, 22));
@@ -189,12 +190,6 @@ public class GameSetupSCREEN {
 	
 	public void finishedWindow() {
 		game.closeSetupScreen(this);
-	}
-	
-	public void createTeam() {
-		game.setCityNum(NoCities);
-		Team team = new Team(TeamName, NoHeroes);
-		game.setTeam(team);
 	}
 	
 	

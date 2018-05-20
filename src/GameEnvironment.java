@@ -62,10 +62,14 @@ public class GameEnvironment {
 	
 	public void closeSetupScreen(GameSetupSCREEN setup) {
 		setup.closeSCREEN();
+		cityNum = setup.getNoCities();
+		chosenTeam = new Team(setup.getTeamName(), setup.getNoHeroes());
 		launchHeroSetupSCREEN();
 	}
 	public void launchHeroSetupSCREEN() {
-		HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN(this);
+		for (int i = 0; i < chosenTeam.getTeamLength(); i++) {
+			HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN(this);
+		}
 	}
 	
 	public void closeHeroSetupScreen(HeroSetupSCREEN heroCreate) {
