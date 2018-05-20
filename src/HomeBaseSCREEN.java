@@ -1,10 +1,13 @@
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class HomeBaseSCREEN {
 
@@ -35,10 +38,10 @@ public class HomeBaseSCREEN {
 	 * Create the application.
 	 */
 	public HomeBaseSCREEN(GameEnvironment newGame, boolean isFinal) {
-		initialize();
 		game = newGame;
 		currentCity = new City(isFinal);
 		this.isFinal = isFinal;
+		initialize();
 		frame.setVisible(true);
 	}
 
@@ -53,7 +56,7 @@ public class HomeBaseSCREEN {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnNorth = new JButton("Travel North");
-		btnNorth.setBounds(403, 300, 119, 38);
+		btnNorth.setBounds(657, 423, 119, 38);
 		frame.getContentPane().add(btnNorth);
 		
 		JLabel lblhomeBase = new JLabel("Home Base");
@@ -61,30 +64,47 @@ public class HomeBaseSCREEN {
 		lblhomeBase.setBounds(382, 11, 164, 102);
 		frame.getContentPane().add(lblhomeBase);
 		
-		JButton btnTravelSouth = new JButton("Destination: ");
-		btnTravelSouth.setBounds(403, 611, 119, 38);
+		JButton btnTravelSouth = new JButton("Destination: " +currentCity.getplaces().get(3).getName());
+		btnTravelSouth.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnTravelSouth.setBounds(657, 689, 119, 38);
 		frame.getContentPane().add(btnTravelSouth);
 		
 		JLabel lblNewLabel = new JLabel("This is the Final City: " + isFinal);
-		lblNewLabel.setBounds(10, 651, 148, 90);
+		lblNewLabel.setBounds(69, 280, 219, 90);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JButton button = new JButton("Travel North");
-		button.setBounds(142, 456, 119, 38);
-		frame.getContentPane().add(button);
+		JButton btnWest = new JButton("Travel West");
+		btnWest.setBounds(477, 552, 119, 38);
+		frame.getContentPane().add(btnWest);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon(HomeBaseSCREEN.class.getResource("/Images/compass-3057603_960_720.png")));
-		lblNewLabel_1.setBounds(55, 193, 762, 443);
-		frame.getContentPane().add(lblNewLabel_1);
-	}
-	                                                                                                                                                                                                                                                                                                                                                                                                                          
-	public String getDisplayText(){
-		return DisplayText;
+		JLabel compass = new JLabel("");
+		compass.setIcon(scaleImg("/Images/compass-3057603_960_720.png", 200, 200));
+		compass.setBounds(614, 472, 206, 206);
+		frame.getContentPane().add(compass);
+		
+		JButton btnEast = new JButton("Travel East");
+		btnEast.setBounds(830, 552, 119, 38);
+		frame.getContentPane().add(btnEast);
+		
+		JButton btnQuitGame = new JButton("QUIT GAME");
+		btnQuitGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				finishedWindow();
+			}
+		});
+		btnQuitGame.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnQuitGame.setBounds(50, 663, 206, 57);
+		frame.getContentPane().add(btnQuitGame);
 	}
 	
-	public static void setDisplayText(String NewDisplayText) {
-		DisplayText = NewDisplayText; 
+	public ImageIcon scaleImg(String ImgFile, Integer width, Integer height) {
+		ImageIcon cover = new ImageIcon(HomeBaseSCREEN.class.getResource(ImgFile));
+		Image scaleImg = cover.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+		ImageIcon icon = new ImageIcon(scaleImg);
+		return icon;
 	}
 	
 	public void closeSCREEN() {
