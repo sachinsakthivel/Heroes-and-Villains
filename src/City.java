@@ -65,5 +65,9 @@ public class City {
 	public void randomEvent() {
 		System.out.println("Random Events not implemented Yet");
 	}
+	
+	public ArrayList<Locations> getplaces() {
+		return places;
+	}
 
 }
