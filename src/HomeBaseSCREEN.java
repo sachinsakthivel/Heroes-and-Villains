@@ -58,7 +58,7 @@ public class HomeBaseSCREEN {
 		lblhomeBase.setBounds(382, 11, 164, 102);
 		frame.getContentPane().add(lblhomeBase);
 		
-		JButton btnTravelSouth = new JButton("Destination: " + );
+		JButton btnTravelSouth = new JButton("Destination: ");
 		btnTravelSouth.setBounds(403, 611, 119, 38);
 		frame.getContentPane().add(btnTravelSouth);
 	}
