@@ -65,6 +65,7 @@ public class GameEnvironment {
 		for (int i = 0; i < chosenTeam.getTeamLength(); i++) {
 			HeroSetupSCREEN HeroSetup = new HeroSetupSCREEN(this);
 		}
+		launchHomeBaseSCREEN();
 	}
 	
 	public void closeHeroSetupScreen(HeroSetupSCREEN heroCreate) {
