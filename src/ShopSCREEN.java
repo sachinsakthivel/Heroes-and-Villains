@@ -1,8 +1,10 @@
+import java.awt.Component;
 import java.awt.EventQueue;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -12,6 +14,10 @@ import java.awt.event.ActionEvent;
 public class ShopSCREEN {
 
 	private JFrame frame;
+	
+	private String DisplayText;
+	private GameEnvironment game;
+
 
 	/**
 	 * Launch the application.
@@ -32,9 +38,12 @@ public class ShopSCREEN {
 	/**
 	 * Create the application.
 	 */
-	public ShopSCREEN() {
+	public ShopSCREEN(GameEnvironment newGame) {
+		game = newGame;
 		initialize();
 	}
+	
+
 
 	/**
 	 * Initialize the contents of the frame.
@@ -46,25 +55,32 @@ public class ShopSCREEN {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblTextDisplay = new JLabel("Text Display");
-		lblTextDisplay.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		lblTextDisplay.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTextDisplay.setBounds(205, 487, 614, 252);
-		frame.getContentPane().add(lblTextDisplay);
+		JTextArea outputBox = new JTextArea("Text display");
+		outputBox.setWrapStyleWord(true);
+		outputBox.setLineWrap(true);
+		outputBox.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		outputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));
+		outputBox.setBounds(215, 493, 608, 246);
+		frame.getContentPane().add(outputBox);
 		
-		JButton btnNewButton = new JButton("Lesser Heal");
-		btnNewButton.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnNewButton.setBounds(48, 29, 183, 48);
-		frame.getContentPane().add(btnNewButton);
+		JButton btnLesserHeal = new JButton("Lesser Heal");
+		btnLesserHeal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				outputBox.setText(game.lesserHeal.getItemDescription());
+			}
+		});
+		btnLesserHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
+		btnLesserHeal.setBounds(48, 29, 183, 48);
+		frame.getContentPane().add(btnLesserHeal);
 		
 		JButton btnAverageHeal = new JButton("Average Heal");
 		btnAverageHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnAverageHeal.setBounds(361, 29, 183, 48);
+		btnAverageHeal.setBounds(362, 29, 183, 48);
 		frame.getContentPane().add(btnAverageHeal);
 		
 		JButton btnGreaterHeal = new JButton("Greater Heal");
 		btnGreaterHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnGreaterHeal.setBounds(680, 29, 183, 48);
+		btnGreaterHeal.setBounds(718, 29, 183, 48);
 		frame.getContentPane().add(btnGreaterHeal);
 		
 		JButton btnArmour = new JButton("Armour");
@@ -73,23 +89,28 @@ public class ShopSCREEN {
 		frame.getContentPane().add(btnArmour);
 		
 		JButton btnDiceLuck = new JButton("Dice luck");
+		btnDiceLuck.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
 		btnDiceLuck.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnDiceLuck.setBounds(341, 188, 183, 48);
+		btnDiceLuck.setBounds(362, 188, 183, 48);
 		frame.getContentPane().add(btnDiceLuck);
 		
 		JButton btnMaxHealth = new JButton("Max Health");
 		btnMaxHealth.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnMaxHealth.setBounds(661, 188, 183, 48);
+		btnMaxHealth.setBounds(718, 188, 183, 48);
 		frame.getContentPane().add(btnMaxHealth);
 		
 		JButton btnSkill = new JButton("Skill");
 		btnSkill.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnSkill.setBounds(35, 330, 183, 48);
+		btnSkill.setBounds(48, 330, 183, 48);
 		frame.getContentPane().add(btnSkill);
 		
 		JButton btnMaps = new JButton("Maps");
 		btnMaps.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnMaps.setBounds(636, 330, 183, 48);
+		btnMaps.setBounds(718, 330, 183, 48);
 		frame.getContentPane().add(btnMaps);
 		
 		JButton btnReturnToHomebase = new JButton("Return to HomeBase");
@@ -109,4 +130,14 @@ public class ShopSCREEN {
 		label.setBounds(0, 0, 968, 755);
 		frame.getContentPane().add(label);
 	}
+	
+	public String GetDisplayText() {
+		return DisplayText;
+	}
+	
+	public void SetDisplayText(String newText) {
+		DisplayText = newText;
+	}
+	
+	
 }
