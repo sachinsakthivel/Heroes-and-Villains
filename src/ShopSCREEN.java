@@ -96,7 +96,7 @@ public class ShopSCREEN {
 		btnReturnToHomebase.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frame.setVisible(false);
-				
+			
 			}
 		});
 		btnReturnToHomebase.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
