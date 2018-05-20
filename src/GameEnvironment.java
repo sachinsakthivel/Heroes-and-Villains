@@ -5,18 +5,13 @@ public class GameEnvironment {
 	private  ExitSCREEN ExitScreen;
 	
 	private Team chosenTeam;
-	
-	public static void main(String args[]) {
+		
+	public void setGame() {
 		GameEnvironment game = new GameEnvironment();
 		game.launchStartUpSCREEN();
 	}
 	
-	
-	public void setGame() {
-		launchStartUpSCREEN();
-	}
-	
-	public void playGame(Team chosenTeam) {
+	public void playGame() {
 		storyIntro();
 		
 		// main game loop:
@@ -76,6 +71,18 @@ public class GameEnvironment {
 		heroCreate.closeSCREEN();
 		System.out.println(chosenTeam);
 		System.out.println(chosenTeam.getTeamLength());
+		launchHomeBaseSCREEN();
+	}
+	
+	public void launchHomeBaseSCREEN() {
+		for (int i = 0; i < cityNum; i++) {
+			HomeBaseSCREEN homebase = new HomeBaseSCREEN(this);
+		}
+	}
+	
+	public void closeHomeBaseScreen(HomeBaseSCREEN home) {
+		home.closeSCREEN();
+		launchExitSCREEN();
 		
 	}
  
