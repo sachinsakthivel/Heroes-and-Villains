@@ -119,7 +119,6 @@ public class HomeBaseSCREEN {
 		outputBox.setWrapStyleWord(true);
 		outputBox.setLineWrap(true);
 		outputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		outputBox.setEditable(false);
 		outputBox.setBounds(321, 124, 624, 246);
 		frame.getContentPane().add(outputBox);
 		
