@@ -143,5 +143,9 @@ public class ShopSCREEN {
 		frame.dispose();
 	}
 	
+	public void finishedWindow() {
+		game.closeShopSCREEN(this);
+	}
+	
 	
 }
