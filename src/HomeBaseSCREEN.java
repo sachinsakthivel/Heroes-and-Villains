@@ -127,6 +127,10 @@ public class HomeBaseSCREEN {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String output  = currentCity.useMap(game.getTeam());
+				btnNorth.setText(currentCity.getplaces().get(0).getName());
+				btnEast.setText(currentCity.getplaces().get(1).getName());
+				btnWest.setText(currentCity.getplaces().get(2).getName());
+				btnSouth.setText(currentCity.getplaces().get(3).getName());
 				outputBox.setText(output);
 			}
 		});
