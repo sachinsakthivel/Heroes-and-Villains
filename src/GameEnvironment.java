@@ -59,6 +59,7 @@ public class GameEnvironment {
 		setup.closeSCREEN();
 		cityNum = setup.getNoCities();
 		chosenTeam = new Team(setup.getTeamName(), setup.getNoHeroes());
+		chosenTeam.getInv().get(3).setItemStock(3);
 		launchHeroSetupSCREEN();
 	}
 	public void launchHeroSetupSCREEN() {

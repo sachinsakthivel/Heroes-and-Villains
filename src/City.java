@@ -34,7 +34,7 @@ public class City {
 			} else if (userInput == 4) {
 				places.get(3).travel(team);
 			} else if (userInput == 5) {
-				useMap(team);
+				String out = useMap(team);
 			} else {
 				System.out.println(team);
 			}
@@ -52,13 +52,17 @@ public class City {
 		System.out.println("6 - Look at Team Status and Item Descriptions");
 	}
 	
-	public void useMap(Team team) {
+	public String useMap(Team team) {
 		if (team.getInv().get(3).getItemStock() > 0) {
 			for (Locations place: places) {
 				place.travelledto();
 			}
+			team.getInv().get(3).setItemStock(team.getInv().get(3).getItemStock() - 1);
+			String out = "Successfully, Used a Map. \n\nAll Possible travel Destinations have been Discovered.";
+			return out;
 		} else {
-			System.out.println("Insuffient Maps.");
+			String out = "Insuffient Maps.\n\nPlease Buy some More from Shop";
+			return out;
 		}
 	}
 	
