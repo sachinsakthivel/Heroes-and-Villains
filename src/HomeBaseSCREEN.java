@@ -108,7 +108,7 @@ public class HomeBaseSCREEN {
 		
 		
 		JButton btnQuitGame = new JButton("QUIT GAME");
-		btnQuitGame.addActionListener(new ActionListener() {
+		btnQuitGame.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) {
 				finishedWindow();
 			}

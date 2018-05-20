@@ -1,10 +1,9 @@
 public class GameEnvironment {
 	
 	private int cityNum = -1;
-	
 	private  ExitSCREEN ExitScreen;
-	
 	private Team chosenTeam;
+	private City currentCity;
 		
 	public void setGame() {
 		GameEnvironment game = new GameEnvironment();
@@ -82,10 +81,19 @@ public class GameEnvironment {
 		}
 	}
 	
-	public void closeHomeBaseScreen(HomeBaseSCREEN home) {
+	public void closeHomeBaseSCREEN(HomeBaseSCREEN home) {
 		home.closeSCREEN();
 	}
- 
+	
+	public void launchShopSCREEN() {
+		ShopSCREEN shop = new ShopSCREEN(this);
+	}
+	
+	public void closeShopSCREEN(ShopSCREEN shop) {
+		shop.closeSCREEN();
+		launchHomeBaseSCREEN();
+	}
+  
 	public void launchExitSCREEN() {
 		ExitScreen = new ExitSCREEN();
 		ExitScreen.frame.setVisible(true);
