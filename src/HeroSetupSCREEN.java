@@ -30,10 +30,10 @@ public class HeroSetupSCREEN {
 
 	JFrame frame;
 	private JTextField textField;
+	private GameEnvironment game;
 
 	/**
 	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -46,7 +46,7 @@ public class HeroSetupSCREEN {
 			}
 		});
 	}
-	
+	*/
 	/**
 	 * Getter for frame
 	 */
@@ -66,8 +66,10 @@ public class HeroSetupSCREEN {
 	/**
 	 * Create the application.
 	 */
-	public HeroSetupSCREEN() {
+	public HeroSetupSCREEN(GameEnvironment newGame) {
 		initialize();
+		game = newGame;
+		frame.setVisible(true);
 	}
 
 	/**
@@ -84,7 +86,7 @@ public class HeroSetupSCREEN {
 		textField = new JTextField();
 		textField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				setHeroName(textField.getText());
+				heroName = textField.getText();
 			}
 		});
 		textField.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -131,6 +133,8 @@ public class HeroSetupSCREEN {
 					lblerror1.setVisible(false);
 					lblerror.setVisible(true);
 				} else {
+					createHero();
+					finishedWindow();
 				}
 			}
 		});
@@ -226,16 +230,15 @@ public class HeroSetupSCREEN {
 	public void closeSCREEN() {
 		frame.dispose();
 	}
-
-	public String getHeroName() {
-		return heroName;
-	}
-
-	public void setHeroName(String heroName) {
-		this.heroName = heroName;
+	
+	public void finishedWindow() {
+		game.closeHeroSetupScreen(this);
 	}
 	
-	public int getType() {
-		return typePick;
+	public void createHero() {
+		Hero newHero = HelperFunctions.heroCreate(typePick, heroName);
+		Team team = game.getTeam();
+		team.addToTeam(newHero);
+		game.setTeam(team);
 	}
 }
