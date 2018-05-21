@@ -1,4 +1,3 @@
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -54,7 +53,7 @@ public class VillainsLairSCREEN {
 		JButton btnTravelHome = new JButton("Travel Back To Home Base");
 		btnTravelHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				finishedWindow();
+				finishedWindow(true);
 			}
 		});
 		btnTravelHome.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -62,6 +61,12 @@ public class VillainsLairSCREEN {
 		frame.getContentPane().add(btnTravelHome);
 		
 		JButton btnenterLair = new JButton("Enter the Lair");
+		btnenterLair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				finishedWindow(false);
+				game.launchBattleSCREEN();
+			}
+		});
 		btnenterLair.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnenterLair.setBounds(281, 301, 264, 57);
 		frame.getContentPane().add(btnenterLair);
@@ -71,7 +76,8 @@ public class VillainsLairSCREEN {
 		frame.dispose();
 	}
 	
-	public void finishedWindow() {
-		game.closeVillainLairSCREEN(game.getHomeBase(),this);
+	public void finishedWindow(boolean toHomeBase) {
+		game.closeVillainLairSCREEN(game.getHomeBase(),this, toHomeBase);
 	}
+	
 }

@@ -1,4 +1,4 @@
-import java.awt.EventQueue;
+
 import java.awt.Font;
 import java.awt.Image;
 
@@ -10,10 +10,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import java.awt.Component;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import java.awt.Rectangle;
-import javax.swing.JRadioButton;
 
 public class HomeBaseSCREEN {
 

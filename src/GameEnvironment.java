@@ -109,9 +109,19 @@ public class GameEnvironment {
 		VillainsLairSCREEN villainLair = new VillainsLairSCREEN(this);
 	}
 	
-	public void closeVillainLairSCREEN(HomeBaseSCREEN homeBase, VillainsLairSCREEN villainLair) {
+	public void closeVillainLairSCREEN(HomeBaseSCREEN homeBase, VillainsLairSCREEN villainLair, boolean toHomeBase) {
 		villainLair.closeSCREEN();
-		homeBase.getFrame().setVisible(true);
+		if(toHomeBase) {
+			homeBase.getFrame().setVisible(true);
+		}
+	}
+	
+	public void launchBattleSCREEN() {
+		battleSCREEN battle = new battleSCREEN(this);
+	}
+	
+	public void closeBattleSCREEN(battleSCREEN battle) {
+		battle.closeSCREEN();
 	}
   
 	public void launchExitSCREEN() {
