@@ -1,7 +1,7 @@
 public class GameEnvironment {
 	
-	private int cityNum = -1;
-	private  ExitSCREEN ExitScreen;
+	private int cityNum;
+	private  HomeBaseSCREEN homeBase;
 	private Team chosenTeam;
 	private City currentCity;
 		
@@ -72,7 +72,7 @@ public class GameEnvironment {
 	}
 	
 	public void launchHomeBaseSCREEN(boolean isFinal) {
-		HomeBaseSCREEN homeBase = new HomeBaseSCREEN(this, isFinal);
+		homeBase = new HomeBaseSCREEN(this, isFinal);
 	}
 	
 	public void closeHomeBaseSCREEN(HomeBaseSCREEN home) {
@@ -96,8 +96,8 @@ public class GameEnvironment {
 	}
   
 	public void launchExitSCREEN() {
-		ExitScreen = new ExitSCREEN();
-		ExitScreen.frame.setVisible(true);
+		ExitSCREEN exit = new ExitSCREEN();
+		exit.frame.setVisible(true);
 	}
 	
 	public void setParty(Team team) {
@@ -124,8 +124,8 @@ public class GameEnvironment {
 		this.currentCity = currentCity;
 	}
 	
-	public ExitSCREEN getExitSCREEN() {
-		return ExitScreen;
+	public HomeBaseSCREEN getHomeBase() {
+		return homeBase;
 	}
 	
 }

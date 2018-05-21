@@ -15,10 +15,10 @@ public class PowerUpSCREEN {
 	private JButton btnHero1;
 	private JButton btnHero2;
 	private JButton btnHero3;
-	JTextArea txtHeroDescription;
-
+	private JTextArea txtHeroDescription;
+	private JTextArea txtItemDescription;
+	private JTextArea txtoutputBox
 	
-
 	/**
 	 * Launch the application.
 	public static void main(String[] args) {
@@ -116,7 +116,7 @@ public class PowerUpSCREEN {
 		btnTravelHome.setBounds(341, 485, 235, 57);
 		frame.getContentPane().add(btnTravelHome);
 		
-		JTextArea txtHeroDescription = new JTextArea();
+		txtHeroDescription = new JTextArea();
 		txtHeroDescription.setEditable(false);
 		txtHeroDescription.setLineWrap(true);
 		txtHeroDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
@@ -124,7 +124,7 @@ public class PowerUpSCREEN {
 		txtHeroDescription.setBounds(20, 366, 203, 206);
 		frame.getContentPane().add(txtHeroDescription);
 		
-		JTextArea txtItemDescription = new JTextArea();
+		txtItemDescription = new JTextArea();
 		txtItemDescription.setEditable(false);
 		txtItemDescription.setLineWrap(true);
 		txtItemDescription.setText("Please Select an Item");
@@ -132,12 +132,22 @@ public class PowerUpSCREEN {
 		txtItemDescription.setBounds(682, 366, 203, 206);
 		frame.getContentPane().add(txtItemDescription);
 		
-		JTextArea txtrHowdyYallWelcome = new JTextArea();
-		txtrHowdyYallWelcome.setWrapStyleWord(true);
-		txtrHowdyYallWelcome.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		txtrHowdyYallWelcome.setLineWrap(true);
-		txtrHowdyYallWelcome.setText("Howdy y'all, Welcome to Miky's Workshop and Upgrade Station!!\r\n\r\nPick the Hero that you would like to Power up by pressing the respective button in Hero Selection.\r\n\r\nPick the Item that you would like to use by pressing the respective button in Item Selection.");
-		txtrHowdyYallWelcome.setBounds(236, 150, 436, 205);
-		frame.getContentPane().add(txtrHowdyYallWelcome);
+		txtoutputBox = new JTextArea();
+		txtoutputBox.setWrapStyleWord(true);
+		txtoutputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));
+		txtoutputBox.setLineWrap(true);
+		txtoutputBox.setText("Howdy y'all, Welcome to Miky's Workshop and Upgrade Station!!\r\n\r\nPick the Hero that you would like to Power up by pressing the respective button in Hero Selection.\r\n\r\nPick the Item that you would like to use by pressing the respective button in Item Selection.");
+		txtoutputBox.setBounds(236, 150, 436, 205);
+		frame.getContentPane().add(txtoutputBox);
 	}
+	
+	public void closeSCREEN() {
+		frame.dispose();
+	}
+	
+	public void finishedWindow() {
+		game.closePowerUpSCREEN(this);
+	}
+	
+	
 }
