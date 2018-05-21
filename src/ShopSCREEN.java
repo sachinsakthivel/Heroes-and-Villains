@@ -17,6 +17,7 @@ public class ShopSCREEN {
 	
 	private String DisplayText;
 	private GameEnvironment game;
+	private
 
 
 	/**
