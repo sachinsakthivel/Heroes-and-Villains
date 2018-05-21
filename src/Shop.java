@@ -23,7 +23,8 @@ public class Shop extends Locations {
 	
 	public void travel(GameEnvironment game) {
 		travelledto();
-		game.launchShopSCREEN();
+		game.launchShopSCREEN(game.getHomeBase());
+		/*
 		input = -1;
 		System.out.println("Welcome Stranger, What're you Buying?" + "\n");
 		while (input != 0) {
@@ -37,6 +38,7 @@ public class Shop extends Locations {
 			}
 			
 		}
+		*/
 	}
 	
 	public void menuOptions(Team team) {

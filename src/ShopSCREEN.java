@@ -17,7 +17,7 @@ public class ShopSCREEN {
 	
 	private String DisplayText;
 	private GameEnvironment game;
-	private
+	private int InvIndex = -1;
 
 
 	/**
@@ -63,7 +63,7 @@ public class ShopSCREEN {
 		outputBox.setLineWrap(true);
 		outputBox.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		outputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		outputBox.setBounds(215, 493, 608, 246);
+		outputBox.setBounds(293, 493, 608, 246);
 		frame.getContentPane().add(outputBox);
 		
 		
@@ -158,15 +158,25 @@ public class ShopSCREEN {
 		frame.getContentPane().add(btnSkill);
 		
 		//Return To HomeBase
-		JButton btnReturnToHomebase = new JButton("Return to HomeBase");
-		btnReturnToHomebase.addActionListener(new ActionListener() {
+		JButton btnTravelHome = new JButton("Return to HomeBase");
+		btnTravelHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				finishedWindow();
 			}
 		});
-		btnReturnToHomebase.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnReturnToHomebase.setBounds(10, 708, 195, 31);
-		frame.getContentPane().add(btnReturnToHomebase);
+		btnTravelHome.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
+		btnTravelHome.setBounds(48, 682, 235, 57);
+		frame.getContentPane().add(btnTravelHome);
+		
+		JButton btnBuyItem = new JButton("Buy Item");
+		btnBuyItem.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
+		btnBuyItem.setBounds(48, 493, 235, 57);
+		frame.getContentPane().add(btnBuyItem);
+		
+		JButton lblGold = new JButton("Gold:");
+		lblGold.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
+		lblGold.setBounds(48, 598, 235, 57);
+		frame.getContentPane().add(lblGold);
 		
 		JLabel label = new JLabel("");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -188,8 +198,6 @@ public class ShopSCREEN {
 	}
 	
 	public void finishedWindow() {
-		game.closeShopSCREEN(this);
+		game.closeShopSCREEN(game.getHomeBase(),this);
 	}
-	
-	
 }
