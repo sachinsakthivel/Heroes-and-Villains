@@ -100,7 +100,7 @@ public class ShopSCREEN {
 		btnAverageHeal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				outputBox.setText(game.getParty().getInv().get(1).getItemName() + 
-						"\nStock: " + StockList[2] + "                                 Price: " +
+						"\nStock: " + StockList[1] + "                                 Price: " +
 						game.getParty().getInv().get(1).getItemPrice() + "\n" +
 						game.getParty().getInv().get(1).getItemDescription() + "\n" + 
 						game.getParty().getInv().get(1).getItemStock() + " in Inventory.");
