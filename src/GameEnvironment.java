@@ -69,8 +69,6 @@ public class GameEnvironment {
 	
 	public void closeHeroSetupScreen(HeroSetupSCREEN heroCreate) {
 		heroCreate.closeSCREEN();
-		System.out.println(chosenTeam);
-		System.out.println(chosenTeam.getTeamLength());
 	}
 	
 	public void launchHomeBaseSCREEN(boolean isFinal) {

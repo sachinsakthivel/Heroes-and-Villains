@@ -13,6 +13,7 @@ import java.awt.Component;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import java.awt.Rectangle;
+import javax.swing.JRadioButton;
 
 public class HomeBaseSCREEN {
 
@@ -169,6 +170,7 @@ public class HomeBaseSCREEN {
 		frame.getContentPane().add(btnUseAHeros);
 		
 		JScrollPane textPlane = new JScrollPane(outputBox);
+		textPlane.setAutoscrolls(true);
 		textPlane.setBounds(new Rectangle(318, 124, 630, 246));
 		frame.getContentPane().add(textPlane);
 	}

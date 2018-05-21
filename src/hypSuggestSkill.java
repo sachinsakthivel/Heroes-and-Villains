@@ -5,7 +5,7 @@ public class hypSuggestSkill extends Item {
 	private final String Description;
 	
 	public hypSuggestSkill() {
-		super("Hypnotic Suggestion Skill", 90, 0);
+		super("Hypnotic Suggestion Skillbook", 90, 0);
 			upperLimit = 1;
 			Description ="This item allows a Hero to learn the skill of Hypnotic suggestion which helps in the Mini-game 'Guess the Number' by reducing the range given by 1.\nIt is stackable.";
 			this.setItemDescription(Description);
