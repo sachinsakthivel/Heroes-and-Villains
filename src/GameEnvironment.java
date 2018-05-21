@@ -87,6 +87,17 @@ public class GameEnvironment {
 		shop.closeSCREEN();
 	}
 	
+	public void launchPowerUpSCREEN(HomeBaseSCREEN homebase) {
+		homebase.getFrame().setVisible(false);
+		PowerUpSCREEN powerUp = new PowerUpSCREEN(this);
+	}
+	
+	public void closePowerUpSCREEN(HomeBaseSCREEN homebase, PowerUpSCREEN powerUp) {
+		powerUp.closeSCREEN();
+		homebase.getFrame().setVisible(true);
+		
+	}
+	
 	public void launchVillainLairSCREEN() {
 		VillainsLairSCREEN villainLair = new VillainsLairSCREEN(this);
 	}

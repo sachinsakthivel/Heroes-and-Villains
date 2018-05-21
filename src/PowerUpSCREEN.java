@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PowerUpSCREEN {
 
@@ -17,7 +19,7 @@ public class PowerUpSCREEN {
 	private JButton btnHero3;
 	private JTextArea txtHeroDescription;
 	private JTextArea txtItemDescription;
-	private JTextArea txtoutputBox
+	private JTextArea txtoutputBox;
 	
 	/**
 	 * Launch the application.
@@ -112,6 +114,11 @@ public class PowerUpSCREEN {
 		frame.getContentPane().add(btnPowerUP);
 		
 		JButton btnTravelHome = new JButton("Travel Back To Home Base");
+		btnTravelHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				finishedWindow();
+			}
+		});
 		btnTravelHome.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnTravelHome.setBounds(341, 485, 235, 57);
 		frame.getContentPane().add(btnTravelHome);
@@ -146,7 +153,7 @@ public class PowerUpSCREEN {
 	}
 	
 	public void finishedWindow() {
-		game.closePowerUpSCREEN(this);
+		game.closePowerUpSCREEN(game.getHomeBase(),this);
 	}
 	
 	

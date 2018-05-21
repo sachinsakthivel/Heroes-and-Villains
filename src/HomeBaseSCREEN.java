@@ -200,4 +200,8 @@ public class HomeBaseSCREEN {
 	public void finishedWindow() {
 		game.closeHomeBaseSCREEN(this);
 	}
+	
+	public JFrame getFrame() {
+		return frame;
+	}
 }
