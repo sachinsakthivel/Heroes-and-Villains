@@ -135,7 +135,7 @@ public class HomeBaseSCREEN {
 		outputBox.setLineWrap(true);
 		outputBox.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		outputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		outputBox.setBounds(321, 124, 608, 246);
+		outputBox.setBounds(249, 99, 608, 246);
 		frame.getContentPane().add(outputBox);
 		
 		JButton btnNewButton = new JButton("Use a Map");

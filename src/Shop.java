@@ -31,7 +31,7 @@ public class Shop extends Locations {
 			menuOptions(game.getParty());
 			input = HelperFunctions.InputValidator(0, 8);
 			if (input !=0) {
-				ShopList = buy(ShopList, game.getParty(), input);
+				String out= buy(game.getParty(), input);
 			} else {
 				System.out.println("Pleasure doing business with ya, Stranger" + "\n");
 			}
@@ -50,23 +50,23 @@ public class Shop extends Locations {
 		}
 	}
 		
-	public int[] buy(int[] itemList, Team team, int input) {
-		if (itemList[input -1] < 1) {
-			System.out.println("Sorry Stranger, Out of Stock");
-			return itemList;
+	public String buy(Team team, int input) {
+		if (ShopList[input -1] < 1) {
+			String out = ("Sorry Stranger, Out of Stock");
+			return out;
 		}
 		else if (team.getInv().get(input-1).getItemPrice() > team.getCoins()) {
-			System.out.println("Not enough coins, Stranger");
-			return itemList;
+			String out = ("Not enough coins, Stranger");
+			return out;
 		}
 		else {
 			int newItemCount = team.getInv().get(input-1).getItemStock() + 1;
 			team.getInv().get(input-1).setItemStock(newItemCount);
 			int coins = team.getCoins() - team.getInv().get(input-1).getItemPrice();
 			team.setCoins(coins);
-			itemList[input-1] -= 1;
-			System.out.println("Anything Else, Stranger?" + "\n");
-			return itemList;
+			ShopList[input-1] -= 1;
+			String out = ("Anything Else, Stranger?" + "\n");
+			return out;
 		}
 		
 	}

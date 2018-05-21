@@ -22,7 +22,7 @@ public class VillainsLair extends Locations{
 	public void travel(GameEnvironment game) {
 		travelledto();
 		game.launchVillainLairSCREEN();
-		userInput = -1;
+		userInput = -1; 
 		System.out.println("You have arrived at the Villain's Lair!");
 		while (userInput != 0 && villain.getLiving() && game.getParty().getTeam().size() > 0) {
 			menuOptions();
