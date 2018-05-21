@@ -1,14 +1,6 @@
 import java.util.*;
 public class Shop extends Locations {
 	
-	private int LesserHealNum;
-	private int AverageHealNum;
-	private int GreaterHealNum;
-	private int ArmourNum;
-	private int DiceNum;
-	private int HealthUpNum;
-	private int SkillNum;
-	private int MapNum;
 	private int input;
 	boolean trade = false;
 	private int[] ShopList;
@@ -29,16 +21,17 @@ public class Shop extends Locations {
 		
 	}
 	
-	public void travel(Team team) {
+	public void travel(GameEnvironment game) {
 		travelledto();
+		game.launchShopSCREEN();
 		input = -1;
 		System.out.println("Welcome Stranger, What're you Buying?" + "\n");
 		while (input != 0) {
-			System.out.println("You have currently " + team.getCoins() + " coins left.");
-			menuOptions(team);
+			System.out.println("You have currently " + game.getParty().getCoins() + " coins left.");
+			menuOptions(game.getParty());
 			input = HelperFunctions.InputValidator(0, 8);
 			if (input !=0) {
-				ShopList = buy(ShopList, team, input);
+				ShopList = buy(ShopList, game.getParty(), input);
 			} else {
 				System.out.println("Pleasure doing business with ya, Stranger" + "\n");
 			}

@@ -15,7 +15,7 @@ public class City {
 		Collections.shuffle(places);
 	}
 	
-	public void HomeBase(Team team) {
+	public void HomeBase(GameEnvironment game) {
 		System.out.println("Welcome To Your Home Base");
 		randomEvent();
 		while (userInput !=0 && lair.getVillain().getLiving()) {
@@ -26,17 +26,18 @@ public class City {
 				System.exit(0);
 			}
 			else if (userInput == 1) {
-				places.get(0).travel(team);
+				places.get(0).travel(game);
 			} else if (userInput == 2) {
-				places.get(1).travel(team);
+				places.get(1).travel(game);
 			} else if (userInput == 3) {
-				places.get(2).travel(team);
+				places.get(2).travel(game);
 			} else if (userInput == 4) {
-				places.get(3).travel(team);
+				places.get(3).travel(game);
 			} else if (userInput == 5) {
-				String out = useMap(team);
+				String out = useMap(game.getParty());
+				System.out.println(out);
 			} else {
-				System.out.println(team);
+				System.out.println(game.getParty());
 			}
 		}
 	}

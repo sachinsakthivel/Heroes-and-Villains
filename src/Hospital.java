@@ -13,7 +13,7 @@ public class Hospital extends Locations {
 		super("General Hosptial");
 	}
 	
-	public void travel(Team team) {
+	public void travel(GameEnvironment game) {
 		travelledto();
 		System.out.println("Welcome to the General Hosptial of this City");
 		userInput = -1;
@@ -21,12 +21,12 @@ public class Hospital extends Locations {
 			menuOptions();
 			userInput = HelperFunctions.InputValidator(0, 2);
 			if (userInput == 1) {
-			chosenHero = HelperFunctions.heroPick(team.getTeam());
-			chosenItem = HelperFunctions.itemPick(team.getInv(), healStartIndex, healEndIndex);
-			healingprocedure(team);
+			chosenHero = HelperFunctions.heroPick(game.getParty().getTeam());
+			chosenItem = HelperFunctions.itemPick(game.getParty().getInv(), healStartIndex, healEndIndex);
+			healingprocedure(game.getParty());
 			System.out.println("You want to Heal Anyone Else?");
 			} else if (userInput == 2) {
-				visitWard(team.getWard());
+				visitWard(game.getParty().getWard());
 			} else {
 				System.out.println("Be Careful Out There, these are Dangerous Times");
 			} 

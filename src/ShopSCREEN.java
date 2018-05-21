@@ -72,7 +72,7 @@ public class ShopSCREEN {
 		JButton btnLesserHeal = new JButton("Lesser Heal");
 		btnLesserHeal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getTeam().getInv().get(0).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(0).getItemDescription());
 			}
 		});
 		btnLesserHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -83,7 +83,7 @@ public class ShopSCREEN {
 		JButton btnAverageHeal = new JButton("Average Heal");
 		btnAverageHeal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getTeam().getInv().get(1).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(1).getItemDescription());
 			}
 		});
 		btnAverageHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -94,7 +94,7 @@ public class ShopSCREEN {
 		JButton btnGreaterHeal = new JButton("Greater Heal");
 		btnGreaterHeal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getTeam().getInv().get(2).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(2).getItemDescription());
 			}
 		});
 		btnGreaterHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -105,7 +105,7 @@ public class ShopSCREEN {
 		JButton btnMaps = new JButton("Maps");
 		btnMaps.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getTeam().getInv().get(3).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(3).getItemDescription());
 			}
 		});
 		btnMaps.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -116,7 +116,7 @@ public class ShopSCREEN {
 		JButton btnArmour = new JButton("Armour");
 		btnArmour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getTeam().getInv().get(4).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(4).getItemDescription());
 			}
 		});
 		btnArmour.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -127,7 +127,7 @@ public class ShopSCREEN {
 		JButton btnDiceLuck = new JButton("Dice luck");
 		btnDiceLuck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getTeam().getInv().get(5).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(5).getItemDescription());
 			}
 		});
 		btnDiceLuck.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -138,7 +138,7 @@ public class ShopSCREEN {
 		JButton btnMaxHealth = new JButton("Max Health");
 		btnMaxHealth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getTeam().getInv().get(6).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(6).getItemDescription());
 			}
 		});
 		btnMaxHealth.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -149,7 +149,7 @@ public class ShopSCREEN {
 		JButton btnSkill = new JButton("Skill");
 		btnSkill.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getTeam().getInv().get(7).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(7).getItemDescription());
 			}
 		});
 		btnSkill.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));

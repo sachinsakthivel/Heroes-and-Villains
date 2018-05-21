@@ -10,6 +10,7 @@ public class GameEnvironment {
 		game.launchStartUpSCREEN();
 	}
 	
+	/*
 	public void playGame() {
 		storyIntro();
 		
@@ -31,6 +32,7 @@ public class GameEnvironment {
 			}
 		}
 	}
+	*/
 	
 	public void storyIntro() {
 		System.out.println("Story Introduction not implemented Yet.");
@@ -86,13 +88,21 @@ public class GameEnvironment {
 	public void closeShopSCREEN(ShopSCREEN shop) {
 		shop.closeSCREEN();
 	}
+	
+	public void launchVillainLairSCREEN() {
+		VillainsLairSCREEN villainLair = new VillainsLairSCREEN(this);
+	}
+	
+	public void closeVillainLairSCREEN(VillainsLairSCREEN villainLair) {
+		villainLair.closeSCREEN();
+	}
   
 	public void launchExitSCREEN() {
 		ExitScreen = new ExitSCREEN();
 		ExitScreen.frame.setVisible(true);
 	}
 	
-	public void setTeam(Team team) {
+	public void setParty(Team team) {
 		chosenTeam = team;
 	}
 	
@@ -100,7 +110,7 @@ public class GameEnvironment {
 		cityNum = num;
 	}
 	
-	public Team getTeam() {
+	public Team getParty() {
 		return chosenTeam;
 	}
 

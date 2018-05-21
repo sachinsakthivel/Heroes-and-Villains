@@ -12,7 +12,7 @@ public class PowerUpDen extends Locations{
 		super("Power Up Den");
 	}
 	
-	public void travel(Team team) {
+	public void travel(GameEnvironment game) {
 		travelledto();
 		System.out.println("Howdy y'all, Welcome to Miky's Workshop and Upgrade Station!!");
 		userInput = -1;
@@ -20,8 +20,8 @@ public class PowerUpDen extends Locations{
 			menuOptions();
 			userInput = HelperFunctions.InputValidator(0, 1);
 			if (userInput == 1) {
-			chosenHero = HelperFunctions.heroPick(team.getTeam());
-			chosenItem = HelperFunctions.itemPick(team.getInv(), PowerUpStartIndex, PowerUpEndIndex);
+			chosenHero = HelperFunctions.heroPick(game.getParty().getTeam());
+			chosenItem = HelperFunctions.itemPick(game.getParty().getInv(), PowerUpStartIndex, PowerUpEndIndex);
 			chosenItem.use(chosenHero);
 			System.out.println("You want to Power Up Anyone Else?");
 			} else {

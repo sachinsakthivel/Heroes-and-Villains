@@ -25,7 +25,6 @@ public class HomeBaseSCREEN {
 	private JButton btnWest;
 	private JButton btnSouth;
 	private int run;
-	private static String DisplayText;
 
 	/**
 	 * Launch the application.
@@ -74,17 +73,28 @@ public class HomeBaseSCREEN {
 		btnNorth.setToolTipText("Travel North");
 		btnNorth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				currentCity.getplaces().get(0).travel(game);
 			}
 		});
 		btnNorth.setBounds(555, 423, 182, 38);
 		frame.getContentPane().add(btnNorth);
 		
 		btnEast = new JButton("Destination: " +currentCity.getplaces().get(1).getName());
+		btnEast.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				currentCity.getplaces().get(1).travel(game);
+			}
+		});
 		btnEast.setToolTipText("Travel East");
 		btnEast.setBounds(766, 555, 182, 38);
 		frame.getContentPane().add(btnEast);
 		
 		btnWest = new JButton("Destination: " +currentCity.getplaces().get(2).getName());
+		btnWest.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				currentCity.getplaces().get(2).travel(game);
+			}
+		});
 		btnWest.setToolTipText("Travel West");
 		btnWest.setBounds(364, 555, 182, 38);
 		frame.getContentPane().add(btnWest);
@@ -93,6 +103,7 @@ public class HomeBaseSCREEN {
 		btnSouth.setToolTipText("Travel South");
 		btnSouth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				currentCity.getplaces().get(3).travel(game);
 			}
 		});
 		btnSouth.setBounds(565, 689, 182, 38);
@@ -130,7 +141,7 @@ public class HomeBaseSCREEN {
 		JButton btnNewButton = new JButton("Use a Map");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String output  = currentCity.useMap(game.getTeam());
+				String output  = currentCity.useMap(game.getParty());
 				btnNorth.setText(currentCity.getplaces().get(0).getName());
 				btnEast.setText(currentCity.getplaces().get(1).getName());
 				btnWest.setText(currentCity.getplaces().get(2).getName());
@@ -145,7 +156,7 @@ public class HomeBaseSCREEN {
 		JButton btnCheckTeamStatus = new JButton("Check Team Status");
 		btnCheckTeamStatus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				outputBox.setText(game.getTeam().toString());
+				outputBox.setText(game.getParty().toString());
 			}
 		});
 		btnCheckTeamStatus.setFont(new Font("Tahoma", Font.PLAIN, 14));

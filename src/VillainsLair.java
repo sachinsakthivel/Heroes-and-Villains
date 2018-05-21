@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class VillainsLair extends Locations{
 	
@@ -21,23 +19,24 @@ public class VillainsLair extends Locations{
 		}
 	}
 	
-	public void travel(Team team) {
+	public void travel(GameEnvironment game) {
 		travelledto();
+		game.launchVillainLairSCREEN();
 		userInput = -1;
 		System.out.println("You have arrived at the Villain's Lair!");
-		while (userInput != 0 && villain.getLiving() && team.getTeam().size() > 0) {
+		while (userInput != 0 && villain.getLiving() && game.getParty().getTeam().size() > 0) {
 			menuOptions();
 			userInput = HelperFunctions.InputValidator(0, 1);
 			if (userInput == 1 ) {
 				System.out.println(villain);
-				chosenHero = HelperFunctions.heroPick(team.getTeam());
+				chosenHero = HelperFunctions.heroPick(game.getParty().getTeam());
 				chosenGame = villain.gamePreference();
 				battle(chosenHero, villain, chosenGame);
 				chosenHero.checkdeath();
 				if (!chosenHero.getLiving()) {
-					team.removeOffTeam(chosenHero);
+					game.getParty().removeOffTeam(chosenHero);
 				}
-				team.checkDead();
+				game.getParty().checkDead();
 				villain.checkdeath();
 			}
 			

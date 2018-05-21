@@ -25,7 +25,7 @@ public class Locations {
 		return discovered;
 	}
 	
-	public void travel(Team team) {
+	public void travel(GameEnvironment game) {
 		
 	}
 

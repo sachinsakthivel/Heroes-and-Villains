@@ -71,7 +71,7 @@ public class HeroSetupSCREEN {
 		initialize();
 		game = newGame;
 		frame.setVisible(true);
-		run = game.getTeam().getTeamLength();
+		run = game.getParty().getTeamLength();
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class HeroSetupSCREEN {
 					lblerror1.setVisible(false);
 					lblerror.setVisible(true);
 				} else {
-					game.getTeam().setTeamLength(game.getTeam().getTeamLength() - 1);
+					game.getParty().setTeamLength(game.getParty().getTeamLength() - 1);
 					createHero();
 					finishedWindow();
 					runAgain();
@@ -232,7 +232,7 @@ public class HeroSetupSCREEN {
 	
 	public void runAgain() {
 		if (run > 1) {
-			game.getTeam().setTeamLength(run - 1);
+			game.getParty().setTeamLength(run - 1);
 			game.launchHeroSetupSCREEN();
 		} else {
 			game.launchHomeBaseSCREEN(false);
@@ -250,7 +250,7 @@ public class HeroSetupSCREEN {
 	
 	public void createHero() {
 		Hero newHero = HelperFunctions.heroCreate(typePick, heroName);
-		game.getTeam().addToTeam(newHero);
+		game.getParty().addToTeam(newHero);
 	}
 	
 }
