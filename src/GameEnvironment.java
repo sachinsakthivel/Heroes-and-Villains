@@ -128,5 +128,16 @@ public class GameEnvironment {
 	public HomeBaseSCREEN getHomeBase() {
 		return homeBase;
 	}
+
+	public void launchPowerUpSCREEN(HomeBaseSCREEN homeBase) {
+		homeBase.getFrame().setVisible(false);
+		PowerUpSCREEN powerUp = new PowerUpSCREEN(this);
+		
+	}
+	
+	public void closePowerUpSCREEN(HomeBaseSCREEN homeBase, PowerUpSCREEN powerUp) {
+		powerUp.closeSCREEN();
+		homeBase.getFrame().setVisible(true);
+	}
 	
 }
