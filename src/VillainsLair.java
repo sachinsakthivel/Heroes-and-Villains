@@ -21,7 +21,8 @@ public class VillainsLair extends Locations{
 	
 	public void travel(GameEnvironment game) {
 		travelledto();
-		game.launchVillainLairSCREEN();
+		game.launchVillainLairSCREEN(game.getHomeBase());
+		/*
 		userInput = -1; 
 		System.out.println("You have arrived at the Villain's Lair!");
 		while (userInput != 0 && villain.getLiving() && game.getParty().getTeam().size() > 0) {
@@ -41,6 +42,7 @@ public class VillainsLair extends Locations{
 			}
 			
 		}
+		*/
 	}
 	
 	public void battle(Hero hero, Villain villain, int gameChoice) {

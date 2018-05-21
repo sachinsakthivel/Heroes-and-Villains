@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VillainsLairSCREEN {
 
@@ -32,6 +34,7 @@ public class VillainsLairSCREEN {
 	public VillainsLairSCREEN(GameEnvironment newGame) {
 		game = newGame;
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**
@@ -49,9 +52,19 @@ public class VillainsLairSCREEN {
 		frame.getContentPane().add(screenTitle);
 		
 		JButton btnTravelHome = new JButton("Travel Back To Home Base");
+		btnTravelHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				finishedWindow();
+			}
+		});
 		btnTravelHome.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnTravelHome.setBounds(10, 508, 264, 57);
+		btnTravelHome.setBounds(281, 383, 264, 57);
 		frame.getContentPane().add(btnTravelHome);
+		
+		JButton btnenterLair = new JButton("Enter the Lair");
+		btnenterLair.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnenterLair.setBounds(281, 301, 264, 57);
+		frame.getContentPane().add(btnenterLair);
 	}
 	
 	public void closeSCREEN() {
@@ -59,6 +72,6 @@ public class VillainsLairSCREEN {
 	}
 	
 	public void finishedWindow() {
-		game.closeVillainLairSCREEN(this);
+		game.closeVillainLairSCREEN(game.getHomeBase(),this);
 	}
 }

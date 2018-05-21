@@ -74,5 +74,13 @@ public class City {
 	public ArrayList<Locations> getplaces() {
 		return places;
 	}
+	
+	public Shop getShop() {
+		return shop;
+	}
+	
+	public VillainsLair getVillainsLair() {
+		return lair;
+	}
 
 }

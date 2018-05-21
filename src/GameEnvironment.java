@@ -81,20 +81,37 @@ public class GameEnvironment {
 		home.closeSCREEN();
 	}
 	
-	public void launchShopSCREEN() {
-		ShopSCREEN shop = new ShopSCREEN(this);
+	public void launchPowerUpSCREEN(HomeBaseSCREEN homeBase) {
+		homeBase.getFrame().setVisible(false);
+		PowerUpSCREEN powerUp = new PowerUpSCREEN(this);
+		
 	}
 	
-	public void closeShopSCREEN(ShopSCREEN shop) {
-		shop.closeSCREEN();
+	public void closePowerUpSCREEN(HomeBaseSCREEN homeBase, PowerUpSCREEN powerUp) {
+		powerUp.closeSCREEN();
+		homeBase.getFrame().setVisible(true);
 	}
 	
-	public void launchVillainLairSCREEN() {
+	public void launchShopSCREEN(HomeBaseSCREEN homeBase) {
+		homeBase.getFrame().setVisible(false);
+		ShopSCREEN ShopWindow = new ShopSCREEN(this);
+		
+	}
+	
+	public void closeShopSCREEN(HomeBaseSCREEN homeBase, ShopSCREEN Shop) {
+		Shop.closeSCREEN();
+		homeBase.getFrame().setVisible(true);
+	}
+
+	
+	public void launchVillainLairSCREEN(HomeBaseSCREEN homeBase) {
+		homeBase.getFrame().setVisible(false);
 		VillainsLairSCREEN villainLair = new VillainsLairSCREEN(this);
 	}
 	
-	public void closeVillainLairSCREEN(VillainsLairSCREEN villainLair) {
+	public void closeVillainLairSCREEN(HomeBaseSCREEN homeBase, VillainsLairSCREEN villainLair) {
 		villainLair.closeSCREEN();
+		homeBase.getFrame().setVisible(true);
 	}
   
 	public void launchExitSCREEN() {
@@ -129,28 +146,5 @@ public class GameEnvironment {
 	public HomeBaseSCREEN getHomeBase() {
 		return homeBase;
 	}
-
-	public void launchPowerUpSCREEN(HomeBaseSCREEN homeBase) {
-		homeBase.getFrame().setVisible(false);
-		PowerUpSCREEN powerUp = new PowerUpSCREEN(this);
-		
-	}
-	
-	public void closePowerUpSCREEN(HomeBaseSCREEN homeBase, PowerUpSCREEN powerUp) {
-		powerUp.closeSCREEN();
-		homeBase.getFrame().setVisible(true);
-	}
-	
-	public void launchShopSCREEN(HomeBaseSCREEN homeBase) {
-		homeBase.getFrame().setVisible(false);
-		ShopSCREEN ShopWindow = new ShopSCREEN(this);
-		
-	}
-	
-	public void closeShopSCREEN(HomeBaseSCREEN homeBase, ShopSCREEN Shop) {
-		Shop.closeSCREEN();
-		homeBase.getFrame().setVisible(true);
-	}
-
 	
 }
