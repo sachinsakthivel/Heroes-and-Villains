@@ -23,6 +23,7 @@ public class battleSCREEN {
 	private JTextArea txtrHeroDescription;
 	private JTextArea txtrVillainDescription;
 	private int HeroIndex;
+	private int gameChoice;
 
 	/**
 	 * Launch the application.
@@ -46,6 +47,7 @@ public class battleSCREEN {
 	public battleSCREEN(GameEnvironment newGame) {
 		game = newGame;
 		villainsLair = game.getCurrentCity().getVillainsLair();
+		gameChoice = villainsLair.getVillain().gamePreference();
 		initialize();
 		frame.setVisible(true);
 	}
@@ -106,7 +108,7 @@ public class battleSCREEN {
 			frame.getContentPane().add(button_1);
 		}
 		
-		if (game.getParty().getTeam().size()  >= 2) {
+		if (game.getParty().getTeam().size()  == 3) {
 			JButton button_2 = new JButton("Hero: "+ game.getParty().getTeam().get(2).getPersonName());
 			button_2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -143,7 +145,7 @@ public class battleSCREEN {
 		
 		txtrVillainDescription = new JTextArea();
 		txtrVillainDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		txtrVillainDescription.setText("Villain Description");
+		txtrVillainDescription.setText(villainsLair.villainInsight() + "\nChosen Game to Play: " +villainsLair.getGames().get(gameChoice).getGameName());
 		txtrVillainDescription.setBounds(517, 250, 337, 191);
 		frame.getContentPane().add(txtrVillainDescription);
 		

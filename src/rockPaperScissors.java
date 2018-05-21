@@ -13,7 +13,7 @@ public class rockPaperScissors extends miniGame {
 		super(name, rules);
 	}
 	
-	public boolean play() {
+	public boolean play(Hero hero) {
 		gameWon = false;
 		Scanner UserInput = new Scanner(System.in);
 		menuOptions();
@@ -23,7 +23,7 @@ public class rockPaperScissors extends miniGame {
 		if (userPick == vNum) {
 			System.out.println("So close! It's a tie!!");
 			System.out.println("We Shall Play Again.");
-			play();
+			play(hero);
 		}
 		else {
 			if (userPick == 1) {
@@ -78,10 +78,4 @@ public class rockPaperScissors extends miniGame {
 		System.out.println("3 - Rock");
 	}
 	
-	public static void main(String[] args) {
-		rockPaperScissors rock = new rockPaperScissors();
-		rock.play();
-	}
-	
-
 }

@@ -32,5 +32,9 @@ public class miniGame {
 		return output;
 	}
 	
+	public boolean play(Hero hero) {
+		return false;
+	}
+	
 
 }

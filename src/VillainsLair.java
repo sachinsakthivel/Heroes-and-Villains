@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class VillainsLair extends Locations{
 	
@@ -8,6 +9,7 @@ public class VillainsLair extends Locations{
 	private diceRolls dice = new diceRolls();
 	private rockPaperScissors RPS = new rockPaperScissors();
 	private guessTheNumber guess = new guessTheNumber();
+	private ArrayList<miniGame> games = new ArrayList<miniGame>(Arrays.asList(dice, RPS, guess));
 	
 	
 	public VillainsLair(boolean isFinal) {
@@ -49,13 +51,13 @@ public class VillainsLair extends Locations{
 		boolean gameWon;
 		if (gameChoice == 0) {
 			System.out.println(dice);
-			gameWon = dice.play(hero.getDice());
+			gameWon = dice.play(hero);
 		} else if ( gameChoice == 1) {
 			System.out.println(RPS);
-			gameWon = RPS.play();
+			gameWon = RPS.play(hero);
 		} else {
 			System.out.println(guess);
-			gameWon = guess.play(hero.getSkill());
+			gameWon = guess.play(hero);
 		}
 		if (!gameWon) {
 			int damage = hero.getArmour() - villain.getDamage();
@@ -76,5 +78,16 @@ public class VillainsLair extends Locations{
 	public Villain getVillain() {
 		return villain;
 	}
+	
+	public ArrayList<miniGame> getGames() {
+		return games;
+	}
+	
+	public String villainInsight() {
+		String output = "Insight into the mind of "+villain.getPersonName()+":";
+		output += "\n\nDamage: "+villain.getDamage();
+		output += "\nGames left to Win until "+villain.getPersonName()+" Dies: "+villain.getStrikes();
+		return output;
+		}
 	
 }

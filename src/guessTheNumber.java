@@ -12,7 +12,8 @@ public class guessTheNumber extends miniGame {
 	public guessTheNumber() {
 		super(name, rules);
 	}
-	public boolean play(int upperLimit) {
+	public boolean play(Hero hero) {
+		int upperLimit = hero.getSkill();
 		System.out.println("Welcome to game of 'Guess the Number' !!!");
 		System.out.println("The rules are simple: You have two chances to guess the number that the I have chosen in the range of 1 to 10");
 		System.out.println("Don't worry, I'm not that unfair, I will tell you if your guess is higher or lower.");
@@ -40,11 +41,6 @@ public class guessTheNumber extends miniGame {
 			}
 		}
 		return gameWon;
-	}
-	
-	public static void main(String[] args) {
-		guessTheNumber newGame = new guessTheNumber();
-		System.out.println(newGame.play(10));
 	}
 
 }

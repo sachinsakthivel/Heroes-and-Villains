@@ -14,7 +14,8 @@ public class diceRolls extends miniGame{
 	}
 	
 	
-	public boolean play(int rollLimit) {
+	public boolean play(Hero hero) {
+		int rollLimit = hero.getDice();
 		gameWon = false;
 		Random rollGenerator = new Random();
 		Scanner input = new Scanner(System.in);
@@ -28,7 +29,7 @@ public class diceRolls extends miniGame{
 		if (villanRoll == userRoll) {
 			System.out.println("\nah Well, it seems Lady Luck is quite indecisive, It's a tie.");
 			System.out.println("We Shall Play Again");
-			play(rollLimit);
+			play(hero);
 		} else if (villanRoll > userRoll) {
 			System.out.println("Ha Ha, Sadly you had no chance, You Lose.");
 			System.out.println("I rolled a " + villanRoll + ".");
