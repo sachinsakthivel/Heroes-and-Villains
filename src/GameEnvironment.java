@@ -140,4 +140,16 @@ public class GameEnvironment {
 		homeBase.getFrame().setVisible(true);
 	}
 	
+	public void launchShopSCREEN(HomeBaseSCREEN homeBase) {
+		homeBase.getFrame().setVisible(false);
+		ShopSCREEN ShopWindow = new ShopSCREEN(this);
+		
+	}
+	
+	public void closeShopSCREEN(HomeBaseSCREEN homeBase, ShopSCREEN Shop) {
+		Shop.closeSCREEN();
+		homeBase.getFrame().setVisible(true);
+	}
+
+	
 }
