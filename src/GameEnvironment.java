@@ -63,6 +63,7 @@ public class GameEnvironment {
 		chosenTeam.getInv().get(3).setItemStock(3);
 		launchHeroSetupSCREEN();
 	}
+	
 	public void launchHeroSetupSCREEN() {
 		HeroSetupSCREEN heroSetup = new HeroSetupSCREEN(this);
 	}
@@ -85,17 +86,6 @@ public class GameEnvironment {
 	
 	public void closeShopSCREEN(ShopSCREEN shop) {
 		shop.closeSCREEN();
-	}
-	
-	public void launchPowerUpSCREEN(HomeBaseSCREEN homebase) {
-		homebase.getFrame().setVisible(false);
-		PowerUpSCREEN powerUp = new PowerUpSCREEN(this);
-	}
-	
-	public void closePowerUpSCREEN(HomeBaseSCREEN homebase, PowerUpSCREEN powerUp) {
-		powerUp.closeSCREEN();
-		homebase.getFrame().setVisible(true);
-		
 	}
 	
 	public void launchVillainLairSCREEN() {
