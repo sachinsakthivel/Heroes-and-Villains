@@ -26,7 +26,7 @@ public class lesserHeals extends Item {
 		return returnString;
 	}
 	
-	public void use(Hero hero) {
+	public String use(Hero hero) {
 		if (this.getItemStock() > 0 ) {
 			int heroHealthUpdate = hero.getCurrentHealth() +  rand.nextInt(3);
 			if (heroHealthUpdate < hero.getMaximumHealth()) {
@@ -35,9 +35,9 @@ public class lesserHeals extends Item {
 				hero.setCurrentHealth(hero.getMaximumHealth());
 			}
 			this.setItemStock(this.getItemStock() - 1);
-			System.out.println("Healing Procedure Has Started");
+			return "Healing Procedure Has Started";
 		} else {
-			System.out.println("Insufficient amount of "+this.getItemName()+", Please Buy Some from Shop");
+			return "Insufficient amount of "+this.getItemName()+".\nPlease Buy Some from Shop";
 		}
 	}
 	

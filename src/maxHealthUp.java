@@ -21,13 +21,13 @@ public class maxHealthUp extends Item {
 		return returnString;
 	}
 	
-	public void use(Hero hero) {
+	public String use(Hero hero) {
 		if (this.getItemStock() > 0 ) {
 			hero.setMaximumHealth(hero.getMaximumHealth() + MaxUp);
 			this.setItemStock(this.getItemStock() - 1);
-			System.out.println("Power Up Successful");
+			return "Power Up Successful";
 		} else {
-			System.out.println("Insufficient amount of " + this.getItemName() + ", Please Buy Some from Shop");
+			return "Insufficient amount of " + this.getItemName() + ".\nPlease Buy Some from Shop";
 		}
 	}
 

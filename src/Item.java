@@ -13,8 +13,8 @@ public class Item {
 		setItemDuration(-1);
 	}
 	
-	public void use(Hero chosenHero) {
-		
+	public String use(Hero chosenHero) {
+		return "Not Working";
 	}
 
 	public String getItemName() {

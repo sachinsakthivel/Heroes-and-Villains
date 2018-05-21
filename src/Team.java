@@ -60,6 +60,7 @@ public class Team {
 	
 	public String toString() {
 		String output = new String("Name of the Team is: " + getteamName());
+		output += "\n" + "\n" + "Coins: " + Coins;
 		output += "\n" + "\n" + "Heroes:";
 		for (Hero superhero: team) {
 			output += "\n" + superhero + "\n";
