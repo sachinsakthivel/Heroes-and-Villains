@@ -124,4 +124,8 @@ public class GameEnvironment {
 		this.currentCity = currentCity;
 	}
 	
+	public ExitSCREEN getExitSCREEN() {
+		return ExitScreen;
+	}
+	
 }
