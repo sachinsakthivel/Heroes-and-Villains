@@ -73,5 +73,13 @@ public class Shop extends Locations {
 		
 	}
 	
+	public int[] getShopList() {
+		return ShopList;
+	}
+	
+	public void setShopList(int[] StockList) {
+		ShopList = StockList;
+	}
+	
 
 }

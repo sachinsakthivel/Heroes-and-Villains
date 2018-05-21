@@ -14,10 +14,12 @@ import java.awt.event.ActionEvent;
 public class ShopSCREEN {
 
 	private JFrame frame;
+	private JLabel lblGold;
 	
 	private String DisplayText;
 	private GameEnvironment game;
 	private int InvIndex = -1;
+	private int[] StockList;
 
 
 	/**
@@ -44,6 +46,7 @@ public class ShopSCREEN {
 		game = newGame;
 		initialize();
 		frame.setVisible(true);
+		StockList = game.getCurrentCity().getShop().getShopList();
 	}
 	
 
@@ -58,12 +61,19 @@ public class ShopSCREEN {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JTextArea outputBox = new JTextArea("Text display");
+		JLabel screenTitle = new JLabel("Wanderer's Shop");
+		screenTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		screenTitle.setFont(new Font("Trebuchet MS", Font.BOLD, 28));
+		screenTitle.setBounds(323, 10, 248, 70);
+		frame.getContentPane().add(screenTitle);
+		
+		// Main Text Output
+		JTextArea outputBox = new JTextArea("What would you like to buy? ");
 		outputBox.setWrapStyleWord(true);
 		outputBox.setLineWrap(true);
 		outputBox.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		outputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		outputBox.setBounds(293, 493, 608, 246);
+		outputBox.setBounds(327, 493, 574, 246);
 		frame.getContentPane().add(outputBox);
 		
 		
@@ -73,51 +83,76 @@ public class ShopSCREEN {
 		JButton btnLesserHeal = new JButton("Lesser Heal");
 		btnLesserHeal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getParty().getInv().get(0).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(0).getItemName() + 
+						"\nStock: " + StockList[0] + "                                 Price: " +
+						game.getParty().getInv().get(0).getItemPrice() + "\n" +
+						game.getParty().getInv().get(0).getItemDescription() + "\n" + 
+						game.getParty().getInv().get(0).getItemStock() + " in Inventory.");
+				InvIndex = 0;
 			}
 		});
 		btnLesserHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnLesserHeal.setBounds(48, 29, 183, 48);
+		btnLesserHeal.setBounds(48, 112, 183, 48);
 		frame.getContentPane().add(btnLesserHeal);
 		
 		//Average Heal Button
 		JButton btnAverageHeal = new JButton("Average Heal");
 		btnAverageHeal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getParty().getInv().get(1).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(1).getItemName() + 
+						"\nStock: " + StockList[2] + "                                 Price: " +
+						game.getParty().getInv().get(1).getItemPrice() + "\n" +
+						game.getParty().getInv().get(1).getItemDescription() + "\n" + 
+						game.getParty().getInv().get(1).getItemStock() + " in Inventory.");
+				InvIndex = 1;
 			}
 		});
 		btnAverageHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnAverageHeal.setBounds(362, 29, 183, 48);
+		btnAverageHeal.setBounds(362, 112, 183, 48);
 		frame.getContentPane().add(btnAverageHeal);
 		
 		//Greater Heal Button
 		JButton btnGreaterHeal = new JButton("Greater Heal");
 		btnGreaterHeal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getParty().getInv().get(2).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(2).getItemName() + 
+						"\nStock: " + StockList[2] + "                                 Price: " +
+						game.getParty().getInv().get(2).getItemPrice() + "\n" +
+						game.getParty().getInv().get(2).getItemDescription() + "\n" + 
+						game.getParty().getInv().get(2).getItemStock() + " in Inventory.");
+				InvIndex = 2;
 			}
 		});
 		btnGreaterHeal.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnGreaterHeal.setBounds(718, 29, 183, 48);
+		btnGreaterHeal.setBounds(718, 112, 183, 48);
 		frame.getContentPane().add(btnGreaterHeal);
 
 		//Map Button
 		JButton btnMaps = new JButton("Maps");
 		btnMaps.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getParty().getInv().get(3).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(3).getItemName() + 
+						"\nStock: " + StockList[3] + "                                 Price: " +
+						game.getParty().getInv().get(3).getItemPrice() + "\n" +
+						game.getParty().getInv().get(3).getItemDescription() + "\n" + 
+						game.getParty().getInv().get(3).getItemStock() + " in Inventory.");
+				InvIndex = 3;
 			}
 		});
 		btnMaps.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnMaps.setBounds(718, 330, 183, 48);
+		btnMaps.setBounds(718, 263, 183, 48);
 		frame.getContentPane().add(btnMaps);
 		
 		//Armour Button
 		JButton btnArmour = new JButton("Armour");
 		btnArmour.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getParty().getInv().get(4).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(4).getItemName() + 
+						"\nStock: " + StockList[4] + "                                 Price: " +
+						game.getParty().getInv().get(4).getItemPrice() + "\n" +
+						game.getParty().getInv().get(4).getItemDescription() + "\n" + 
+						game.getParty().getInv().get(4).getItemStock() + " in Inventory.");
+				InvIndex = 4;
 			}
 		});
 		btnArmour.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -128,7 +163,12 @@ public class ShopSCREEN {
 		JButton btnDiceLuck = new JButton("Dice luck");
 		btnDiceLuck.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getParty().getInv().get(5).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(5).getItemName() + 
+						"\nStock: " + StockList[5] + "                                 Price: " +
+						game.getParty().getInv().get(5).getItemPrice() + "\n" +
+						game.getParty().getInv().get(5).getItemDescription() + "\n" + 
+						game.getParty().getInv().get(5).getItemStock() + " in Inventory.");
+				InvIndex = 5;
 			}
 		});
 		btnDiceLuck.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -139,7 +179,12 @@ public class ShopSCREEN {
 		JButton btnMaxHealth = new JButton("Max Health");
 		btnMaxHealth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getParty().getInv().get(6).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(6).getItemName() + 
+						"\nStock: " + StockList[6] + "                                 Price: " +
+						game.getParty().getInv().get(6).getItemPrice() + "\n" +
+						game.getParty().getInv().get(6).getItemDescription() + "\n" + 
+						game.getParty().getInv().get(6).getItemStock() + " in Inventory.");
+				InvIndex = 6;
 			}
 		});
 		btnMaxHealth.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
@@ -150,11 +195,16 @@ public class ShopSCREEN {
 		JButton btnSkill = new JButton("Skill");
 		btnSkill.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				outputBox.setText(game.getParty().getInv().get(7).getItemDescription());
+				outputBox.setText(game.getParty().getInv().get(7).getItemName() + 
+						"\nStock: " + StockList[7] + "                                 Price: " +
+						game.getParty().getInv().get(7).getItemPrice() + "\n" +
+						game.getParty().getInv().get(7).getItemDescription() + "\n" + 
+						game.getParty().getInv().get(7).getItemStock() + " in Inventory.");
+				InvIndex = 7;
 			}
 		});
 		btnSkill.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		btnSkill.setBounds(48, 330, 183, 48);
+		btnSkill.setBounds(48, 263, 183, 48);
 		frame.getContentPane().add(btnSkill);
 		
 		//Return To HomeBase
@@ -168,14 +218,37 @@ public class ShopSCREEN {
 		btnTravelHome.setBounds(48, 682, 235, 57);
 		frame.getContentPane().add(btnTravelHome);
 		
+		
+		//Buying an Item
 		JButton btnBuyItem = new JButton("Buy Item");
+		btnBuyItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (InvIndex == -1) {
+					outputBox.setText("Stranger, you please select an Item");
+				} else if (StockList[InvIndex] < 1){
+					outputBox.setText("Sorry Stranger, Out of Stock");
+				} else if (game.getParty().getCoins() < game.getParty().getInv().get(InvIndex).getItemPrice()) {
+					outputBox.setText("Not enough coins, Stranger");
+				} else {
+					StockList[InvIndex] = StockList[InvIndex] -1;
+					game.getCurrentCity().getShop().setShopList(StockList);
+					int UpdatedGold = game.getParty().getCoins() - game.getParty().getInv().get(InvIndex).getItemPrice();
+					game.getParty().setCoins(UpdatedGold);
+					int UpdatedItemInv = game.getParty().getInv().get(InvIndex).getItemStock() + 1;
+					game.getParty().getInv().get(InvIndex).setItemStock(UpdatedItemInv);
+					outputBox.setText(game.getParty().getInv().get(InvIndex).getItemName() + " Bought.\n\nAnything Else, Stranger?" + "\n");
+					lblGold.setText("Gold: " + game.getParty().getCoins());
+				}
+			}
+		});
 		btnBuyItem.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
 		btnBuyItem.setBounds(48, 493, 235, 57);
 		frame.getContentPane().add(btnBuyItem);
 		
-		JButton lblGold = new JButton("Gold:");
+		lblGold = new JLabel("Gold: " + game.getParty().getCoins());
+		lblGold.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGold.setFont(new Font("Tw Cen MT", Font.PLAIN, 20));
-		lblGold.setBounds(48, 598, 235, 57);
+		lblGold.setBounds(48, 586, 235, 57);
 		frame.getContentPane().add(lblGold);
 		
 		JLabel label = new JLabel("");
