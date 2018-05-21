@@ -14,9 +14,6 @@ public class PowerUpSCREEN {
 
 	private JFrame frame;
 	private GameEnvironment game;
-	private JButton btnHero1;
-	private JButton btnHero2;
-	private JButton btnHero3;
 	private JTextArea txtHeroDescription;
 	private JTextArea txtItemDescription;
 	private JTextArea txtoutputBox;
@@ -74,7 +71,7 @@ public class PowerUpSCREEN {
 		lbItemSelection.setBounds(640, 110, 214, 29);
 		frame.getContentPane().add(lbItemSelection);
 		
-		btnHero1 = new JButton("Hero: " + game.getParty().getTeam().get(0).getPersonName());
+		JButton btnHero1 = new JButton("Hero: " + game.getParty().getTeam().get(0).getPersonName());
 		btnHero1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				heroIndex = 0;
@@ -86,7 +83,7 @@ public class PowerUpSCREEN {
 		frame.getContentPane().add(btnHero1);
 		
 		if (game.getParty().getTeam().size()  >= 2) {
-			btnHero2 = new JButton("Hero: " + game.getParty().getTeam().get(1).getPersonName());
+			JButton btnHero2 = new JButton("Hero: " + game.getParty().getTeam().get(1).getPersonName());
 			btnHero2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					heroIndex = 1;
@@ -99,7 +96,7 @@ public class PowerUpSCREEN {
 		}
 
 		if (game.getParty().getTeam().size() == 3) {
-			btnHero3 = new JButton("Hero: " + game.getParty().getTeam().get(2).getPersonName());
+			JButton btnHero3 = new JButton("Hero: " + game.getParty().getTeam().get(2).getPersonName());
 			btnHero3.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					heroIndex = 2;

@@ -18,6 +18,11 @@ public class battleSCREEN {
 
 	private JFrame frame;
 	private GameEnvironment game;
+	private VillainsLair villainsLair;
+	private JTextArea txtrVillain;
+	private JTextArea txtrHeroDescription;
+	private JTextArea txtrVillainDescription;
+	private int HeroIndex;
 
 	/**
 	 * Launch the application.
@@ -40,6 +45,7 @@ public class battleSCREEN {
 	 */
 	public battleSCREEN(GameEnvironment newGame) {
 		game = newGame;
+		villainsLair = game.getCurrentCity().getVillainsLair();
 		initialize();
 		frame.setVisible(true);
 	}
@@ -58,11 +64,12 @@ public class battleSCREEN {
 		titleLabel.setBounds(340, 11, 220, 84);
 		frame.getContentPane().add(titleLabel);
 		
-		JTextArea txtrVillain = new JTextArea();
+		txtrVillain = new JTextArea();
+		txtrVillain.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		txtrVillain.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
 		txtrVillain.setEditable(false);
 		txtrVillain.setWrapStyleWord(true);
-		txtrVillain.setText("Villain Name \r\n\r\nVillain Taunt");
+		txtrVillain.setText(villainsLair.getVillain().toString());
 		txtrVillain.setBounds(106, 91, 681, 84);
 		frame.getContentPane().add(txtrVillain);
 		
@@ -72,27 +79,53 @@ public class battleSCREEN {
 		label.setBounds(20, 210, 214, 29);
 		frame.getContentPane().add(label);
 		
-		JButton button = new JButton("Hero: <dynamic>");
+		JButton button = new JButton("Hero: " + game.getParty().getTeam().get(0).getPersonName());
 		button.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				HeroIndex = 0;
+				txtrHeroDescription.setText(game.getParty().getTeam().get(0).toString());
+				
 			}
 		});
 		button.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		button.setBounds(20, 250, 206, 43);
 		frame.getContentPane().add(button);
 		
-		JButton button_1 = new JButton("Hero: <dynamic>");
-		button_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		button_1.setBounds(20, 324, 206, 43);
-		frame.getContentPane().add(button_1);
+		if (game.getParty().getTeam().size()  >= 2) {
+			JButton button_1 = new JButton("Hero: " + game.getParty().getTeam().get(1).getPersonName());
+			button_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					HeroIndex = 1;
+					txtrHeroDescription.setText(game.getParty().getTeam().get(1).toString());
+					
+				}
+			});
+			button_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+			button_1.setBounds(20, 324, 206, 43);
+			frame.getContentPane().add(button_1);
+		}
 		
-		JButton button_2 = new JButton("Hero: <dynamic>");
-		button_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		button_2.setBounds(20, 398, 206, 43);
-		frame.getContentPane().add(button_2);
+		if (game.getParty().getTeam().size()  >= 2) {
+			JButton button_2 = new JButton("Hero: "+ game.getParty().getTeam().get(2).getPersonName());
+			button_2.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					HeroIndex = 1;
+					txtrHeroDescription.setText(game.getParty().getTeam().get(1).toString());
+					
+				}
+			});
+			button_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+			button_2.setBounds(20, 398, 206, 43);
+			frame.getContentPane().add(button_2);
+		}
 		
 		JButton btnReturnToLair = new JButton("Return to Lair Entrance");
+		btnReturnToLair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				finishedWindow();
+			}
+		});
 		btnReturnToLair.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnReturnToLair.setBounds(20, 528, 235, 57);
 		frame.getContentPane().add(btnReturnToLair);
@@ -102,12 +135,14 @@ public class battleSCREEN {
 		btnFightVillain.setBounds(619, 528, 235, 57);
 		frame.getContentPane().add(btnFightVillain);
 		
-		JTextArea txtrHeroDescription = new JTextArea();
+		txtrHeroDescription = new JTextArea();
+		txtrHeroDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		txtrHeroDescription.setText("Select a Hero");
 		txtrHeroDescription.setBounds(270, 250, 214, 191);
 		frame.getContentPane().add(txtrHeroDescription);
 		
-		JTextArea txtrVillainDescription = new JTextArea();
+		txtrVillainDescription = new JTextArea();
+		txtrVillainDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		txtrVillainDescription.setText("Villain Description");
 		txtrVillainDescription.setBounds(517, 250, 337, 191);
 		frame.getContentPane().add(txtrVillainDescription);

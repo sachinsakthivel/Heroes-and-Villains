@@ -69,7 +69,7 @@ public class Villain extends Person {
 	
 	public String toString() {
 		String output = new String("Welcome Heroes, I am known as '" +this.getPersonName()+"'.");
-		output += "\n" + this.getTaunt() + "\n";
+		output += "\n\n" + this.getTaunt() + "\n";
 		return output;
 	}
 	

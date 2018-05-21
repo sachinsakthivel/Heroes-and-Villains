@@ -122,6 +122,7 @@ public class GameEnvironment {
 	
 	public void closeBattleSCREEN(battleSCREEN battle) {
 		battle.closeSCREEN();
+		VillainsLairSCREEN villainLair = new VillainsLairSCREEN(this);
 	}
   
 	public void launchExitSCREEN() {
