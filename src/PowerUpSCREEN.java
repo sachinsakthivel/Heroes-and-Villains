@@ -166,8 +166,8 @@ public class PowerUpSCREEN {
 					Hero chosenHero = game.getParty().getTeam().get(heroIndex);
 					Item chosenItem = game.getParty().getInv().get(itemIndex);
 					txtoutputBox.setText(chosenItem.use(chosenHero));
-					txtItemDescription.setText("Please Select an Item");
-					txtHeroDescription.setText("Please Select a Hero");
+					txtItemDescription.setText("Please Select an Item.");
+					txtHeroDescription.setText("Please Select a Hero.");
 					itemIndex = -1;
 					heroIndex = -1;
 				}
@@ -192,7 +192,7 @@ public class PowerUpSCREEN {
 		txtHeroDescription.setEditable(false);
 		txtHeroDescription.setLineWrap(true);
 		txtHeroDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		txtHeroDescription.setText("Please Select a Hero");
+		txtHeroDescription.setText("Please Select a Hero.");
 		txtHeroDescription.setBounds(20, 366, 248, 206);
 		frame.getContentPane().add(txtHeroDescription);
 		
@@ -200,7 +200,7 @@ public class PowerUpSCREEN {
 		txtItemDescription.setWrapStyleWord(true);
 		txtItemDescription.setEditable(false);
 		txtItemDescription.setLineWrap(true);
-		txtItemDescription.setText("Please Select an Item");
+		txtItemDescription.setText("Please Select an Item.");
 		txtItemDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		txtItemDescription.setBounds(640, 366, 245, 206);
 		frame.getContentPane().add(txtItemDescription);
