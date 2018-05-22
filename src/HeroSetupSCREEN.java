@@ -85,11 +85,6 @@ public class HeroSetupSCREEN {
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
-		textField.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				//heroName = textField.getText();
-			}
-		});
 		textField.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textField.setDisabledTextColor(Color.LIGHT_GRAY);
 		textField.setForeground(Color.BLACK);
