@@ -83,7 +83,7 @@ public class battleSCREEN {
 		label.setBounds(20, 210, 214, 29);
 		frame.getContentPane().add(label);
 		
-		if (game.getParty().getTeam().size()  >= 2) {
+		if (game.getParty().getTeam().size()  >= 1) {
 			JButton button = new JButton("Hero: " + game.getParty().getTeam().get(0).getPersonName());
 			button.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 			button.addActionListener(new ActionListener() {

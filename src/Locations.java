@@ -17,7 +17,7 @@ public class Locations {
 		if (discovered) {
 			return name;
 		} else {
-			return "Unknown";
+			return "Destination: Unknown";
 		}
 	}
 	

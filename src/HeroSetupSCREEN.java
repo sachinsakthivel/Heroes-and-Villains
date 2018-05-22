@@ -32,7 +32,6 @@ public class HeroSetupSCREEN {
 	JFrame frame;
 	private JTextField textField;
 	private GameEnvironment game;
-	private int run;
 
 	/**
 	 * Launch the application.
@@ -72,7 +71,6 @@ public class HeroSetupSCREEN {
 		initialize();
 		game = newGame;
 		frame.setVisible(true);
-		run = game.getParty().getTeamLength();
 	}
 
 	/**
@@ -238,8 +236,7 @@ public class HeroSetupSCREEN {
 	}
 	
 	public void runAgain() {
-		if (run > 1) {
-			game.getParty().setTeamLength(run - 1);
+		if (game.getParty().getTeamLength() > 0) {
 			game.launchHeroSetupSCREEN();
 		} else {
 			game.launchHomeBaseSCREEN(false);
