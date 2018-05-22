@@ -134,11 +134,9 @@ public class HeroSetupSCREEN {
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				heroName = textField.getText();
-				if (heroName == "") {
-					lblerror.setVisible(false);
+				if (heroName.length() < 1) {
 					lblerror1.setVisible(true);
 				} else if (typePick == -1) {
-					lblerror1.setVisible(false);
 					lblerror.setVisible(true);
 				} else {
 					game.getParty().setTeamLength(game.getParty().getTeamLength() - 1);
