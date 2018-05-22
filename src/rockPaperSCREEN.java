@@ -120,7 +120,10 @@ public class rockPaperSCREEN {
 			public void actionPerformed(ActionEvent arg0) {
 				finishedWindow();
 				game.getParty().checkDead(game);
-				villain.checkdeath(game);
+				if (villain.checkdeath(game)) {
+					closeSCREEN();
+					game.getHomeBase().runAgain();
+				}
 			}
 		});
 		btnReturnToHero.setFont(new Font("Tahoma", Font.PLAIN, 15));

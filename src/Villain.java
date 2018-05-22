@@ -59,11 +59,12 @@ public class Villain extends Person {
 		return rand.nextInt(2);
 	}
 	
-	public void checkdeath(GameEnvironment game) {
+	public boolean checkdeath(GameEnvironment game) {
 		if (strikes == 0) {
 			this.setLiving(false);
-			game.getHomeBase().runAgain();
+			return true;
 		}
+		return false;
 	}
 	
 	
