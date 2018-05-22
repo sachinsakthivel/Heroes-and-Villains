@@ -104,6 +104,17 @@ public class GameEnvironment {
 		Shop.closeSCREEN();
 		homeBase.getFrame().setVisible(true);
 	}
+	
+	public void launchHospitalSCREEN(HomeBaseSCREEN homeBase) {
+		homeBase.getFrame().setVisible(false);
+		hospitalSCREEN hospital = new hospitalSCREEN(this);
+		homeBase.updateButton();
+	}
+	
+	public void closeHospitalSCREEN(HomeBaseSCREEN homeBase, hospitalSCREEN hospital) {
+		hospital.closeSCREEN();
+		homeBase.getFrame().setVisible(true);
+	}
 
 	
 	public void launchVillainLairSCREEN(HomeBaseSCREEN homeBase) {

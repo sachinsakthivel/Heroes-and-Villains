@@ -192,7 +192,7 @@ public class PowerUpSCREEN {
 		txtHeroDescription.setLineWrap(true);
 		txtHeroDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		txtHeroDescription.setText("Please Select a Hero.");
-		txtHeroDescription.setBounds(20, 366, 248, 206);
+		txtHeroDescription.setBounds(20, 366, 206, 206);
 		frame.getContentPane().add(txtHeroDescription);
 		
 		txtItemDescription = new JTextArea();
@@ -202,7 +202,7 @@ public class PowerUpSCREEN {
 		txtItemDescription.setLineWrap(true);
 		txtItemDescription.setText("Please Select an Item.");
 		txtItemDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		txtItemDescription.setBounds(640, 366, 245, 206);
+		txtItemDescription.setBounds(682, 366, 203, 206);
 		frame.getContentPane().add(txtItemDescription);
 		
 		txtoutputBox = new JTextArea();
@@ -212,7 +212,7 @@ public class PowerUpSCREEN {
 		txtoutputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		txtoutputBox.setLineWrap(true);
 		txtoutputBox.setText("Howdy y'all, Welcome to Miky's Workshop and Upgrade Station!!\r\n\r\nPick the Hero that you would like to Power up by pressing the respective button in Hero Selection.\r\n\r\nPick the Item that you would like to use by pressing the respective button in Item Selection.");
-		txtoutputBox.setBounds(236, 150, 436, 205);
+		txtoutputBox.setBounds(236, 150, 436, 206);
 		frame.getContentPane().add(txtoutputBox);
 	}
 	

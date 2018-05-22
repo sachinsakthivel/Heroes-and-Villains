@@ -94,7 +94,6 @@ public class Team {
 	public void moveToWard(Hero hero) {
 		Ward.add(hero);
 		this.removeOffTeam(hero);
-		System.out.println("Hero: "+hero.getPersonName()+ " has been moved to Healing Ward from Team." + "\n");
 	}
 	
 	public void releaseFromWard(Hero hero) {

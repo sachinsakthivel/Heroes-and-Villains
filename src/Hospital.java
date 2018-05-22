@@ -15,39 +15,33 @@ public class Hospital extends Locations {
 	
 	public void travel(GameEnvironment game) {
 		travelledto();
-		System.out.println("Welcome to the General Hosptial of this City");
-		userInput = -1;
+		game.launchHospitalSCREEN(game.getHomeBase());
+		/*userInput = -1;
 		while (userInput != 0) {
 			menuOptions();
 			userInput = HelperFunctions.InputValidator(0, 2);
 			if (userInput == 1) {
 			chosenHero = HelperFunctions.heroPick(game.getParty().getTeam());
-			chosenItem = HelperFunctions.itemPick(game.getParty().getInv(), healStartIndex, healEndIndex);
-			healingprocedure(game.getParty());
+			chosenItem = HelperFunctions.itemPick(game.getParty().getInv(), healStartIndex, healEndIndex);*/
+/*			healingprocedure(game.getParty());
 			System.out.println("You want to Heal Anyone Else?");
 			} else if (userInput == 2) {
 				visitWard(game.getParty().getWard());
 			} else {
 				System.out.println("Be Careful Out There, these are Dangerous Times");
-			} 
+			}*/
+	}
 			
-		}		
-	}
 	
-	public void menuOptions() {
-		System.out.println("What would you like to do? (Input the Number that Corresponds with your Choice) ");
-		System.out.println("0 - Return To HomeBase");
-		System.out.println("1 - Heal a Hero");
-		System.out.println("2 - Visit the Hero Ward");
-	}
-	
-	public void healingprocedure(Team team) {
+	public String healingprocedure(Team team, Hero chosenHero, Item chosenItem) {
 		if (chosenItem.getItemStock() == 0) {
-			System.out.println("Insuffient Required Tickets, Buy from Shop");
+			String out = "Insuffient Required Tickets, Please buy some from Shop";
+			return out;
 		}else if (chosenHero.getCurrentHealth() == chosenHero.getMaximumHealth()) {
-			System.out.println("Chosen Hero has no need for Healing, Hero is at Full Health.");
+			String out = "Chosen Hero has no need for Healing, Hero is already at Full Health.";
+			return out;
 		} else {
-			chosenItem.use(chosenHero);
+			String out = chosenItem.use(chosenHero);
 			team.moveToWard(chosenHero);
 			timer.schedule(new TimerTask() {
 				  @Override
@@ -55,16 +49,20 @@ public class Hospital extends Locations {
 				    team.releaseFromWard(chosenHero);
 				  }
 				}, chosenItem.getItemDuration()*60*1000);
+			return out;
 		}
 	}
 	
-	public void visitWard(ArrayList<Hero> ward) {
+	public String visitWard(ArrayList<Hero> ward) {
 		if (ward.size() > 0) {
+			String output = "Heroes Currently being treated and are resting in Hospital Ward:" + "\n\n";
 			for (Hero patient: ward) {
-				System.out.println("Person Name: " + patient.getPersonName());
+				output += "Person Name: " + patient.getPersonName() + "\n";
 			}
+			return output;
 		} else {
-			System.out.println("There are currenlty no Heroes Healing in Ward." + "\n");
+			String output = "There are currenlty no Heroes Healing in Hospital Ward." + "\n";
+			return output;
 		}
 	}
 

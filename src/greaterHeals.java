@@ -35,7 +35,9 @@ public class greaterHeals extends Item {
 				hero.setCurrentHealth(hero.getMaximumHealth());
 			}
 			this.setItemStock(this.getItemStock() - 1);
-			return "Healing Procedure Has Started";
+			String out =  "Healing Procedure Has Started";
+			out += " \n\nHero: "+hero.getPersonName()+ " has been moved into Healing Ward from Team." + "\n";
+			return out;
 		} else {
 			return "Insufficient amount of "+this.getItemName()+". \nPlease Buy Some from Shop";
 		}

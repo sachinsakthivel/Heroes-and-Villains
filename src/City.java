@@ -86,6 +86,10 @@ public class City {
 	public VillainsLair getVillainsLair() {
 		return lair;
 	}
+	
+	public Hospital getHospital() {
+		return hospital;
+	}
 
 
 
