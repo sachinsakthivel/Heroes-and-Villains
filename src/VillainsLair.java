@@ -55,8 +55,6 @@ public class VillainsLair extends Locations{
 		if(!hero.getLiving()) {
 			game.getParty().removeOffTeam(hero);
 		}
-		game.getParty().checkDead();
-		villain.checkdeath();
 	}
 	
 	public void menuOptions() {

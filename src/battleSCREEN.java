@@ -83,17 +83,20 @@ public class battleSCREEN {
 		label.setBounds(20, 210, 214, 29);
 		frame.getContentPane().add(label);
 		
-		JButton button = new JButton("Hero: " + game.getParty().getTeam().get(0).getPersonName());
-		button.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				HeroIndex = 0;
-				txtrHeroDescription.setText(game.getParty().getTeam().get(0).toString());	
-			}
-		});
-		button.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		button.setBounds(20, 250, 206, 43);
-		frame.getContentPane().add(button);
+		if (game.getParty().getTeam().size()  >= 2) {
+			JButton button = new JButton("Hero: " + game.getParty().getTeam().get(0).getPersonName());
+			button.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
+			button.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					HeroIndex = 0;
+					txtrHeroDescription.setText(game.getParty().getTeam().get(0).toString());	
+				}
+			});
+			button.setFont(new Font("Tahoma", Font.PLAIN, 14));
+			button.setBounds(20, 250, 206, 43);
+			frame.getContentPane().add(button);
+			
+		}
 		
 		if (game.getParty().getTeam().size()  >= 2) {
 			JButton button_1 = new JButton("Hero: " + game.getParty().getTeam().get(1).getPersonName());

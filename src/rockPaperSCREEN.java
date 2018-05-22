@@ -119,6 +119,8 @@ public class rockPaperSCREEN {
 		btnReturnToHero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				finishedWindow();
+				game.getParty().checkDead(game);
+				villain.checkdeath(game);
 			}
 		});
 		btnReturnToHero.setFont(new Font("Tahoma", Font.PLAIN, 15));

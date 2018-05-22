@@ -90,6 +90,8 @@ public class diceRollsSCREEN {
 		btnHeroSelect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				finishedWindow();
+				game.getParty().checkDead(game);
+				villain.checkdeath(game);
 			}
 		});
 		btnHeroSelect.setFont(new Font("Tahoma", Font.PLAIN, 15));

@@ -59,10 +59,10 @@ public class Villain extends Person {
 		return rand.nextInt(2);
 	}
 	
-	public void checkdeath() {
+	public void checkdeath(GameEnvironment game) {
 		if (strikes == 0) {
 			this.setLiving(false);
-			System.out.println("Congratualations, You have Defeated the Villain of This City!!");
+			game.getHomeBase().runAgain();
 		}
 	}
 	
