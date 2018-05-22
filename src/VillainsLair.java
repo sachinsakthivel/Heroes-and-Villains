@@ -2,10 +2,7 @@ import java.util.*;
 
 public class VillainsLair extends Locations{
 	
-	private int userInput;
 	private Villain villain;
-	private Hero chosenHero;
-	private int chosenGame;
 	private diceRolls dice = new diceRolls();
 	private rockPaperScissors RPS = new rockPaperScissors();
 	private guessTheNumber guess = new guessTheNumber();
@@ -47,26 +44,19 @@ public class VillainsLair extends Locations{
 		*/
 	}
 	
-	public void battle(Hero hero, Villain villain, int gameChoice) {
-		boolean gameWon;
-		if (gameChoice == 0) {
-			System.out.println(dice);
-			gameWon = dice.play(hero);
-		} else if ( gameChoice == 1) {
-			System.out.println(RPS);
-			gameWon = RPS.play(hero);
-		} else {
-			System.out.println(guess);
-			gameWon = guess.play(hero);
-		}
+	public void gameResults(boolean gameWon, Hero hero, Villain villain, GameEnvironment game) {
 		if (!gameWon) {
 			int damage = hero.getArmour() - villain.getDamage();
 			hero.setCurrentHealth(hero.getCurrentHealth() + damage);
-			System.out.println("Hero's current Health: "+ hero.getCurrentHealth() + "\n");
 		} else {
 			villain.setStrikes(villain.getStrikes() - 1);
-			System.out.println("Games left to Win until Villan Dies : " + villain.getStrikes() + "\n");
 		}
+		hero.checkdeath();
+		if(!hero.getLiving()) {
+			game.getParty().removeOffTeam(hero);
+		}
+		game.getParty().checkDead();
+		villain.checkdeath();
 	}
 	
 	public void menuOptions() {

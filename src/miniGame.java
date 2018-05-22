@@ -36,5 +36,11 @@ public class miniGame {
 		return false;
 	}
 	
+	public String gameDescription() {
+		return "Not Implemented Yet";
+	}
+	
+	
+	
 
 }

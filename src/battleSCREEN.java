@@ -22,8 +22,9 @@ public class battleSCREEN {
 	private JTextArea txtrVillain;
 	private JTextArea txtrHeroDescription;
 	private JTextArea txtrVillainDescription;
-	private int HeroIndex;
+	private int HeroIndex = -1;
 	private int gameChoice;
+	private JLabel lblerror;
 
 	/**
 	 * Launch the application.
@@ -47,7 +48,7 @@ public class battleSCREEN {
 	public battleSCREEN(GameEnvironment newGame) {
 		game = newGame;
 		villainsLair = game.getCurrentCity().getVillainsLair();
-		gameChoice = villainsLair.getVillain().gamePreference();
+		gameChoice = 0 ; /*villainsLair.getVillain().gamePreference();*/
 		initialize();
 		frame.setVisible(true);
 	}
@@ -67,12 +68,13 @@ public class battleSCREEN {
 		frame.getContentPane().add(titleLabel);
 		
 		txtrVillain = new JTextArea();
+		txtrVillain.setLineWrap(true);
 		txtrVillain.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		txtrVillain.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
 		txtrVillain.setEditable(false);
 		txtrVillain.setWrapStyleWord(true);
 		txtrVillain.setText(villainsLair.getVillain().toString());
-		txtrVillain.setBounds(106, 91, 681, 84);
+		txtrVillain.setBounds(106, 91, 681, 108);
 		frame.getContentPane().add(txtrVillain);
 		
 		JLabel label = new JLabel("Hero Selection:");
@@ -86,8 +88,7 @@ public class battleSCREEN {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				HeroIndex = 0;
-				txtrHeroDescription.setText(game.getParty().getTeam().get(0).toString());
-				
+				txtrHeroDescription.setText(game.getParty().getTeam().get(0).toString());	
 			}
 		});
 		button.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -114,7 +115,6 @@ public class battleSCREEN {
 				public void actionPerformed(ActionEvent e) {
 					HeroIndex = 1;
 					txtrHeroDescription.setText(game.getParty().getTeam().get(1).toString());
-					
 				}
 			});
 			button_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -133,6 +133,11 @@ public class battleSCREEN {
 		frame.getContentPane().add(btnReturnToLair);
 		
 		JButton btnFightVillain = new JButton("Fight Villain\r\n");
+		btnFightVillain.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				battle(HeroIndex, gameChoice, game);
+				}
+		});
 		btnFightVillain.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnFightVillain.setBounds(619, 528, 235, 57);
 		frame.getContentPane().add(btnFightVillain);
@@ -160,6 +165,13 @@ public class battleSCREEN {
 		label_1.setFont(new Font("Dialog", Font.BOLD, 18));
 		label_1.setBounds(270, 210, 214, 29);
 		frame.getContentPane().add(label_1);
+		
+		lblerror = new JLabel("Please Select a Hero");
+		lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
+		lblerror.setForeground(Color.RED);
+		lblerror.setBounds(654, 489, 255, 29);
+		lblerror.setVisible(false);
+		frame.getContentPane().add(lblerror);
 	}
 	
 	public void closeSCREEN() {
@@ -168,5 +180,21 @@ public class battleSCREEN {
 	
 	public void finishedWindow() {
 		game.closeBattleSCREEN(this);
+	}
+	
+	public void battle(int heroIndex, int gameChoice, GameEnvironment game) {
+		if (heroIndex == -1) {
+			lblerror.setVisible(true);
+		} else {
+			Hero chosenHero = game.getParty().getTeam().get(HeroIndex);
+			if (gameChoice == 0) {
+				game.launchDiceRollsSCREEN(chosenHero);
+			} else if (gameChoice == 0) {
+				txtrVillainDescription.setText("Rock Paper Scissors not implemented yet");
+			} else {
+				txtrVillainDescription.setText("guess not implemented yet");
+			}
+			closeSCREEN();
+		}
 	}
 }

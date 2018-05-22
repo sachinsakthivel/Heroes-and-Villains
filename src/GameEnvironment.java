@@ -4,6 +4,7 @@ public class GameEnvironment {
 	private  HomeBaseSCREEN homeBase;
 	private Team chosenTeam;
 	private City currentCity;
+	private battleSCREEN battle;
 		
 	public void setGame() {
 		GameEnvironment game = new GameEnvironment();
@@ -117,17 +118,27 @@ public class GameEnvironment {
 	}
 	
 	public void launchBattleSCREEN() {
-		battleSCREEN battle = new battleSCREEN(this);
+		battle = new battleSCREEN(this);
 	}
 	
 	public void closeBattleSCREEN(battleSCREEN battle) {
 		battle.closeSCREEN();
 		VillainsLairSCREEN villainLair = new VillainsLairSCREEN(this);
 	}
+	
+	public void launchDiceRollsSCREEN(Hero chosenHero) {
+		diceRollsSCREEN dice = new diceRollsSCREEN(this, chosenHero);
+	}
+	
+	public void closeDiceRollsSCREEN(diceRollsSCREEN dice) {
+		dice.closeSCREEN();
+		battleSCREEN battle = new battleSCREEN(this);
+	}
+	
+
   
 	public void launchExitSCREEN() {
 		ExitSCREEN exit = new ExitSCREEN();
-		exit.frame.setVisible(true);
 	}
 	
 	public void setParty(Team team) {
