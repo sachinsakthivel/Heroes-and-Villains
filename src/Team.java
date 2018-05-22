@@ -78,7 +78,8 @@ public class Team {
 
 	public void checkDead(GameEnvironment game) {
 		if (team.size() == 0 && Ward.size() == 0) {
-			game.launchExitSCREEN();
+			ExitSCREEN ExitScreen = new ExitSCREEN();
+			ExitScreen.frame.setVisible(true);
 		}
 	}
 
