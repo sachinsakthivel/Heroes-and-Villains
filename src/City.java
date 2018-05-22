@@ -2,16 +2,20 @@ import java.util.*;
 
 public class City {
 	private boolean isFinal;
-	private Shop shop = new Shop();
-	private Hospital hosptial = new Hospital();
-	private PowerUpDen power = new PowerUpDen();
-	private VillainsLair lair = new VillainsLair(isFinal);
+	private Shop shop;
+	private Hospital hospital;
+	private PowerUpDen power;;
+	private VillainsLair lair;
 	private int userInput = -1;
 	ArrayList<Locations> places;
 	
 	public City( boolean last) {
 		isFinal = last;
-		places = new ArrayList<Locations>(Arrays.asList(shop, hosptial, power, lair));
+		shop = new Shop();
+		hospital = new Hospital();
+		power = new PowerUpDen();
+		lair = new VillainsLair(isFinal);
+		places = new ArrayList<Locations>(Arrays.asList(shop, hospital, power, lair));
 		Collections.shuffle(places);
 	}
 	

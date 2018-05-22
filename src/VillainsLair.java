@@ -21,27 +21,6 @@ public class VillainsLair extends Locations{
 	public void travel(GameEnvironment game) {
 		travelledto();
 		game.launchVillainLairSCREEN(game.getHomeBase());
-		/*
-		userInput = -1; 
-		System.out.println("You have arrived at the Villain's Lair!");
-		while (userInput != 0 && villain.getLiving() && game.getParty().getTeam().size() > 0) {
-			menuOptions();
-			userInput = HelperFunctions.InputValidator(0, 1);
-			if (userInput == 1 ) {
-				System.out.println(villain);
-				chosenHero = HelperFunctions.heroPick(game.getParty().getTeam());
-				chosenGame = villain.gamePreference();
-				battle(chosenHero, villain, chosenGame);
-				chosenHero.checkdeath();
-				if (!chosenHero.getLiving()) {
-					game.getParty().removeOffTeam(chosenHero);
-				}
-				game.getParty().checkDead();
-				villain.checkdeath();
-			}
-			
-		}
-		*/
 	}
 	
 	public void gameResults(boolean gameWon, Hero hero, Villain villain, GameEnvironment game) {
@@ -55,12 +34,6 @@ public class VillainsLair extends Locations{
 		if(!hero.getLiving()) {
 			game.getParty().removeOffTeam(hero);
 		}
-	}
-	
-	public void menuOptions() {
-		System.out.println("What would you like to do? (Input the Number that Corresponds with your Choice) ");
-		System.out.println("0 - Travel Back to Homebase");
-		System.out.println("1 - Fight the Villain");
 	}
 	
 	public Villain getVillain() {

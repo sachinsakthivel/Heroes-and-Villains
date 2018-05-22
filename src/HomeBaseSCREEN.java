@@ -25,7 +25,6 @@ public class HomeBaseSCREEN {
 	private JButton btnEast;
 	private JButton btnWest;
 	private JButton btnSouth;
-	private int run;
 
 	/**
 	 * Launch the application.
@@ -48,12 +47,13 @@ public class HomeBaseSCREEN {
 	 */
 	public HomeBaseSCREEN(GameEnvironment newGame, boolean isFinal) {
 		game = newGame;
-		currentCity = new City(isFinal);
-		game.setCurrentCity(currentCity);
 		this.isFinal = isFinal;
+		currentCity = new City(isFinal);
+		game.setCityNum(game.getCityNum() -1);
+		game.setCurrentCity(currentCity);
 		initialize();
 		frame.setVisible(true);
-		run = game.getCityNum();
+
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class HomeBaseSCREEN {
 		lblhomeBase.setBounds(382, 11, 164, 102);
 		frame.getContentPane().add(lblhomeBase);
 		
-		btnNorth = new JButton("Destination: " +currentCity.getplaces().get(0).getName());
+		btnNorth = new JButton(currentCity.getplaces().get(0).getName());
 		btnNorth.setToolTipText("Travel North");
 		btnNorth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -81,7 +81,7 @@ public class HomeBaseSCREEN {
 		btnNorth.setBounds(555, 423, 182, 38);
 		frame.getContentPane().add(btnNorth);
 		
-		btnEast = new JButton("Destination: " +currentCity.getplaces().get(1).getName());
+		btnEast = new JButton(currentCity.getplaces().get(1).getName());
 		btnEast.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				currentCity.getplaces().get(1).travel(game);
@@ -91,7 +91,7 @@ public class HomeBaseSCREEN {
 		btnEast.setBounds(766, 555, 182, 38);
 		frame.getContentPane().add(btnEast);
 		
-		btnWest = new JButton("Destination: " +currentCity.getplaces().get(2).getName());
+		btnWest = new JButton(currentCity.getplaces().get(2).getName());
 		btnWest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				currentCity.getplaces().get(2).travel(game);
@@ -101,7 +101,7 @@ public class HomeBaseSCREEN {
 		btnWest.setBounds(364, 555, 182, 38);
 		frame.getContentPane().add(btnWest);
 		
-		btnSouth = new JButton("Destination: " +currentCity.getplaces().get(3).getName());
+		btnSouth = new JButton(currentCity.getplaces().get(3).getName());
 		btnSouth.setToolTipText("Travel South");
 		btnSouth.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -187,13 +187,18 @@ public class HomeBaseSCREEN {
 	}
 	
 	public void runAgain() {
-		if (run == 2) {
-			game.setCityNum(run - 1);
-			game.launchHomeBaseSCREEN(true);
-		} else if (run > 2) {
-			game.setCityNum(run - 1);
+		if (game.getCityNum() > 1) {
 			game.launchHomeBaseSCREEN(false);
+		} else if (game.getCityNum() == 1) {
+			game.launchHomeBaseSCREEN(true);
 		}
+	}
+	
+	public void updateButton() {
+		btnNorth.setText(currentCity.getplaces().get(0).getName());
+		btnEast.setText(currentCity.getplaces().get(1).getName());
+		btnWest.setText(currentCity.getplaces().get(2).getName());
+		btnSouth.setText(currentCity.getplaces().get(3).getName());
 	}
 	
 	public void closeSCREEN() {
