@@ -131,6 +131,7 @@ public class HomeBaseSCREEN {
 		frame.getContentPane().add(btnQuitGame);
 		
 		JTextArea outputBox = new JTextArea("After the arduous journey to the Home Base of the City; the Heroes rested their minds and bodies.\r\n\r\nAfter being fully rested, the Heroes are ready for a new challenge! What would you like to do?");
+		outputBox.setEditable(false);
 		outputBox.setWrapStyleWord(true);
 		outputBox.setLineWrap(true);
 		outputBox.setAlignmentY(Component.BOTTOM_ALIGNMENT);

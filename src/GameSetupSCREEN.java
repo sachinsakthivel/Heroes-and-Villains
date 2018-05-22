@@ -78,7 +78,7 @@ public class GameSetupSCREEN {
 		textField.setBorder(new LineBorder(new Color(0, 0, 0)));
 		textField.setDisabledTextColor(Color.LIGHT_GRAY);
 		textField.setForeground(Color.BLACK);
-		textField.setToolTipText("Enter a team name");
+		textField.setToolTipText("Enter a team name between 2-10 characters.");
 		textField.setFont(new Font("Century Gothic", Font.PLAIN, 22));
 		textField.setBackground(new Color(245, 245, 245));
 		textField.setBounds(504, 127, 288, 53);
@@ -86,7 +86,7 @@ public class GameSetupSCREEN {
 		textField.setColumns(10);
 		
 		citySlide = new JSlider();
-		citySlide.setOpaque(false);
+		citySlide.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		citySlide.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				NoCities = citySlide.getValue();
@@ -102,7 +102,8 @@ public class GameSetupSCREEN {
 		citySlide.setBounds(504, 189, 288, 67);
 		frame.getContentPane().add(citySlide);
 		
-		JLabel lblerror = new JLabel("Team name should be between 2-10 Characters and please Press Enter");
+		JLabel lblerror = new JLabel("Team name should be between 2-10 Characters ");
+		lblerror.setHorizontalAlignment(SwingConstants.CENTER);
 		lblerror.setVisible(false);
 		lblerror.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblerror.setForeground(Color.RED);
@@ -150,6 +151,7 @@ public class GameSetupSCREEN {
 		heroSlide.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		heroSlide.setPaintTicks(true);
 		heroSlide.setPaintLabels(true);
+		heroSlide.setValue(1);
 		heroSlide.setMinimum(1);
 		heroSlide.setMaximum(3);
 		heroSlide.setMajorTickSpacing(1);

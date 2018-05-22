@@ -203,6 +203,7 @@ public class PowerUpSCREEN {
 		frame.getContentPane().add(txtItemDescription);
 		
 		txtoutputBox = new JTextArea();
+		txtoutputBox.setEditable(false);
 		txtoutputBox.setWrapStyleWord(true);
 		txtoutputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));
 		txtoutputBox.setLineWrap(true);
