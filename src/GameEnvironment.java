@@ -135,6 +135,14 @@ public class GameEnvironment {
 		battleSCREEN battle = new battleSCREEN(this);
 	}
 	
+	public void launchRockPaperSCREEN(Hero chosenHero) {
+		rockPaperSCREEN rps = new rockPaperSCREEN(this, chosenHero);
+	}
+	
+	public void closeDiceRollsSCREEN(rockPaperSCREEN rps) {
+		rps.closeSCREEN();
+		battleSCREEN battle = new battleSCREEN(this);
+	}
 
   
 	public void launchExitSCREEN() {

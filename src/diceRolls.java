@@ -42,7 +42,7 @@ public class diceRolls extends miniGame{
 		output += "\nThe villain has rolled a "+villanRoll+".";
 		if (!gameWon) {
 			output += ("\n\nHa Ha, Sadly you had no chance.\nYou Lose.");
-		} else {
+		} else {  
 			output += ("\n\nIt seems you have won today, but remember Lady Luck is quite fickle.\nYou Win!");
 		}
 		return output;

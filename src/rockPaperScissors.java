@@ -6,47 +6,36 @@ public class rockPaperScissors extends miniGame {
 	private static final String rules = "The Aim of this Game is to beat the opponent's choice. Paper beats Rock, Rock beat Scissors and Scissors beats Paper.";
 	private int vNum;
 	private String vPick;
-	private int userPick;
 	private boolean gameWon;
 	
 	public rockPaperScissors() {
 		super(name, rules);
 	}
 	
-	public boolean play(Hero hero) {
-		gameWon = false;
-		Scanner UserInput = new Scanner(System.in);
-		menuOptions();
-		userPick = UserInput.nextInt();
+	public boolean play(Hero hero, int userPick) {
 		VillianPick();
-		System.out.println("....And the villian has picked "+vPick+" !.");
 		if (userPick == vNum) {
-			System.out.println("So close! It's a tie!!");
-			System.out.println("We Shall Play Again.");
-			play(hero);
+			gameWon = false;
 		}
 		else {
 			if (userPick == 1) {
 				if (vNum == 2) {
-					System.out.println("Sadly, You Have Lost.");
+					gameWon = false;
 				} else {
-					System.out.println("Congratulations You have Won this Game!!!");
 					gameWon = true;
 				}
 			} else if (userPick == 2) {
 				if (vNum == 3) {
-					System.out.println("Sadly, You Have Lost.");
+					gameWon = true;
 				}
 				else {
-					System.out.println("Congratulations You have Won this Game!!!");
 					gameWon = true;
 				} 
 			} else {
 				if (vNum == 1) {
-					System.out.println("Sadly, You Have Lost.");
+					gameWon = false;
 				}
 				else {
-					System.out.println("Congratulations You have Won this Game!!!");
 					gameWon = true;
 				} 
 			}
@@ -66,6 +55,25 @@ public class rockPaperScissors extends miniGame {
 		else {
 			vPick = "Rock";
 		}
+	}
+	
+	public String gameDescription() {
+		String output = "Welcome to the game of Rock Paper Scissors!!!";
+		output += "\n\nRules are simple: Rock beats Scissors, Scissors beats Paper and Paper beats Rock";
+		output += "\nA simple game that everyone has played, Now assuming you've played this before, you understand that this game brings about a lot of ties.";
+		output += "\nSince playing multiple times is annoying, if it's a tie, I win.";
+		output += "\n\nWhat do you Pick? Rock Paper Scissors!!!";
+		return output;
+	} 
+	
+	public String results() {
+		String output = "\n....And the villain chose "+vPick+".";
+		if (!gameWon) {
+			output += ("\n\nHa Ha, Sadly you had no chance.\nYou Lose.");
+		} else {  
+			output += ("\n\nIt seems you have won today, but remember Lady Luck is quite fickle.\nYou Win!");
+		}
+		return output;
 	}
 
 	

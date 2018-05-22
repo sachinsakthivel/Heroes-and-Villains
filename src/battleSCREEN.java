@@ -48,7 +48,7 @@ public class battleSCREEN {
 	public battleSCREEN(GameEnvironment newGame) {
 		game = newGame;
 		villainsLair = game.getCurrentCity().getVillainsLair();
-		gameChoice = 0 ; /*villainsLair.getVillain().gamePreference();*/
+		gameChoice = 1; /*villainsLair.getVillain().gamePreference();*/
 		initialize();
 		frame.setVisible(true);
 	}
@@ -189,8 +189,8 @@ public class battleSCREEN {
 			Hero chosenHero = game.getParty().getTeam().get(HeroIndex);
 			if (gameChoice == 0) {
 				game.launchDiceRollsSCREEN(chosenHero);
-			} else if (gameChoice == 0) {
-				txtrVillainDescription.setText("Rock Paper Scissors not implemented yet");
+			} else if (gameChoice == 1) {
+				game.launchRockPaperSCREEN(chosenHero);
 			} else {
 				txtrVillainDescription.setText("guess not implemented yet");
 			}
