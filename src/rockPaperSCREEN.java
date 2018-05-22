@@ -122,7 +122,7 @@ public class rockPaperSCREEN {
 			}
 		});
 		btnReturnToHero.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnReturnToHero.setBounds(317, 400, 235, 57);
+		btnReturnToHero.setBounds(317, 332, 235, 57);
 		frame.getContentPane().add(btnReturnToHero);
 		btnReturnToHero.setVisible(false);
 	}
