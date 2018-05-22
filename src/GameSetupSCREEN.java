@@ -72,7 +72,7 @@ public class GameSetupSCREEN {
 		textField = new JTextField();
 		textField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				TeamName = textField.getText();
+				//TeamName = textField.getText();
 			}
 		});
 		textField.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -115,6 +115,7 @@ public class GameSetupSCREEN {
 				if (TeamName.length() < 2 || TeamName.length() > 10) {
 					lblerror.setVisible(true);
 				}else {
+					TeamName = textField.getText();
 					finishedWindow();
 				}
 				
