@@ -76,11 +76,11 @@ public class Team {
 	}
 
 
-	public void checkDead(GameEnvironment game) {
+	public boolean checkDead(GameEnvironment game) {
 		if (team.size() == 0 && Ward.size() == 0) {
-			ExitSCREEN ExitScreen = new ExitSCREEN();
-			ExitScreen.frame.setVisible(true);
+			return true;
 		}
+		return false;
 	}
 
 

@@ -104,7 +104,10 @@ public class diceRollsSCREEN {
 	}
 	
 	public void finishedWindow() {
-		if (villain.checkdeath(game)) {
+		if (game.getParty().checkDead(game) ) {
+			closeSCREEN();
+			game.launchExitSCREEN();
+		}else if (villain.checkdeath(game)) {
 			closeSCREEN();
 			game.getHomeBase().runAgain();
 		} else {

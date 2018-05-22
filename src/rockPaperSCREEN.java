@@ -133,11 +133,14 @@ public class rockPaperSCREEN {
 	}
 	
 	public void finishedWindow() {
-		if (villain.checkdeath(game)) {
+		if (game.getParty().checkDead(game) ) {
+			closeSCREEN();
+			game.launchExitSCREEN();
+		} else if (villain.checkdeath(game)) {
 			closeSCREEN();
 			game.getHomeBase().runAgain();
 		} else {
-			game.closeRockPaperSCREEN(this);
+			game.closeRockPaperSCREEN(this);	
 		}
 	}
 	
