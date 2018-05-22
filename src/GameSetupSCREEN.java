@@ -86,6 +86,7 @@ public class GameSetupSCREEN {
 		textField.setColumns(10);
 		
 		citySlide = new JSlider();
+		citySlide.setOpaque(false);
 		citySlide.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				NoCities = citySlide.getValue();
@@ -112,10 +113,10 @@ public class GameSetupSCREEN {
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				TeamName = textField.getText();
 				if (TeamName.length() < 2 || TeamName.length() > 10) {
 					lblerror.setVisible(true);
 				}else {
-					TeamName = textField.getText();
 					finishedWindow();
 				}
 				

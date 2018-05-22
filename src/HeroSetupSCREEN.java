@@ -88,7 +88,7 @@ public class HeroSetupSCREEN {
 		textField = new JTextField();
 		textField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				heroName = textField.getText();
+				//heroName = textField.getText();
 			}
 		});
 		textField.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -128,6 +128,7 @@ public class HeroSetupSCREEN {
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				heroName = textField.getText();
 				if (heroName == "") {
 					lblerror.setVisible(false);
 					lblerror1.setVisible(true);
