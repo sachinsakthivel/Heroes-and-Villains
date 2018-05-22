@@ -91,10 +91,6 @@ public class diceRollsSCREEN {
 			public void actionPerformed(ActionEvent arg0) {
 				finishedWindow();
 				game.getParty().checkDead(game);
-				if (villain.checkdeath(game)) {
-					closeSCREEN();
-					game.getHomeBase().runAgain();
-				}
 			}
 		});
 		btnHeroSelect.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -108,7 +104,12 @@ public class diceRollsSCREEN {
 	}
 	
 	public void finishedWindow() {
-		game.closeDiceRollsSCREEN(this);
+		if (villain.checkdeath(game)) {
+			closeSCREEN();
+			game.getHomeBase().runAgain();
+		} else {
+			game.closeDiceRollsSCREEN(this);	
+		}
 	}
 	
 	

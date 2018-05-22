@@ -120,10 +120,6 @@ public class rockPaperSCREEN {
 			public void actionPerformed(ActionEvent arg0) {
 				finishedWindow();
 				game.getParty().checkDead(game);
-				if (villain.checkdeath(game)) {
-					closeSCREEN();
-					game.getHomeBase().runAgain();
-				}
 			}
 		});
 		btnReturnToHero.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -137,7 +133,12 @@ public class rockPaperSCREEN {
 	}
 	
 	public void finishedWindow() {
-		game.closeDiceRollsSCREEN(this);
+		if (villain.checkdeath(game)) {
+			closeSCREEN();
+			game.getHomeBase().runAgain();
+		} else {
+			game.closeRockPaperSCREEN(this);
+		}
 	}
 	
 	public void visibleButtons() {

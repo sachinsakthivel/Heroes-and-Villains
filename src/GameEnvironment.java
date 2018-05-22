@@ -152,7 +152,7 @@ public class GameEnvironment {
 		rockPaperSCREEN rps = new rockPaperSCREEN(this, chosenHero);
 	}
 	
-	public void closeDiceRollsSCREEN(rockPaperSCREEN rps) {
+	public void closeRockPaperSCREEN(rockPaperSCREEN rps) {
 		rps.closeSCREEN();
 		battleSCREEN battle = new battleSCREEN(this);
 	}
