@@ -12,6 +12,8 @@ import javax.swing.JTextArea;
 import java.awt.Component;
 import javax.swing.JScrollPane;
 import java.awt.Rectangle;
+import java.awt.Insets;
+import javax.swing.SwingConstants;
 
 public class HomeBaseSCREEN {
 
@@ -110,6 +112,7 @@ public class HomeBaseSCREEN {
 		frame.getContentPane().add(btnSouth);
 		
 		JLabel lblNewLabel = new JLabel("This is the Final City: " + isFinal);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(10, 23, 219, 90);
 		frame.getContentPane().add(lblNewLabel);
 		
@@ -131,6 +134,7 @@ public class HomeBaseSCREEN {
 		frame.getContentPane().add(btnQuitGame);
 		
 		JTextArea outputBox = new JTextArea("After the arduous journey to the Home Base of the City; the Heroes rested their minds and bodies.\r\n\r\nAfter being fully rested, the Heroes are ready for a new challenge! What would you like to do?");
+		outputBox.setMargin(new Insets(10, 10, 10, 10));
 		outputBox.setEditable(false);
 		outputBox.setWrapStyleWord(true);
 		outputBox.setLineWrap(true);

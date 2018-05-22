@@ -10,6 +10,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Insets;
 
 public class ShopSCREEN {
 
@@ -69,6 +70,7 @@ public class ShopSCREEN {
 		
 		// Main Text Output
 		JTextArea outputBox = new JTextArea("What would you like to buy? ");
+		outputBox.setMargin(new Insets(10, 10, 10, 10));
 		outputBox.setWrapStyleWord(true);
 		outputBox.setLineWrap(true);
 		outputBox.setAlignmentY(Component.BOTTOM_ALIGNMENT);
