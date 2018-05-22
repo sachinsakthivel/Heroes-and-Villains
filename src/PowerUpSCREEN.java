@@ -9,6 +9,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Insets;
 
 public class PowerUpSCREEN {
 
@@ -185,6 +186,7 @@ public class PowerUpSCREEN {
 		frame.getContentPane().add(btnTravelHome);
 		
 		txtHeroDescription = new JTextArea();
+		txtHeroDescription.setMargin(new Insets(10, 10, 10, 10));
 		txtHeroDescription.setWrapStyleWord(true);
 		txtHeroDescription.setEditable(false);
 		txtHeroDescription.setLineWrap(true);
@@ -194,6 +196,7 @@ public class PowerUpSCREEN {
 		frame.getContentPane().add(txtHeroDescription);
 		
 		txtItemDescription = new JTextArea();
+		txtItemDescription.setMargin(new Insets(10, 10, 10, 10));
 		txtItemDescription.setWrapStyleWord(true);
 		txtItemDescription.setEditable(false);
 		txtItemDescription.setLineWrap(true);
@@ -203,6 +206,7 @@ public class PowerUpSCREEN {
 		frame.getContentPane().add(txtItemDescription);
 		
 		txtoutputBox = new JTextArea();
+		txtoutputBox.setMargin(new Insets(10, 10, 10, 10));
 		txtoutputBox.setEditable(false);
 		txtoutputBox.setWrapStyleWord(true);
 		txtoutputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));

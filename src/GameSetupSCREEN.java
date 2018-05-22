@@ -19,6 +19,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
+import java.awt.Insets;
 
 public class GameSetupSCREEN {
 
@@ -70,6 +71,7 @@ public class GameSetupSCREEN {
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
+		textField.setMargin(new Insets(5, 5, 5, 5));
 		textField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//TeamName = textField.getText();
@@ -97,6 +99,7 @@ public class GameSetupSCREEN {
 		citySlide.setPaintLabels(true);
 		citySlide.setPaintTicks(true);
 		citySlide.setMajorTickSpacing(1);
+		citySlide.setValue(3);
 		citySlide.setMinimum(3);
 		citySlide.setMaximum(6);
 		citySlide.setBounds(504, 189, 288, 67);
@@ -133,12 +136,12 @@ public class GameSetupSCREEN {
 		
 		JLabel lblTeam = new JLabel("Team Name:");
 		lblTeam.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblTeam.setBounds(349, 137, 145, 33);
+		lblTeam.setBounds(351, 137, 145, 33);
 		frame.getContentPane().add(lblTeam);
 		
 		JLabel lblNoOfHeroes = new JLabel("Number of Heroes in your Team:");
 		lblNoOfHeroes.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblNoOfHeroes.setBounds(140, 278, 358, 33);
+		lblNoOfHeroes.setBounds(151, 276, 350, 33);
 		frame.getContentPane().add(lblNoOfHeroes);
 		
 		heroSlide = new JSlider();
@@ -160,7 +163,7 @@ public class GameSetupSCREEN {
 		
 		JLabel lblNoOfCities = new JLabel("Number of Cities you would like to explore:");
 		lblNoOfCities.setFont(new Font("Century Gothic", Font.BOLD, 22));
-		lblNoOfCities.setBounds(39, 205, 459, 33);
+		lblNoOfCities.setBounds(35, 205, 467, 33);
 		frame.getContentPane().add(lblNoOfCities);
 		
 		JLabel label = new JLabel("");

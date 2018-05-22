@@ -22,6 +22,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JTextPane;
 import java.awt.Component;
 import java.awt.Point;
+import java.awt.Insets;
 
 public class HeroSetupSCREEN {
 	
@@ -112,13 +113,17 @@ public class HeroSetupSCREEN {
 		frame.getContentPane().add(lblTeam);
 		
 		JLabel lblerror = new JLabel("Incorrect Input, Please Select A Hero Type");
+		lblerror.setHorizontalAlignment(SwingConstants.CENTER);
+		lblerror.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblerror.setForeground(Color.RED);
 		lblerror.setVisible(false);
 		lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
 		lblerror.setBounds(312, 628, 375, 40);
 		frame.getContentPane().add(lblerror);
 		
-		JLabel lblerror1 = new JLabel("Please Type in A Hero Name and Press Enter");
+		JLabel lblerror1 = new JLabel("Please Enter in A Hero Name");
+		lblerror1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblerror1.setHorizontalTextPosition(SwingConstants.CENTER);
 		lblerror1.setForeground(Color.RED);
 		lblerror1.setVisible(false);
 		lblerror1.setFont(new Font("Dialog", Font.PLAIN, 18));
@@ -156,6 +161,7 @@ public class HeroSetupSCREEN {
 		frame.getContentPane().add(lblHeroCreation);
 		
 		JTextArea textArea = new JTextArea("Select a Hero Class");
+		textArea.setMargin(new Insets(10, 10, 10, 10));
 		textArea.setWrapStyleWord(true);
 		textArea.setLineWrap(true);
 		textArea.setFont(new Font("Cambria Math", Font.PLAIN, 17));
