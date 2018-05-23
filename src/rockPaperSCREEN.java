@@ -140,6 +140,7 @@ public class rockPaperSCREEN {
 			game.launchExitSCREEN();
 			closeSCREEN();
 		} else if (villain.checkdeath(game)) {
+			JOptionPane.showMessageDialog(null, "Congratulations You have Defeated this Villain, Now Onward to the Next City!" + "\n");
 			closeSCREEN();
 			game.getHomeBase().runAgain();
 		} else {
