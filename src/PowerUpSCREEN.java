@@ -72,16 +72,18 @@ public class PowerUpSCREEN {
 		lbItemSelection.setBounds(640, 110, 214, 29);
 		frame.getContentPane().add(lbItemSelection);
 		
-		JButton btnHero1 = new JButton("Hero: " + game.getParty().getTeam().get(0).getPersonName());
-		btnHero1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				heroIndex = 0;
-				txtHeroDescription.setText(game.getParty().getTeam().get(0).toString());
-			}
-		});
-		btnHero1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnHero1.setBounds(20, 150, 206, 43);
-		frame.getContentPane().add(btnHero1);
+		if(game.getParty().getTeam().size() >= 1) {
+			JButton btnHero1 = new JButton("Hero: " + game.getParty().getTeam().get(0).getPersonName());
+			btnHero1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					heroIndex = 0;
+					txtHeroDescription.setText(game.getParty().getTeam().get(0).toString());
+				}
+			});
+			btnHero1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+			btnHero1.setBounds(20, 150, 206, 43);
+			frame.getContentPane().add(btnHero1);
+		}
 		
 		if (game.getParty().getTeam().size()  >= 2) {
 			JButton btnHero2 = new JButton("Hero: " + game.getParty().getTeam().get(1).getPersonName());
