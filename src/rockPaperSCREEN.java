@@ -140,8 +140,12 @@ public class rockPaperSCREEN {
 			game.launchExitSCREEN();
 			closeSCREEN();
 		} else if (villain.checkdeath(game)) {
+<<<<<<< HEAD
 			game.getParty().setCoins(game.getParty().getCoins() + 150);
 			JOptionPane.showMessageDialog(null, "Congratulations You have Defeated this Villain, Now Onward to the Next City!" + "\nYou have recieved 150 coins as gratitude from the Citizens");
+=======
+			JOptionPane.showMessageDialog(null, "Congratulations You have Defeated this Villain, Now Onward to the Next City!" + "\n");
+>>>>>>> branch 'master' of https://eng-git.canterbury.ac.nz/ssa237/heroes-and-villians.git
 			closeSCREEN();
 			game.getHomeBase().runAgain();
 		} else {

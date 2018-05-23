@@ -123,8 +123,6 @@ public class GameSetupSCREEN {
 				}else {
 					finishedWindow();
 				}
-				
-				
 			}
 		});
 		btnConfirm.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));

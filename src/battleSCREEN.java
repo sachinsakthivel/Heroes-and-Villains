@@ -121,8 +121,8 @@ public class battleSCREEN {
 			JButton button_2 = new JButton("Hero: "+ game.getParty().getTeam().get(2).getPersonName());
 			button_2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					HeroIndex = 1;
-					txtrHeroDescription.setText(game.getParty().getTeam().get(1).toString());
+					HeroIndex = 2;
+					txtrHeroDescription.setText(game.getParty().getTeam().get(2).toString());
 				}
 			});
 			button_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -212,6 +212,7 @@ public class battleSCREEN {
 			} else if (gameChoice == 1) {
 				game.launchRockPaperSCREEN(chosenHero);
 			} else {
+				
 				txtrVillainDescription.setText("guess not implemented yet");
 			}
 			closeSCREEN();
