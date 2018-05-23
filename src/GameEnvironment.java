@@ -156,8 +156,16 @@ public class GameEnvironment {
 		rps.closeSCREEN();
 		battleSCREEN battle = new battleSCREEN(this);
 	}
-
-  
+	
+	public void launchGuessNumber(Hero chosenHero) {
+		GuessTheNumberSCREEN GuessGame = new GuessTheNumberSCREEN(this, chosenHero);
+	}
+	
+	public void closeGuessNumber(GuessTheNumberSCREEN GuessGame) {
+		GuessGame.closeSCREEN();
+		battleSCREEN battle = new battleSCREEN(this);
+	}
+	  
 	public void launchExitSCREEN() {
 		ExitSCREEN exit = new ExitSCREEN();
 	}
