@@ -1,6 +1,19 @@
-
+/**
+ * Date: May 3rd 2018
+ * 
+ * This class creates the Armour power up Item.
+ * 
+ * Parent Class is Item. Attributes include amount of Armour and Armour description. Enables Hero to 
+ * use Armour Item.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ *
+ */
 public class armourUp extends Item {
 	
+	/**
+	 * 
+	 */
 	private final int armAmount;
 	private final String Description;
 	
