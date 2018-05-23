@@ -27,7 +27,7 @@ public class GuessTheNumberSCREEN {
 	private JButton Continue;
 	private int UserGuess;
 	private boolean gameWon;
-	private int tryNo = 0;
+	private int tryNo;
 
 	/**
 	 * Create the application.
@@ -38,7 +38,8 @@ public class GuessTheNumberSCREEN {
 		villain = game.getCurrentCity().getVillainsLair().getVillain();
 		GuessGame = new guessTheNumber();
 		Random rand = new Random();
-		villianGuess = rand.nextInt(10 - hero.getSkill()) + 1;
+		villianGuess = 2;
+		tryNo = 0;
 		initialize();
 		textArea.setText(GuessGame.gameDescription());
 		frame.setVisible(true);
@@ -66,7 +67,8 @@ public class GuessTheNumberSCREEN {
 		UGuessSlider.setPaintTicks(true);
 		UGuessSlider.setPaintLabels(true);
 		UGuessSlider.setMajorTickSpacing(1);
-		UGuessSlider.setMaximum(10 - hero.getSkill());
+		UGuessSlider.setMaximum(10);
+		UGuessSlider.setMinimum(1);
 		UGuessSlider.setBounds(175, 445, 684, 44);
 		frame.getContentPane().add(UGuessSlider);
 		
@@ -83,13 +85,17 @@ public class GuessTheNumberSCREEN {
 		btnIGuess.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				UserGuess = UGuessSlider.getValue();
-				if (tryNo >= 1) {
+				tryNo++;
+				gameWon = playGame();
+				if (gameWon) {
+					textArea.setText("Well done, You guessed Right!!, You Win.");
+					btnIGuess.setVisible(false);
+					Continue.setVisible(true);
+				}else if (tryNo > 2) {
 					textArea.setText("Ha Ha Ha, You Lose. The number I chose was " + villianGuess);
 					btnIGuess.setVisible(false);
 					Continue.setVisible(true);
-				} else {
-					gameWon = playGame();
-				}
+				} 
 			}
 		});
 		btnIGuess.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
@@ -113,18 +119,13 @@ public class GuessTheNumberSCREEN {
 	
 	public boolean playGame() {
 		if (UserGuess == villianGuess) {
-			textArea.setText("Well done, You guessed Right!!, You Win.");
-			btnIGuess.setVisible(false);
-			Continue.setVisible(true);
 			gameWon = true;
 		} else if (UserGuess < villianGuess) {
 			textArea.setText("Your Guess is lower than mine.");
-			tryNo++;
 			gameWon = false;
 			
 		} else {
 			textArea.setText("Your Guess is higher than mine.");
-			tryNo++;
 			gameWon = false;
 		}
 		return gameWon;
