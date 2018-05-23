@@ -50,7 +50,7 @@ public class battleSCREEN {
 	public battleSCREEN(GameEnvironment newGame) {
 		game = newGame;
 		villainsLair = game.getCurrentCity().getVillainsLair();
-		gameChoice = 1; /*villainsLair.getVillain().gamePreference();*/
+		gameChoice = 2; /*villainsLair.getVillain().gamePreference();*/
 		initialize();
 		frame.setVisible(true);
 		if (game.getParty().typeCheck("Mental Monk")) {
@@ -212,8 +212,7 @@ public class battleSCREEN {
 			} else if (gameChoice == 1) {
 				game.launchRockPaperSCREEN(chosenHero);
 			} else {
-				
-				txtrVillainDescription.setText("guess not implemented yet");
+				game.launchGuessNumber(chosenHero);
 			}
 			closeSCREEN();
 		}

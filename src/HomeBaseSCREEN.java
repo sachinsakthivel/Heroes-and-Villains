@@ -46,9 +46,9 @@ public class HomeBaseSCREEN {
 	/**
 	 * Create the application.
 	 */
-	public HomeBaseSCREEN(GameEnvironment newGame, boolean isFinal) {
+	public HomeBaseSCREEN(GameEnvironment newGame, boolean Final) {
 		game = newGame;
-		this.isFinal = isFinal;
+		this.isFinal = Final;
 		currentCity = new City(isFinal);
 		game.setCityNum(game.getCityNum() -1);
 		game.setCurrentCity(currentCity);
