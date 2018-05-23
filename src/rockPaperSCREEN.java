@@ -2,6 +2,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
@@ -134,8 +136,9 @@ public class rockPaperSCREEN {
 	
 	public void finishedWindow() {
 		if (game.getParty().checkDead(game) ) {
-			closeSCREEN();
+			JOptionPane.showMessageDialog(null, "Your Team has Perished. You have Failed this City" + "\n");
 			game.launchExitSCREEN();
+			closeSCREEN();
 		} else if (villain.checkdeath(game)) {
 			closeSCREEN();
 			game.getHomeBase().runAgain();

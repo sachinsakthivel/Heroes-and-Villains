@@ -51,7 +51,7 @@ public class Team {
 		if (!team.contains(superhero)) {
 			team.add(superhero);
 		} else {
-			System.out.println("This hero is already in the team");
+			System.out.println("This hero is already in the team");  
 		}
 	}
 	

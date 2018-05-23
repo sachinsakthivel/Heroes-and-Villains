@@ -30,6 +30,7 @@ public class ExitSCREEN {
 	 */
 	public ExitSCREEN() {
 		initialize();
+		frame.setVisible(true);
 	}
 
 	/**

@@ -89,8 +89,7 @@ public class StartUpSCREEN {
 		JButton btnNewButton =  new JButton("QUIT GAME");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ExitSCREEN ExitScreen = new ExitSCREEN();
-				ExitScreen.frame.setVisible(true);
+				game.launchExitSCREEN();
 				closeSCREEN();
 			}
 		});
