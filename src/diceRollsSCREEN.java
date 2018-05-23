@@ -111,7 +111,8 @@ public class diceRollsSCREEN {
 			closeSCREEN();
 			game.launchExitSCREEN();
 		}else if (villain.checkdeath(game)) {
-			JOptionPane.showMessageDialog(null, "Congratulations You have Defeated this Villain, Now Onward to the Next City!" + "\n");
+			game.getParty().setCoins(game.getParty().getCoins() + 150);
+			JOptionPane.showMessageDialog(null, "Congratulations You have Defeated this Villain, Now Onward to the Next City!" + "\nYou have recieved 150 coins as gratitude from the Citizens");
 			closeSCREEN();
 			game.getHomeBase().runAgain();
 		} else {

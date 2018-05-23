@@ -16,10 +16,10 @@ public class HelperFunctions {
 			watchDog newHero = new watchDog(name);
 			return newHero;
 		} else if (userPick == 5) {
-			Necromancer newHero = new Necromancer(name);
+			pathFinder newHero = new pathFinder(name);
 			return newHero;
 		} else {
-			Oracle newHero = new Oracle(name);
+			mentalMonk newHero = new mentalMonk(name);
 			return newHero;
 		}
 	}

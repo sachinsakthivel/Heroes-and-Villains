@@ -7,9 +7,7 @@ public class Hero extends Person{
 	private int Dice;
 	private int Skill;
 	private int Armour;
-	private boolean isActive;
 	private String type;
-	private int abilityCount;
 	
 	public Hero(String name) {
 		super(name);
@@ -18,7 +16,6 @@ public class Hero extends Person{
 		Dice = 0;
 		Skill = 0;
 		Armour = 0;
-		isActive = false;
 		
 	}
 	
@@ -77,23 +74,6 @@ public class Hero extends Person{
 		Armour = armour;
 	}
 
-
-	public boolean getisActive() {
-		return isActive;
-	}
-
-
-	public void setActive(boolean isActive) {
-		this.isActive = isActive;
-	}
-	
-	public void ability(Team team) {
-		if (!this.getisActive()) {
-			System.out.println("This Hero Does not Have any Active Abilities");
-		}
-	}
-
-
 	public String getType() {
 		return type;
 	}
@@ -103,15 +83,6 @@ public class Hero extends Person{
 		this.type = type;
 	}
 
-
-	public int getAbilityCount() {
-		return abilityCount;
-	}
-
-
-	public void setAbilityCount(int abilityCount) {
-		this.abilityCount = abilityCount;
-	}
 
 	
 

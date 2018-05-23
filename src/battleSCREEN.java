@@ -13,6 +13,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.border.MatteBorder;
+import javax.swing.JPanel;
 
 public class battleSCREEN {
 
@@ -25,6 +26,7 @@ public class battleSCREEN {
 	private int HeroIndex = -1;
 	private int gameChoice;
 	private JLabel lblerror;
+	JPanel villainDescription;
 
 	/**
 	 * Launch the application.
@@ -51,6 +53,9 @@ public class battleSCREEN {
 		gameChoice = 1; /*villainsLair.getVillain().gamePreference();*/
 		initialize();
 		frame.setVisible(true);
+		if (game.getParty().typeCheck("Mental Monk")) {
+			villainDescription.setVisible(true);
+		}
 	}
 
 	/**
@@ -145,24 +150,6 @@ public class battleSCREEN {
 		btnFightVillain.setBounds(619, 528, 235, 57);
 		frame.getContentPane().add(btnFightVillain);
 		
-		txtrHeroDescription = new JTextArea();
-		txtrHeroDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		txtrHeroDescription.setText("Select a Hero");
-		txtrHeroDescription.setBounds(270, 250, 214, 191);
-		frame.getContentPane().add(txtrHeroDescription);
-		
-		txtrVillainDescription = new JTextArea();
-		txtrVillainDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		txtrVillainDescription.setText(villainsLair.villainInsight() + "\nChosen Game to Play: " +villainsLair.getGames().get(gameChoice).getGameName());
-		txtrVillainDescription.setBounds(517, 250, 337, 191);
-		frame.getContentPane().add(txtrVillainDescription);
-		
-		JLabel lblVillaindescription = new JLabel("Knowledge About Villain:\r\n");
-		lblVillaindescription.setHorizontalAlignment(SwingConstants.CENTER);
-		lblVillaindescription.setFont(new Font("Dialog", Font.BOLD, 18));
-		lblVillaindescription.setBounds(575, 210, 235, 29);
-		frame.getContentPane().add(lblVillaindescription);
-		
 		JLabel label_1 = new JLabel("Hero Selection:");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		label_1.setFont(new Font("Dialog", Font.BOLD, 18));
@@ -175,6 +162,36 @@ public class battleSCREEN {
 		lblerror.setBounds(654, 489, 255, 29);
 		lblerror.setVisible(false);
 		frame.getContentPane().add(lblerror);
+		
+		villainDescription = new JPanel();
+		villainDescription.setBounds(494, 210, 378, 268);
+		frame.getContentPane().add(villainDescription);
+		villainDescription.setLayout(null);
+		villainDescription.setVisible(false);
+		
+		JLabel lblVillaindescription = new JLabel("Knowledge About Villain:\r\n");
+		lblVillaindescription.setBounds(10, 11, 218, 24);
+		villainDescription.add(lblVillaindescription);
+		lblVillaindescription.setHorizontalAlignment(SwingConstants.CENTER);
+		lblVillaindescription.setFont(new Font("Dialog", Font.BOLD, 18));
+		
+		txtrVillainDescription = new JTextArea();
+		txtrVillainDescription.setWrapStyleWord(true);
+		txtrVillainDescription.setLineWrap(true);
+		txtrVillainDescription.setEditable(false);
+		txtrVillainDescription.setBounds(20, 39, 337, 191);
+		villainDescription.add(txtrVillainDescription);
+		txtrVillainDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
+		txtrVillainDescription.setText(villainsLair.villainInsight() + "\nChosen Game to Play: " +villainsLair.getGames().get(gameChoice).getGameName());
+		
+		txtrHeroDescription = new JTextArea();
+		txtrHeroDescription.setWrapStyleWord(true);
+		txtrHeroDescription.setLineWrap(true);
+		txtrHeroDescription.setEditable(false);
+		txtrHeroDescription.setBounds(280, 246, 214, 191);
+		frame.getContentPane().add(txtrHeroDescription);
+		txtrHeroDescription.setFont(new Font("Cambria Math", Font.PLAIN, 17));
+		txtrHeroDescription.setText("Select a Hero");
 	}
 	
 	public void closeSCREEN() {

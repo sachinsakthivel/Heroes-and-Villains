@@ -90,6 +90,7 @@ public class GameEnvironment {
 	
 	public void closePowerUpSCREEN(HomeBaseSCREEN homeBase, PowerUpSCREEN powerUp) {
 		powerUp.closeSCREEN();
+		homeBase.randomEvents();
 		homeBase.getFrame().setVisible(true);
 	}
 	
@@ -102,6 +103,7 @@ public class GameEnvironment {
 	
 	public void closeShopSCREEN(HomeBaseSCREEN homeBase, ShopSCREEN Shop) {
 		Shop.closeSCREEN();
+		homeBase.randomEvents();
 		homeBase.getFrame().setVisible(true);
 	}
 	
@@ -113,6 +115,7 @@ public class GameEnvironment {
 	
 	public void closeHospitalSCREEN(HomeBaseSCREEN homeBase, hospitalSCREEN hospital) {
 		hospital.closeSCREEN();
+		homeBase.randomEvents();
 		homeBase.getFrame().setVisible(true);
 	}
 
@@ -126,6 +129,7 @@ public class GameEnvironment {
 	public void closeVillainLairSCREEN(HomeBaseSCREEN homeBase, VillainsLairSCREEN villainLair, boolean toHomeBase) {
 		villainLair.closeSCREEN();
 		if(toHomeBase) {
+			homeBase.randomEvents();
 			homeBase.getFrame().setVisible(true);
 		}
 	}

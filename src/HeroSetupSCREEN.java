@@ -111,27 +111,23 @@ public class HeroSetupSCREEN {
 		lblerror.setForeground(Color.RED);
 		lblerror.setVisible(false);
 		lblerror.setFont(new Font("Dialog", Font.PLAIN, 18));
-		lblerror.setBounds(312, 628, 375, 40);
+		lblerror.setBounds(225, 628, 539, 40);
 		frame.getContentPane().add(lblerror);
-		
-		JLabel lblerror1 = new JLabel("Please Enter in A Hero Name");
-		lblerror1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblerror1.setHorizontalTextPosition(SwingConstants.CENTER);
-		lblerror1.setForeground(Color.RED);
-		lblerror1.setVisible(false);
-		lblerror1.setFont(new Font("Dialog", Font.PLAIN, 18));
-		lblerror1.setBounds(312, 628, 375, 40);
-		frame.getContentPane().add(lblerror1);
 		
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				heroName = textField.getText();
 				if (heroName.length() < 1) {
-					lblerror1.setVisible(true);
-				} else if (typePick == -1) {
+					lblerror.setText("Please Enter a Hero Name");
 					lblerror.setVisible(true);
-				} else {
+				} else if (typePick == -1) {
+					lblerror.setText("Incorrect Input, Please Select A Hero Type");
+					lblerror.setVisible(true);
+				} else if (game.getParty().nameCheck(heroName)) {
+					lblerror.setText("Hero Name is already taken. Enter another Name");
+					lblerror.setVisible(true);
+				}else {
 					game.getParty().setTeamLength(game.getParty().getTeamLength() - 1);
 					createHero();
 					finishedWindow();
@@ -204,10 +200,10 @@ public class HeroSetupSCREEN {
 		btnWatchdog.setBounds(575, 241, 149, 60);
 		frame.getContentPane().add(btnWatchdog);
 		
-		JButton btnNecromancer = new JButton("Necromancer");
+		JButton btnNecromancer = new JButton("Path Finder");
 		btnNecromancer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.setText(Necromancer.background() + "\n\n" + Necromancer.getStats());
+				textArea.setText(pathFinder.background() + "\n\n" + pathFinder.getStats());
 				typePick = 5;
 			}
 		});
@@ -215,10 +211,10 @@ public class HeroSetupSCREEN {
 		btnNecromancer.setBounds(575, 326, 149, 60);
 		frame.getContentPane().add(btnNecromancer);
 		
-		JButton btnHealer = new JButton("Oracle");
+		JButton btnHealer = new JButton("Mental Monk");
 		btnHealer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.setText(Oracle.background() + "\n\n" + Oracle.getStats());
+				textArea.setText(mentalMonk.background() + "\n\n" + mentalMonk.getStats());
 				typePick = 6;
 				
 			}

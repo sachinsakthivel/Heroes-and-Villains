@@ -84,6 +84,24 @@ public class Team {
 		}
 		return false;
 	}
+	
+	public boolean typeCheck(String type) {
+		for (Hero superHero: team) {
+			if (superHero.getType().equals(type)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean nameCheck(String name) {
+		for (Hero superHero: team) {
+			if(superHero.getPersonName().equals(name)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 
 	public int getCoins() {

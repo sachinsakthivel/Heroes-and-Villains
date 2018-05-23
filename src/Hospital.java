@@ -2,11 +2,6 @@ import java.util.*;
 
 public class Hospital extends Locations {
 	
-	private int userInput;
-	private Hero chosenHero;
-	private Item chosenItem;
-	private int healStartIndex = 0;
-	private int healEndIndex = 3;
 	private Timer timer = new Timer();
 	
 	public Hospital() {
@@ -16,20 +11,6 @@ public class Hospital extends Locations {
 	public void travel(GameEnvironment game) {
 		travelledto();
 		game.launchHospitalSCREEN(game.getHomeBase());
-		/*userInput = -1;
-		while (userInput != 0) {
-			menuOptions();
-			userInput = HelperFunctions.InputValidator(0, 2);
-			if (userInput == 1) {
-			chosenHero = HelperFunctions.heroPick(game.getParty().getTeam());
-			chosenItem = HelperFunctions.itemPick(game.getParty().getInv(), healStartIndex, healEndIndex);*/
-/*			healingprocedure(game.getParty());
-			System.out.println("You want to Heal Anyone Else?");
-			} else if (userInput == 2) {
-				visitWard(game.getParty().getWard());
-			} else {
-				System.out.println("Be Careful Out There, these are Dangerous Times");
-			}*/
 	}
 			
 	

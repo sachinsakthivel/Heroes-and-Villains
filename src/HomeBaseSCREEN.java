@@ -25,6 +25,7 @@ public class HomeBaseSCREEN {
 	private JButton btnEast;
 	private JButton btnWest;
 	private JButton btnSouth;
+	private JTextArea outputBox;
 
 	/**
 	 * Launch the application.
@@ -51,9 +52,13 @@ public class HomeBaseSCREEN {
 		currentCity = new City(isFinal);
 		game.setCityNum(game.getCityNum() -1);
 		game.setCurrentCity(currentCity);
+		if (game.getParty().typeCheck("Path Finder")) {
+			for (Locations place: game.getCurrentCity().getplaces()) {
+				place.travelledto();
+			}
+		}
 		initialize();
 		frame.setVisible(true);
-
 	}
 
 	/**
@@ -111,11 +116,6 @@ public class HomeBaseSCREEN {
 		btnSouth.setBounds(565, 689, 182, 38);
 		frame.getContentPane().add(btnSouth);
 		
-		JLabel lblNewLabel = new JLabel("This is the Final City: " + isFinal);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(10, 23, 219, 90);
-		frame.getContentPane().add(lblNewLabel);
-		
 		JLabel compass = new JLabel("");
 		compass.setIcon(scaleImg("/Images/compass-3057603_960_720.png", 200, 200));
 		compass.setBounds(555, 472, 206, 206);
@@ -133,7 +133,7 @@ public class HomeBaseSCREEN {
 		btnQuitGame.setBounds(10, 684, 206, 57);
 		frame.getContentPane().add(btnQuitGame);
 		
-		JTextArea outputBox = new JTextArea("After the arduous journey to the Home Base of the City; the Heroes rested their minds and bodies.\r\n\r\nAfter being fully rested, the Heroes are ready for a new challenge! What would you like to do?");
+		outputBox = new JTextArea("After the arduous journey to the Home Base of the City; the Heroes rested their minds and bodies.\r\n\r\nAs the Sun rose, the Heroes are ready for a new challenge! What would you like to do?");
 		outputBox.setMargin(new Insets(10, 10, 10, 10));
 		outputBox.setEditable(false);
 		outputBox.setWrapStyleWord(true);
@@ -147,10 +147,7 @@ public class HomeBaseSCREEN {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String output  = currentCity.useMap(game.getParty());
-				btnNorth.setText(currentCity.getplaces().get(0).getName());
-				btnEast.setText(currentCity.getplaces().get(1).getName());
-				btnWest.setText(currentCity.getplaces().get(2).getName());
-				btnSouth.setText(currentCity.getplaces().get(3).getName());
+				updateButton();
 				outputBox.setText(output);
 			}
 		});
@@ -199,6 +196,10 @@ public class HomeBaseSCREEN {
 		btnEast.setText(currentCity.getplaces().get(1).getName());
 		btnWest.setText(currentCity.getplaces().get(2).getName());
 		btnSouth.setText(currentCity.getplaces().get(3).getName());
+	}
+	
+	public void randomEvents() {
+		outputBox.setText(game.getCurrentCity().randomEvent(game.getParty()));
 	}
 	
 	public void closeSCREEN() {

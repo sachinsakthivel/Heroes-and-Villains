@@ -7,7 +7,7 @@ public class City {
 	private PowerUpDen power;;
 	private VillainsLair lair;
 	private int userInput = -1;
-	ArrayList<Locations> places;
+	private ArrayList<Locations> places;
 	
 	public City( boolean last) {
 		isFinal = last;
@@ -21,7 +21,6 @@ public class City {
 	
 	public void HomeBase(GameEnvironment game) {
 		System.out.println("Welcome To Your Home Base");
-		randomEvent();
 		while (userInput !=0 && lair.getVillain().getLiving()) {
 			menuOptions();
 			userInput = HelperFunctions.InputValidator(0, 6);
@@ -71,8 +70,34 @@ public class City {
 		}
 	}
 	
-	public void randomEvent() {
-		System.out.println("Random Events not implemented Yet");
+	public String randomEvent(Team team) {
+		String output = "After the arduous journey to the Home Base of the City; the Heroes rested their minds and bodies.";
+		output += "\n\n....As the Night Passed, Strangers using the cover of darkness sneaked closer.";
+		Random Chance = new Random();
+		int event = Chance.nextInt(10) + 1;
+		int itemIndex = Chance.nextInt(team.getInv().size());
+		Item chosenItem = team.getInv().get(itemIndex);
+		if (event <= 4) {
+			chosenItem.setItemStock(chosenItem.getItemStock() + event);
+			output += "\n\n As the Heroes woke just before Dawn; They noticed "+event+" "+chosenItem.getItemName()+" placed near them.";
+			output += "\nA gift given by the citizens of the City, too terrified to give it in person, in case of repercussions from the Villain.";
+		} else {
+			if (team.typeCheck("WatchDog")) {
+				output += "\nAs the Theives tried to steal Items for the Heroes, the ever Vigiliant WatchDog Discovered them and Scared them Off.";	
+			} else {
+				int stealItem = Chance.nextInt(2) +1;
+				if (chosenItem.getItemStock() < stealItem) {
+					int stolenCoins =  Chance.nextInt(40) + 1;
+					team.setCoins(team.getCoins() - stolenCoins);
+					output += "\nUnable to find any valuable items, the Thieves stole "+stolenCoins+" Coins.";
+				} else {
+					team.getInv().get(itemIndex).setItemStock(team.getInv().get(itemIndex).getItemStock() - stealItem);
+					output += "When the Heroes woke up, they realised that they've been robbed. The Thieves took "+stealItem+" of "+chosenItem.getItemName()+" taken.";
+				}
+			}
+		}
+		output += "\n\n What would you like to do Now?";
+		return output;
 	}
 	
 	public ArrayList<Locations> getplaces() {
