@@ -80,7 +80,7 @@ public class GuessTheNumberSCREEN {
 		UGuessSlider.setPaintTicks(true);
 		UGuessSlider.setPaintLabels(true);
 		UGuessSlider.setMajorTickSpacing(1);
-		UGuessSlider.setMaximum(hero.getSkill());
+		UGuessSlider.setMaximum(10 - hero.getSkill());
 		UGuessSlider.setBounds(175, 445, 684, 44);
 		frame.getContentPane().add(UGuessSlider);
 		
