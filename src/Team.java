@@ -1,5 +1,7 @@
 import java.util.*;
 
+import javax.swing.JOptionPane;
+
 public class Team {
 	/* team class*/
 	private String teamName;
@@ -100,7 +102,6 @@ public class Team {
 	public void releaseFromWard(Hero hero) {
 		this.addToTeam(hero);
 		Ward.remove(hero);
-		System.out.println("Hero: "+hero.getPersonName()+ " has been released from Healing Ward and is ready to fight again." + "\n");
 	}
 	
 	public ArrayList<Hero> getWard() {

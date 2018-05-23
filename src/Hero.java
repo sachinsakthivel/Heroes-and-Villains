@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class Hero extends Person{
 	
@@ -41,7 +42,7 @@ public class Hero extends Person{
 	
 	public void checkdeath() {
 		if (currentHealth < 1) {
-			System.out.println("This Hero has Died.");
+			JOptionPane.showMessageDialog(null, "Hero: " +this.getPersonName()+"has been Killed by the Villain" + "\n");
 			this.setLiving(false);
 		}
 	}

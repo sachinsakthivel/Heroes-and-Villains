@@ -3,6 +3,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
@@ -105,9 +107,11 @@ public class diceRollsSCREEN {
 	
 	public void finishedWindow() {
 		if (game.getParty().checkDead(game) ) {
+			JOptionPane.showMessageDialog(null, "Your Team has Perished. You have Failed this City" + "\n");
 			closeSCREEN();
 			game.launchExitSCREEN();
 		}else if (villain.checkdeath(game)) {
+			JOptionPane.showMessageDialog(null, "Congratulations You have Defeated this Villain, Now Onward to the Next City!" + "\n");
 			closeSCREEN();
 			game.getHomeBase().runAgain();
 		} else {
