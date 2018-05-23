@@ -11,6 +11,7 @@ import javax.swing.JTextArea;
 import java.awt.Insets;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Random;
 import java.awt.event.ActionEvent;
 
 public class GuessTheNumberSCREEN {
@@ -20,31 +21,13 @@ public class GuessTheNumberSCREEN {
 	private guessTheNumber GuessGame;
 	private Hero hero;
 	private Villain villain;
+	private int villianGuess;
+	private JButton btnIGuess;
 	private JTextArea textArea;
-	private JSlider UGuessSlider;
-	private JLabel lblLower;
-	private JLabel lblHigher;
 	private JButton Continue;
 	private int UserGuess;
-	private boolean gameWon = false;
-	private boolean Higher;
+	private boolean gameWon;
 	private int tryNo = 0;
-
-	/**
-	 * Launch the application.
-	 *
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GuessTheNumberSCREEN window = new GuessTheNumberSCREEN();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
 
 	/**
 	 * Create the application.
@@ -54,6 +37,8 @@ public class GuessTheNumberSCREEN {
 		hero = chosenHero;
 		villain = game.getCurrentCity().getVillainsLair().getVillain();
 		GuessGame = new guessTheNumber();
+		Random rand = new Random();
+		villianGuess = rand.nextInt(10 - hero.getSkill()) + 1;
 		initialize();
 		textArea.setText(GuessGame.gameDescription());
 		frame.setVisible(true);
@@ -76,7 +61,7 @@ public class GuessTheNumberSCREEN {
 		lblGuessTheNumber.setBounds(369, 52, 296, 59);
 		frame.getContentPane().add(lblGuessTheNumber);
 
-		UGuessSlider = new JSlider();
+		JSlider UGuessSlider = new JSlider();
 		UGuessSlider.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
 		UGuessSlider.setPaintTicks(true);
 		UGuessSlider.setPaintLabels(true);
@@ -94,61 +79,55 @@ public class GuessTheNumberSCREEN {
 		textArea.setBounds(162, 129, 711, 204);
 		frame.getContentPane().add(textArea);
 		
-		JButton btnIGuess = new JButton("Did you guess...");
+		btnIGuess = new JButton("Did you guess...");
 		btnIGuess.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				UserGuess = UGuessSlider.getValue();
-				while(gameWon == false) {
-					if (tryNo >= 2) {
-						gameWon = false;
-						break;
-					}
-					tryNo++;
-					gameWon = GuessGame.play(hero, UserGuess);
-					Higher = GuessGame.GetHighOrNot();
-					if (gameWon == true) {
-						textArea.setText("Pathetic, you need to guess Higher");
-
-					}
-					if (Higher == true) {
-						lblHigher.setVisible(true);
-						textArea.setText("Pathetic, you need to guess Higher");
-					} else {
-						lblLower.setVisible(false);
-						textArea.setText("Too fast for you boi, guess Lower");
-					}
+				if (tryNo >= 1) {
+					textArea.setText("Ha Ha Ha, You Lose. The number I chose was " + villianGuess);
+					btnIGuess.setVisible(false);
+					Continue.setVisible(true);
+				} else {
+					gameWon = playGame();
 				}
 			}
 		});
 		btnIGuess.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
-		btnIGuess.setBounds(400, 571, 235, 57);
+		btnIGuess.setBounds(404, 572, 235, 57);
 		frame.getContentPane().add(btnIGuess);
-		
-		lblLower = new JLabel("Lower");
-		lblLower.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
-		lblLower.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLower.setBounds(279, 408, 106, 27);
-		lblLower.setVisible(false);
-		frame.getContentPane().add(lblLower);
-		
-		lblHigher = new JLabel("Higher");
-		lblHigher.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
-		lblHigher.setHorizontalAlignment(SwingConstants.CENTER);
-		lblHigher.setBounds(613, 408, 106, 27);
-		lblHigher.setVisible(false);
-		frame.getContentPane().add(lblHigher);
 		
 		Continue = new JButton("Return to Hero Selction");
 		Continue.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				game.getCurrentCity().getVillainsLair().gameResults(gameWon, hero, villain, game);
 				finishedWindow();
 				game.getParty().checkDead(game);
 			}
 		});
 		Continue.setFont(new Font("Tw Cen MT", Font.PLAIN, 18));
-		Continue.setBounds(400, 571, 235, 57);
+		Continue.setBounds(404, 572, 235, 57);
 		frame.getContentPane().add(Continue);
+		Continue.setVisible(false);
 		
+	}
+	
+	public boolean playGame() {
+		if (UserGuess == villianGuess) {
+			textArea.setText("Well done, You guessed Right!!, You Win.");
+			btnIGuess.setVisible(false);
+			Continue.setVisible(true);
+			gameWon = true;
+		} else if (UserGuess < villianGuess) {
+			textArea.setText("Your Guess is lower than mine.");
+			tryNo++;
+			gameWon = false;
+			
+		} else {
+			textArea.setText("Your Guess is higher than mine.");
+			tryNo++;
+			gameWon = false;
+		}
+		return gameWon;
 	}
 	
 	public void closeSCREEN() {
@@ -161,7 +140,8 @@ public class GuessTheNumberSCREEN {
 			closeSCREEN();
 			game.launchExitSCREEN();
 		}else if (villain.checkdeath(game)) {
-			JOptionPane.showMessageDialog(null, "Congratulations You have Defeated this Villain, Now Onward to the Next City!" + "\n");
+			game.getParty().setCoins(game.getParty().getCoins() + 150);
+			JOptionPane.showMessageDialog(null, "Congratulations You have Defeated this Villain, Now Onward to the Next City!" + "\nYou have recieved 150 coins as gratitude from the Citizens");
 			closeSCREEN();
 			game.getHomeBase().runAgain();
 		} else {
