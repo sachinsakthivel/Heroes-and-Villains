@@ -15,7 +15,7 @@ public class Team {
 	public Team(String name, int length) {
 		teamName = name;
 		setTeamLength(length);
-		Coins = 500;
+		Coins = 300;
 		setInventory();
 		
 	}

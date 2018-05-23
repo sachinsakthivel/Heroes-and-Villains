@@ -50,10 +50,11 @@ public class GuessTheNumberSCREEN {
 	 * Create the application.
 	 */
 	public GuessTheNumberSCREEN(GameEnvironment newGame, Hero chosenHero) {
-		initialize();
 		game = newGame;
 		hero = chosenHero;
 		villain = game.getCurrentCity().getVillainsLair().getVillain();
+		GuessGame = new guessTheNumber();
+		initialize();
 		textArea.setText(GuessGame.gameDescription());
 		frame.setVisible(true);
 	}

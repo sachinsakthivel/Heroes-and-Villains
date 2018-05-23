@@ -27,7 +27,7 @@ public class guessTheNumber extends miniGame {
 		userGuess = UserGuess;
 		upperLimit = 10 - hero.getSkill();
 		Random numGenerator = new Random();
-		VillainGuess = numGenerator.nextInt(10 - upperLimit) + 1;
+		VillainGuess = numGenerator.nextInt(upperLimit) + 1;
 		while (gameWon == false) {
 			if (tries >=  2) {
 				gameWon = false;
