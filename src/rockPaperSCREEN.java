@@ -139,7 +139,7 @@ public class rockPaperSCREEN {
 			JOptionPane.showMessageDialog(null, "Your Team has Perished. You have Failed this City" + "\n");
 			game.launchExitSCREEN();
 			closeSCREEN();
-		} else if (villain.checkdeath(game)) {
+		} else if (villain.checkdeath()) {
 			game.getParty().setCoins(game.getParty().getCoins() + 150);
 			JOptionPane.showMessageDialog(null, "Congratulations You have Defeated this Villain, Now Onward to the Next City!" + "\nYou have recieved 150 coins as gratitude from the Citizens");
 			closeSCREEN();
