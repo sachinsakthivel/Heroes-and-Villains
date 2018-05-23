@@ -164,6 +164,8 @@ public class GuessTheNumberSCREEN {
 			closeSCREEN();
 			game.getHomeBase().runAgain();
 		} else {
-			game.closeDiceRollsSCREEN(this);	
+			game.closeGuessNumber(this);	
 		}
+	}
+	
 }
