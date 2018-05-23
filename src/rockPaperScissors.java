@@ -61,7 +61,7 @@ public class rockPaperScissors extends miniGame {
 		String output = "Welcome to the game of Rock Paper Scissors!!!";
 		output += "\n\nRules are simple: Rock beats Scissors, Scissors beats Paper and Paper beats Rock";
 		output += "\nA simple game that everyone has played, Now assuming you've played this before, you understand that this game brings about a lot of ties.";
-		output += "\nSince playing multiple times is annoying, if it's a tie, I win.";
+		output += "\nSince spending time around yous make me sick, if it's a tie, I win.";
 		output += "\n\nWhat do you Pick? Rock Paper Scissors!!!";
 		return output;
 	} 

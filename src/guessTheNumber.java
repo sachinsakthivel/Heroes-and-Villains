@@ -19,7 +19,7 @@ public class guessTheNumber extends miniGame {
 		System.out.println("Don't worry, I'm not that unfair, I will tell you if your guess is higher or lower.");
 		gameWon = false;
 		Random numGenerator = new Random();
-		guessNumber = numGenerator.nextInt(upperLimit) + 1;
+		guessNumber = numGenerator.nextInt(10 - upperLimit) + 1;
 		Scanner input = new Scanner(System.in);
 		while (gameWon == false) {
 			if (tries == 2) {
@@ -41,6 +41,14 @@ public class guessTheNumber extends miniGame {
 			}
 		}
 		return gameWon;
+	}
+	
+	public String gameDescription() {
+		String output = "Welcome to game of 'Guess the Number' !!!";
+		output += "\n\nThe rules are simple: You have two chances to guess the number that the I have chosen in the range of 1 to 10.";
+		output += "\nDon't worry, I'm not that unfair, I will tell you if your guess is higher or lower.";
+		output += "\n\nAre you feeling Lucky?";
+		return output;
 	}
 
 }
