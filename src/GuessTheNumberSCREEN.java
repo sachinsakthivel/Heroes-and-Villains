@@ -38,7 +38,7 @@ public class GuessTheNumberSCREEN {
 		villain = game.getCurrentCity().getVillainsLair().getVillain();
 		GuessGame = new guessTheNumber();
 		Random rand = new Random();
-		villianGuess = 2;
+		villianGuess = rand.nextInt(10 - hero.getSkill());
 		tryNo = 0;
 		initialize();
 		textArea.setText(GuessGame.gameDescription());
