@@ -11,21 +11,43 @@ import java.awt.Point;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * This Class provides the GUI for the User to use the Hospital and all its functions.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 18th 2018
+ *
+ */
+
 public class hospitalSCREEN {
 
 	private JFrame frame;
-	private GameEnvironment game;
-	private int itemIndex = -1;
-	private int heroIndex = -1;
 	private JTextArea txtheroStatus;
 	private JTextArea txtItemStatus;
 	private JTextArea txtrWelcomeToGeneral;
 	private JButton btnHero1;
 	private JButton btnHero2;
 	private JButton btnHero3;
+	/**
+	 * GameEnvironment variable to pass data on the current status of the game.
+	 */
+	private GameEnvironment game;
+	/**
+	 * Variable 'itemIndex' of Type Integer refers to User's preferred choice of Item to be 
+	 * used
+	 */
+	private int itemIndex = -1;
+	/**
+	 * Variable 'heroIndex' of Type Integer refers to User's preferred choice of Hero for the 
+	 * Item to be used.
+	 */
+	private int heroIndex = -1;
+	
 
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
 	 */
 	public hospitalSCREEN(GameEnvironment newGame) {
 		game = newGame;
@@ -207,6 +229,12 @@ public class hospitalSCREEN {
 
 	}
 	
+	/**
+	 * This method makes the relevant number of Buttons Visible according to the size of the 
+	 * current Team
+	 * @param heroIndex Input variable of type integer which determines how many heroes are
+	 * present in the Team. 
+	 */
 	public void HeroButtoninVisible(int heroIndex) {
 		if (heroIndex == 0) {
 			btnHero1.setVisible(false);
@@ -217,10 +245,18 @@ public class hospitalSCREEN {
 		}
 	}
 	
+	/**
+	 * Closes up the frame and clears up this instance of HospitalSCREEN
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This method calls closeHospitalSCREEN of GameEnvironment class which closes the closes 
+	 * the GUI element HospitalSCREEN currently being displayed. The user's Homebase is 
+	 * subjected to a random event. Then the current HomeBaseSCREEN is set to visible.
+	 */
 	public void finishedWindow() {
 		game.closeHospitalSCREEN(game.getHomeBase(),this);
 	}
