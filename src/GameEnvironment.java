@@ -33,6 +33,7 @@ public class GameEnvironment {
 	 */
 	private battleSCREEN battle;
 		
+	
 	/**
 	 * This method starts a new game and launches the Start up screen.
 	 */
