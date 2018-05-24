@@ -1,5 +1,14 @@
 import java.util.*;
 
+/**
+ * The parent class for all items.
+ * The class provides Object Item attributes such as Item Name, Price, Stock, Duration and Description.  
+ * Includes getter and setter methods for Attributes.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 3rd 2018
+ */
+
 public class HelperFunctions {
 	
 	public static Hero heroCreate(int userPick, String name) {
