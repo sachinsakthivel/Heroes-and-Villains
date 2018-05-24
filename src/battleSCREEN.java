@@ -47,7 +47,7 @@ public class battleSCREEN {
 	public battleSCREEN(GameEnvironment newGame) {
 		game = newGame;
 		villainsLair = game.getCurrentCity().getVillainsLair();
-		gameChoice = 2; /*villainsLair.getVillain().gamePreference();*/
+		gameChoice = villainsLair.getVillain().gamePreference();
 		initialize();
 		frame.setVisible(true);
 		if (game.getParty().typeCheck("Mental Monk")) {
