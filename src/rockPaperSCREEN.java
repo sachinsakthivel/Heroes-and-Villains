@@ -79,7 +79,7 @@ public class rockPaperSCREEN {
 		btnRock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				userPick = 3;
-				boolean gameWon = RPS.play(hero, userPick);
+				boolean gameWon = RPS.play(userPick);
 				game.getCurrentCity().getVillainsLair().gameResults(gameWon, hero, villain, game);
 				textArea.setText(RPS.results());
 				visibleButtons();
@@ -93,7 +93,7 @@ public class rockPaperSCREEN {
 		btnPaper.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				userPick = 1;
-				boolean gameWon = RPS.play(hero, userPick);
+				boolean gameWon = RPS.play(userPick);
 				game.getCurrentCity().getVillainsLair().gameResults(gameWon, hero, villain, game);
 				textArea.setText(RPS.results());
 				visibleButtons();
@@ -107,7 +107,7 @@ public class rockPaperSCREEN {
 		btnScissors.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				userPick = 2;
-				boolean gameWon = RPS.play(hero, userPick);
+				boolean gameWon = RPS.play(userPick);
 				game.getCurrentCity().getVillainsLair().gameResults(gameWon, hero, villain, game);
 				textArea.setText(RPS.results());
 				visibleButtons();

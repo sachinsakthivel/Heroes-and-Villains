@@ -12,7 +12,7 @@ public class rockPaperScissors extends miniGame {
 		super(name, rules);
 	}
 	
-	public boolean play(Hero hero, int userPick) {
+	public boolean play(int userPick) {
 		VillianPick();
 		if (userPick == vNum) {
 			gameWon = false;
@@ -74,16 +74,6 @@ public class rockPaperScissors extends miniGame {
 			output += ("\n\nIt seems you have won today, but remember Lady Luck is quite fickle.\nYou Win!");
 		}
 		return output;
-	}
-
-	
-	
-	public void menuOptions() {
-		System.out.println("Welcome to the game of Rock Paper Scissors !!!");
-		System.out.println("Your choice?:\n");
-		System.out.println("1 - Paper");
-		System.out.println("2 - Scissors");
-		System.out.println("3 - Rock");
 	}
 	
 }

@@ -22,32 +22,12 @@ public class guessTheNumber extends miniGame {
 		output += "\n\nAre you feeling Lucky?";
 		return output;
 	}
-
-	public boolean play(Hero hero, int UserGuess) {
-		userGuess = UserGuess;
-		upperLimit = 10 - hero.getSkill();
-		Random numGenerator = new Random();
-		VillainGuess = numGenerator.nextInt(upperLimit) + 1;
-		while (!gameWon && tries > 3) {
-			if (userGuess == VillainGuess) {
-				gameWon = true;
-			} else if (userGuess < VillainGuess) {
-				HigherOrNot = true;
-			} else {
-				HigherOrNot = false;
-			}
-		}
-		return gameWon;
-	}
 	
-	
-	public boolean GetHighOrNot() {
-		return HigherOrNot;
-	}
 	
 	public boolean check(int userGuess, int VillianGuess) {
 		if (userGuess == VillianGuess) {
-			return gameWon;
+			gameWon = true;
+			return gameWon ;
 		} else if (userGuess < VillianGuess) {
 			HigherOrNot = true;
 			return HigherOrNot;
@@ -57,33 +37,5 @@ public class guessTheNumber extends miniGame {
 		}
 	}
 	
-
-//	public boolean playText(Hero hero) {
-//		int upperLimit = hero.getSkill();
-//		gameWon = false;
-//		Random numGenerator = new Random();
-//		guessNumber = numGenerator.nextInt(10 - upperLimit) + 1;
-//		Scanner input = new Scanner(System.in);
-//		while (gameWon == false) {
-//			if (tries == 2) {
-//				System.out.println("Ha Ha Ha, You Lose. The number I chose was " + guessNumber);
-//				break;
-//			}
-//			System.out.println("\nWell then, What's your guess?? Choose Wisely !!");
-//			userGuess = input.nextInt();
-//			System.out.println(guessNumber);
-//			tries++;
-//			if (userGuess == guessNumber) {
-//				System.out.println("Well done, You guessed Right!!, You Win.");
-//				gameWon = true;
-//			} else if (userGuess < guessNumber) {
-//				System.out.println("Your Guess is lower than mine.");
-//				
-//			} else {
-//				System.out.println("Your Guess is higher than mine.");
-//			}
-//		}
-//		return gameWon;
-//	}
 	
 }
