@@ -1,12 +1,43 @@
 import java.util.Random;
 
+/**
+ * Date: May 5th 2018
+ * 
+ * This class creates the Lesser Heal Tickets Item, lesserHeals.
+ * 
+ * Parent Class is Item. Attributes include amount of HealBase, Duration and description. 
+ * Enables Hero to use Lesser Heal Tickets Item.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ *
+ */
+
 public class lesserHeals extends Item {
 	
+	/**
+	 * An unchangeable Integer variable depicting amount of Health that can be restored.
+	 */
 	private final int HealBase;
+	/**
+	 * An unchangeable Integer variable depicting Duration the Item takes to come into effect.
+	 */
 	private final int Duration;
+	/**
+	 * An unchangeable String variable describing the Item, Lesser Heal Tickets.
+	 */
 	private final String Description;
+	/**
+	 * A local variable of Random class, to determine the bonus Health restored.
+	 */
 	private Random rand = new Random();
 	
+	
+	/**
+	 * Constructor method for Item, lesserHeals.
+	 * Sets Name, Price and Stock using Item Class.
+	 * Health restored, HealBase, is set to 10.  Duration is set to 1 mins.
+	 * An explanation of how the Item, Greater Heal Tickets work is stored in Description.
+	 */
 	public lesserHeals() {
 		super("Lesser Heal Tickets", 20, 0);
 		HealBase = 10;
@@ -16,6 +47,11 @@ public class lesserHeals extends Item {
 		this.setItemDescription(Description);
 	}
 	
+	/**
+	 * This method returns an Integer variable 'getHealNum' meaning amount of health restored 
+	 * to Hero.
+	 * @return Returns Integer getHealNum.
+	 */
 	public int getHealNum() {
 		return HealBase;
 	}
@@ -26,6 +62,12 @@ public class lesserHeals extends Item {
 		return returnString;
 	}
 	
+	/**
+	 * This method lets user use 'lesserHeals' item on Hero.
+	 * Checks if Item is available in Team Inventory, if present restores 10 to 13 Health 
+	 * (randomized) over 1 minutes of Hero. Else alerts the user to the lack of the Item.
+	 * @param hero Hero Object variable referencing Hero to which the Item will be used on.
+	 */
 	public String use(Hero hero) {
 		if (this.getItemStock() > 0 ) {
 			int heroHealthUpdate = hero.getCurrentHealth() +  rand.nextInt(3) + HealBase;

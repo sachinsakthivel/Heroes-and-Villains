@@ -49,8 +49,9 @@ public class Item {
 	}
 	
 	/**
-	 * @param chosenHero
-	 * @return
+	 * The use() method is specified for each Item Type. 
+	 * @param chosenHero Hero chosen to which the item will be applied.
+	 * @return Returns String variable "Not Working".
 	 */
 	public String use(Hero chosenHero) {
 		return "Not Working";

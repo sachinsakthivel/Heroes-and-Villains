@@ -1,7 +1,7 @@
 /**
  * Date: May 3rd 2018
  * 
- * This class creates the Armour power up Item.
+ * This class creates the Armour attribute power up Item.
  * 
  * Parent Class is Item. Attributes include amount of Armour and Armour description. Enables Hero to 
  * use Armour Item.
@@ -9,6 +9,7 @@
  * @author Sachin Sakthivel and Sasiru Goonatillake
  *
  */
+
 public class armourUp extends Item {
 	
 	/**
@@ -26,7 +27,7 @@ public class armourUp extends Item {
 	 * Constructor method for Item, armourUp.
 	 * Sets Name, Price and Stock using Item Class.
 	 * Armour provided set to 5.
-	 * An explanation of how the Item, armourUp works is given.
+	 * An explanation of how the Item, armourUp works is stored in Description.
 	 */
 	public armourUp() {
 		super("Armour Piece", 120, 0);
@@ -53,10 +54,10 @@ public class armourUp extends Item {
 	}
 	
 	/**
-	 * This method lets user use armourUp item on Hero.
-	 * Checks if Item is available in Team Inventory, if present applies Armour Attribute to Hero. Else alerts the 
+	 * This method lets user use Armour Piece item on Hero.
+	 * Checks if Item is available in Team Inventory, if present increases Armour Attribute of Hero. Else alerts the 
 	 * user to the lack of the Item.
-	 * @param hero Hero Object variable referencing Hero to which the Item will be used on
+	 * @param hero Hero Object variable referencing Hero to which the Item will be used on.
 	 */
 	public String use(Hero hero) {
 		if (this.getItemStock() > 0 ) {
