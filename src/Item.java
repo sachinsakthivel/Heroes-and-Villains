@@ -35,7 +35,7 @@ public class Item {
 	
 	/**
 	 * Constructor method for Item class
-	 * Item Duration for all items are set to -1 by default as not all items has a effect that is
+	 * Item Duration for all items are set to 1 by default as not all items has a effect that is
 	 * applied over a time period.
 	 * @param Name String variable of Item Name
 	 * @param Price Integer variable of Item Price
