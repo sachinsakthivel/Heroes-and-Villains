@@ -49,18 +49,12 @@ public class Villain extends Person {
 		tauntPhrase = taunt;
 	}
 	
-	public void checkStrikes() {
-		if (strikes == 0) {
-			this.setLiving(false);
-		}
-	}
-	
 	public int gamePreference() {
 		return rand.nextInt(2);
 	}
 	
 	public boolean checkdeath() {
-		if (strikes == 0) {
+		if (strikes <= 0) {
 			this.setLiving(false);
 			return true;
 		}
