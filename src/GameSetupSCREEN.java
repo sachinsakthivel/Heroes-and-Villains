@@ -37,7 +37,7 @@ public class GameSetupSCREEN {
 	private JSlider citySlide;
 	private JSlider heroSlide;
 	/**
-	 * Variable 'villainsLair' of Type VillainsLair refers to the currently active villains lair
+	 * GameEnvironment variable to pass data on the current status of the game.
 	 */
 	private GameEnvironment game;
 	/**

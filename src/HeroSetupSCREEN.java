@@ -38,7 +38,7 @@ public class HeroSetupSCREEN {
 	JFrame frame;
 	private JTextField textField;
 	/**
-	 * Variable 'villainsLair' of Type VillainsLair refers to the currently active villains lair
+	 * GameEnvironment variable to pass data on the current status of the game.
 	 */
 	private GameEnvironment game;
 	/**

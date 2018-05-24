@@ -30,7 +30,7 @@ public class battleSCREEN {
 	private JLabel lblerror;
 	JPanel villainDescription;
 	/**
-	 * Game Environment variable to pass data on the current status of the game.
+	 * GameEnvironment variable to pass data on the current status of the game.
 	 */
 	private GameEnvironment game;
 	/**

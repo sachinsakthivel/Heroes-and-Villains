@@ -1,4 +1,3 @@
-
 import java.awt.Font;
 import java.awt.Image;
 
@@ -15,36 +14,42 @@ import java.awt.Rectangle;
 import java.awt.Insets;
 import javax.swing.SwingConstants;
 
+/**
+ * This Class provides the GUI for the User to use the HomeBase Screen and all its functions.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 15th 2018
+ *
+ */
+
 public class HomeBaseSCREEN {
 
 	private JFrame frame;
-	private City currentCity;
-	private GameEnvironment game;
-	private boolean  isFinal;
 	private JButton btnNorth;
 	private JButton btnEast;
 	private JButton btnWest;
 	private JButton btnSouth;
 	private JTextArea outputBox;
-
 	/**
-	 * Launch the application.
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					HomeBaseSCREEN window = new HomeBaseSCREEN();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	*/
+	 * City variable 'currentCity' to pass data on the current status of the game.
+	 */
+	private City currentCity;
+	/**
+	 * GameEnvironment variable to pass data on the current status of the game.
+	 */
+	private GameEnvironment game;
+	/**
+	 * Boolean variable 'isFinal' which determines if the the current City level is the Final
+	 */
+	private boolean  isFinal;
+
 
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
+	 * @param Final Input variable 'Final' of type Boolean refers to if the current City level 
+	 * is the Final city.
 	 */
 	public HomeBaseSCREEN(GameEnvironment newGame, boolean Final) {
 		game = newGame;
@@ -176,6 +181,13 @@ public class HomeBaseSCREEN {
 		frame.getContentPane().add(textPlane);
 	}
 	
+	/**
+	 * This method is used to smoothly scale Images
+	 * @param ImgFile String variable referring to the location of the Image File
+	 * @param width Integer variable referring to the desired scaled width
+	 * @param height Integer variable referring to the desired scaled height
+	 * @return Returns and ImageIcon that contains the scaled version of the original Image
+	 */
 	public ImageIcon scaleImg(String ImgFile, Integer width, Integer height) {
 		ImageIcon cover = new ImageIcon(HomeBaseSCREEN.class.getResource(ImgFile));
 		Image scaleImg = cover.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
@@ -183,6 +195,9 @@ public class HomeBaseSCREEN {
 		return icon;
 	}
 	
+	/**
+	 * This method decides if the next city is the final city or not.
+	 */
 	public void runAgain() {
 		if (game.getCityNum() > 1) {
 			game.launchHomeBaseSCREEN(false);
@@ -191,6 +206,9 @@ public class HomeBaseSCREEN {
 		}
 	}
 	
+	/**
+	 * This method updates the travel buttons of the HomeBaseSCREEN.
+	 */
 	public void updateButton() {
 		btnNorth.setText(currentCity.getplaces().get(0).getName());
 		btnEast.setText(currentCity.getplaces().get(1).getName());
@@ -198,18 +216,32 @@ public class HomeBaseSCREEN {
 		btnSouth.setText(currentCity.getplaces().get(3).getName());
 	}
 	
+	/**
+	 * This method facilitates Random Events to happen in the current city
+	 */
 	public void randomEvents() {
 		outputBox.setText(game.getCurrentCity().randomEvent(game.getParty()));
 	}
 	
+	/**
+	 * Closes up the frame and clears up this instance of HeroSetupScreen
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This method calls closeHomeBaseSCREEN of GameEnvironment class which closes the 
+	 * HomeBaseSCREEN using closeSCREEN().
+	 */
 	public void finishedWindow() {
 		game.closeHomeBaseSCREEN(this);
 	}
 	
+	/**
+	 * This method returns the variable 'frame' of type JFrame
+	 * @return returns the variable 'frame' of type JFrame
+	 */
 	public JFrame getFrame() {
 		return frame;
 	}
