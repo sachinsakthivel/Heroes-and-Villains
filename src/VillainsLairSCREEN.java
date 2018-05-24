@@ -26,7 +26,7 @@ public class VillainsLairSCREEN {
 	/**
 	 * Create the application.
 	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
-	 * method of the current state of the game.
+	 * method of the current state of the game. 
 	 */
 	public VillainsLairSCREEN(GameEnvironment newGame) {
 		game = newGame;
