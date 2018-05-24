@@ -44,9 +44,6 @@ public class diceRolls extends miniGame{
 		super(name, rules);
 	}
 	
-	/* (non-Javadoc)
-	 * @see miniGame#play(Hero)
-	 */
 	public boolean play(Hero hero) {
 		int rollLimit = hero.getDice();
 		gameWon = false;
