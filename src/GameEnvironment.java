@@ -1,6 +1,4 @@
 /**
- * Date: April 29th 2018
- * 
  * This is the main class of the Game that runs the game.
  * 
  * The game is broken down in to two sections determined by progression. Setting up the game, team and heroes
@@ -8,6 +6,7 @@
  * city loops are launched form this class.
  * 
  * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: April 29th 2018
  *
  */
 public class GameEnvironment {

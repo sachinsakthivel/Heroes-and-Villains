@@ -1,10 +1,31 @@
 import java.util.*;
+
+/**
+ * Date: May 17th 2018
+ * 
+ * This class creates Location, Shop.
+ * 
+ * The Shop class's parent class is Locations. This class creates a Shop for each City. Renews 
+ * stock of each item when a city is created. Allows the User to buy Items from the Shop in 
+ * exchange for Gold.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ *
+ */
+
 public class Shop extends Locations {
 	
-	private int input;
-	boolean trade = false;
+	/**
+	 * Integer ArrayList containing stocks of each Item available in the shop.
+	 */
 	private int[] ShopList;
 	
+	/**
+	 * Constructor method for Shop.
+	 * Sets the locations Name to "Wanderer's Shop" using parent class, Locations.
+	 * Randomizes the stock of each item and equates the stock list to Integer ArrayList variable 
+	 * 'ShopList'. 
+	 */
 	public Shop() {
 		super("Wanderer's Shop");
 		Random rand  = new Random();
@@ -24,34 +45,19 @@ public class Shop extends Locations {
 	public void travel(GameEnvironment game) {
 		travelledto();
 		game.launchShopSCREEN(game.getHomeBase());
-		/*
-		input = -1;
-		System.out.println("Welcome Stranger, What're you Buying?" + "\n");
-		while (input != 0) {
-			System.out.println("You have currently " + game.getParty().getCoins() + " coins left.");
-			menuOptions(game.getParty());
-			input = HelperFunctions.InputValidator(0, 8);
-			if (input !=0) {
-				String out= buy(game.getParty(), input);
-			} else {
-				System.out.println("Pleasure doing business with ya, Stranger" + "\n");
-			}
-			
-		}
-		*/
-	}
-	
-	public void menuOptions(Team team) {
-		System.out.println("What would you like to do? (Input the Number that Corresponds with your Choice) ");
-		System.out.println("0 - Return To Home Base" + "\n");
-		int i = 1;
-		for (Item item: team.getInv()) {
-			System.out.println(i+" - Buy One "+ item.getItemName() + " ("+ShopList[i-1]+ " left in Stock) (You own: "+team.getInv().get(i-1).getItemStock()+") (Price: "+team.getInv().get(i -1).getItemPrice()+" coins)");
-			System.out.println(item.getItemDescription() + "\n");
-			i++;
-		}
 	}
 		
+		
+	/**
+	 * This method lets the User to buy Items from the Shop.
+	 * An item is bought if enough gold is present and the Item is taken off from the Stock and 
+	 * added to the Team Inventory. Returns a String output which notifies the User of the result
+	 * of the action.
+	 * 
+	 * @param team The current team status is inputed to get attributes such as Inventory and Gold.
+	 * @param input Input variable which determines which Item is being purchased.
+	 * @return Returns a String variable 'out' which notifies the User of the result.
+	 */
 	public String buy(Team team, int input) {
 		if (ShopList[input -1] < 1) {
 			String out = ("Sorry Stranger, Out of Stock");
@@ -73,10 +79,21 @@ public class Shop extends Locations {
 		
 	}
 	
+	/**
+	 * This method returns the Integer ArrayList 'ShopList' which contain Stocks of each item in
+	 * the Shop.
+	 * @return Returns the Integer ArrayList 'ShopList'.
+	 */
 	public int[] getShopList() {
 		return ShopList;
 	}
 	
+	/**
+	 * This method updates the stocks by using Integer ArrayList variable input 'StockList', so 
+	 * that the 'ShopList' is updated.
+	 * @param StockList Integer ArrayList variable input 'StockList' containing updated Stock 
+	 * information.
+	 */
 	public void setShopList(int[] StockList) {
 		ShopList = StockList;
 	}

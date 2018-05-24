@@ -1,8 +1,6 @@
 import java.util.*;
 
 /**
- * Date: May 29th 2018
- * 
  * The main class of the Game that runs the game.
  * 
  * each city would be considered circular progression. The setup GUI and the 
@@ -13,6 +11,7 @@ import java.util.*;
  * city loops are launched form this class.
  * 
  * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 12th 2018
  *
  */
 
