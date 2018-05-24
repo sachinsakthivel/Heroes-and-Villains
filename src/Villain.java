@@ -113,7 +113,8 @@ public class Villain extends Person {
 	
 	/**
 	 * This method returns an Integer variable referencing the minigame which is preferred by 
-	 * the villain.
+	 * the villain. For the Final Villain, the games are predetermined using the no of Strikes 
+	 * left for Fianl Villain.
 	 * @return Returns Integer variable related to Villan's preferred minigame.
 	 */
 	public int gamePreference() {
