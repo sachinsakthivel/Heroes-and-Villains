@@ -21,38 +21,44 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.Insets;
 
+/**
+ * This Class provides the GUI for the User to setup the game by inputing Team Name, a team size 
+ * and the No. of Cities the User would like to explore.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 18th 2018
+ *
+ */
+
 public class GameSetupSCREEN {
-
-	private String TeamName = "";
-	private int NoCities = -5;
-	private int NoHeroes = -1;
-
+	
 	JFrame frame;
 	private JTextField textField;
-	private GameEnvironment game;
 	private JSlider citySlide;
 	private JSlider heroSlide;
-	
-
-
 	/**
-	 * Launch the application.
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GameSetupSCREEN window = new GameSetupSCREEN();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	*/
+	 * Variable 'villainsLair' of Type VillainsLair refers to the currently active villains lair
+	 */
+	private GameEnvironment game;
+	/**
+	 * Variable 'TeamName' of Type String refers to User's preferred Team Name.
+	 */
+	private String TeamName = "";
+	/**
+	 * Variable 'NoCities' of Type Integer refers to the User's chosen No. of cities to be 
+	 * explored
+	 */
+	private int NoCities = -5;
+	/**
+	 * Variable 'NoHeroes' of Type Integer refers to User's preferred Team Size
+	 */
+	private int NoHeroes = -1;
+
 
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
 	 */
 	public GameSetupSCREEN(GameEnvironment newGame) {
 		initialize();
@@ -173,26 +179,50 @@ public class GameSetupSCREEN {
 		frame.getContentPane().add(label);
 	}
 	
+	/**
+	 * This method sets the Team name using String input 'TeamName'
+	 * @param TeamName String input 'TeamName' updating the Team Name.
+	 */
 	public void setTeamName(String TeamName) {
 		this.TeamName = TeamName;
 	}
 	
+	/**
+	 * This method returns the String variable 'TeamName' 
+	 * @return Returns variable 'TeamName' of type String.
+	 */
 	public String getTeamName() {
 		return TeamName;
 	}
 	
+	/**
+	 * This method returns the Integer variable 'NoCities' 
+	 * @return Returns variable 'NoCities' of type Integer.
+	 */
 	public int getNoCities() {
 		return NoCities;
 	}
 	
+	/**
+	 * This method returns the Integer variable 'NoHeroes' 
+	 * @return Returns variable 'NoHeroes' of type Integer.
+	 */
 	public int getNoHeroes() {
 		return NoHeroes;
 	}
-		
+	
+	/**
+	 * Closes up the frame and clears up this instance of GameSetupSCREEN
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This method calls closeSetupScreen of GameEnvironment class which closes the 
+	 * GameSetupSCREEN and creates a Team using Inputs gathered. Then launches HeroSetupSCREEN 
+	 * to complete setting up the game.
+	 */
 	public void finishedWindow() {
 		game.closeSetupScreen(this);
 	}

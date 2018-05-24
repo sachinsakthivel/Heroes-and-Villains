@@ -24,30 +24,35 @@ import java.awt.Component;
 import java.awt.Point;
 import java.awt.Insets;
 
+/**
+ * This Class provides the GUI for the User setup the Team by inputing Hero Names 
+ * and Hero Types for each Hero in the Team.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 18th 2018
+ *
+ */
+
 public class HeroSetupSCREEN {
 	
-	private String heroName = "";
-	private int typePick = -1;
-
 	JFrame frame;
 	private JTextField textField;
-	private GameEnvironment game;
-
 	/**
-	 * Launch the application.
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					HeroSetupSCREEN window = new HeroSetupSCREEN();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	*/
+	 * Variable 'villainsLair' of Type VillainsLair refers to the currently active villains lair
+	 */
+	private GameEnvironment game;
+	/**
+	 * Variable 'heroName' of Type String refers to User's preferred Hero Name for 
+	 * the Hero in Creation.
+	 */
+	private String heroName = "";
+	/**
+	 * Variable 'typePick' of Type Integer refers to User's preferred Hero Type for 
+	 * the Hero in Creation.
+	 */
+	private int typePick = -1;
+
+
 	/**
 	 * Getter for frame
 	 */
@@ -57,15 +62,17 @@ public class HeroSetupSCREEN {
 	 
 	/**
 	 * setter for frame
-	 * @param newframe
+	 * @param newframe Varaible 'newframe' of type Jframe
 	 */
 	public void setFrame(JFrame newframe)  {
 		frame = newframe;
-		
 	}
+	
 
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
 	 */
 	public HeroSetupSCREEN(GameEnvironment newGame) {
 		initialize();
@@ -224,6 +231,10 @@ public class HeroSetupSCREEN {
 		frame.getContentPane().add(btnHealer);
 	}
 	
+	/**
+	 * This method is called when Team creation is not complete and more Heroes 
+	 * need to be created. Else the first city is created.
+	 */
 	public void runAgain() {
 		if (game.getParty().getTeamLength() > 0) {
 			game.launchHeroSetupSCREEN();
@@ -232,15 +243,25 @@ public class HeroSetupSCREEN {
 		}
 	}
 	
-	
+	/**
+	 * Closes up the frame and clears up this instance of HeroSetupScreen
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This method calls closeSetupScreen of GameEnvironment class which closes the 
+	 * HeroSetupSCREEN using closeSCREEN().
+	 */
 	public void finishedWindow() {
 		game.closeHeroSetupScreen(this);
 	}
 	
+	/**
+	 * This method creates Heroes based on the input given to it by variable typePick and 
+	 * heroName, and adds them to the Team
+	 */
 	public void createHero() {
 		Hero newHero = HelperFunctions.heroCreate(typePick, heroName);
 		game.getParty().addToTeam(newHero);

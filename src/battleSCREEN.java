@@ -12,6 +12,15 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JPanel;
 
+/**
+ * This Class provides the GUI for the User to select a Hero from the team and battle the 
+ * current Villain
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 23rd 2018
+ *
+ */
+
 public class battleSCREEN {
 
 	private JFrame frame;
