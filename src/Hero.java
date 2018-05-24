@@ -95,7 +95,7 @@ public class Hero extends Person{
 	 */
 	public void checkdeath() {
 		if (currentHealth < 1) {
-			JOptionPane.showMessageDialog(null, "Hero: " +this.getPersonName()+"has been Killed by the Villain" + "\n");
+			JOptionPane.showMessageDialog(null, "Hero: " +this.getPersonName()+" has been Killed by the Villain" + "\n");
 			this.setLiving(false);
 		}
 	}
