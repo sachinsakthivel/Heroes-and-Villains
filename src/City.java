@@ -1,5 +1,18 @@
 import java.util.*;
 
+/**
+ * Date: May 29th 2018
+ * 
+ * The main class of the Game that runs the game.
+ * 
+ * The game is broken down in to two sections determined by progression. Setting up the game, team and heroes
+ * are linear progression while the each city would be considered circular progression. The setup GUI and the 
+ * city loops are launched form this class.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ *
+ */
+
 public class City {
 	private boolean isFinal;
 	private Shop shop;
