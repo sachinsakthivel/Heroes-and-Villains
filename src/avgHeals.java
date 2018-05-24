@@ -1,15 +1,16 @@
-import java.util.Random;
+	import java.util.Random;
 /**
  * Date: May 5th 2018
  * 
  * This class creates the Average Health Restore Item, avgHeals.
  * 
  * Parent Class is Item. Attributes include amount of HealBase, Duration and description. Enables Hero to 
- * use avgHeals Item.
+ * use Average Heal Tickets Item.
  * 
  * @author Sachin Sakthivel and Sasiru Goonatillake
  *
  */
+	
 public class avgHeals extends Item {
 	
 	/**
@@ -23,7 +24,7 @@ public class avgHeals extends Item {
 	private final int Duration;
 	
 	/**
-	 * An unchangeable String variable describing the Item, avgHeals.
+	 * An unchangeable String variable describing the Item, Average Heal Tickets.
 	 */
 	private final String Description;
 	
@@ -35,8 +36,8 @@ public class avgHeals extends Item {
 	/**
 	 * Constructor method for Item, avgHeals.
 	 * Sets Name, Price and Stock using Item Class.
-	 * Health restored, HealBase, is set to 25.
-	 * An explanation of how the Item, avgHeals work is given.
+	 * Health restored, HealBase, is set to 25.  Duration is set to 2 mins.
+	 * An explanation of how the Item, Average Heal Tickets work is stored in Description.
 	 */
 	public avgHeals() {
 		super("Average Heal Tickets", 50, 0);
@@ -55,9 +56,6 @@ public class avgHeals extends Item {
 		return HealBase;
 	}
 	
-	/**
-	 * This (toString) method returns a String variable containing Item Name, Stock, and Description.
-	 */
 	public String toString() {
 		String returnString = this.getItemName() + " - " + this.getItemStock() + " currently in Team Inventory.";
 		returnString += "\n" + this.Description;
@@ -68,7 +66,7 @@ public class avgHeals extends Item {
 	 * This method lets user use 'avgHeals' item on Hero.
 	 * Checks if Item is available in Team Inventory, if present restores 25 to 30 Health (randomized) over 2 minutes of Hero. 
 	 * Else alerts the user to the lack of the Item.
-	 * @param hero Hero Object variable referencing Hero to which the Item will be used on
+	 * @param hero Hero Object variable referencing Hero to which the Item will be used on.
 	 */
 	public String use(Hero hero) {
 		if (this.getItemStock() > 0 ) {

@@ -28,7 +28,7 @@ public class hypSuggestSkill extends Item {
 	 * Constructor method for Item, hypSuggestSkill.
 	 * Sets Name, Price and Stock using Item Class.
 	 * Skill provided set to 1.
-	 * An explanation of how the Item, Hypnotic Suggestion Skillbook works is  stored in Description.
+	 * An explanation of how the Item, Hypnotic Suggestion Skillbook works is stored in Description.
 	 */
 	public hypSuggestSkill() {
 		super("Hypnotic Suggestion Skillbook", 90, 0);
