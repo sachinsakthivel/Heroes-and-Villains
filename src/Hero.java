@@ -82,7 +82,7 @@ public class Hero extends Person{
 	
 	/**
 	 * This method sets a Hero's Current Health to the input Integer variable 'Health'.
-	 * @param maxHealth Input Integer variable which indicated Current Health.	
+	 * @param Health Input Integer variable which indicated Current Health.	
 	 */
 	public void setCurrentHealth(int Health) {
 		this.currentHealth = Health;

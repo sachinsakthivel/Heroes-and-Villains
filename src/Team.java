@@ -126,7 +126,7 @@ public class Team {
 	/**
 	 * Removing a Hero from Team when killed.
 	 * This method removes Hero type variable 'superhero' from team and adds 'superhero' to the
-	 * ArrayList<Hero> Graveyard.
+	 * ArrayList containing Heroes Graveyard.
 	 * @param superhero Hero type variable 'superhero', which is a new Hero being removed from 
 	 * the Team.
 	 */

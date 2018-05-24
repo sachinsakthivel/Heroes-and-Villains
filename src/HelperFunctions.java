@@ -1,16 +1,23 @@
 import java.util.*;
 
 /**
- * The parent class for all items.
- * The class provides Object Item attributes such as Item Name, Price, Stock, Duration and Description.  
- * Includes getter and setter methods for Attributes.
+ * This Class contains methods that was use to help facilitate certain action within the game. 
+ * These methods is used in a wide area of actions, such as Input validation, and User 
+ * Interactions.
  * 
  * @author Sachin Sakthivel and Sasiru Goonatillake
- * Date: May 3rd 2018
+ * Date: May 17th 2018
  */
 
 public class HelperFunctions {
 	
+	/**
+	 * This method is used to create a Hero based on the input received through Integer variable
+	 * 'userPick' and String 'name'. A new instance of the relevant hero is created and returned.
+	 * @param userPick This Integer variable determines the Hero Type of the created Hero
+	 * @param name This String variable determines the Name of the newly created Hero.
+	 * @return Returns a Hero of specific Hero Type dependent on the Input variables.
+	 */
 	public static Hero heroCreate(int userPick, String name) {
 		if (userPick == 1 ) {
 			Guardian newHero = new Guardian(name);
@@ -33,6 +40,12 @@ public class HelperFunctions {
 		}
 	}
 	
+	/**
+	 * This 
+	 * @param lower
+	 * @param upper
+	 * @return
+	 */
 	public static int InputValidator(int lower, int upper) {
 		int userInput = -1;
 		boolean validInput = false;
