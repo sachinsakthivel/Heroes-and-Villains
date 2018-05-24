@@ -17,42 +17,34 @@ import java.awt.Cursor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * This Class provides the GUI for the User to start a New Game or Quit Game. This will be the 
+ * first window seen by the user when running the game.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 17th 2018
+ *
+ */
+
 public class StartUpSCREEN {
 
 	JFrame frame;
+	/**
+	 * GameEnvironment variable to pass data on the current status of the game.
+	 */
+	private GameEnvironment game;
 	
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
 	 */
-	
-	private GameEnvironment game;
-	
 	public StartUpSCREEN(GameEnvironment newGame) {
 		initialize();
 		game = newGame;
 		frame.setVisible(true);
 	}
 	
-
-	
-	/**
-	 * Launch the application.
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					StartUpSCREEN window = new StartUpSCREEN();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	*/
-
-	
-
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -106,6 +98,13 @@ public class StartUpSCREEN {
 		frame.getContentPane().add(label);
 	}
 	
+	/**
+	 * This method is used to smoothly scale Images
+	 * @param ImgFile String variable referring to the location of the Image File
+	 * @param width Integer variable referring to the desired scaled width
+	 * @param height Integer variable referring to the desired scaled height
+	 * @return Returns and ImageIcon that contains the scaled version of the original Image
+	 */
 	public ImageIcon scaleImg(String ImgFile, Integer width, Integer height) {
 		ImageIcon cover = new ImageIcon(StartUpSCREEN.class.getResource(ImgFile));
 		Image scaleImage = cover.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
@@ -113,11 +112,17 @@ public class StartUpSCREEN {
 		return icon;
 	}
 	
-	
+	/**
+	 * Closes up the frame and clears up this instance of StartUpScreen
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This method calls closeMainScreen of GameEnvironment class which closes the 
+	 * StartUpScreen and launches GameSetupSCREEN to start setting up the game.
+	 */
 	public void finishedWindow() {
 		game.closeMainScreen(this);
 	}

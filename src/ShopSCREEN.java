@@ -287,7 +287,7 @@ public class ShopSCREEN {
 	}
 	
 	/**
-	 * This method calls closeShopSCREEN of GameEnvironment class which closes the closes 
+	 * This method calls closeShopSCREEN of GameEnvironment class which closes  
 	 * the GUI element ShopSCREEN currently being displayed. The user's Homebase is 
 	 * subjected to a random event. Then the current HomeBaseSCREEN is set to visible.
 	 */

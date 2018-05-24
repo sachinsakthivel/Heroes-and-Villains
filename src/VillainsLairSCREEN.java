@@ -1,4 +1,3 @@
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -6,29 +5,28 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * This Class provides the GUI for the User to either enter the Villin's lair or to go back to 
+ * the HomeBase
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 19th 2018
+ *
+ */
+
 public class VillainsLairSCREEN {
 
 	private JFrame frame;
+	/**
+	 * GameEnvironment variable to pass data on the current status of the game.
+	 */
 	private GameEnvironment game;
 
-	/**
-	 * Launch the application.
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VillainsLairSCREEN window = new VillainsLairSCREEN();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	*/
-
+	
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
 	 */
 	public VillainsLairSCREEN(GameEnvironment newGame) {
 		game = newGame;
@@ -72,10 +70,19 @@ public class VillainsLairSCREEN {
 		frame.getContentPane().add(btnenterLair);
 	}
 	
+	/**
+	 * Closes up the frame and clears up this instance of VillainLairSCREEN
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This method calls closeVillainLairSCREEN of GameEnvironment class which closes  
+	 * the GUI element VillainLairSCREEN currently being displayed. If the Boolean 'toHomeBase' 
+	 * is true, the user's Homebase is subjected to a random event. Then the current 
+	 * HomeBaseSCREEN is set to visible.
+	 */
 	public void finishedWindow(boolean toHomeBase) {
 		game.closeVillainLairSCREEN(game.getHomeBase(),this, toHomeBase);
 	}
