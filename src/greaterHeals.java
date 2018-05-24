@@ -28,7 +28,7 @@ public class greaterHeals extends Item {
 	
 	public String use(Hero hero) {
 		if (this.getItemStock() > 0 ) {
-			int heroHealthUpdate = hero.getCurrentHealth() +rand.nextInt(10);
+			int heroHealthUpdate = hero.getCurrentHealth() +rand.nextInt(10) + + HealBase;
 			if (heroHealthUpdate < hero.getMaximumHealth()) {
 				hero.setCurrentHealth(heroHealthUpdate);
 			} else {

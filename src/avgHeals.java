@@ -72,7 +72,7 @@ public class avgHeals extends Item {
 	 */
 	public String use(Hero hero) {
 		if (this.getItemStock() > 0 ) {
-			int heroHealthUpdate = hero.getCurrentHealth() + rand.nextInt(5);
+			int heroHealthUpdate = hero.getCurrentHealth() + rand.nextInt(5) + HealBase;
 			if (heroHealthUpdate < hero.getMaximumHealth()) {
 				hero.setCurrentHealth(heroHealthUpdate);
 			} else {
