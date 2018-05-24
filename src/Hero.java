@@ -100,11 +100,6 @@ public class Hero extends Person{
 		}
 	}
 
-	
-	/** 
-	 * This (toString) methods returns a String variable which gives a description of the Hero which includes the Name, Type, Health presented as Current/Maximum Health, Armour and
-	 * Luck which is a combination of Skill and Dice.
-	 */
 	public String toString() {
 		String output = new String("This person is named: " + getPersonName() + "\nType: " + getType() +"\nHealth: " + getCurrentHealth() + "/"+ getMaximumHealth());
 		output += "\nArmour: " + getArmour() + "\nLuck: " + (getSkill() + getDice());
