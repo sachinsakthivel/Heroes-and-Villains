@@ -50,8 +50,6 @@ public class Team {
 	public void addToTeam(Hero superhero) {
 		if (!team.contains(superhero)) {
 			team.add(superhero);
-		} else {
-			System.out.println("This hero is already in the team");  
 		}
 	}
 	
