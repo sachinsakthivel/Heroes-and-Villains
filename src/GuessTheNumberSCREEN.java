@@ -161,7 +161,7 @@ public class GuessTheNumberSCREEN {
 	 * instance of the game. (1 try) If game is won by the User, 'gameWon' is set to true, else 
 	 * it returns false. The method also modifies the text in the 'textArea' of type JTextArea 
 	 * depending on whether the 'UserGuess' was higher or not than the 'villianGuess'
-	 * @return
+	 * @return Returns the Boolean variable 'gameWon' 
 	 */
 	public boolean playGame() {
 		if (UserGuess == villianGuess) {
