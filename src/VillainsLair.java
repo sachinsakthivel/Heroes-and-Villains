@@ -26,7 +26,9 @@ public class VillainsLair extends Locations{
 	public void gameResults(boolean gameWon, Hero hero, Villain villain, GameEnvironment game) {
 		if (!gameWon) {
 			int damage = hero.getArmour() - villain.getDamage();
-			hero.setCurrentHealth(hero.getCurrentHealth() + damage);
+			if (damage < 0) {
+				hero.setCurrentHealth(hero.getCurrentHealth() + damage);
+			}
 		} else {
 			villain.setStrikes(villain.getStrikes() - 1);
 		}
