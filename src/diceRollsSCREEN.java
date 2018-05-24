@@ -11,35 +11,47 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * This is GUI class which corresponds to the diceRolls class which is a type of 
+ * minigame. This class was built using Swing and facilitates the interaction 
+ * between the User and the Dice Roll minigame.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 19th 2018
+ *
+ */
+
 public class diceRollsSCREEN {
 
 	private JFrame frame;
-	private GameEnvironment game;
-	private Hero hero;
-	private Villain villain;
 	private JTextArea textArea;
-	private diceRolls dice;
 	private JButton btnHeroSelect;
 	private JButton btnRoll;
-
 	/**
-	 * Launch the application.
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					diceRollsSCREEN window = new diceRollsSCREEN();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	*/
+	 * Game Environment variable to pass data on the current status of the game.
+	 */
+	private GameEnvironment game;
+	/**
+	 * Variable 'hero' of Type Hero
+	 */
+	private Hero hero;
+	/**
+	 * Variable 'villain' of Type Villain
+	 */
+	private Villain villain;
+	/**
+	 * Variable 'dice' of Type diceRolls which is the minigame Dice Roll
+	 */
+	private diceRolls dice;
 
+	
+	
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
+	 * @param chosenHero Input variable 'chosenHero' of Type Hero which passes on data about the
+	 * hero to the method.
 	 */
 	public diceRollsSCREEN(GameEnvironment newGame, Hero chosenHero) {
 		initialize();
@@ -101,10 +113,19 @@ public class diceRollsSCREEN {
 		btnHeroSelect.setVisible(false);
 	}
 	
+	/**
+	 * Closes up the frame and clears up this instance of diceRollsSCREEN
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This utilizes the closeSCREEN method to exit the screen after checking for various 
+	 * conditions. If the Team is killed the User will be notified of his/her defeat. If the 
+	 * Villain is killed the User progresses to the next City. In all cases the diceRollSCREEN 
+	 * is disposed of.
+	 */
 	public void finishedWindow() {
 		if (game.getParty().checkDead(game) ) {
 			JOptionPane.showMessageDialog(null, "Your Team has Perished. You have Failed this City" + "\n");

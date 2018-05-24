@@ -10,38 +10,53 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * This is GUI class which corresponds to the rockPaperScissors class which is a type of 
+ * minigame. This class was built using Swing and facilitates the interaction 
+ * between the User and the Rock Paper Scissors minigame.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 21st 2018
+ *
+ */
+
 public class rockPaperSCREEN {
 
 	private JFrame frame;
-	private GameEnvironment game;
-	private Hero hero;
-	private Villain villain;
 	private JTextArea textArea;
-	private rockPaperScissors RPS;
 	private JButton btnReturnToHero;
 	private JButton btnScissors;
 	private JButton btnPaper;
 	private JButton btnRock;
+	/**
+	 * Game Environment variable to pass data on the current status of the game.
+	 */
+	private GameEnvironment game;
+	/**
+	 * Variable 'hero' of Type Hero
+	 */
+	private Hero hero;
+	/**
+	 * Variable 'villain' of Type Villain
+	 */
+	private Villain villain;
+	/**
+	 * Variable 'RPS' of Type rockPaperScissors which is the minigame Rock Paper Scissors.
+	 */
+	private rockPaperScissors RPS;
+	/**
+	 * Variable 'userPick' of Type Integer, which corresponds to the User's choice of Rock, 
+	 * Paper or Scissors.
+	 */
 	private int userPick;
 
-	/**
-	 * Launch the application.
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					rockPaperSCREEN window = new rockPaperSCREEN();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	*/
-
+	
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
+	 * @param chosenHero chosenHero Input variable 'chosenHero' of Type Hero which passes on data about the
+	 * hero to the method.
 	 */
 	public rockPaperSCREEN(GameEnvironment newGame, Hero chosenHero) {
 		initialize();
@@ -130,10 +145,19 @@ public class rockPaperSCREEN {
 		btnReturnToHero.setVisible(false);
 	}
 	
+	/**
+	 * Closes up the frame and clears up this instance of rockPaperSCREEN
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This utilizes the closeSCREEN method to exit the screen after checking for various 
+	 * conditions. If the Team is killed the User will be notified of his/her defeat. If the 
+	 * Villain is killed the User progresses to the next City. In all cases the diceRollSCREEN 
+	 * is disposed of.
+	 */
 	public void finishedWindow() {
 		if (game.getParty().checkDead(game) ) {
 			JOptionPane.showMessageDialog(null, "Your Team has Perished. You have Failed this City" + "\n");
@@ -149,6 +173,10 @@ public class rockPaperSCREEN {
 		}
 	}
 	
+	/**
+	 * This method hides the User's choice buttons, such as the Rock, Paper, and Scissor and 
+	 * sets the ReturnToHero button to visible.
+	 */
 	public void visibleButtons() {
 		btnRock.setVisible(false);
 		btnPaper.setVisible(false);

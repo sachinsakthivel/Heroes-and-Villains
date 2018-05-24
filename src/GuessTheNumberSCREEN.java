@@ -14,23 +14,62 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 import java.awt.event.ActionEvent;
 
+/**
+ * This is GUI class which corresponds to the guessTheNumber class which is a type of 
+ * minigame. This class was built using Swing and facilitates the interaction 
+ * between the User and the Guess the Number minigame.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 22nd 2018
+ *
+ */
+
 public class GuessTheNumberSCREEN {
 
 	private JFrame frame;
-	private GameEnvironment game;
-	private guessTheNumber GuessGame;
-	private Hero hero;
-	private Villain villain;
-	private int villianGuess;
 	private JButton btnIGuess;
 	private JTextArea textArea;
 	private JButton Continue;
+	/**
+	 * Game Environment variable to pass data on the current status of the game.
+	 */
+	private GameEnvironment game;
+	/**
+	 * Variable 'GuessGame' of Type guessTheNumber which is the minigame Guess the Number.
+	 */
+	private guessTheNumber GuessGame;
+	/**
+	 * Variable 'hero' of Type Hero
+	 */
+	private Hero hero;
+	/**
+	 * Variable 'villain' of Type Villain
+	 */
+	private Villain villain;
+	/**
+	 * Variable 'villianGuess' of Type Integer refers to the Villain's chosen number
+	 */
+	private int villianGuess;
+	/**
+	 * Variable 'UserGuess' of Type Integer refers to User's choice
+	 */
 	private int UserGuess;
+	/**
+	 * Boolean variable referencing whether the game was won by the Hero or not.
+	 */
 	private boolean gameWon;
+	/**
+	 * Variable 'tryNo' of Type Integer which refers to how many tries the User has had at 
+	 * guessing the Villain's chosen number.
+	 */
 	private int tryNo;
 
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
+	 * @param chosenHero chosenHero Input variable 'chosenHero' of Type Hero which passes on data about the
+	 * hero to the method.
 	 */
 	public GuessTheNumberSCREEN(GameEnvironment newGame, Hero chosenHero) {
 		game = newGame;
@@ -117,6 +156,13 @@ public class GuessTheNumberSCREEN {
 		
 	}
 	
+	/**
+	 * This method uses variables UserGuess and villianGuess to determine the outcome of an 
+	 * instance of the game. (1 try) If game is won by the User, 'gameWon' is set to true, else 
+	 * it returns false. The method also modifies the text in the 'textArea' of type JTextArea 
+	 * depending on whether the 'UserGuess' was higher or not than the 'villianGuess'
+	 * @return
+	 */
 	public boolean playGame() {
 		if (UserGuess == villianGuess) {
 			gameWon = true;
@@ -131,10 +177,19 @@ public class GuessTheNumberSCREEN {
 		return gameWon;
 	}
 	
+	/**
+	 * Closes up the frame and clears up this instance of GuessTheNumberSCREEN
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This utilizes the closeSCREEN method to exit the screen after checking for various 
+	 * conditions. If the Team is killed the User will be notified of his/her defeat. If the 
+	 * Villain is killed the User progresses to the next City. In all cases the diceRollSCREEN 
+	 * is disposed of.
+	 */
 	public void finishedWindow() {
 		if (game.getParty().checkDead(game) ) {
 			JOptionPane.showMessageDialog(null, "Your Team has Perished. You have Failed this City" + "\n");
