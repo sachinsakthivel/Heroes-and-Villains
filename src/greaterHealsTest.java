@@ -2,12 +2,12 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class avgHealsTest {
+public class greaterHealsTest {
 
 	@Test
 	public void testUse() {
 		Hero testHero = new Hero("Timmy the fuckboi");
-		avgHeals testHeal = new avgHeals();
+		greaterHeals testHeal = new greaterHeals();
 		String out = "Insufficient amount of "+testHeal.getItemName()+". \nPlease Buy Some from Shop";
 		assertEquals(out, testHeal.use(testHero));
 		testHeal.setItemStock(3);
@@ -21,10 +21,10 @@ public class avgHealsTest {
 	}
 
 	@Test
-	public void testAvgHeals() {
-		avgHeals testHeal = new avgHeals();
-		assertEquals("Average Heal Tickets", testHeal.getItemName());
-		assertEquals(50 , testHeal.getItemPrice());
+	public void testGreaterHeals() {
+		greaterHeals testHeal = new greaterHeals();
+		assertEquals("Greater Heal Tickets", testHeal.getItemName());
+		assertEquals(100 , testHeal.getItemPrice());
 		assertEquals(0 , testHeal.getItemStock());
 	}
 

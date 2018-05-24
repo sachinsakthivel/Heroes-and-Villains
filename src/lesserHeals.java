@@ -39,7 +39,7 @@ public class lesserHeals extends Item {
 			out += " \n\nHero: "+hero.getPersonName()+ " has been moved into Healing Ward from Team." + "\n";
 			return out;
 		} else {
-			return "Insufficient amount of "+this.getItemName()+".\nPlease Buy Some from Shop";
+			return "Insufficient amount of "+this.getItemName()+". \nPlease Buy Some from Shop";
 		}
 	}
 	
