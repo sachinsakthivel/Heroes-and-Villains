@@ -55,6 +55,7 @@ public class HeroSetupSCREEN {
 
 	/**
 	 * Getter for frame
+	 * @return Returns frame
 	 */
 	public JFrame getFrame() {
 		return frame;

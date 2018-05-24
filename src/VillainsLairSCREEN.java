@@ -83,6 +83,14 @@ public class VillainsLairSCREEN {
 	 * is true, the user's Homebase is subjected to a random event. Then the current 
 	 * HomeBaseSCREEN is set to visible.
 	 */
+	/**
+	 * This method calls closeVillainLairSCREEN of GameEnvironment class which closes  
+	 * the GUI element VillainLairSCREEN currently being displayed. If the Boolean 'toHomeBase' 
+	 * is true, the user's Homebase is subjected to a random event. Then the current 
+	 * HomeBaseSCREEN is set to visible.
+	 * @param toHomeBase The Boolean 'toHomeBase' indicates the User's wish to travel
+	 * back to Homebase
+	 */
 	public void finishedWindow(boolean toHomeBase) {
 		game.closeVillainLairSCREEN(game.getHomeBase(),this, toHomeBase);
 	}
