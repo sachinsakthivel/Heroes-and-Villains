@@ -15,19 +15,35 @@ import javax.swing.JPanel;
 public class battleSCREEN {
 
 	private JFrame frame;
-	private GameEnvironment game;
-	private VillainsLair villainsLair;
 	private JTextArea txtrVillain;
 	private JTextArea txtrHeroDescription;
 	private JTextArea txtrVillainDescription;
-	private int HeroIndex = -1;
-	private int gameChoice;
 	private JLabel lblerror;
 	JPanel villainDescription;
+	/**
+	 * Game Environment variable to pass data on the current status of the game.
+	 */
+	private GameEnvironment game;
+	/**
+	 * Variable 'villainsLair' of Type VillainsLair refers to the currently active villains lair
+	 */
+	private VillainsLair villainsLair;
+	/**
+	 * Variable 'HeroIndex' of Type Integer refers to User's selection of Heros, and it is set 
+	 * to -1 by default.
+	 */
+	private int HeroIndex = -1;
+	/**
+	 * Variable 'gameChoice' of Type Integer refers to Villains preferred choice in minigames
+	 */
+	private int gameChoice;
+	
 
 
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
 	 */
 	public battleSCREEN(GameEnvironment newGame) {
 		game = newGame;
@@ -176,14 +192,29 @@ public class battleSCREEN {
 		txtrHeroDescription.setText("Select a Hero");
 	}
 	
+	/**
+	 * Closes up the frame and clears up this instance of GuessTheNumberSCREEN
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This method calls closeBattleSCREEN of GameEnvironment class which closes the 
+	 * BattleSCREEN and creates a new instance of the GUI element VillainLairSCREEN.
+	 */
 	public void finishedWindow() {
 		game.closeBattleSCREEN(this);
 	}
 	
+	/**
+	 * This method facilitates minigame battles by creating new instances of the relevant 
+	 * minigames with the User's selected Hero.
+	 * @param heroIndex Variable 'heroIndex' of Type Integer refers to the User's selected Hero
+	 * @param gameChoice Variable 'gameChoice' of Type Integer refers to the Villains preferred 
+	 * minigame choice. 
+	 * @param game GameEnvironment variable to pass data on the current status of the game.
+	 */
 	public void battle(int heroIndex, int gameChoice, GameEnvironment game) {
 		if (heroIndex == -1) {
 			lblerror.setVisible(true);

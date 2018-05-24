@@ -31,7 +31,7 @@ public class GuessTheNumberSCREEN {
 	private JTextArea textArea;
 	private JButton Continue;
 	/**
-	 * Game Environment variable to pass data on the current status of the game.
+	 * GameEnvironment variable to pass data on the current status of the game.
 	 */
 	private GameEnvironment game;
 	/**
