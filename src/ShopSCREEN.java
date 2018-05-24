@@ -12,36 +12,39 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Insets;
 
+/**
+ * This Class provides the GUI for the User to use the Shop and all its functions.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 18th 2018
+ *
+ */
+
 public class ShopSCREEN {
 
 	private JFrame frame;
 	private JLabel lblGold;
 	
 	private String DisplayText;
+	/**
+	 * GameEnvironment variable to pass data on the current status of the game.
+	 */
 	private GameEnvironment game;
+	/**
+	 * Variable 'InvIndex' of Type Integer refers to User's preferred choice of Item to be 
+	 * bought
+	 */
 	private int InvIndex = -1;
+	/**
+	 * Integer ArrayList containing stocks of each Item available in the shop.
+	 */
 	private int[] StockList;
 
 
 	/**
-	 * Launch the application.
-	 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ShopSCREEN window = new ShopSCREEN();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	*/
-
-	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
 	 */
 	public ShopSCREEN(GameEnvironment newGame) {
 		game = newGame;
@@ -260,18 +263,34 @@ public class ShopSCREEN {
 		frame.getContentPane().add(label);
 	}
 	
+	/**
+	 * This method returns the String type variable 'DisplayText'
+	 * @return Returns the String type variable 'DisplayText'
+	 */
 	public String GetDisplayText() {
 		return DisplayText;
 	}
 	
+	/**
+	 * This method updates the String variable 'Display Text' using Input String 'newText'
+	 * @param newText Input String 'newText', which updates the String variable 'Display Text'
+	 */
 	public void SetDisplayText(String newText) {
 		DisplayText = newText;
 	}
 	
+	/**
+	 * Closes up the frame and clears up this instance of ShopSCREEN
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This method calls closeShopSCREEN of GameEnvironment class which closes the closes 
+	 * the GUI element ShopSCREEN currently being displayed. The user's Homebase is 
+	 * subjected to a random event. Then the current HomeBaseSCREEN is set to visible.
+	 */
 	public void finishedWindow() {
 		game.closeShopSCREEN(game.getHomeBase(),this);
 	}

@@ -11,33 +11,40 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Insets;
 
+/**
+ * This Class provides the GUI for the User to use the Power Up Den and all its functions.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 18th 2018
+ *
+ */
+
 public class PowerUpSCREEN {
 
 	private JFrame frame;
-	private GameEnvironment game;
 	private JTextArea txtHeroDescription;
 	private JTextArea txtItemDescription;
 	private JTextArea txtoutputBox;
-	private int itemIndex = -1;
-	private int heroIndex = -1;
 	/**
-	 * Launch the application.
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PowerUpSCREEN window = new PowerUpSCREEN();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	*/
+	 * GameEnvironment variable to pass data on the current status of the game.
+	 */
+	private GameEnvironment game;
+	/**
+	 * Variable 'itemIndex' of Type Integer refers to User's preferred choice of Item to be 
+	 * used
+	 */
+	private int itemIndex = -1;
+	/**
+	 * Variable 'heroIndex' of Type Integer refers to User's preferred choice of Hero for the 
+	 * Item to be used.
+	 */
+	private int heroIndex = -1;
+	
 
 	/**
 	 * Create the application.
+	 * @param newGame Input variable 'newGame' of type GameEnvironment to pass data on to the 
+	 * method of the current state of the game.
 	 */
 	public PowerUpSCREEN(GameEnvironment newGame) {
 		game = newGame;
@@ -218,10 +225,18 @@ public class PowerUpSCREEN {
 		frame.getContentPane().add(txtoutputBox);
 	}
 	
+	/**
+	 * Closes up the frame and clears up this instance of PowerUpSCREEN
+	 */
 	public void closeSCREEN() {
 		frame.dispose();
 	}
 	
+	/**
+	 * This method calls closePowerUpSCREEN of GameEnvironment class which closes the closes 
+	 * the GUI element PowerUpSCREEN currently being displayed. The user's Homebase is 
+	 * subjected to a random event. Then the current HomeBaseSCREEN is set to visible.
+	 */
 	public void finishedWindow() {
 		game.closePowerUpSCREEN(game.getHomeBase(),this);
 	}
