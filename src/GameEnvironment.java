@@ -1,7 +1,7 @@
 /**
  * Date: April 29th 2018
  * 
- * The main class of the Game that runs the game.
+ * This is the main class of the Game that runs the game.
  * 
  * The game is broken down in to two sections determined by progression. Setting up the game, team and heroes
  * are linear progression while the each city would be considered circular progression. The setup GUI and the 

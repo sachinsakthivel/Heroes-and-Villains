@@ -5,6 +5,9 @@ import java.util.*;
  * 
  * The main class of the Game that runs the game.
  * 
+ * each city would be considered circular progression. The setup GUI and the 
+ * city loops are launched form this class.
+ * 
  * The game is broken down in to two sections determined by progression. Setting up the game, team and heroes
  * are linear progression while the each city would be considered circular progression. The setup GUI and the 
  * city loops are launched form this class.
@@ -14,14 +17,42 @@ import java.util.*;
  */
 
 public class City {
+	
+	/**
+	 * Boolean variable to verify if the current city is the final city of the play through to 
+	 * create the final Villain.
+	 */
 	private boolean isFinal;
+	/**
+	 * Shop variable for current city. 
+	 */
 	private Shop shop;
+	/**
+	 * Hospital variable for current city
+	 */
 	private Hospital hospital;
-	private PowerUpDen power;;
+	/**
+	 * PowerUp Dean variable for current city.
+	 */
+	private PowerUpDen power;
+	/**
+	 * VillainsLair variable for current city.
+	 */
 	private VillainsLair lair;
-	private int userInput = -1;
+	/**
+	 * ArrayList variable 'places' contains the 4 locations mentioned above.
+	 */
 	private ArrayList<Locations> places;
 	
+	
+	/**
+	 * Constructor method for City class.
+	 * All location objects are created with checking if the Final Villain is needed. All 
+	 * Locations are included in places ArrayList and is shuffled to provide variation in the 
+	 * Loaction's direction of travel.
+	 * @param last Boolean variable which determines if the current city is the last city of 
+	 * the play through, If true the villain is created as a Final Villain.
+	 */
 	public City( boolean last) {
 		isFinal = last;
 		shop = new Shop();
@@ -34,6 +65,15 @@ public class City {
 
 
 	
+	/**
+	 * This methods uses a map and makes all location in the current City discovered.
+	 * Check Team Inventory for maps and if present travels to each location to make each 
+	 * location discovered. Else, alerts the user to the lack of maps in the Team Inventory
+	 * @param team Input Team variable which carries all the information of the current team 
+	 * in the play through.
+	 * @return Returns a String Variable out notifying the user if the map was successfully 
+	 * or not.
+	 */
 	public String useMap(Team team) {
 		if (team.getInv().get(3).getItemStock() > 0) {
 			for (Locations place: places) {
@@ -48,6 +88,16 @@ public class City {
 		}
 	}
 	
+	/**
+	 * When the Team travels from any location to the HomeBase an Random Event occurs.
+	 * Positive Random Events  provides the team with additional Items or Gold, while negative
+	 * Random Events takes Items or Gold from the Team Inventory. If the Watch Dog Hero Type is 
+	 * present in the Team Negative Random Events doesn't occur although the user will be 
+	 * notified of the failed negative Random Event.
+	 * @param team Input Team variable which carries all the information of the current team 
+	 * in the play through.
+	 * @return Returns a String Variable out notifying the user of a Random Event that occured.
+	 */
 	public String randomEvent(Team team) {
 		String output = "After the arduous journey to the Home Base of the City; the Heroes rested their minds and bodies.";
 		output += "\n\n....As the Night Passed, Strangers using the cover of darkness sneaked closer.";
@@ -83,18 +133,37 @@ public class City {
 		return output;
 	}
 	
+	/**
+	 * This method returns the ArrayList 'places' in its current shuffled state.
+	 * @return  Returns the ArrayList variable 'places'
+	 */
 	public ArrayList<Locations> getplaces() {
 		return places;
 	}
 	
+	/**
+	 * This method returns the shop in its current state which includes its attributes such as
+	 * Item stocks.
+	 * @return Returns Shop variable 'shop'.
+	 */
 	public Shop getShop() {
 		return shop;
 	}
 	
+	/**
+	 * This method returns the VillainsLair in its current state which includes its attributes 
+	 * such as Villains current Health in the form of Strikes.
+	 * @return Returns VillainsLair variable 'lair'.
+	 */
 	public VillainsLair getVillainsLair() {
 		return lair;
 	}
 	
+	/**
+	 * This method returns the Hospital in its current state which includes its attributes such 
+	 * as the HeroWard.
+	 * @return Returns Hospital variable 'hospital'.
+	 */
 	public Hospital getHospital() {
 		return hospital;
 	}
