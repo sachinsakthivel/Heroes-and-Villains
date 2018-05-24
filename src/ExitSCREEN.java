@@ -5,12 +5,23 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+/**
+ * This is GUI class was built as the last window a User would see when exiting the game due to 
+ * quitting, finishing or being defeated by the game.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ * Date: May 22nd 2018
+ *
+ */
+
 public class ExitSCREEN {
 
 	JFrame frame;
 
+	
 	/**
 	 * Launch the application.
+	 * @param args Array of String Arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
