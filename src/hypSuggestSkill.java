@@ -1,9 +1,35 @@
+/**
+ * Date: May 5th 2018
+ * 
+ * This class creates the Skill attribute, power up, Item.
+ * 
+ * Parent Class is Item. Skill attribute of a Hero increases its chances of wining the Guess the
+ * Number minigame. Attributes include upperLimit (Skill attribute) and description of Item. 
+ * Enables Hero to use hypSuggestSkill Item.
+ * 
+ * @author Sachin Sakthivel and Sasiru Goonatillake
+ *
+ */
 
 public class hypSuggestSkill extends Item {
 	
+	/**
+	 * An unchangeable Integer variable depicting amount of Skill increase the Item provides.
+	 */
 	private final int upperLimit;
+	
+	/**
+	 * An unchangeable String variable describing the Item, hypSuggestSkill.
+	 */
 	private final String Description;
 	
+	
+	/**
+	 * Constructor method for Item, hypSuggestSkill.
+	 * Sets Name, Price and Stock using Item Class.
+	 * Skill provided set to 1.
+	 * An explanation of how the Item, Hypnotic Suggestion Skillbook works is  stored in Description.
+	 */
 	public hypSuggestSkill() {
 		super("Hypnotic Suggestion Skillbook", 90, 0);
 			upperLimit = 1;
@@ -11,6 +37,11 @@ public class hypSuggestSkill extends Item {
 			this.setItemDescription(Description);
 	}
 	
+	/**
+	 * This method returns the Integer variable upperLimit depicting amount of
+	 *  Skill increase the Item provides.
+	 * @return Returns Integer 'upperLimit' Skill the Item provides.
+	 */
 	public int getUpperLimit() {
 		return upperLimit;
 	}
@@ -21,6 +52,12 @@ public class hypSuggestSkill extends Item {
 		return returnString;
 	}
 	
+	/**
+	 * This method lets user use hypSuggestSkill item on Hero.
+	 * Checks if Item is available in Team Inventory, if present increases Skill Attribute of 
+	 * Hero. Else alerts the user to the lack of the Item.
+	 * @param hero Hero Object variable referencing Hero to which the Item will be used on.
+	 */
 	public String use(Hero hero) {
 		if (this.getItemStock() > 0 ) {
 			hero.setSkill(hero.getSkill() + upperLimit);
