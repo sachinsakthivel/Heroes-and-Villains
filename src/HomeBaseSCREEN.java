@@ -126,18 +126,6 @@ public class HomeBaseSCREEN {
 		compass.setBounds(555, 472, 206, 206);
 		frame.getContentPane().add(compass);
 		
-		
-		JButton btnQuitGame = new JButton("QUIT GAME");
-		btnQuitGame.addActionListener(new ActionListener() { 
-			public void actionPerformed(ActionEvent e) {
-				finishedWindow();
-				runAgain();
-			}
-		});
-		btnQuitGame.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnQuitGame.setBounds(10, 684, 206, 57);
-		frame.getContentPane().add(btnQuitGame);
-		
 		outputBox = new JTextArea("After the arduous journey to the Home Base of the City; the Heroes rested their minds and bodies.\r\n\r\nAs the Sun rose, the Heroes are ready for a new challenge! What would you like to do?");
 		outputBox.setMargin(new Insets(10, 10, 10, 10));
 		outputBox.setEditable(false);
@@ -145,7 +133,7 @@ public class HomeBaseSCREEN {
 		outputBox.setLineWrap(true);
 		outputBox.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		outputBox.setFont(new Font("Cambria Math", Font.PLAIN, 17));
-		outputBox.setBounds(249, 99, 608, 246);
+		outputBox.setBounds(10, 36, 608, 246);
 		frame.getContentPane().add(outputBox);
 		
 		JButton btnNewButton = new JButton("Use a Map");
@@ -167,18 +155,18 @@ public class HomeBaseSCREEN {
 			}
 		});
 		btnCheckTeamStatus.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnCheckTeamStatus.setBounds(31, 225, 266, 43);
+		btnCheckTeamStatus.setBounds(31, 261, 266, 43);
 		frame.getContentPane().add(btnCheckTeamStatus);
-		
-		JButton btnUseAHeros = new JButton("Use a Hero's Ability");
-		btnUseAHeros.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnUseAHeros.setBounds(31, 327, 266, 43);
-		frame.getContentPane().add(btnUseAHeros);
 		
 		JScrollPane textPlane = new JScrollPane(outputBox);
 		textPlane.setAutoscrolls(true);
 		textPlane.setBounds(new Rectangle(318, 124, 630, 246));
 		frame.getContentPane().add(textPlane);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(HomeBaseSCREEN.class.getResource("/Images/homebaseBKG.JPG")));
+		lblNewLabel.setBounds(1, 1, 974, 756);
+		frame.getContentPane().add(lblNewLabel);
 	}
 	
 	/**
